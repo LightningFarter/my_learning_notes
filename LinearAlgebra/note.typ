@@ -9,6 +9,8 @@
     if head != () { head.last().body }
 }
 
+#set heading(numbering: "1.1.1")
+
 #set page(
     paper: "a4",
     margin: (top: 2.2cm, bottom: 2.2cm, left: 2.2cm, right: 2.2cm),
@@ -45,6 +47,7 @@
     stroke: 1pt + c,
     radius: 6pt,
     inset: 10pt,
+    width: 100%,
     body,
 )
 
@@ -112,62 +115,115 @@
     #author , #email
 ]
 
+#let s0 = h(0.2cm)
+#let h0 = h(0.5cm)
+#let h1 = h(1cm)
+#let h2 = h(1.5cm)
+#let h3 = h(2cm)
+
+#let suchthat = " such that "
+
 #pagebreak()
 
 #outline(title: "Contents")
 
 #pagebreak()
 
-= Chapter 1 -- #lorem(5)
+= Linear Equations
 
-#lorem(50)
+== Fields
 
-#theorem(title: lorem(3), [
-    #lorem(100)
+Let $F$ be a field, must satisfy:
+
+#definition([
+    $ x + y = y + x  h1 forall x , y in F $
+    $ x + (y + z) = (x + y) + z h1 forall x, y, z in F $
+    $ exists excl s0 0 in F, suchthat x + 0 = x h1 forall x in F $
+    $ forall x in F s0 exists s0 (-x), suchthat x + (-x) = 0 $
+    $ x y = y x h0 forall x, y in F $
+    $ x (y z) = (x y) z h0 forall x, y, z in F $
+    $ exists excl s0 1 in F, suchthat x 1 = x h0 forall x in F $
+    $ forall x eq.not 0, x in F, s0 exists s0 x^(-1), suchthat x x^(-1) = 1 $
+    $ x (y + z) = x y + x z h0 forall x, y, z in F $
 ])
 
-#lemma(title: lorem(3), [
-    #lorem(100)
+== Systems of Linear Equations
+
+*Linear equations* has form of:
+
+#example([
+    $ A_(1 1) x_1 + A_(1 2) x_2 + dots + A_(1 n) x_n = y_1 $
+    $ A_(2 1) x_1 + A_(2 2) x_2 + dots + A_(2 n) x_n = y_2 $
+    $ dots.v h1 dots.v h3 h1 dots.v h1 dots.v $
+    $ A_(m 1) x_1 + A_(m 2) x_2 + dots + A_(m n) x_n = y_m $
 ])
 
-#proposition(title: lorem(3), [
-    #lorem(100)
+If $y_1 = y_2 = dots = y_m = 0$ is a solution, the system is *homogeneous*.
+
+*Linear Combination* has form of:
+
+#example([
+    $ ( c_1 A_(1 1) + dots + c_m A_(m 1) ) x_1 + dots + (c_1 A_(1 n) + dots + c_m A_(m n) ) x_n = c_1 y_1 + dots + c_m y_m $
 ])
 
-#definition(title: lorem(3), [
-    #lorem(100)
+Linear equations are *equivalent* if each equation is linear combination of other in each system.
+
+#theorem([
+    Equivalent systems of linear equations have exactly the same solutions.
 ])
 
-#example(title: lorem(3), [
-    #lorem(100)
-])
 
-#remark(title: lorem(3), [
-    #lorem(100)
-])
 
-#exercise(title: lorem(3), [
-    #lorem(100)
-])
 
-#solution(title: lorem(3), [
-    #lorem(100)
-])
 
-#proof([
-    #lorem(30)
-])
+// #lorem(50)
 
-#todo([
-    #lorem(3)
-])
+// #theorem(title: lorem(3), [
+//     #lorem(100)
+// ])
 
-= Chapter 2 #lorem(7)
+// #lemma(title: lorem(3), [
+//     #lorem(100)
+// ])
 
-#example(title: lorem(3), [
-    #lorem(100)
-])
+// #proposition(title: lorem(3), [
+//     #lorem(100)
+// ])
 
-#example(title: lorem(3), [
-    #lorem(100)
-])
+// #definition(title: lorem(3), [
+//     #lorem(100)
+// ])
+
+// #example(title: lorem(3), [
+//     #lorem(100)
+// ])
+
+// #remark(title: lorem(3), [
+//     #lorem(100)
+// ])
+
+// #exercise(title: lorem(3), [
+//     #lorem(100)
+// ])
+
+// #solution(title: lorem(3), [
+//     #lorem(100)
+// ])
+
+// #proof([
+//     #lorem(30)
+// ])
+
+// #todo([
+//     #lorem(3)
+// ])
+
+// = Chapter 2 #lorem(7)
+
+// #example(title: lorem(3), [
+//     #lorem(100)
+// ])
+
+// #example(title: lorem(3), [
+//     #lorem(100)
+// ])

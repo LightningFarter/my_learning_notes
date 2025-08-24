@@ -9,6 +9,8 @@
     if head != () { head.last().body }
 }
 
+#set heading(numbering: "1.1.1")
+
 #set page(
     paper: "a4",
     margin: (top: 2.2cm, bottom: 2.2cm, left: 2.2cm, right: 2.2cm),
@@ -45,6 +47,7 @@
     stroke: 1pt + c,
     radius: 6pt,
     inset: 10pt,
+    width: 100%,
     body,
 )
 
@@ -112,18 +115,26 @@
     #author , #email
 ]
 
+#let s0 = h(0.2cm)
+#let h0 = h(0.5cm)
+#let h1 = h(1cm)
+#let h2 = h(1.5cm)
+#let h3 = h(2cm)
+
+#let suchthat = " such that "
+
 #pagebreak()
 
 #outline(title: "Contents")
 
 #pagebreak()
 
-= Chapter 1 -- #lorem(5)
+= #lorem(5)
 
 #lorem(50)
 
 #theorem(title: lorem(3), [
-    #lorem(100)
+    #lorem(10)
 ])
 
 #lemma(title: lorem(3), [
@@ -162,7 +173,7 @@
     #lorem(3)
 ])
 
-= Chapter 2 #lorem(7)
+= #lorem(7)
 
 #example(title: lorem(3), [
     #lorem(100)
