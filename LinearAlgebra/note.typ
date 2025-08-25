@@ -248,7 +248,28 @@ $bold(A)$ is the *matrix of coefficients*
 
 #theorem([
     every $m times n$ matrix over $F$ is row-equivalent to a row-reduced matrix
-])
+]) <row_reduced_equivalent_theorem>
+
+== Row-Reduced Echelon Matrics
+
+#definition(title: "Row-Reduced Echelon", [
+    for $bold(R) in F_(m times n)$ to be row-reduced echelon:
+    1. $bold(R)$ is row-reduced
+    2. all row of full $0$ entries is below any non-zero row
+    3. if there are $r$ non-zero rows in $R$, where the leading non-zero entry of row $i$ occurs in $k_i$, $i = 1, dots, r$ then $k_1 < k_2 < dots < k_r$
+]) <row_reduced_echelon_definition>
+
+#theorem([
+    every $bold(A) in F_(m times n)$ is row-equivalent to a row-reduced echelon
+]) <row_echelon_equivalence_theorem>
+
+#theorem([
+    for matrix $bold(A) in F_(m times n)$ if $m < n$ then $bold(A) bold(X) = bold(0)$ has non-trivial solution
+]) <non_trivial_solution_homogeneous_theorem>
+
+#theorem([
+    a homogeneous equation $bold(A) bold(X) = bold(0)$ is row-equivalent to $bold(I)$ iff it has only trivial solution
+]) <homogeneous_trivial_solution_identity_theorem>
 
 
 
