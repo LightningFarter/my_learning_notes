@@ -486,7 +486,28 @@ the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m
     and $dim W_1 + dim W_2 = dim (W_1 inter W_2) + dim (W_1 + W_2)$
 ]) <dimension_of_sum_subspaces_theorem>
 
+== Coordinates
 
+#definition(title: "Ordered Basis", [
+    let $V$ be a finite-dimensional vector space, an *ordered basis* is a finite sequence of linearly independent vectors that spans $V$
+]) <ordered_basis_definition>
+
+#definition([
+    the coordinate matrix of $alpha$ to the ordered basis $cal(B)$ is as
+    $
+        [alpha]_cal(B) = vec(x_1, dots.v, x_n), s0 "where" alpha = sum_(i=1)^n x_i alpha_i, s0 alpha_i in cal(B)
+    $
+]) <coordinate_matrix_definition>
+
+#theorem([
+    let $bold(P)_(n times n)$ be invertible matrix over $F$, $V$ be an $n$-dimensional vector space with ordered basis $cal(B)$.
+    there is a unique ordered basis $cal(B)'$ for each $alpha$ such that
+    $
+        [alpha]_cal(B) = bold(P) [alpha]_cal(B)' \
+        [alpha]_cal(B)' = bold(P)^(-1) [alpha]_cal(B) \
+        bold(P) = mat([alpha'_1]_cal(B), dots, [alpha'_n]_cal(B))
+    $
+]) <ordered_basis_transforming_theorem>
 
 
 // #lorem(50)
