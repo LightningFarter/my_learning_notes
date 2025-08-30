@@ -509,6 +509,29 @@ the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m
     $
 ]) <ordered_basis_transforming_theorem>
 
+== Summary of Row-Equivalences
+
+#theorem([
+    Row-Equivalent matrices have the same row space
+]) <row_equivalent_same_row_space_theorem>
+
+#theorem([
+    let $bold(R)$ be a row-reduced echelon matrix, then the non-zero rows of $bold(R)$ forms a basis of row space of $bold(R)$
+]) <row_reduced_echelon_non_zero_row_space_theorem>
+
+#theorem([
+    $"let" m, n > 0 s0 m, n in N, s0 F "be a field", s0 W "be a subspace of " F^n "and" dim W <= m$ \
+    then exists unique row-reduced echelon matrix over $F$ which has $W$ as its row space
+]) <row_space_unique_row_reduced_echelon_theorem>
+
+#corollary([
+    each $m times n$ matrix is row-equivalent to one and only one row-reduced echelon matrix
+]) <any_matrix_row_reduced_echelon_uniqueness_corollary>
+
+#corollary([
+    let $bold(A), bold(B) in F^(m times n)$, then $bold(A)$ and $bold(B)$ are row-equivalent iff they have the same row space
+]) <same_row_space_row_equivalence_corollary>
+
 
 // #lorem(50)
 
