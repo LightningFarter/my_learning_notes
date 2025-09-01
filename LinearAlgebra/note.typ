@@ -143,6 +143,8 @@
 #let suchthat = " such that "
 #let mif = " if "
 #let existsunique = $exists excl s0$
+#let rank = "rank"
+#let nullity = "nullity"
 
 #set math.mat(delim: "[")
 #set math.vec(delim: "[")
@@ -531,6 +533,47 @@ the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m
 #corollary([
     let $bold(A), bold(B) in F^(m times n)$, then $bold(A)$ and $bold(B)$ are row-equivalent iff they have the same row space
 ]) <same_row_space_row_equivalence_corollary>
+
+#pagebreak()
+
+= Linear Transformations
+
+== Linear Transformations
+
+#definition(title: "Linear Transformation", [
+    let $V, W$ be vector spaces over field $F$, a linear transformation from $V$ to $W$ is a function \ $T: V arrow W$
+    such that $T(c alpha + beta) = c(T alpha) + T beta$
+]) <linear_transformation_definition>
+
+if $V$ is a vector space, an *identity transformation* $I$ is defined by $I alpha = alpha$ for $alpha in V$ \
+an *zero transformation* $0$ is defined by $0 alpha = 0$ 
+
+#theorem([
+    let $V$ be a finite-dimensional vector space over field $F$, let ${alpha_1, dots, alpha_n}$ be an ordered basis of
+    $V$, let $W$ be a vector space over $F$, and let $beta_1, dots, beta_n$ be any vectors in $W$, then
+    $
+        existsunique T : V arrow W suchthat T alpha_i = beta_i, h0 i = 1, dots, n
+    $
+]) <exists_unique_linear_transformation_theorem>
+
+#definition([
+    let $V, W$ be vector spaces over field $F$, let $T : V -> W$, the *null space* of $T$ is the set of all vectors $alpha$ 
+    such that $T alpha = 0$ \
+    let $V$ be a finite-dimensional vector space, the *rank* of $T$ is the dimension of range of $T$, 
+    the *nullity* of $T$ is the dimension of null space of $T$
+]) <null_space_rank_nullity_definition>
+
+#theorem([
+    let $V$ be finite-dimensional and $W$ be any vector space over $F$, let $T : V -> W$ be a linear transformation, then
+    $
+        rank T + nullity T = dim V
+    $
+]) <rank_nullity_dim_relation_theorem>
+
+#theorem([
+    if $bold(A) in F^(m times n)$ then $ "row" rank bold(A) = "column" rank bold(A) $
+]) <row_column_rank_equality_theorem>
+
 
 
 // #lorem(50)
