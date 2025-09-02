@@ -574,56 +574,62 @@ an *zero transformation* $0$ is defined by $0 alpha = 0$
     if $bold(A) in F^(m times n)$ then $ "row" rank bold(A) = "column" rank bold(A) $
 ]) <row_column_rank_equality_theorem>
 
+== The Algebra of Linear Transformation
+
+#theorem([
+    let $V, W$ be vector spaces over field $F$, #s0 $T, U$ be linear transformations from $V$ into $W$
+    then functions $ (T + U)(alpha) := T alpha + U alpha$, #s0 $(c T)(alpha) := c (T alpha)$ where the set of linear transformations $ T, U$ spanned form a vector space over field $F$
+]) <linear_transformation_set_vector_space_theorem>
+
+#theorem([
+    let $V$ be $n$-dimensional and $W$ be $m$-dimensional vector space over $F$, then the linear transformation vector space $L(V, W)$
+    is finite-dimensional and has dimension $m n$
+]) <linear_transformation_dimension_relation_theorem>
+
+#theorem([
+    let $V, W, Z$ be vector spaces over field $F$, #s0 let linear transformations $T : V -> W, s0 U : W -> Z$ then $(U T)(alpha) := U(T(alpha))$
+    is a linear transformation such that $U T : V -> W$
+]) <composed_linear_transformation_theorem>
+
+#definition(title: "linear operator", [
+    let $V$ be a vector space over field $F$, then $T : V -> V$ is a *linear operator* on $V$
+]) <linear_operator_definition>
+
+#lemma([
+    let $V$ be a vector space over field $F$, $s0$ let $U, T_1, T_2$ be linear operators on $V$, $s0$ let $c in F$
+    + $I U = U I = U$
+    + $U (T_1 + T_2) = U T_1 + U T_2 h0 (T_1 + T_2) U = T_1 U + T_2 U$
+    + $c (U T_1) = (c U) T_1 = U (c T_1)$
+]) <linear_operator_lemma>
+
+#theorem([
+    let $V, W$ be vector spaces over field $F$, let $T : V -> W$ be linear transformation \
+    if $T$ is invertible, then $T^(-1) : W -> V$ is linear transformation
+]) <linear_transformation_inverse_theorem>
+
+for a linear transformation $T$ to be *non-singular* is $T alpha = 0$ implies $alpha = 0$
+
+#theorem([
+    let $T : V -> W$ be linear transformation, then $T$ is non-singular iff $T$ maps each linearly independent subset of $V$
+    onto a linearly independent subset of $W$
+]) <non_singularity_linear_independent_subset_theorem>
+
+#theorem([
+    let $V, W$ be finite-dimensional vector spaces over field $F$ such that $dim V = dim W$, let $T : V -> W$ be linear transformation
+    then the followings are equivalent
+    + $T$ is invertible
+    + $T$ is non-singular
+    + $T$ is onto
+    + if ${alpha_1, dots, alpha_n}$ is basis of $V$, then ${T alpha_1, dots, T alpha_n}$ is a basis for $W$
+    + $exists "basis" {alpha_1, dots, alpha_n} "for" V suchthat {T alpha_1, dots, T alpha_n}$ is basis of $W$ 
+]) <equal_dimension_linear_transform_equivalency_theorem>
+
+== Isomorphism
+
+if $V, W$ are vector spaces over field $F$, any bijection transformation $T : V -> W$ is called *isomorphism* of $V$ onto $W$
+
+#theorem([
+    every $n$-dimensional vector space over field $F$ is isomorphic to space $F^n$
+]) <n_dimensional_n_tuple_isomorphism_theorem>
 
 
-// #lorem(50)
-
-// #theorem(title: lorem(3), [
-//     #lorem(100)
-// ])
-
-// #lemma(title: lorem(3), [
-//     #lorem(100)
-// ])
-
-// #proposition(title: lorem(3), [
-//     #lorem(100)
-// ])
-
-// #definition(title: lorem(3), [
-//     #lorem(100)
-// ])
-
-// #example(title: lorem(3), [
-//     #lorem(100)
-// ])
-
-// #remark(title: lorem(3), [
-//     #lorem(100)
-// ])
-
-// #exercise(title: lorem(3), [
-//     #lorem(100)
-// ])
-
-// #solution(title: lorem(3), [
-//     #lorem(100)
-// ])
-
-// #proof([
-//     #lorem(30)
-// ])
-
-// #todo([
-//     #lorem(3)
-// ])
-
-// = Chapter 2 #lorem(7)
-
-// #example(title: lorem(3), [
-//     #lorem(100)
-// ])
-
-// #example(title: lorem(3), [
-//     #lorem(100)
-// ])
