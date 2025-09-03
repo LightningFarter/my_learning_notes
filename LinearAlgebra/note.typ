@@ -632,4 +632,47 @@ if $V, W$ are vector spaces over field $F$, any bijection transformation $T : V 
     every $n$-dimensional vector space over field $F$ is isomorphic to space $F^n$
 ]) <n_dimensional_n_tuple_isomorphism_theorem>
 
+== Representation of Transformations by Matrices
+
+#theorem([
+    let $V$ be $n$-dimensional, $W$ be $m$-dimensional vector spaces over field $F$, let
+    $cal(B)$ be ordered basis of $V$, and $cal(B)'$ be ordered basis of $W$
+    $
+        forall s0 T : V -> W s0 exists bold(A) in F^(m times n) suchthat [T alpha]_(cal(B)') 
+        = bold(A) [alpha]_(cal(B)) h0 forall alpha in V
+    $
+    furthermore, $T -> A$ is a bijection between $L(V, W)$ and $F^(m times n)$
+]) <linear_transformation_matrices_representation_existence_theorem>
+
+$bold(A)$ in #theref(<linear_transformation_matrices_representation_existence_theorem>)
+is called *matrix of * $T$ * relative to the ordered bases * $cal(B), cal(B)'$
+
+#theorem([
+    let $V, W, Z$ be finite-dimensional vector space over field $F$, let $cal(B), cal(B)', cal(B)''$
+    be ordered basis of $V, W, Z$ respectively, let $T : V -> W, s0 U : W -> Z$, if $bold(A)$
+    be matrix of $T$ relative to $(cal(B), cal(B)')$, and $bold(B)$ be matrix of $U$ 
+    relative to $(cal(B)', cal(B)'')$, then matrix of $U T$ relative to $(cal(B), cal(B)'')$
+    be $bold(C) = bold(B) bold(A)$
+]) <linear_transformation_composition_matrix_representation_theorem>
+
+#definition([
+    let $bold(A), bold(B) in F^(n times n)$, then $bold(B)$ is similar to $bold(A)$ over $F$
+    if exists invertible $bold(P) in F^(n times n)$ such that $bold(B) = bold(P)^(-1)
+    bold(A) bold(P)$
+]) <similar_matrix_definition>
+
+#theorem([
+    let $V$ be finite-dimensional vector space over field $F$
+    let $cal(B) = {alpha_1, dots, alpha_n}$ and $cal(B)' = {alpha'_1, dots, alpha'_n}$
+    be ordered basis of $V$; let $T$ be linear operator on $V$, if $bold(P) = [ [alpha'_1]_cal(B), 
+    dots, [alpha'_n]_cal(B) ]$ be $n times n$ matrix, then
+    $
+        [T]_cal(B)' = bold(P)^(-1) [T]_cal(B) bold(P)
+    $
+    if $U$ is invertible operator on $V$ defined by $U alpha_j = alpha'_j, s0 j = 1 , dots, n$
+    then
+    $
+        [T]_cal(B)' = [U]^(-1)_cal(B) [T]_cal(B) [U]_cal(B)
+    $
+]) <linear_operator_similar_theorem>
 
