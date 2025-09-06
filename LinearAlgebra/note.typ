@@ -289,8 +289,7 @@ $bold(A)$ is the *matrix of coefficients*
 ]) <matrix_product_defined_associative_theorem>
 
 #definition(title: "Elementary Matrix", [
-    a matrix is said to be *elementary matrix* if it could be obtainable by Identity matrix through a series of
-    elementary row operations
+    a matrix is said to be *elementary matrix* if it could be obtainable by Identity matrix through a series of elementary row operations
 ]) <elementary_matrix_definition>
 
 #theorem([
@@ -298,15 +297,13 @@ $bold(A)$ is the *matrix of coefficients*
 ]) <elementary_row_operation_matrix_equivalence_theorem>
 
 #corollary([
-    let $bold(A), bold(B) in F^(m times n)$ then $bold(B)$ is row-equivalent to $bold(A)$ iff $bold(B = P A)$ where $bold(P)$
-    is product of a series of elementary row operation
+    let $bold(A), bold(B) in F^(m times n)$ then $bold(B)$ is row-equivalent to $bold(A)$ iff $bold(B = P A)$ where $bold(P)$ is product of a series of elementary row operation
 ]) <row_equivalent_elementary_row_operation_corollary>
 
 == Invertible Matrix
 
 #definition([
-    let $bold(A), bold(B) in F^(n times n)$ if $bold(A B = I)$, $bold(A)$ is the *left inverse* of $bold(B)$ and $bold(B)$
-    is the *right inverse* of $bold(A)$, if $bold(A B = B A = I)$ then it is a *two-sided inverse* and $bold(A)$ is said to be invertible
+    let $bold(A), bold(B) in F^(n times n)$ if $bold(A B = I)$, $bold(A)$ is the *left inverse* of $bold(B)$ and $bold(B)$ is the *right inverse* of $bold(A)$, if $bold(A B = B A = I)$ then it is a *two-sided inverse* and $bold(A)$ is said to be invertible
 ]) <matrix_inverse_definition>
 
 #lemma([
@@ -374,16 +371,14 @@ $bold(A)$ is the *matrix of coefficients*
 == Subspaces
 
 #definition(title: "Subspace", [
-    let $V$ be a vector space over field $F$, the subspace $W$ over field $F$ is a subset of $V$ which itself is a vector space
-    with the same operators
+    let $V$ be a vector space over field $F$, the subspace $W$ over field $F$ is a subset of $V$ which itself is a vector space with the same operators
 ]) <subspace_definition>
 
 #theorem([
     a non-empty subset $W$ of $V$ is a subspace of $V$ over field $F$ iff $s0 forall alpha, beta in W, s0 c in F, s0 c alpha + beta in W$
 ]) <subspace_definition_equivalence_theorem>
 
-a *Hermitian matrix* is a square matrix over complex number where 
-$A_(j k) = overline(A_(k j))$
+a *Hermitian matrix* is a square matrix over complex number where $A_(j k) = overline(A_(k j))$
 
 #lemma([
     $
@@ -397,14 +392,12 @@ $A_(j k) = overline(A_(k j))$
 ]) <subspace_intersection_is_subspace_theorem>
 
 #definition([
-    let $S$ be a set of vectors in a vector space $V$, the *subspace spanned by *$S$ is intersection of all subspace $W$ of $V$
-    which contains $S$ \
+    let $S$ be a set of vectors in a vector space $V$, the *subspace spanned by *$S$ is intersection of all subspace $W$ of $V$ which contains $S$ \
     if $S$ is a finite set where $S = { alpha_1, dots, alpha_n }$ then $W$ is called *subspace spanned by * vectors $alpha_1, dots, alpha_n$
 ]) <subspace_spanning_definition>
 
 #theorem([
-    the subspace spanned non-empty subset $S$ of vector space $V$ is the set of all linear combination of 
-    vectors in $S$
+    the subspace spanned non-empty subset $S$ of vector space $V$ is the set of all linear combination of vectors in $S$
 ]) <subspace_spanning_linear_combination_theorem>
 
 #definition([
@@ -466,13 +459,11 @@ the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m
 ]) <linear_independent_subset_adjoin_lemma>
 
 #theorem([
-    let $W$ be subspace of finite-dimensional vector space $V$, every linear independent subset of $W$ 
-    is finite and part of a basis of $W$ 
+    let $W$ be subspace of finite-dimensional vector space $V$, every linear independent subset of $W$ is finite and part of a basis of $W$ 
 ]) <subset_of_subspace_is_in_basis_theorem>
 
 #corollary([
-    if $W$ is a proper subspace of a finite-dimensional vector space $V$, then $W$ is finite-dimensional
-    and $dim W < dim V$
+    if $W$ is a proper subspace of a finite-dimensional vector space $V$, then $W$ is finite-dimensional and $dim W < dim V$
 ]) <dimension_relation_proper_subspace_corollary>
 
 #corollary([
@@ -484,8 +475,7 @@ the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m
 ]) <row_vector_independence_invertible_matrix_corollary>
 
 #theorem([
-    if $W_1 , W_2$ are subspaces of finite-dimensional vector space $V$ then $W_1 + W_2$ are finite-dimensional
-    and $dim W_1 + dim W_2 = dim (W_1 inter W_2) + dim (W_1 + W_2)$
+    if $W_1 , W_2$ are subspaces of finite-dimensional vector space $V$ then $W_1 + W_2$ are finite-dimensional and $dim W_1 + dim W_2 = dim (W_1 inter W_2) + dim (W_1 + W_2)$
 ]) <dimension_of_sum_subspaces_theorem>
 
 == Coordinates
@@ -502,8 +492,7 @@ the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m
 ]) <coordinate_matrix_definition>
 
 #theorem([
-    let $bold(P)_(n times n)$ be invertible matrix over $F$, $V$ be an $n$-dimensional vector space with ordered basis $cal(B)$.
-    there is a unique ordered basis $cal(B)'$ for each $alpha$ such that
+    let $bold(P)_(n times n)$ be invertible matrix over $F$, $V$ be an $n$-dimensional vector space with ordered basis $cal(B)$. there is a unique ordered basis $cal(B)'$ for each $alpha$ such that
     $
         [alpha]_cal(B) = bold(P) [alpha]_cal(B)' \
         [alpha]_cal(B)' = bold(P)^(-1) [alpha]_cal(B) \
@@ -541,26 +530,23 @@ the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m
 == Linear Transformations
 
 #definition(title: "Linear Transformation", [
-    let $V, W$ be vector spaces over field $F$, a linear transformation from $V$ to $W$ is a function \ $T: V arrow W$
-    such that $T(c alpha + beta) = c(T alpha) + T beta$
+    let $V, W$ be vector spaces over field $F$, a linear transformation from $V$ to $W$ is a function \
+    $T: V arrow W$ such that $T(c alpha + beta) = c(T alpha) + T beta$
 ]) <linear_transformation_definition>
 
 if $V$ is a vector space, an *identity transformation* $I$ is defined by $I alpha = alpha$ for $alpha in V$ \
 an *zero transformation* $0$ is defined by $0 alpha = 0$ 
 
 #theorem([
-    let $V$ be a finite-dimensional vector space over field $F$, let ${alpha_1, dots, alpha_n}$ be an ordered basis of
-    $V$, let $W$ be a vector space over $F$, and let $beta_1, dots, beta_n$ be any vectors in $W$, then
+    let $V$ be a finite-dimensional vector space over field $F$, let ${alpha_1, dots, alpha_n}$ be an ordered basis of $V$, let $W$ be a vector space over $F$, and let $beta_1, dots, beta_n$ be any vectors in $W$, then
     $
         existsunique T : V arrow W suchthat T alpha_i = beta_i, h0 i = 1, dots, n
     $
 ]) <exists_unique_linear_transformation_theorem>
 
 #definition([
-    let $V, W$ be vector spaces over field $F$, let $T : V -> W$, the *null space* of $T$ is the set of all vectors $alpha$ 
-    such that $T alpha = 0$ \
-    let $V$ be a finite-dimensional vector space, the *rank* of $T$ is the dimension of range of $T$, 
-    the *nullity* of $T$ is the dimension of null space of $T$
+    let $V, W$ be vector spaces over field $F$, let $T : V -> W$, the *null space* of $T$ is the set of all vectors $alpha$ such that $T alpha = 0$ \
+    let $V$ be a finite-dimensional vector space, the *rank* of $T$ is the dimension of range of $T$, the *nullity* of $T$ is the dimension of null space of $T$
 ]) <null_space_rank_nullity_definition>
 
 #theorem([
@@ -577,18 +563,15 @@ an *zero transformation* $0$ is defined by $0 alpha = 0$
 == The Algebra of Linear Transformation
 
 #theorem([
-    let $V, W$ be vector spaces over field $F$, #s0 $T, U$ be linear transformations from $V$ into $W$
-    then functions $ (T + U)(alpha) := T alpha + U alpha$, #s0 $(c T)(alpha) := c (T alpha)$ where the set of linear transformations $ T, U$ spanned form a vector space over field $F$
+    let $V, W$ be vector spaces over field $F$, #s0 $T, U$ be linear transformations from $V$ into $W$ then functions $ (T + U)(alpha) := T alpha + U alpha$, #s0 $(c T)(alpha) := c (T alpha)$ where the set of linear transformations $ T, U$ spanned form a vector space over field $F$
 ]) <linear_transformation_set_vector_space_theorem>
 
 #theorem([
-    let $V$ be $n$-dimensional and $W$ be $m$-dimensional vector space over $F$, then the linear transformation vector space $L(V, W)$
-    is finite-dimensional and has dimension $m n$
+    let $V$ be $n$-dimensional and $W$ be $m$-dimensional vector space over $F$, then the linear transformation vector space $L(V, W)$ is finite-dimensional and has dimension $m n$
 ]) <linear_transformation_dimension_relation_theorem>
 
 #theorem([
-    let $V, W, Z$ be vector spaces over field $F$, #s0 let linear transformations $T : V -> W, s0 U : W -> Z$ then $(U T)(alpha) := U(T(alpha))$
-    is a linear transformation such that $U T : V -> W$
+    let $V, W, Z$ be vector spaces over field $F$, #s0 let linear transformations $T : V -> W, s0 U : W -> Z$ then $(U T)(alpha) := U(T(alpha))$ is a linear transformation such that $U T : V -> W$
 ]) <composed_linear_transformation_theorem>
 
 #definition(title: "linear operator", [
@@ -610,13 +593,11 @@ an *zero transformation* $0$ is defined by $0 alpha = 0$
 for a linear transformation $T$ to be *non-singular* is $T alpha = 0$ implies $alpha = 0$
 
 #theorem([
-    let $T : V -> W$ be linear transformation, then $T$ is non-singular iff $T$ maps each linearly independent subset of $V$
-    onto a linearly independent subset of $W$
+    let $T : V -> W$ be linear transformation, then $T$ is non-singular iff $T$ maps each linearly independent subset of $V$ onto a linearly independent subset of $W$
 ]) <non_singularity_linear_independent_subset_theorem>
 
 #theorem([
-    let $V, W$ be finite-dimensional vector spaces over field $F$ such that $dim V = dim W$, let $T : V -> W$ be linear transformation
-    then the followings are equivalent
+    let $V, W$ be finite-dimensional vector spaces over field $F$ such that $dim V = dim W$, let $T : V -> W$ be linear transformation then the followings are equivalent
     + $T$ is invertible
     + $T$ is non-singular
     + $T$ is onto
@@ -635,8 +616,7 @@ if $V, W$ are vector spaces over field $F$, any bijection transformation $T : V 
 == Representation of Transformations by Matrices
 
 #theorem([
-    let $V$ be $n$-dimensional, $W$ be $m$-dimensional vector spaces over field $F$, let
-    $cal(B)$ be ordered basis of $V$, and $cal(B)'$ be ordered basis of $W$
+    let $V$ be $n$-dimensional, $W$ be $m$-dimensional vector spaces over field $F$, let $cal(B)$ be ordered basis of $V$, and $cal(B)'$ be ordered basis of $W$
     $
         forall s0 T : V -> W s0 exists bold(A) in F^(m times n) suchthat [T alpha]_(cal(B)') 
         = bold(A) [alpha]_(cal(B)) h0 forall alpha in V
@@ -644,35 +624,76 @@ if $V, W$ are vector spaces over field $F$, any bijection transformation $T : V 
     furthermore, $T -> A$ is a bijection between $L(V, W)$ and $F^(m times n)$
 ]) <linear_transformation_matrices_representation_existence_theorem>
 
-$bold(A)$ in #theref(<linear_transformation_matrices_representation_existence_theorem>)
-is called *matrix of * $T$ * relative to the ordered bases * $cal(B), cal(B)'$
+$bold(A)$ in #theref(<linear_transformation_matrices_representation_existence_theorem>) is called *matrix of * $T$ * relative to the ordered bases * $cal(B), cal(B)'$
 
 #theorem([
-    let $V, W, Z$ be finite-dimensional vector space over field $F$, let $cal(B), cal(B)', cal(B)''$
-    be ordered basis of $V, W, Z$ respectively, let $T : V -> W, s0 U : W -> Z$, if $bold(A)$
-    be matrix of $T$ relative to $(cal(B), cal(B)')$, and $bold(B)$ be matrix of $U$ 
-    relative to $(cal(B)', cal(B)'')$, then matrix of $U T$ relative to $(cal(B), cal(B)'')$
-    be $bold(C) = bold(B) bold(A)$
+    let $V, W, Z$ be finite-dimensional vector space over field $F$, let $cal(B), cal(B)', cal(B)''$ be ordered basis of $V, W, Z$ respectively, let $T : V -> W, s0 U : W -> Z$, if $bold(A)$ be matrix of $T$ relative to $(cal(B), cal(B)')$, and $bold(B)$ be matrix of $U$ relative to $(cal(B)', cal(B)'')$, then matrix of $U T$ relative to $(cal(B), cal(B)'')$ be $bold(C) = bold(B) bold(A)$
 ]) <linear_transformation_composition_matrix_representation_theorem>
 
 #definition([
-    let $bold(A), bold(B) in F^(n times n)$, then $bold(B)$ is similar to $bold(A)$ over $F$
-    if exists invertible $bold(P) in F^(n times n)$ such that $bold(B) = bold(P)^(-1)
-    bold(A) bold(P)$
+    let $bold(A), bold(B) in F^(n times n)$, then $bold(B)$ is similar to $bold(A)$ over $F$ if exists invertible $bold(P) in F^(n times n)$ such that $bold(B) = bold(P)^(-1) bold(A) bold(P)$
 ]) <similar_matrix_definition>
 
 #theorem([
-    let $V$ be finite-dimensional vector space over field $F$
-    let $cal(B) = {alpha_1, dots, alpha_n}$ and $cal(B)' = {alpha'_1, dots, alpha'_n}$
-    be ordered basis of $V$; let $T$ be linear operator on $V$, if $bold(P) = [ [alpha'_1]_cal(B), 
-    dots, [alpha'_n]_cal(B) ]$ be $n times n$ matrix, then
+    let $V$ be finite-dimensional vector space over field $F$ let $cal(B) = {alpha_1, dots, alpha_n}$ and $cal(B)' = {alpha'_1, dots, alpha'_n}$ be ordered basis of $V$; let $T$ be linear operator on $V$, if $bold(P) = [ [alpha'_1]_cal(B), dots, [alpha'_n]_cal(B) ]$ be $n times n$ matrix, then
     $
         [T]_cal(B)' = bold(P)^(-1) [T]_cal(B) bold(P)
     $
-    if $U$ is invertible operator on $V$ defined by $U alpha_j = alpha'_j, s0 j = 1 , dots, n$
-    then
+    if $U$ is invertible operator on $V$ defined by $U alpha_j = alpha'_j, s0 j = 1 , dots, n$ then
     $
         [T]_cal(B)' = [U]^(-1)_cal(B) [T]_cal(B) [U]_cal(B)
     $
 ]) <linear_operator_similar_theorem>
 
+== Linear Functionals
+
+#definition(title: "linear functional", [
+    let $V$ be a vector space over field $F$, a *linear functional* $f : V -> F$ is a linear transformation from $V$ to $F$ such that
+    $
+        f( c alpha + beta) = c f(alpha) + f(beta)
+    $
+]) <linear_functional_definition>
+
+#definition(title: "dual space", [
+    let $V$ be a vector space over field $F$, then $L(V, F)$ is a *dual space* of $V$ denoted as $V^*$
+]) <dual_space_definition>
+
+#corollary([
+    let $V$ be a vector space over field $F$, and let $V^*$ be its dual space, then
+    $
+        dim V^* = dim V
+    $
+]) <dual_space_dimension_corollary>
+
+#theorem([
+    let $V$ be a finite-dimensional vector space over field $F$ with an ordered basis $cal(B) = {alpha_1, dots, alpha_n}$\
+    There is a unique basis $cal(B)' = {f_1, dots, f_n }$ such that $f_i(alpha_j) = delta_(i j)$, and for each function $f in V^*$ that
+    $
+        f = sum_(i=1)^n f(alpha_i) f_i
+    $
+    and for each vector $alpha in V$ that
+    $
+        alpha = sum_(i=1)^n f_i (alpha) alpha_i
+    $
+]) <linear_functional_uniqueness_theorem>
+
+#definition(title: "annihilator", [
+    let $V$ be a vector space over field $F$, and $S$ is a subset of $V$ #s0 the *annihilator* of $S$ denoted as $S^0$ is the set of linear functionals $f$ on $V$ such that $f(alpha) = 0 s0 forall alpha in S$
+]) <annihilator_definition>
+
+#theorem([
+    let $V$ be a finite-dimensional vector space over field $F$, and let $W$ be a subspace of $V$, then
+    $
+        dim W + dim W^0 = dim V
+    $
+]) <annihilator_dimensional_theorem>
+
+if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W = dim V - 1$, then $W$ is a *hyperspace* or *hyperplane* or *subspace of codimension 1*
+
+#corollary([
+    if $W$ is a $k$-dimensional subspace of a $n$-dimensional vector space $V$, then $W$ is the intersection of $(n - k)$ hyperspaces in $V$
+]) <hyperspaces_intersection_corollary>
+
+#corollary([
+    if $W_1, W_2$ are subspace of a finite-dimensional vector space, then $W_1 = W_2 <=> W_1^0 = W_2^0$
+]) <subspace_annihilator_equivilant_corollary>
