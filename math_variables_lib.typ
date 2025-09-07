@@ -87,4 +87,4 @@
 #let existsunique = $exists excl s0$
 #let rank = "rank"
 #let nullity = "nullity"
-
+#let null = "null"

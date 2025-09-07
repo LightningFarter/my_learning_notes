@@ -603,3 +603,51 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
 #corollary([
     if $W_1, W_2$ are subspace of a finite-dimensional vector space, then $W_1 = W_2 <=> W_1^0 = W_2^0$
 ]) <subspace_annihilator_equivilant_corollary>
+
+== The Double Dual
+
+#theorem([
+    let $V$ be finite-dimensional vector space over field $F$, for each $alpha in V$ define
+    $
+        L_(alpha) (f) = f(alpha), h0 f in V^*
+    $
+    the mapping $alpha -> L_alpha$ is an isomorphism of $V$ onto $V^(**)$
+]) <double_dual_isomorphism_theorem>
+
+#corollary([
+    let $V$ be finite-dimensional vector space over field $F$, let $L$ be a linear functional on dual space $V^*$ of $V$, then
+    $
+        existsunique alpha in V suchthat L(f) = f(alpha) h0 forall f in V^*
+    $
+]) <exists_unique_dual_linear_functional_corollary>
+
+#corollary([
+    let $V$ be finite-dimensional vector space over field $F$, then each basis of $V^*$ is the dual of some basis for $V$
+]) <vector_space_linear_functional_basis_dual_corollary>
+
+#theorem([
+    if $S$ is any subspace of finite-dimensional vector space $V$, then $(S^0)^0$ is the subspace of $S$
+]) <annihilator_annihilator_theorem>
+
+#definition(title: "hyperspace", [
+    if $V$ is a vector space, a *hyperspace* in $V$ is a maximal proper subspace of $V$
+]) <hyperspace_definition>
+
+#theorem([
+    let $V$ be a vector space, $f$ be a non-zero linear functional on $V$, then
+    - null $f$ is a hyperspace in $V$
+    - every hyperspace in $V$ is null $f$ for some $f$
+]) <hyperspace_linear_functional_null_theorem>
+
+#lemma([
+    let $V$ be vector space over field $F$, let $f, g in L(V, F)$
+    $
+        g = c f <=> null f subset null g <=> (f(alpha) = 0 => g(alpha) = 0) \
+        c in F, s0 alpha in V
+    $
+]) <linear_functional_scalar_multiple_lemma>
+
+#theorem([
+    let $g, f_1, dots, f_r$ be linear functionals on vector space $V$ with null space $N, N_1, dots, N_r$, then $g$ is linear combination of $f_1, dots, f_r$ iff $N_1 inter dots inter N_r subset N$
+]) <linear_functional_linear_combination_theorem>
+
