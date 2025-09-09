@@ -530,7 +530,7 @@ if $V, W$ are vector spaces over field $F$, any bijection transformation $T : V 
     furthermore, $T -> A$ is a bijection between $L(V, W)$ and $F^(m times n)$
 ]) <linear_transformation_matrices_representation_existence_theorem>
 
-$bold(A)$ in #theref(<linear_transformation_matrices_representation_existence_theorem>) is called *matrix of * $T$ * relative to the ordered bases * $cal(B), cal(B)'$
+$bold(A)$ in #theref(<linear_transformation_matrices_representation_existence_theorem>) is called *matrix of * $T$ * relative to the ordered bases * $cal(B), cal(B)'$ deonted as $[T]_cal(B)^cal(B)'$
 
 #theorem([
     let $V, W, Z$ be finite-dimensional vector space over field $F$, let $cal(B), cal(B)', cal(B)''$ be ordered basis of $V, W, Z$ respectively, let $T : V -> W, s0 U : W -> Z$, if $bold(A)$ be matrix of $T$ relative to $(cal(B), cal(B)')$, and $bold(B)$ be matrix of $U$ relative to $(cal(B)', cal(B)'')$, then matrix of $U T$ relative to $(cal(B), cal(B)'')$ be $bold(C) = bold(B) bold(A)$
@@ -651,3 +651,40 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
     let $g, f_1, dots, f_r$ be linear functionals on vector space $V$ with null space $N, N_1, dots, N_r$, then $g$ is linear combination of $f_1, dots, f_r$ iff $N_1 inter dots inter N_r subset N$
 ]) <linear_functional_linear_combination_theorem>
 
+== The Transpose of a Linear Transformation
+
+#theorem([
+    let $V, W$ be vector spaces over field $F$, then \
+    $
+        "for each linear transformation" T : V -> W \
+        existsunique T^t : W^* -> V^* suchthat \
+        (T^t g)(alpha) = g (T alpha) h0 forall g in W^*, forall alpha in V
+    $
+    which $T^t$ is called *transpose* of $T$
+]) <transpose_definition_theorem>
+
+#theorem([
+    let $V, W$ be vector spaces over field $F$, let $T in L(V, W)$, then
+    $
+        null T^t = (range T)^0
+    $
+    if $V, W$ are finite-dimensional, then
+    + $rank T = rank T^t$
+    + $range T^t = (null T)^0$
+]) <null_annihilator_transpose_theorem>
+
+#theorem([
+    let $V, W$ be finite-dimensional vector space over field $F$, let $cal(B)$ be basis of $V$ with dual basis $cal(B)^*$, let $cal(B)'$ be basis of $W$ with dual basis of $cal(B)'^*$, let $T in L(V, W)$ where
+    $
+        [T]_cal(B)^cal(B)' = A h0 [T^t]_(cal(B)'^*)^(cal(B)^*) = B \
+        "then" A_(i j) = B_(j i)
+    $
+]) <transpose_matrix_representation_theorem>
+
+#definition(title: "matrix transpose", [
+    let $A in F^(m times n)$, then *transpose* of $A$ is $A^t in F^(n times m)$ defined as $A^t_(i j) = A_(j i)$
+]) <matrix_transpose_definition>
+
+#theorem([
+    let $A in F^(m times n)$ , then row rank $A = $ column rank $A$
+]) <row_column_rank_transpose_theorem>

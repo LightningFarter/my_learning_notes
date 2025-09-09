@@ -88,3 +88,5 @@
 #let rank = "rank"
 #let nullity = "nullity"
 #let null = "null"
+#let range = "range"
+#let mlet = "let"
