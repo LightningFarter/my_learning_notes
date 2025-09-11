@@ -688,3 +688,17 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
 #theorem([
     let $A in F^(m times n)$ , then row rank $A = $ column rank $A$
 ]) <row_column_rank_transpose_theorem>
+
+= Polynomials
+
+== Algebras
+
+#definition(title: "Linear Algebra", [
+    let $F$ be a field, a *linear algebra* over field $F$ is a vector space $cal(A)$ over field $F$ with additional *multiplication* operator for each pair of $alpha, beta in cal(A)$, where $alpha beta$ is the *product*, such that
+    + $alpha (beta gamma) = (alpha beta) gamma$
+    + $alpha (beta + gamma) = alpha beta + alpha gamma h0 (alpha + beta) gamma = alpha gamma + beta gamma$
+    + $c (alpha beta) = (c alpha) beta = alpha (c beta), h0 c in F$
+    if $exists s0 1 in cal(A) suchthat 1 alpha = alpha 1 = alpha, s0 alpha in cal(A)$ then $cal(A)$ is *linear algebra with identity* \
+    if $alpha beta = beta alpha h0 alpha, beta in cal(A)$ then $cal(A)$ is *commutative linear algebra*
+]) <linear_algebra_definition>
+
