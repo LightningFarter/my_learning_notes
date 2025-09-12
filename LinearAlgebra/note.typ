@@ -702,3 +702,44 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
     if $alpha beta = beta alpha h0 alpha, beta in cal(A)$ then $cal(A)$ is *commutative linear algebra*
 ]) <linear_algebra_definition>
 
+== The Algebra of Polynomials
+
+#definition(title: "polynomial", [
+    let $F[x]$ be a subspace of $F^infinity$ spanned by vectors $1, x, x^2, dots$, then $F[x]$ is *polynomial* over $F$
+]) <polynomial_definition>
+
+let $f$ be polynomial such that $f = sum_(i=0)^infinity c_i x^i$, if $c_n = 1$ and $c_k = 0 s0 forall k > n$ then, $deg f = n$\
+if $deg f = n, s0 c_n = 1$, then $f$ is *monic polynomial* \
+if $deg f = 0$, then $f$ is *scalar polynomial*
+
+#theorem([
+    let $f, g$ be non-zero polynomials over field $F$
+    + $f g$ is non-zero polynomial
+    + $deg (f g) = deg f + deg g$
+    + $f, g$ be monic polynomial $=> f g$ be monic polynomial
+    + $f, g$ be scalar polynomial $<=> f g$ be scalar polynomial
+    + if $f + g != 0$ then $deg (f + g) <= max (deg f, deg g)$
+]) <polynomial_degree_theorem>
+
+#corollary([
+    the set of all polynomials over field $F$ is a commutative linear algebra
+]) <polynomial_linear_algebra_corollary>
+
+#corollary([
+    if $f, g, h in F[x] suchthat f != 0, s0 f g = f h$ then $g = h$
+]) <polynomial_cancelation_corollary>
+
+#definition([
+    let $cal(A)$ be a linear algebra with identity over field $F$, identity denoted as $1$ and set $alpha^0 = 1 s0 forall alpha in cal(A)$ and
+    $
+        "for each" f = sum_(i=0)^n f_i x^i \
+        "define" f(alpha) = sum_(i=0)^n f_i alpha^i
+    $
+]) <polynomial_association_definition>
+
+#theorem([
+    let $cal(A)$ be linear algebra with identity over field $F$, let $f, g in F[x]$, let $alpha in cal(A)$, and $c in F$, then
+    + $(c f + g) (alpha) = c f(alpha) + g(alpha)$
+    + $(f g) (alpha) = f(alpha) g(alpha)$
+]) <linear_algebra_polynomial_linearlity_theorem>
+
