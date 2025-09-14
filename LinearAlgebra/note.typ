@@ -743,3 +743,35 @@ if $deg f = 0$, then $f$ is *scalar polynomial*
     + $(f g) (alpha) = f(alpha) g(alpha)$
 ]) <linear_algebra_polynomial_linearlity_theorem>
 
+== Lagrange Interpolation
+
+let $V in F[x]$ and $F$ be a field \
+*Lagrange interpolation forula* is as form
+$
+    f = sum_(i=0)^n f(t_i) P_i, h0 f in V, h0 t_i in F \
+    P_i = product_(j != i) ((x - t_j)/(t_i - t_j))
+$
+let $L_i (f) = f(t_i) suchthat L_j (P_i) = P_i (t_j) = delta_(i j)$, then
+$
+    L = mat(
+        1, t_0, t_0^2, dots, t_0^n ;
+        1, t_1, t_1^2, dots, t_1^n ;
+        dots.v, dots.v, dots.v, dots.down, dots.v ;
+        1, t_n, t_n^2, dots, t_n^n
+    )
+$
+
+if $f in F[x]$ is polynomial let polynomial functions denoted as $f^~ in L(F[x], F)$
+
+#definition([
+    let $F$ be a field, let $cal(A), cal(A)^~$ be linear algebras over $F$, then $cal(A) tilde.equiv cal(A)^~$ if there is a bijection $alpha -> alpha^~$ of $cal(A) -> cal(A)^~$ such that
+    + $(c alpha + d beta)^~ = c alpha^~ + d beta^~$
+    + $(alpha beta)^~ = alpha^~ beta^~$
+    for $c, d in F, s0 alpha, beta in cal(A)$\
+    the mapping is called an *isomorphism* of $cal(A)$ onto $cal(A)^~$
+]) <polynomial_functions_isomorphism_definition>
+
+#theorem([
+    if $F$ contains infinite number of distinct elements,\
+    then $f -> f^~$ is an isomorphism of $F[x] -> L(F[x], F)$
+]) <polynomial_functions_isomorphism_theorem>
