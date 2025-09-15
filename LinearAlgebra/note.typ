@@ -689,6 +689,8 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
     let $A in F^(m times n)$ , then row rank $A = $ column rank $A$
 ]) <row_column_rank_transpose_theorem>
 
+#pagebreak()
+
 = Polynomials
 
 == Algebras
