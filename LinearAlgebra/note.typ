@@ -857,3 +857,38 @@ let $d_1, dots, d_n in F[x]$ then $d_1 F[x] + dots + d_n F[x]$ is ideal *generat
     $p_1, dots, p_n$ are *relatively prime* if $d = 1$ or $p_1 F[x] + dots + p_n F[x] = F[x]$
 ]) <polynomial_GCD_definition>
 
+== The Prime Factorization of a Polynomial
+
+#definition(title: "prime and irreducible polynomials", [
+    let $F$ be a field, then $f in F[x]$ is *reducible over* $F$ if $exists g, h in F[x]$ which $deg g >= 1, deg h >= 1$ such that $f = g h$, otherwise $f$ is *irreducible over* $F$ \
+    A non-scalar irreducible polynomial over $F$ is called a *prime polynomial over* $F$, or *prime* in $F[x]$
+]) <prime_irreducible_polynomial_definition>
+
+#theorem([
+    let $F$ be a field, $p, f, g in F[x]$, if $p$ is prime, and $p$ divides $f g$ then either $p$ divides $f$ or $p$ divides $g$
+]) <prime_divide_factor_theorem>
+
+#corollary([
+    continue by #theref(<prime_divide_factor_theorem>), let $f_1, dots, f_n in F[x]$ and $p$ divides $f_1 dots f_n$ then $p$ divides at least one of $f_1, dots, f_n$
+]) <prime_divide_factor_corollary>
+
+#theorem([
+    let $F$ be a field, $f in F[x]$ be monic can be factorized into a product of monic prime polynomials in one unordered form
+]) <polynomial_prime_factorization_theorem>
+
+#theorem([
+    let $F$ be a field, let $f in F[x]$ be monic and let $f = p_1^(n_1) dots p_k^(n_k)$ be prime factorization and let
+    $
+        f_j = f / p_j^(n_j) = product_(i != j) p_i^(n_i) h0 1 <= j <= k
+    $
+    then $f_1, dots, f_k$ are relatively prime
+]) <polynomial_factor_exclude_theorem>
+
+#theorem([
+    let $F$ be a field, $f in F[x]$ is product of distinct prime iff $p$ is relatively prime to $p'$ which is the formal derivative
+]) <formal_derivative_prime_polynomial_theorem>
+
+#definition(title: "algebraically closed", [
+    a field $F$ is *algebraically closed* if $deg p = 1 s0 forall p in F[x]$ be prime
+]) <algebraically_closed_definition>
+
