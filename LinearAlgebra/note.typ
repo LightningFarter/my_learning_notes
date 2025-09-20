@@ -892,3 +892,18 @@ let $d_1, dots, d_n in F[x]$ then $d_1 F[x] + dots + d_n F[x]$ is ideal *generat
     a field $F$ is *algebraically closed* if $deg p = 1 s0 forall p in F[x]$ be prime
 ]) <algebraically_closed_definition>
 
+#pagebreak()
+
+= Determinants
+
+== Commutative Rings
+
+#definition(title: "Ring", [
+    a *ring* is a set $K$ with operation $(x, y) -> x + y$ and $(x, y) -> x y$ where
+    + $K$ is commutative group under $(x, y) -> x + y$
+    + $(x y) z = x (y z)$
+    + $x (y + z) = x y + x z ; s0 (y + z) x = y x + z x$
+    if $x y = y x s0 forall x, y in K$ then $K$ is *commutative ring*\
+    if $exists 1 in K suchthat 1 x = x 1 = x s0 forall x in K$ then $K$ is *ring with identity* and $1$ is *identity* of $K$
+]) <ring_definition>
+
