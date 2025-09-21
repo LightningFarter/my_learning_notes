@@ -907,3 +907,48 @@ let $d_1, dots, d_n in F[x]$ then $d_1 F[x] + dots + d_n F[x]$ is ideal *generat
     if $exists 1 in K suchthat 1 x = x 1 = x s0 forall x in K$ then $K$ is *ring with identity* and $1$ is *identity* of $K$
 ]) <ring_definition>
 
+== Determinant Functions
+
+#definition(title: "n-linear", [
+    let $K$ be a commutative ring with identity, $n in bb(Z)^+$, $D : K^(n times n) -> K$ is *n-linear* if
+    $
+        "let" A = mat(alpha_1, dots, alpha_n) in K^(n times n), s0 alpha_i in K^(1 times n), s0 i = 1, dots, n
+    $
+    then $D in L(K^(n times n), K)$ for $alpha_i$ if all $alpha_j, s0 j!= i$ are fixed
+]) <n_linear_definition>
+
+#lemma([
+    a linear combination of n-linear function is n-linear
+]) <n_linear_combination_lemma>
+
+#definition(title: "alternate", [
+    let $D$ be n-linear function, then it is *alternate*, or *alternating* if
+    + $D(alpha_i, alpha_j) = 0 mif alpha_i = alpha_j, s0 i != j$
+    + $D(alpha_i, alpha_j) = -D(alpha_j, alpha_i)$
+]) <alternate_definition>
+
+#lemma([
+    let $D$ be $2$-linear function, if $D(A) = 0, forall A in K^(2 times 2)$ where $A$ has equal rows, then $D$ is alternate
+]) <2_linear_alternate_lemma>
+
+#lemma([
+    let $D$ be $n$-linear function, if $D(A) = 0, forall A in K^(n times n)$ where $A$ has two adjacent rows equal, then $D$ is alternate
+]) <adjacent_row_alternate_lemma>
+
+#definition([
+    if $n in bb(Z)^+, A in K^(n times n)$ then denote $A(i|j) in K^((n-1) times (n-1))$ obtained by deleting $i$th row and $j$th column of $A$ \
+    let $D$ be $(n-1)$-linear and let $A in K^(n times n)$ then denote $D_(i j) (A) = D(A(i|j))$
+]) <deleting_row_column_notation_definition>
+
+#theorem([
+    let $n in bb(Z)^+$, let $D : K^((n-1) times (n-1)) -> K$ be $(n-1)$-linear function, then define $E_j$ as
+    $
+        E_j (A) = sum_(i=1)^n (-1)^(i+j) A_(i j) D_(i j) (A) h0 j = 1, dots, n
+    $
+    $E_j$ is an alternate n-linear function if $D$ is determinant function
+]) <determinant_induction_construction_theorem>
+
+#corollary([
+    let $K$ be a commutative ring with identity and $n in bb(Z)^+$, then exists at least one determinant function for $K^(n times n)$
+]) <determinant_exists_corollary>
+
