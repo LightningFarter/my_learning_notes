@@ -104,7 +104,11 @@ Linear equations are *equivalent* if each equation is linear combination of othe
     Equivalent systems of linear equations have exactly the same solutions.
 ]) <linear_equation_equivilance_theorem>
 
-#pagebreak()
+#exercise([
+    + prove if two homogeneous of linear equation in two unknowns have same solution, they are equivalent
+    + prove each subfield of complex number contains every rational number
+    + prove each field of characteristic $0$ contains  rational number field
+]) <exercise_linear_equations>
 
 == Matrics and Elementary Row Operations
 
@@ -158,6 +162,10 @@ $bold(A)$ is the *matrix of coefficients*
 #theorem([
     every $m times n$ matrix over $F$ is row-equivalent to a row-reduced matrix
 ]) <row_reduced_equivalent_theorem>
+
+#exercise([
+    + prove interchange of two rows can be acomplished by a finite series of other two type of row operations
+]) <exercise_row_operations>
 
 == Row-Reduced Echelon Matrics
 
@@ -245,6 +253,21 @@ $bold(A)$ is the *matrix of coefficients*
     + a square matrix with left or right inverse is invertible \
     + let $bold(A = A_1 dots A_k)$ where $bold(A_1), dots, bold(A_k)$ are square matrics, then $bold(A)$ is invertible iff all $bold(A_1), dots, bold(A_k)$ are invertible
 ]) <inverse_elementary_row_operation_corollary>
+
+#exercise([
+    + an *upper-triangular* matrix is $A in F^(n times n) mif A_(i j) = 0, forall i > j$, prove an upper-triangular matrix has no $0$ entries in diagonal iff it is invertible
+    + let $A in F^(m times n), B in F^(n times m), s0 n < m$ prove $A B$ is not invertible
+    + prove there is a finite series of row and column operations such that any matrix $A$ can be transformed into $R = P A Q$, where $R$ is both a row-reduced echelon and column-reduced echelon matrix
+    + prove *Hilbert matrics* $H$ is invertible and $H^(-1)$ has all integer entries
+    $ 
+        H = mat(
+            1, 1/2, dots, 1/n;
+            1/2, 1/3, dots, 1/(n+1);
+            dots.v, dots.v, dots.down, dots.v;
+            1/n, 1/(n+1), dots, 1/(2 n - 1)
+        )
+    $
+]) <exercise_invertible_matrix>
 
 #pagebreak()
 
@@ -383,6 +406,11 @@ the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m
 #theorem([
     if $W_1 , W_2$ are subspaces of finite-dimensional vector space $V$ then $W_1 + W_2$ are finite-dimensional and $dim W_1 + dim W_2 = dim (W_1 inter W_2) + dim (W_1 + W_2)$
 ]) <dimension_of_sum_subspaces_theorem>
+
+#exercise([
+    + prove that $A in F^(m times n)$ has dimension $m n$ by exhibiting its standard basis
+    + prove $V$ a vector space of $bb(Q)$ representing $bb(R)$ is not finite-dimensional 
+]) <exercise_base_dimensions>
 
 == Coordinates
 
@@ -603,6 +631,11 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
 #corollary([
     if $W_1, W_2$ are subspace of a finite-dimensional vector space, then $W_1 = W_2 <=> W_1^0 = W_2^0$
 ]) <subspace_annihilator_equivilant_corollary>
+
+#exercise([
+    + prove that $(W_1 + W_2)^0 = W_1^0 inter W_2^0$
+    + prove that $(W_1 inter W_2)^0 = W_1^0 + W_2^0$
+]) <exercise_linear_functionals>
 
 == The Double Dual
 
@@ -857,6 +890,11 @@ let $d_1, dots, d_n in F[x]$ then $d_1 F[x] + dots + d_n F[x]$ is ideal *generat
     $p_1, dots, p_n$ are *relatively prime* if $d = 1$ or $p_1 F[x] + dots + p_n F[x] = F[x]$
 ]) <polynomial_GCD_definition>
 
+#exercise([
+    + prove if $F$ is a field, then any intersection of ideals of $F[x]$ is a ideal
+    + let $K$ be a subfield of $F$ then prove ideal in $K$ has same monic generator as ideal in $F$
+]) <exercise_ideal>
+
 == The Prime Factorization of a Polynomial
 
 #definition(title: "prime and irreducible polynomials", [
@@ -891,6 +929,11 @@ let $d_1, dots, d_n in F[x]$ then $d_1 F[x] + dots + d_n F[x]$ is ideal *generat
 #definition(title: "algebraically closed", [
     a field $F$ is *algebraically closed* if $deg p = 1 s0 forall p in F[x]$ be prime
 ]) <algebraically_closed_definition>
+
+#exercise([
+    let $f, g, p in F[x]$ then if $f - g | p$ then $f$ is *congruent to* $g$ *modulo* $p$ denoted as $f equiv q mod p$
+    + prove congruence is equivalence relation, thus is reflexive, symmetric, and transitive
+]) <exercise_prive_factor_polynomial>
 
 #pagebreak()
 
@@ -951,4 +994,11 @@ let $d_1, dots, d_n in F[x]$ then $d_1 F[x] + dots + d_n F[x]$ is ideal *generat
 #corollary([
     let $K$ be a commutative ring with identity and $n in bb(Z)^+$, then exists at least one determinant function for $K^(n times n)$
 ]) <determinant_exists_corollary>
+
+#exercise([
+    + let $D$ be $n$-linear alternate function over commutative ring $K$ with identity, then
+        + $D(A) = 0$ if $A$ has an empty row
+        + $D(B) = D(A)$ if $B$ can be obtained by multiple and add row operation
+    + show that $det(A B) = det(A) det(B)$
+]) <exercise_determinant_functions>
 
