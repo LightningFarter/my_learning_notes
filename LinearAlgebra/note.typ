@@ -999,6 +999,35 @@ let $d_1, dots, d_n in F[x]$ then $d_1 F[x] + dots + d_n F[x]$ is ideal *generat
     + let $D$ be $n$-linear alternate function over commutative ring $K$ with identity, then
         + $D(A) = 0$ if $A$ has an empty row
         + $D(B) = D(A)$ if $B$ can be obtained by multiple and add row operation
-    + show that $det(A B) = det(A) det(B)$
 ]) <exercise_determinant_functions>
+
+== Permutations and the Uniqueness of Determinants
+
+if $(k_1, dots k_n)$ that no two $k_i$ is equal, then it is called *permutation of degree $n$* \
+the group of all permutation of degree $n$ is a *symmetric group* of degree $n$ \
+numbers of interchanges of a permutation determines if a permutation is *even* or *odd*, sign defined by 
+$
+    sign sigma = cases(
+        1 h0 & mif sigma "is even",
+        -1 h0 & mif sigma "is odd", 
+    )
+$
+
+#theorem([
+    let $K$ be a commutative ring with identity, $n in bb(Z)^+$, then $existsunique det$ on $K^(n times n)$ defined by
+    $
+        det A = sum_sigma (sign sigma) A_(1, sigma 1) dots A_(n, sigma n) h1 forall A in K^(n times n)
+    $
+    then if $D : K^(n times n) -> K$ be $n$-linear and alternate, then
+    $
+        D(A) = (det A) D(I) h1 forall A in K^(n times n)
+    $
+]) <n_linear_alternate_determinant_permutation_theorem>
+
+#theorem([
+    let $K$ be a commutative ring with identity, let $A, B in K^(n times n)$, then
+    $
+        det (A B) = (det A) (det B)
+    $
+]) <determinant_product_theorem>
 
