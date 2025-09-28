@@ -964,19 +964,19 @@ let $d_1, dots, d_n in F[x]$ then $d_1 F[x] + dots + d_n F[x]$ is ideal *generat
     a linear combination of n-linear function is n-linear
 ]) <n_linear_combination_lemma>
 
-#definition(title: "alternate", [
-    let $D$ be n-linear function, then it is *alternate*, or *alternating* if
+#definition(title: "alternating", [
+    let $D$ be n-linear function, then it is *alternating*, or *alternate* if
     + $D(alpha_i, alpha_j) = 0 mif alpha_i = alpha_j, s0 i != j$
     + $D(alpha_i, alpha_j) = -D(alpha_j, alpha_i)$
-]) <alternate_definition>
+]) <alternating_definition>
 
 #lemma([
-    let $D$ be $2$-linear function, if $D(A) = 0, forall A in K^(2 times 2)$ where $A$ has equal rows, then $D$ is alternate
-]) <2_linear_alternate_lemma>
+    let $D$ be $2$-linear function, if $D(A) = 0, forall A in K^(2 times 2)$ where $A$ has equal rows, then $D$ is alternating
+]) <2_linear_alternating_lemma>
 
 #lemma([
-    let $D$ be $n$-linear function, if $D(A) = 0, forall A in K^(n times n)$ where $A$ has two adjacent rows equal, then $D$ is alternate
-]) <adjacent_row_alternate_lemma>
+    let $D$ be $n$-linear function, if $D(A) = 0, forall A in K^(n times n)$ where $A$ has two adjacent rows equal, then $D$ is alternating
+]) <adjacent_row_alternating_lemma>
 
 #definition([
     if $n in bb(Z)^+, A in K^(n times n)$ then denote $A(i|j) in K^((n-1) times (n-1))$ obtained by deleting $i$th row and $j$th column of $A$ \
@@ -988,7 +988,7 @@ let $d_1, dots, d_n in F[x]$ then $d_1 F[x] + dots + d_n F[x]$ is ideal *generat
     $
         E_j (A) = sum_(i=1)^n (-1)^(i+j) A_(i j) D_(i j) (A) h0 j = 1, dots, n
     $
-    $E_j$ is an alternate n-linear function if $D$ is determinant function
+    $E_j$ is an alternating n-linear function if $D$ is determinant function
 ]) <determinant_induction_construction_theorem>
 
 #corollary([
@@ -996,7 +996,7 @@ let $d_1, dots, d_n in F[x]$ then $d_1 F[x] + dots + d_n F[x]$ is ideal *generat
 ]) <determinant_exists_corollary>
 
 #exercise([
-    + let $D$ be $n$-linear alternate function over commutative ring $K$ with identity, then
+    + let $D$ be $n$-linear alternating function over commutative ring $K$ with identity, then
         + $D(A) = 0$ if $A$ has an empty row
         + $D(B) = D(A)$ if $B$ can be obtained by multiple and add row operation
 ]) <exercise_determinant_functions>
@@ -1018,11 +1018,11 @@ $
     $
         det A = sum_sigma (sign sigma) A_(1, sigma 1) dots A_(n, sigma n) h1 forall A in K^(n times n)
     $
-    then if $D : K^(n times n) -> K$ be $n$-linear and alternate, then
+    then if $D : K^(n times n) -> K$ be $n$-linear and alternating, then
     $
         D(A) = (det A) D(I) h1 forall A in K^(n times n)
     $
-]) <n_linear_alternate_determinant_permutation_theorem>
+]) <n_linear_alternating_determinant_permutation_theorem>
 
 #theorem([
     let $K$ be a commutative ring with identity, let $A, B in K^(n times n)$, then
@@ -1031,3 +1031,161 @@ $
     $
 ]) <determinant_product_theorem>
 
+== Additional Properties of Determinants
+
+let $A in F^(r times r), C in F^(s times s), B in F^(r times s)$ then
+$
+    det mat(A , B; 0, C) = (det A) (det C)
+$
+$
+    det A = sum_(i=1)^n (-1)^(i + j) A_(i j) det A(i|j)
+$
+then denote $C_(i j) = (-1)^(i + j) det A(i|j)$ the *cofactor* of $A$ \
+the *classical adjoint* of $A$ is
+$
+    (adj A)_(i j) = C_(j i) = (-1)^(i+j) det A(j|i) \
+    (adj A)A = (det A) I
+$
+
+#theorem([
+    let $A in K^(n times n)$ be invertible iff $det A$ is invertible in $K$, if $A$ is invertible, then
+    $
+        A^(-1) = (det A)^(-1) adj A
+    $
+]) <invertible_determinant_theorem>
+
+for equation $A X = Y$
+$
+    (adj A) A X = (adj A) Y \
+    => (det A) X = (adj A) Y \
+    => x_j = (det B_j) / (det A) h1 B_j = mat(A_(. 1), dots, A_(. j-1), Y, A_(. j+1), dots, A_(. n) )
+$
+which is the *Cramer's rule*
+
+#remark([
+    + let $A in F^(n times n) mif A^t = -A$ then $A$ is *skew-symmetric* then if $n$ is odd, $det A = 0$
+    + let $A in F^(n times n) mif A A^t = I$ then $A$ is *orthogonal* then $det A = plus.minus 1$
+    + let $A in F^(n times n) mif A A^* = I$ then $A$ is *unitary* then $| det A | = 1$
+    + the *determinant rank* of $A in F^(n times n)$ is the largest $r$ such that $det A_r != 0$ where $A_r in F^(r times r)$ a submatrix of $A$, determinant rank is equal to row/column rank
+])
+
+#exercise([
+    + let $V$ be a vector space over field $F$, $B in F^(n times n)$, set $L_B : V -> V$ where $L_B(A) = B A$, same, $R_B : V -> V$ where $R_B(A) = A B$ then show that
+        - $det L_B = (det B)^n$
+        - $det R_B = (det B)^n$
+]) <additional_determinant_exercise>
+
+== Modules
+
+#definition(title: "module", [
+    let $K$ be a commutative ring with identity, $V$ is a *module over* $K$ if:
+    + $exists + suchthat (alpha, beta) -> alpha + beta, h0 alpha, beta in V$, where $V$ is a commutative group
+    + $exists dot suchthat (c, alpha) -> c alpha, h0 c in K, alpha in V$ such that
+        - $(c_1 + c_2)alpha = c_1 alpha + c_2 alpha$
+        - $c(alpha_1 + alpha_2) = c alpha_1 + c alpha_2$
+        - $(c_1 c_2) alpha = c_1 (c_2 alpha)$
+        - $1 alpha = alpha$
+]) <module_definition>
+
+#definition(title: "free module", [
+    the $K$-module $V$ is called a *free module* if it has a basis. \
+    if $V$ has a finite basis of $n$ elements, then $V$ is *free $K$-module with $n$ generators*
+]) <free_module_definition>
+
+#definition(title: "finitely generated", [
+    module $V$ is *finitely generated* if $exists S subset V suchthat V = span S$ \
+    let $V$ be finitely generated, then the *rank* defined by smallest $k$ such that $span (v_1, dots, v_k) = V$
+]) <finitely_generated_definition>
+
+#theorem([
+    let $K$ be a commutative ring with identity, let $V$ be free $K$-mudule with $n$ generators then $rank V = n$
+]) <free_K_module_n_gen_rank_theorem>
+
+== Multilinear Functions
+
+#definition(title: "multilinear functions", [
+    let $K$ be commutative ring with identity, let $V$ be a module over $K$, $r in bb(Z)^+$, then $L : V^r -> K$ is *multilinear* if $L(alpha_1, dots, alpha_r)$ is $r$-linear, also called as *$r$-linear form* on $V$ or *multilinear form of degree $r$* on $V$, or *$r$-tensors* on $V$
+
+    the collection of all multilinear functions on $V^r$ denoted as $M^r (V)$ where $M^r (V)$ is a $K$-module, meanwhile a submodule of all functions $V^r -> K$ \
+    if $r = 1$ then $M^1 (V) = V^*$ \
+    if $r = 2$ it is *bilinear form* on $V$ \
+])
+
+define $U(alpha_1, dots, alpha_r) = f_1 (alpha_1) dots f_r (alpha_r)$ then $U in M^r (V)$ as $f_i in L(V, V)$
+
+#definition(title: "tensor product", [
+    let $L in M^r (V)$, $U in M^s (V)$ define function $L times.circle U in M^(r+s) (V)$ by
+    $
+        (L times.circle U) (alpha_1, dots, alpha_(r+s)) = L(alpha_1, dots, alpha_r) U(alpha_(r + 1), dots, alpha_(r+s))
+    $
+    then $L times.circle U$ is the *tensor product* of $L$ and $U$, which is not commutative
+]) <tensor_product_definition>
+
+#lemma([
+    let $L_1, L in M^r (V)$, let $U_1, U in M^s (V)$, let $N in M^t (V)$, let $c in K$ then
+    + $(c L_1 + L) times.circle U = c (L_1 times.circle U) + L times.circle U$
+    + $L times.circle (c M_1 + M) = c (L times.circle U_1) + L times.circle U$
+    + $(L times.circle U) times.circle N = L times.circle (U times.circle N)$
+]) <tensor_product_distributive_lemma>
+
+#lemma([
+    let $L_1, dots, L_k$ be multilinear functions on $V^(r_1), dots ,V^(r_n)$ ,then tensor product 
+    $
+        L := L_1 times.circle dots times.circle L_n
+    $
+    is well defined, let $r = r_1 + dots + r_n$ then
+    $
+        L(alpha_1, dots, alpha_r) = f_1 (alpha_1) dots f_r (alpha_r), h0 f_i in L(V, V)
+    $
+]) <tensor_product_series_lemma>
+
+#theorem([
+    let $K$ be a commutative ring with identity, $V$ be a free $K$-module of rank $n$ then $M^r (V)$ is a free $K$-module of rank $n^r$ \
+    if ${f_1, dots, f_n}$ be a basis of $V^*$ then
+    $
+        f_(j_1) times.circle dots times.circle f_(j_r) h0 1 <= j_1 <= n, dots, 1 <= j_r <= n
+    $
+    form a basis of $M^r (V)$
+]) <multilinear_module_function_degree_theorem>
+
+#definition(title: "multilinear alternating", [
+    let $L$ be a $r$-linear form on $K$-module $V$, then $L$ is *alternating* if $L(alpha_1, dots, alpha_r) = 0$ wherever $alpha_i = alpha_j$ with $i != j$
+
+    denote $Lambda^r (V)$ as the collection of all alternating $r$-linear forms on $V$ which is a submodule of $M^r (V)$
+]) <multilinear_alternating_definition>
+
+#definition([
+    let $L in M^r (V)$, $sigma$ as a permutation, then define $pi_r L in M^r (V)$ as
+    $
+        pi_r L = sum_sigma (sign sigma) L_sigma \
+        "or " (pi_r L) (alpha_1, dots, alpha_r) = sum_sigma (sign sigma) L(alpha_(sigma 1), dots, alpha_(sigma r))
+    $
+]) <pi_permutation_function_on_multilinear_function_definition>
+
+#lemma([
+    $pi_r in L(M^r (V), Lambda^r (V))$
+
+    if $L in Lambda^r (V)$ then $pi_r L = r! L$
+]) <pi_permutation_linear_to_alternating_lemma>
+
+#theorem([
+    let $K$ be a commutative ring with identity, let $V$ be a free $K$-module of rank $n$
+    - if $r > n$ then $Lambda^r (V) = {0}$
+    - if $1 <= r <= n$ then $Lambda^r (V)$ is a free $K$-module of rank $mat(delim: "(", n ; r)$
+]) <alternating_multilinear_function_rank_theorem>
+
+a *$r$-shuffle* of ${1, dots, n}$ is picking $r$ out of $n$ and permute
+
+#corollary([
+    if $V$ is a free $K$-module of rank $n$, then $Lambda^n (V)$ is a free $K$-module of rank $1$ \
+    if $T in L(V, V)$ then $existsunique c in K suchthat$
+    $
+        L(T alpha_1, dots, T alpha_n) = c L(alpha_1, dots, alpha_n) h0 forall "alternating" L in M^n (V)
+    $
+]) <determinant_rank_corollary>
+
+we can denote $D_J (alpha_1, dots, alpha_r)$ for $J$ the $r$-shuffle, $D$ the determinant of $r times r$ matrix as
+$
+    D_j (alpha_1, dots, alpha_r) = (partial (alpha_1, dots, alpha_r)) / (partial (beta_j_i, dots, beta_j_r)) \
+    "then" L(alpha_1, dots, alpha_r) = sum_(j_1 < dots < j_r) (partial (alpha_1, dots, alpha_r)) / (partial (beta_j_i, dots, beta_j_r)) L(beta_j_i, dots, beta_j_r)
+$

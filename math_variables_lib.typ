@@ -91,3 +91,5 @@
 #let range = "range"
 #let mlet = "let"
 #let sign = "sign"
+#let adj = "adj"
+#let span = "span"
