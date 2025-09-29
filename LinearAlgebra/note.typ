@@ -307,7 +307,7 @@ $bold(A)$ is the *matrix of coefficients*
     a non-empty subset $W$ of $V$ is a subspace of $V$ over field $F$ iff $s0 forall alpha, beta in W, s0 c in F, s0 c alpha + beta in W$
 ]) <subspace_definition_equivalence_theorem>
 
-a *Hermitian matrix* is a square matrix over complex number where $A_(j k) = overline(A_(k j))$
+a *Hermitian matrix* is a square matrix over complex number where $A_(j k) = overline(A_(k j))$ or $A = A^*$
 
 #lemma([
     $
@@ -1189,3 +1189,66 @@ $
     D_j (alpha_1, dots, alpha_r) = (partial (alpha_1, dots, alpha_r)) / (partial (beta_j_i, dots, beta_j_r)) \
     "then" L(alpha_1, dots, alpha_r) = sum_(j_1 < dots < j_r) (partial (alpha_1, dots, alpha_r)) / (partial (beta_j_i, dots, beta_j_r)) L(beta_j_i, dots, beta_j_r)
 $
+
+== The Grassman Ring
+
+#definition(title: "exterior product of field", [
+    let $F$ be a field of characteristic $0$, $V$ be a vector space, then define *exterior product* or *wedge product* of $L in M^r (V)$, $U in M^s (V)$ by
+    $
+        L and U = 1 / (r ! s !) pi_(r+s) (L times.circle M)
+    $
+]) <field_exterior_product_definition>
+
+let $I = (i_1, dots, i_r)$ a $r$-shuffle, $J = (j_1, dots, j_s)$ a "s"-shuffle, assume
+$
+    i_1 < dots < i_r < j_1 < dots < j_s
+$
+and set $E_I = f_i_1 times.circle dots times.circle f_i_r$, $E_J = f_j_1 times.circle dots times.circle f_j_s$, let determinant $D_I = pi_r (E_I)$ and $D_J = pi_s (E_J)$ then
+$
+    D_I D_J = r! s! D_(I union J) \
+    D_I and D_J = D_(I union J)
+$
+
+#theorem([
+    let $K$ be a field of characteristic zero and $V$ be a vector space over $K$, then exterior product is associative operation on alternating multilinear forms on $V$
+    
+    namely, let $L in Lambda^r (V), M in Lambda^s (V), N in Lambda^r (V)$ then
+    $
+        (L and M) and N = L and (M and N)
+    $
+]) <field_exterior_product_associative_theorem>
+
+#definition(title: "commutative ring with identity exterior product", [
+    let $K$ be a commutative ring with identity, let $L in M^r (V), M in M^s (V)$, let $sigma in S_(r+s)$ \
+    define $psi (sigma) = (sign sigma)(L times.circle M)_sigma$ let $G = S_r plus.circle S_({r+1, dots, r+s})$ then define $tilde(psi) (tau G) = psi (tau)$ for $tau in S_(r+s)$ then let $H = tau G$ define
+    $
+        L and M = sum_H tilde(psi) (H)
+    $
+]) <commutative_ring_with_identity_exterior_product_definition>
+
+$
+    L and M = sum_sigma (sign sigma) (L times.circle M)_sigma => r! s! L and M = pi_(r+s) (L times.circle M)
+$
+
+#theorem([
+    let $K$ be a commutative ring with identity, let $V$ be a module over $K$, then the exterior product is associative operation on alternating multilinear forms on $V$
+
+    namely, let $L in Lambda^r (V), M in Lambda^s (V), N in Lambda^r (V)$ then
+    $
+        (L and M) and N = L and (M and N)
+    $
+]) <commutative_ring_with_identity_exterior_product_associative_theorem>
+
+#definition(title: "Grassman ring", [
+    let $K$ be a commutative ring with identity, and $V$ be a $k$-module, define
+    $
+        Lambda (V) = Lambda^0 (V) plus.circle Lambda^1 (V) plus.circle dots plus.circle Lambda^n (V)
+    $
+    an $(n+1)$-tuple then the ring of $Lambda (V)$ is *Grassman ring* over $V^*$
+]) <grassman_ring_definition>
+
+the Grassman ring is not a commutative ring which
+$
+    L and M = (-1)^(r s) M and L
+$
+
