@@ -93,3 +93,4 @@
 #let sign = "sign"
 #let adj = "adj"
 #let span = "span"
+#let diag = "diag"

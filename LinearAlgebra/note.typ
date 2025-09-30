@@ -1252,3 +1252,55 @@ $
     L and M = (-1)^(r s) M and L
 $
 
+#pagebreak()
+
+= Elementary Canonical Forms
+
+== Characteristic Values
+
+#definition(title: "characteristic value", [
+    let $F$ be a field, $V$ be a vector space over $F$, $T in L(V, V)$, $alpha in V$ then a *characterisitc value* of $T$ is $c in F suchthat T alpha = c alpha$
+    + any $alpha in V suchthat T alpha = c alpha$ is called *characteristic vector* of $T$ associated with $c$
+    + $W = {alpha in V | alpha T = c alpha}$ is *characteristic space* associated with $c$
+]) <characteristic_value_definition>
+
+#theorem([
+    let $V$ be a vector space over field $F$, $T in L(V, V)$, $c in F$ then the followings are equivalent
+    + $c$ is a characteristic value of $T$
+    + the operator $(T - c I)$ is singular
+    + $det (T - c I) = 0$
+]) <characteristic_singular_det_equivalent_theorem>
+
+#definition(title: "characteristic value for matrix", [
+    let $A in F^(n times n)$, then a *characteristic value of $A$ in $F$* is $c in F$ such that $(A - c I)$ is singular
+
+    the polynomial $f(x) = det (x I - A)$ is the *characteristic polynomial*
+]) <characteristic_value_matrix_definition>
+
+#lemma([
+    similar matrices have the same characteristic polynomial
+]) <characteristic_poly_similar_eq_lemma>
+
+#definition(title: "diagonalizable", [
+    let $V$ be a finite-dimensional vector space, $T in L(V, V)$, then $T$ is *diagonalizable* if $exists cal(B) suchthat [T]_cal(B) = diag (c_1, dots, c_n)$ where $cal(B)$ is a basis formed by characteristic vectors of $T$ and $c_i$ are characteristic values of $T$
+]) <diagonalizable_definition>
+
+#lemma([
+    if $T alpha = c alpha$ then $f(T) alpha = f(c) alpha s0 forall f in F[x]$
+]) <polynomial_linear_transform_characteristic_value_lemma>
+
+#lemma([
+    let $V$ be a finite-dimensional vector space, $T in L(V, V)$, let $c_1, dots, c_k$ be distinct characteristic values of $T$, and let $W_i$ be characteristic spaces associated with $c_i$, set $W = W_1 + dots + W_k$ then
+    $
+        dim W = sum_(i = 1)^k dim W_i
+    $
+    if $cal(B)_i$ is basis of $W_i$ then $cal(B) = (cal(B)_1, dots, cal(B)_k)$ is an ordered basis of $W$
+]) <characteristic_space_linear_independence_lemma>
+
+#theorem([
+    let $V$ be a finite-dimensional vector space, let $T in L(V, V)$, let $c_1, dots, c_k$ be distinct characteristic values of $T$, and let $W_i$ be null space of $(T - c_i I)$ then the followings are equivalent
+    + $T$ is diagonalizable
+    + the characteristic polynomial of $T$ is $f = (x - c_1)^(d_1) dots (x - c_k)^(d_k)$ where $dim W_i =d_i$
+    + $dim W = dim W_1 + dots + dim W_k$
+]) <diagonalizable_equivalence_theorem>
+
