@@ -1304,3 +1304,18 @@ $
     + $dim W = dim W_1 + dots + dim W_k$
 ]) <diagonalizable_equivalence_theorem>
 
+== Annihilating Polynomials
+
+#definition(title: "minimal polynomial of linear operator", [
+    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$, a *minimal polynomial* for $T$ is the unique monic generator of the ideal of polynomial $p in F[x]$ such that $p$ annihilate $T$
+]) <minimal_polynomial_linear_operator_definition>
+
+#theorem([
+    let $V$ be a $n$-dimensional vector space, let $T in L(V, V)$, then the characteristic and minimal polynomials of $T$ have the same roots, excepts for multiplicities 
+]) <characteristic_minimal_poly_same_roots_theorem>
+
+#theorem(title: "Cayley-Hamilton", [
+    let $V$ be a finite-dimensional vector space, $T in L(V, V)$, if $f$ is the characteristic polynomial of $T$ then $f(T) = 0$\
+    or say, minimal polynomial divides characteristic polynomial of $T$
+]) <cayley_hamilton_theroem>
+
