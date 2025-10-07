@@ -1319,3 +1319,85 @@ $
     or say, minimal polynomial divides characteristic polynomial of $T$
 ]) <cayley_hamilton_theroem>
 
+== Invariant Subspaces
+
+#definition(title: "invariant under operator", [
+    let $V$ be a vector space and $W$ be a subspace, $T in L(V, V)$ then if $L(W) subset W$, then $W$ is *invariant under* $T$
+]) <invariant_under_operator_definition>
+
+let $alpha_1, dots, alpha_n$ be basis of $V$ and $alpha_1, dots, alpha_k$ be basis of $W$, where $k < n$, let $E in V, A in W$ then
+$
+    E = mat(A, B; 0, C) h0 "for some" B_(k times (n-k)), C_((n-k) times (n-k))
+$
+
+#lemma([
+    let $W$ be invariant space of $T$, let $T_W$ be restriction operator of $T$ on $W$, then the characteristic polynomial of $T_W | T$, and minimal polynomial $T_W | T$
+]) <invariant_polynomial_division_lemma>
+
+#definition(title: "conductor ideal", [
+    let $W$ be invariant subspace of $T in L(V, V)$, the *$T$-conductor of $alpha$ into $W$* is denoted as $S_T (alpha, W)$, which is a set of polynomials $g$ such that $g(T)alpha in W$
+
+    in the special case $W = {0}$ is called *$T$-annihilator of $alpha$*
+]) <conductor_ideal_definition>
+
+#lemma([
+    if $W$ be an invariant subspace of $T$, then $W$ is invariant under any polynomial of $T$
+
+    thus $forall alpha in V, s0 S_T (alpha, W)$ is an ideal in $F[x]$
+]) <invariant_subspace_polynomial_lemma>
+
+#definition(title: "conductor generator", [
+    the unique monic generator of $S_T (alpha, W)$ is also called *$T$-conductor of alpha into W*
+]) <conductor_generator_definition>
+
+#lemma([
+    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$ where minimal polynomial $p$ is 
+    $
+        p = (x - c_1)^(r_1) dots (x - c_k)^(r_k) h0 c_i in F
+    $
+    let $W$ be a proper subset of $V$ where $T(W) subset W$ then $exists alpha in V$ sucht that
+    + $alpha in.not W$
+    + $(T - c I) alpha in W$ for some characteristic value $c$ of $T$ 
+]) <expanding_invariant_subspace_lemma>
+
+to be *triangulable* is to be able to find a basis $cal(B)$ for $T in L(V, V)$ such that $[L]_cal(B)$ is a triangular matrix
+
+#theorem([
+    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$, then $T$ is triangulable iff minimal polynomial of $T$ is products of linear polynomials
+]) <linear_operator_triangulable_linear_poly_theorem>
+
+#corollary([
+    let $F$ be an algebraically closed, then every $A in M_(n times n)(F)$ is triangulable
+]) <algebraically_closed_triangulable_corollary>
+
+#theorem([
+    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$, then $T$ is diagonalizable iff minimal polynomial $p$ of $T$ is product of 
+    $
+        p = (x - c_1) dots (x - c_k) h0 c_i in K "be distinct"
+    $
+]) <diagonalizable_minimal_polynomial_factor_theorem>
+
+== Simultaneous Triangulation; Simultaneous Diagonalization
+
+#definition(title: "invariant family of operators", [
+    the subspace $W$ is *invariant under* $cal(F)$ if $W$ is invariant under every element of $cal(F)$
+])
+
+#lemma([
+    let $cal(F)$ be a commuting family of triangulable linear operators on $V$, let $W$ be a proper subspace of $V$ which is invariant under $cal(F)$, then $exists alpha in V$ such that
+    + $alpha in.not W$
+    + $forall T in cal(F), s0 T alpha in span {alpha} union W$
+]) <expanding_invariant_commuting_family_lemma>
+
+#theorem([
+    let $V$ be a finite-dimensional vector space over field $F$, let $cal(F)$ be commuting family of triangulable linear operations on $V$, then exists $cal(B)$ be an ordered basis that $forall T in cal(F), s0 [T]_cal(B)$ is triangular matrix
+]) <simultaneous_triangulation_theorem>
+
+#corollary([
+    let $cal(F)$ be a comuting family of $n times n$ matrices over algebraically closed field $F$, then exists non-singular $P in F^(n times n)$ such that $P^(-1) A P$ is upper-triangular for all $A in cal(F)$
+]) <similar_upper_triangular_algebraically_closed_corollary>
+
+#theorem([
+    let $cal(F)$ be a comuting family of diagonalizable linear operator on finite-dimensional space $V$, then there exists $cal(B)$ be an ordered basis that $forall T in cal(F), s0 [T]_cal(B)$ is diagonal matrix
+]) <simultaneous_diagonalization_theorem>
+
