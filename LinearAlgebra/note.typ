@@ -1401,3 +1401,47 @@ to be *triangulable* is to be able to find a basis $cal(B)$ for $T in L(V, V)$ s
     let $cal(F)$ be a comuting family of diagonalizable linear operator on finite-dimensional space $V$, then there exists $cal(B)$ be an ordered basis that $forall T in cal(F), s0 [T]_cal(B)$ is diagonal matrix
 ]) <simultaneous_diagonalization_theorem>
 
+== Direct-Sum Decomposition
+
+#definition(title: "linear independence of subspaces", [
+    let $W_1, dots, W_k$ be subspaces of vector space $V$ then $W_1, dots, W_k$ are *linear independent* if 
+    $
+        alpha_1 + dots + alpha_k = 0 h0 alpha_i in W_i
+    $
+    implies trivial solution
+]) <linear_independence_of_subspace_definition>
+
+#lemma([
+    let $V$ be a finite-dimensional vector space, let $W_1, dots W_k$ be subspaces of $V$, let $W = W_1 + dots + W_k$, then the followings are equivalent
+    + $W_1, dots, W_k$ are independent
+    + for each $j, s0 2 <= j <= k$ that $W_j inter (W_1 + dots + W_(j-1))$
+    + if $cal(B)_i$ is an ordered basis of $W_i$ then $cal(B) = (cal(B)_1, dots, cal(B)_k)$ is ordered basis of $W$
+]) <linear_independent_spaces_equivalent_lemma>
+
+#definition(title: "direct sum", [
+    if #lemref(<linear_independent_spaces_equivalent_lemma>) holds, then we say $W = W_1 + dots + W_k$ is *direct sum* denoted as
+    $
+        W = W_1 plus.circle dots plus.circle W_k
+    $
+]) <direct_sum_definition>
+
+#definition(title: "projection", [
+    if $V$ is a vector space, a *projection* of $V$ is $E in L(V, V)$ such that $E^2 = E$
+]) <projection_definition>
+
+#lemma([
+    let $E$ be a projection and $R = range E, s0 N = null E$ then
+    + the vector $beta in R$ iff $E beta = beta$
+    + $V = R plus.circle N$
+    + $alpha = E alpha + (alpha - E alpha)$ is unique expression
+    it is called *projection on $R$ along $N$*
+]) <projection_range_null_lemma>
+
+#theorem([
+    if $V = W_1 plus.circle dots plus.circle W_k$ then exists $E_1, dots, E_k in L(V, V)$ such that
+    + $E_i = E_i^2$ be a projection
+    + $E_i E_j = 0 h0 i != j$
+    + $I = E_1 + dots + E_k$
+    + $range E_i = W_i$
+]) <projection_direct_sum_theorem>
+
