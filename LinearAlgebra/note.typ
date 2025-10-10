@@ -1445,3 +1445,33 @@ to be *triangulable* is to be able to find a basis $cal(B)$ for $T in L(V, V)$ s
     + $range E_i = W_i$
 ]) <projection_direct_sum_theorem>
 
+== Invariant Direct Sums
+
+let $V = W_1 plus.circle dots plus.circle W_k$ be a vector space, let $cal(B) = (cal(B)_1, dots, cal(B)_k)$ be a basis, where each $cal(B)_i$ be basis of $W_i$, then $A = [T]_cal(B)$ and $A_i = [T_i]_(cal(B)_i)$, $A$ has block form
+$
+    A = mat(
+        A_1, 0, dots, 0;
+        0, A_2, dots, 0;
+        dots.v, dots.v, dots.down, dots.v;
+        0, 0, dots, A_k
+    )
+$
+where $A$ is *direct sum* of $A_1, dots, A_k$
+
+#theorem([
+    let $T$ be a linear operator on vector space $V = W_1 plus.circle dots plus.circle W_k$, let $E_1, dots, E_k$ be projection of $W_1, dots, W_k$, then
+    $
+        T(W_i) subset W_i <=> T E_i = E_i T h0 forall i = 1, dots, k
+    $
+]) <restriction_operation_commute_theorem>
+
+#theorem([
+    let $T$ be a linear operator on finite-dimensional vector space $V$, if $T$ is diagonalizable and let $c_1, dots, c_k$ be distinct characteristic values of $T$, then $exists s0 E_1, dots, E_k$ on $V$ such that
+    + $T = c_1 E_1 + dots + c_k E_k$
+    + $I = E_1 + dots + E_k$
+    + $E_i E_j = 0 h0 i != j$
+    + $E_i^2 = E_i$
+    + $range E_i = $ characteristic space for $T$ associated with $c_i$
+    if exists $k$ distinct scalars $c_1, dots, c_k$ and $k$ non-zero operatiors $E_1, dots, E_k$ satisfy 1, 2, 3 then $T$ is diagonalizable and 4, 5 are satisfied
+]) <diagonalizable_projection_condition_theorem>
+
