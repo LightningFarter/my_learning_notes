@@ -1475,3 +1475,28 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
     if exists $k$ distinct scalars $c_1, dots, c_k$ and $k$ non-zero operatiors $E_1, dots, E_k$ satisfy 1, 2, 3 then $T$ is diagonalizable and 4, 5 are satisfied
 ]) <diagonalizable_projection_condition_theorem>
 
+== The Primary Decomposition Theorem
+
+#theorem(title: "Primary Decomposition Theorem", [
+    let $T$ be a linear operator finite-dimensional vector space $V$ over field $F$, let $p$ be minimal polynomial of $T$, where $p = p_1^(r_1) dots p_k^(r_k)$, $p_i$ are distinct irreducible monic polynomials over $F$, and $r_i in bb(Z)^+$ \ for $i = 1, dots, k$ then
+    + $V = W_1 plus.circle dots plus.circle W_k$
+    + $T (W_i) subset W_i h0 i = 1, dots, k$
+    + $T_i in L(W_i, W_i)$ where $T_i$ is restriction of $T$ on $W_i$, then minimal polynomial of $T_i$ is $p_i^(r_i)$
+]) <primary_decomposition_theorem>
+
+#corollary([
+    if $E_1, dots, E_k$ are projections associated with primary decomposition of $T$, then each $E_i$ is a polynomail of $T$
+
+    if exists $U$ such that $U T = T U$ then $U E_i = E_i U$ for all $i = 1, dots, k$, namely $W_i$ is invariant under $U$
+]) <primary_decomposition_corollary>
+
+#definition(title: "nilpotent", [
+    let $N$ be a linear operator on vector space $V$, then $N$ is *nilpotent* if $exists s0 r in bb(Z)^+ suchthat N^r = 0$
+]) <nilpotent_definition>
+
+#theorem([
+    let $T$ be a linear operator on finite-dimensional vector space $V$ over field $F$, if minimal polynomial of $T$ decomposes over $F$ into product of linear polynomials, then exists diagonalizable operator $D$ on $V$, and nilpotent operator $N$ on $V$ such that
+    + $T = D + N$
+    + $D N = N D$
+]) <diagonalizable_nilpotent_decomposition_theorem>
+
