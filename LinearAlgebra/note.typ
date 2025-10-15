@@ -1500,6 +1500,8 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
     + $D N = N D$
 ]) <diagonalizable_nilpotent_decomposition_theorem>
 
+#pagebreak()
+
 = The Rational and Jordan Forms
 
 == Cyclic Subspaces and Annihilators
