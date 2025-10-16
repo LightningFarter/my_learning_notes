@@ -1546,3 +1546,57 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
     if $A$ is a companion matrix of polynomial $p$, then $p$ is both characteristic and minimal polynomial of $A$
 ]) <companion_matrix_polynomail_char_min_corollary>
 
+== Cyclic Decopmosition and the Rational Form
+
+#definition(title: "T-admissible", [
+    let $V$ be a vector space, $W$ be subspace of $V$, $T in L(V, V)$, then $W$ is *$T$-admissible*
+    + $W$ is invariant under $T$
+    + if $f(T) beta in W => exists gamma in W suchthat f(T) beta = f(T) gamma$
+]) <t-admissible_definition>
+
+#theorem(title: "Cyclic Decomposition Theorem", [
+    let $V$ be a finite-dimensional, let $T in L(V, V)$, let $W_0$ be proper $T$-admissible subspace of $V$, then $exists s0 alpha_1, dots, alpha_r in V$ having $T$-annihilators $p_1, dots, p_r$ such that
+    + $V = W_0 plus.circle Z(alpha; T) plus.circle dots plus.circle Z(alpha_r; T)$
+    + $p_k | p_(k-1), h0 k = 2, dots, r$
+]) <cyclic_decomposition_theorem>
+
+#corollary([
+    let $V$ be a finite-dimensional vector space, let $T in L(V, V)$, if $W$ be $T$-admissible subspace of $V$ then $exists s0 W' plus.circle W = V suchthat T(W') subset W'$
+]) <admissible_subspace_complement_corollary>
+
+#corollary([
+    let $V$ be a finite-dimensional vector space, let $T in L(V, V)$ then
+    + $exists alpha in V suchthat$ minimal polynomial of $T = p_alpha$ generator of $M(alpha; T)$
+    + $T$ has cyclic vector iff characteristic polynomial and minimal polynomial is the same
+]) <cyclic_characteristic_minimal_equiv_corollary>
+
+#theorem(title: "Generalized Cayley-Hamilton Theorem", [
+    let $V$ be a finite-dimensional vector space, $T in L(V, V)$, let $p, f$ be minimal and characteristic polynomial of $T$ then
+    + $p | f$
+    + $p$ and $f$ have same roots in algebraically closed field
+    + if $p = f_1^(r_1) dots f_k^(r_k)$ where $f_1, dots, f_k$ are all prime, then $f = f_1^(d_1) dots f_k^(d_k)$ where $d_i = (nullity f_i (T)^(r_i)) / (deg f_i)$
+]) <generalized_cayley-hamilton_theorem>
+
+#corollary([
+    if $T$ is a nilpotent linear operator of $n$-dimensional vector space, then characteristic polynomail of $T$ is $f = x^n$
+]) <nilpotent_characteristic_polynomial_corollary>
+
+#definition(title: "rational form", [
+    let $V = Z(alpha_1; T) plus.circle dots plus.circle Z(alpha_k; T)$, let basis $cal(B)_i = (alpha_i, T alpha_i, dots, T^(r_i) alpha_i)$, set basis $cal(B) = (cal(B)_1, dots, cal(B)_k)$ then
+    $
+        [T]_cal(B) = A = mat(
+            A_1, 0, dots, 0;
+            0, A_2, dots, 0;
+            dots.v, dots.v, dots.down, dots.v;
+            0, 0, dots, A_k
+        )
+    $
+    where $A_i$ be companion matrix of basis $cal(B)_i$ of annihilator $p_(alpha_i)$
+    
+    then $A$ is the *rational form* of $T$
+]) <rational_form_definition>
+
+#theorem([
+    let $F$ be a field, let $B in F^(n times n)$ then $existsunique A ~ B$ where $A$ is of rational form
+]) <rational_form_uniqueness_theorem>
+
