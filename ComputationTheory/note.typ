@@ -174,7 +174,7 @@ two machine is said to be *equivalent* if they recognize the same language
 == Nonregular Languages
 
 #theorem(title: "pumping lemma", [
-    if $A$ is a regular language, $exists p s0 exists s in A, s0 |s| >= p, s0 s = x y z suchthat$
+    if $A$ is a regular language, $exists p s0 forall s  in A, s0 |s| >= p, s0 s = x y z "for some" x, y, z suchthat$
     + $forall i >= 0, s0 x y^i z in A$
     + $|y| > 0$
     + $|x y| <= p$
@@ -244,7 +244,7 @@ the *language of grammar* is ${w in Sigma^* | S limits(=>)^* w}$
 == Non-Context-Free Languages
 
 #theorem(title: "pumping theorem for context-free languages", [
-    if $A$ is a context-free language, then $exists p , s0 exists s in A, s0 |s| >= p, s0 s = u v x y z$ where
+    if $A$ is a context-free language, then $exists p , s0 forall s in A, s0 |s| >= p, s0 s = u v x y z$ where
     + $forall i >= 0, s0 u v^i x y^i z in A$
     + $|v y| > 0$
     + $|v x y| <= p$
