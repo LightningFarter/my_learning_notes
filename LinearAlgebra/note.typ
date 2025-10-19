@@ -1556,7 +1556,7 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 
 #theorem(title: "Cyclic Decomposition Theorem", [
     let $V$ be a finite-dimensional, let $T in L(V, V)$, let $W_0$ be proper $T$-admissible subspace of $V$, then $exists s0 alpha_1, dots, alpha_r in V$ having $T$-annihilators $p_1, dots, p_r$ such that
-    + $V = W_0 plus.circle Z(alpha; T) plus.circle dots plus.circle Z(alpha_r; T)$
+    + $V = W_0 plus.circle Z(alpha_1; T) plus.circle dots plus.circle Z(alpha_r; T)$
     + $p_k | p_(k-1), h0 k = 2, dots, r$
 ]) <cyclic_decomposition_theorem>
 
@@ -1599,4 +1599,48 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 #theorem([
     let $F$ be a field, let $B in F^(n times n)$ then $existsunique A ~ B$ where $A$ is of rational form
 ]) <rational_form_uniqueness_theorem>
+
+== The Jordan Form
+
+#definition(title: "elementary Jordan matrix", [
+    let $V$ be a finite-dimensional vector space, let $T in L(V, V)$, let $V = W_1 plus.circle dots plus.circle W_k$ by primary decomposition theorem, let $T_i = T |_W_i$, let $N_i = T_i - c_i I$ where $c_i$ is characteristic value of $T_i$, then $N_i$ is nilpotent and $[T_i] = J_1^((i)) plus.circle dots plus.circle J_(n_i)^((i))$ where
+    $
+        J_j^(i) = mat(
+            c_i, 0, 0, dots, 0, 0;
+            1, c_i, 0, dots, 0, 0;
+            0, 1, c_i, dots, 0, 0;
+            dots.v, dots.v, dots.v, dots.down, dots.v, dots.v;
+            0, 0, 0, dots, c_i, 0;
+            0, 0, 0, dots, 1, c_i
+        )
+    $
+    is the *elementary Jordan matrix with characteristic value* $c_i$
+]) <elementary_jordan_matrix_definition>
+
+#definition(title: "Jordan form", [
+    continue #defref(<elementary_jordan_matrix_definition>), every $T$ is represented as
+    $
+        [T] = mat(
+            [T_1], 0, dots, 0;
+            0, [T_2], dots, 0;
+            dots.v, dots.v, dots.down, dots.v;
+            0, 0, dots, [T_k]
+        ) \
+        [T_i] = mat(
+            J_1^((i)), 0, dots, 0;
+            0, J_2^((i)), dots, 0;
+            dots.v, dots.v, dots.down, dots.v;
+            0, 0, dots, J_(n_i)^((i))
+        )
+    $
+    where for each $J_j^((i))$ has polynomial $f_j^((i))$ then $f_1^((i)) | dots | f_(n_i)^((i))$
+]) <jordan_form_definition>
+
+#theorem([
+    for a finite-dimensional vector space $V$, with $T in L(V, V)$, having $A$ as Jordan form of $T$, by primary decomposition theorem, $V = W_1 plus.circle dots plus.circle W_k$, where characteristic polynomial of $T$ is \ $f = (x - c_i)^(d_i) dots (x - c_k)^(d_k)$ then
+    + $A_(j, j) = c_i$ which each $c_i$ appears $d_i = dim W_i$ times, $A_(j+1, j) = 1$ others $= 0$
+    + $n_i = nullity (T - c_i I)$, and $T$ is diagonalizable iff $n_i = d_i s0 forall i$
+    + $forall i s0 J_1^((i)) in F^(r_i times r_i)$ where $ p = (x - c_1)^(r_1) dots (x - c_k)^(r_k)$ is minimal polynomial of $T$
+    + $nullity (T - c_i I)^j = $ number of elementary Jordan block of size $j times j$
+]) <jordan_form_remark_theorem>
 
