@@ -19,18 +19,19 @@
 )
 
 #let c-ch  = counter("ch")
+#let c-sch = counter("sch")
 #let c-thm = counter("thm")
-#let c-lem = counter("thm")
-#let c-prp = counter("thm")
-#let c-cor = counter("thm")
-#let c-def = counter("thm")
+#let c-lem = counter("lem")
+#let c-prp = counter("prp")
+#let c-cor = counter("cor")
+#let c-def = counter("def")
 #let c-ex  = counter("ex")
 #let c-exr = counter("exr")
 
 #let make-env(kind, c: none, color: blue, title: none, body: content) = {
     if c != none { c.step() }
     block[#lightfill(color, [
-        *#kind* #if c != none {context [#c-ch.display("1").#c.display("1")]}
+        *#kind* #if c != none {context [#c-ch.display("1").#c-sch.display("1").#c.display("1")]}
         #if title != none {[*-- #title*]}:
 
         #body
@@ -60,13 +61,13 @@
 ]))
 #let todo(text) = block(lightfill(red, [*TODO:* #text]))
 
-#let thetxt(id) = context [ Theorem #counter("ch").at(id).first().#( counter("thm").at(id).first()+1 )]
-#let lemtxt(id) = context [ Lemma #counter("ch").at(id).first().#( counter("thm").at(id).first()+1 )]
-#let protxt(id) = context [ Proposition #counter("ch").at(id).first().#( counter("thm").at(id).first()+1 )]
-#let cortxt(id) = context [ Corollary #counter("ch").at(id).first().#( counter("thm").at(id).first()+1 )]
-#let deftxt(id) = context [ Definition #counter("ch").at(id).first().#( counter("thm").at(id).first()+1 )]
-#let extxt(id) = context [ Example #counter("ch").at(id).first().#( counter("ex").at(id).first()+1 )]
-#let exetxt(id) = context [ Exercise #counter("ch").at(id).first().#( counter("exr").at(id).first()+1 )]
+#let thetxt(id) = context [ Theorem #counter("ch").at(id).first().#counter("sch").at(id).first().#( counter("thm").at(id).first()+1 )]
+#let lemtxt(id) = context [ Lemma #counter("ch").at(id).first().#counter("sch").at(id).first().#( counter("lem").at(id).first()+1 )]
+#let protxt(id) = context [ Proposition #counter("ch").at(id).first().#counter("sch").at(id).first().#( counter("prp").at(id).first()+1 )]
+#let cortxt(id) = context [ Corollary #counter("ch").at(id).first().#counter("sch").at(id).first().#( counter("cor").at(id).first()+1 )]
+#let deftxt(id) = context [ Definition #counter("ch").at(id).first().#counter("sch").at(id).first().#( counter("def").at(id).first()+1 )]
+#let extxt(id) = context [ Example #counter("ch").at(id).first().#counter("sch").at(id).first().#(counter("ex").at(id).first()+1 )]
+#let exetxt(id) = context [ Exercise #counter("ch").at(id).first().#counter("sch").at(id).first().#( counter("exr").at(id).first()+1 )]
 
 #let theref(id) = link(id, thetxt(id))
 #let lemref(id) = link(id, lemtxt(id))

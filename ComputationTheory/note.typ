@@ -35,6 +35,19 @@
 
 #show heading.where(level:1): it => {
     c-ch.step()
+    c-sch.update(0)
+    c-thm.update(0)
+    c-lem.update(0)
+    c-prp.update(0)
+    c-cor.update(0)
+    c-def.update(0)
+    c-ex.update(0)
+    c-exr.update(0)
+    it
+}
+
+#show heading.where(level: 2): it => {
+    c-sch.step()
     c-thm.update(0)
     c-lem.update(0)
     c-prp.update(0)
