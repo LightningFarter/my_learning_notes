@@ -1659,3 +1659,92 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
     + $nullity (T - c_i I)^j = $ number of elementary Jordan block of size $j times j$
 ]) <jordan_form_remark_theorem>
 
+== Computation of Invariant Factors
+
+#definition(title: "row operations and equivalence on polynomials", [
+    let $M in F[x]^(n times m)$ over polynomial of field $F$ be a matrix, then the *elementary row operations* is defined as
+    + $M_(i .) <- c M_(i .) h0 c in F$
+    + $M_(i .) <- M_(i .) + f M_(j .) h0 f in F[x], s0 i != j$
+    + $M_(i .) <- M_(j .) "while" M_(j .) <- M_(i .)$
+    An *elementary matrix* is $M in F[x]^(m times m)$ that can be obtained by a series of row operation from $I_(m times m)$ and let $e$ be row operation function, then $e(M) = e(I) M$
+
+    let $N, M in F[x]^(n times m)$ to said to be *row-equivalent* iff exists finite series of row operation that converts $N$ to $M$ or $M$ to $N$
+    $
+        M = M_0 <-> M_1 <-> dots <-> M_k = N
+    $
+    if $N$ is row-equivalent to $M$ then $N = P M$ where $P in F[x]^(n times n)$ be product of elementary matrix
+
+    the *elementary column operations* and *column-equivalence* is defined similarly
+]) <row_op_eq_poly_definition>
+
+#lemma([
+    let $M in F[x]^(m times n)$ where $M_(. 1) != 0$, let $p = gcd(M_(1 1), dots, M_(m 1))$, then $M$ is row-equivalent to \ $N in F[x]^(m times n)$ where
+    $
+        N_(. 1) = mat(p; 0; dots.v; 0)
+    $
+]) <row_equivalent_gcd_1st_col_lemma>
+
+#theorem([
+    let $P in F[x]^(m times m)$ then the followings are equivalent
+    + $P$ is invertible
+    + $det(P) != 0 and deg (det(P)) = 0$
+    + $P$ is row-equivalent to $I_(m times m)$
+    + $P = E_1 dots E_k$ where $E_1, dots, E_k$ are all elementary matrices
+]) <invertible_polynomial_matrices_equivalent_theorem>
+
+#corollary([
+    let $M, N in F[x]^(m times n)$ then $N$ is row-equivalent to $M$ iff $exists P in F[x]^(m times m)$ be invertible such that \ $N = P M$
+]) <row_eq_invertible_transform_corollary>
+
+#definition(title: "equivalent of polynomial matrices", [
+    let $N, M in F[x]^(m times n)$ is said to be *equivalent* then exists a series of row or column operations that
+    $
+        M = M_0 <-> M_1 <-> dots <-> M_k = N
+    $
+]) <equivalent_polynomial_matrices_definition>
+
+#theorem([
+    let $M, N in F[x]^(m times n)$ then $N$ is equivalent to $M$ iff $exists P in F[x]^(m times m), s0 exists Q in F[x]^(n times n)$ both invertible such that $N = P M Q$
+]) <equivalent_polynomial_theorem>
+
+#theorem([
+    let $A in F[x]^(n times n)$ and let $p_1, dots, p_r$ be invariant factors of $A$ then $x I - A$ is equivalent to $diag(p_1, dots, p_r, 1, dots, 1)$
+]) <invariant_factors_polynomial_eq_diag_theorem>
+
+#definition(title: "Smith Normal Form", [
+    let $N in F[x]^(m times n)$ then $N$ is in *(Smith) normal form* if
+    + $N_(i j) = 0 h0 forall i != j$
+    + $N_(1, 1) | N_(2, 2) | dots | N_(k, k)$ where $k = min(n, m)$
+]) <smith_normal_form_definition>
+
+#theorem([
+    let $M in F[x]^(m times n)$ then $M$ is equivalent to $N in F[x]^(m times n)$ which is in Smith normal form
+]) <smith_normal_form_equivalent_theorem>
+
+#definition(title: [$delta$ function for polynomial matrices], [
+    let $M in F[x]^(m times n)$ and let $1 <= k <= min(m, n)$, let
+    $
+        I = (i_1, dots, i_k) h0 1 <= i_1 <= dots <= i_k <= m \
+        J = (j_1, dots, j_k) h0 1 <= j_1 <= dots <= j_k <= n \
+        D_(I, J) = det mat(
+            M_(i_1 j_1), dots, M_(i_1 j_k) ;
+            dots.v, dots.down, dots.v;
+            M_(i_k j_1), dots, M_(i_k j_k)
+        )
+    $
+    then define $delta_k (M) = gcd(D_(I, J), dots) h0 forall I, J$
+]) <delta_function_polynomial_matrices_definition>
+
+#theorem([
+    if $M, N in F[x]^(m times n)$ are equivalent then $delta_k (M) = delta_k (N) h0 1 <= k <= min(m, n)$
+]) <equivalent_polynomial_matrices_delta_theorem>
+
+#corollary([
+    for each $M in F[x]^(m times n) s0 existsunique N in F[x]^(m times n)$ in Smith normal form, where
+    $
+        N_(k k) = (delta_k (M)) / (delta_(k-1) (M)) h0 1 <= k <= min(n, m)
+    $
+    and define $delta_0 (M) = 1$ \
+    where $N$ is the *normal form* of $M$ and $N_(1 1), dots, N_(k k)$ is the *invariant factors* of $M$ for $k = min(n, m)$
+]) <polynomial_matrices_unique_normal_form_invariant_corollary>
+
