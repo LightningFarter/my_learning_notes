@@ -1748,3 +1748,52 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
     where $N$ is the *normal form* of $M$ and $N_(1 1), dots, N_(k k)$ is the *invariant factors* of $M$ for $k = min(n, m)$
 ]) <polynomial_matrices_unique_normal_form_invariant_corollary>
 
+== Semi-Simple Operators
+
+#definition(title: "semi-simple", [
+    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$, to say $T$ is *semi-simple* is to say that $forall W subset V$ be a $T$-invariant vector space, then $exists W' plus.circle W = V$ such that $W'$ is $T$-invariant
+]) <semi_simple_definition>
+
+#lemma([
+    let $V$ be a finite-dimensional vector space, let $T in L(V, V)$, let $V = W_1 plus.circle dots plus.circle W_k$ and $p = p_1^(r_1) dots p_k^(r_k)$ be invariant subspaces and minimal polynomials by primary decomposition theorem, \ then $W_i = null p_i^(r_i) (T)$, let $W$ be any $T$-invariant subspace of $V$ then
+    $
+        W = (W inter W_1) plus.circle dots plus.circle (W inter W_k)
+    $
+]) <invariant_subspace_direct_sum_lemma>
+
+#lemma([
+    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$, if minimal polynomial of $T$ is a prime polynomial over $F$ then $T$ is semi-simple
+]) <prime_minimal_polynomial_semi_simple_lemma>
+
+#theorem([
+    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$ then $T$ is semi-simple iff minimal polynomial of $T$ is $p = p_1 dots p_k$ where $p_1, dots, p_k$ are distinct prime polynomials over $F$
+]) <distinct_prime_polynomial_semi_simple_theorem>
+
+#corollary([
+    let $V$ be a finite-dimensional vector space over algebraically closed field $F$, let $T in L(V, V)$ then $T$ is semi-simple iff $T$ is diagnoalizable
+]) <algebraically_closed_semi_simple_diagonalizable_corollary>
+
+#lemma(title: "Taylor's Formula", [
+    let $F$ be a field of characteristic zero, and let $g, h in F[x]$, if $f in F[x] suchthat deg f <= n$ then
+    $
+        f(g) = f(h) + f^((1))(h)(g-h) + (f^((2))(h))/2(g-h)^2 + dots + (f^((n))(h))/(n!)(g-h)^n
+    $
+]) <taylor_formula_polynomial_extension_lemma>
+
+#lemma([
+    let $F subset bb(C)$ be a field, let $f in F[x]$, let $f'$ be formal derivative of $f$, then the followings are equivalent
+    + $f$ is product of distinct prime polynomial over $F$
+    + $gcd(f, f') = 1$
+    + $f$ has no repeated roots in $bb(C)$
+]) <product_distinct_prime_polynomial_equivalent_lemma>
+
+#theorem([
+    let $F subset bb(C)$ be a field, let $V$ be a finite-dimensional vector space over $F$, let $T in L(V, V)$, let $cal(B)$ be an ordered basis of $V$, let $A = [T]_cal(B)$, then $T$ is semi-simple iff $A$ is similar to a diagonal matrix over $bb(C)$
+]) <semi_simple_similar_diagonal_matrix_complex_theorem>
+
+#theorem([
+    let $F subset bb(C)$ be a field, let $V$ be a finite-dimensional vector space over $F$, let $T in L(V, V)$ then $existsunique S$ be semi-simple, $existsunique N$ be nilpotent over $V$ such that
+    + T = S + N
+    + S N = N S
+]) <semi_simple_nilpotent_decomposition_theorem>
+
