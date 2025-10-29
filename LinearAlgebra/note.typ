@@ -1797,3 +1797,44 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
     + S N = N S
 ]) <semi_simple_nilpotent_decomposition_theorem>
 
+#pagebreak()
+
+= Inner Product Spaces
+
+== Inner Products
+
+#definition(title: "inner product", [
+    let field $F$ be $bb(C)$ or $bb(R)$, let $V$ be a vector space over $F$, *inner product* $( . | . )$ on $V$ is $(V, V) -> F$, let $alpha, beta, gamma in V$ and let $c in F$ then define
+    + $(alpha + beta | gamma) = (alpha | gamma) + (beta | gamma)$
+    + $(c alpha | beta) = c (alpha | beta)$
+    + $(beta | alpha) = overline((alpha | beta))$
+    + $(alpha | alpha) > 0 mif alpha != 0$
+    then imply $(alpha | c beta + gamma) = overline(c) (alpha | beta) + (alpha | gamma)$
+]) <inner_product_definition>
+
+let $F$ be $bb(R)$ or $bb(C)$, let $alpha, beta in F^n$ which $[alpha] = [x_1, dots, x_n]$, $[beta] = [y_1, dots, y_n]$ then \
+the *standard inner product* is defined as
+$
+    (alpha | beta) = sum_(i=1)^n x_i overline(y_i)
+$
+let $X, Y in F^(n times 1)$ and let $Q in F^(n times n)$ be invertible then inner product can also be present as
+$
+    (X | Y) = Y^* Q^* Q X^*
+$
+when $Q = I$ then it is standard inner product
+
+the *norm* $||alpha||$ is denoted as $||alpha||^2 = (alpha | alpha)$ then 
+$
+    ||alpha plus.minus beta||^2 = ||alpha||^2 plus.minus 2 real (alpha | beta) + ||beta||^2 \
+    (alpha | beta) = 1/4 ||alpha + beta||^2 - 1/4 ||alpha - beta||^2 + i/4 ||alpha + i beta||^2 - i/4 ||alpha - i beta||^2 \
+    = 1/4 sum_(n=1)^4 i^n ||alpha + i^n beta||^2
+$
+let $cal(B) = (gamma_1, dots, gamma_k)$ be a basis, and $[alpha]_cal(B) = X, s0 [beta]_cal(B) = Y$ let $G_(j k) = (gamma_k | gamma_j)$ then
+$
+    (alpha | beta) = Y^* G X
+$
+where $G$ is the *matrix of inner product in ordered basis* $cal(B)$ then $G = Q^* Q$ which $G^* = G$ and additinally
+$
+    X^* G X > 0, h0 X != 0
+$
+

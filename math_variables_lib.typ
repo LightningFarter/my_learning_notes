@@ -95,3 +95,5 @@
 #let adj = "adj"
 #let span = "span"
 #let diag = "diag"
+#let real = "Re"
+#let ima = "Im"
