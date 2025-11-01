@@ -1838,3 +1838,100 @@ $
     X^* G X > 0, h0 X != 0
 $
 
+== Inner Product Spaces
+
+#definition(title: "inner product space", [
+    an *inner product space* is a real or complex vector space with a specified inner product
+]) <inner_product_space_definition>
+
+#theorem([
+    if $V$ is an inner product space, then let $alpha, beta in V$ and $c in F$ then
+    + $||c alpha|| = |c| ||alpha||$
+    + $||alpha|| > 0 s0 forall alpha != 0$
+    + $|(alpha | beta)| <= ||alpha|| ||beta||$ #h0 is the *Cauchy-Schwarz inequality* only equals when $beta = ((beta | alpha))/(||alpha||^2)alpha$
+    + $||alpha + beta|| <= ||alpha|| + ||beta||$
+]) <inner_product_norm_theorem>
+
+#definition(title: "orthogonal and orthonormal", [
+    let $alpha, beta in V$ where $V$ is a inner product space, then $alpha$ is *orthogonal* to $beta$ if $(alpha | beta) = 0$, which is reflexive
+
+    let $S subset V$ such that $forall alpha, beta in S, s0 alpha != beta, s0 (alpha | beta) = 0 s0$ then $S$ is an *orthogonal set*
+
+    let $S subset V$ be orthogonal, if $forall alpha in S, s0 ||alpha|| = 1$ then $S$ is an *orthonormal set*
+]) <orthogonal_orthonormal_definition>
+
+#theorem([
+    an orthogonal set of non-zero vectors is linearly independent
+]) <orthogonal_set_linear_independent_theorem>
+
+#corollary([
+    let $beta$ be a vector of linear combination of orthogonal set ${alpha_1, dots, alpha_m}$ then
+    $
+        beta = sum_(k = 1)^m ((beta | alpha_k))/(||alpha_k||^2) alpha_k
+    $
+]) <orthogonal_linear_combination_corollary>
+
+#theorem([
+    let $V$ be an inner product space, let $beta_1, dots, beta_n in V$ be independent, then exists orthogonal set $S = {alpha_1, dots, alpha_k}$ be a basis of $span(beta_1 , dots, beta_k)$
+    
+    where $S$ is constructed by *Gram-Schmidt orthogonalization process*
+    having $alpha_1 = beta_1$ and
+    $
+        alpha_(m + 1) = beta_(m + 1) - sum_(k = 1)^m ((beta_(m+1) | alpha_k))/(||alpha_k||^2) alpha_k
+    $
+]) <gram_schmidt_orthogonalization_process_theorem>
+
+#corollary([
+    every finite-dimensional inner product space has an orthonormal basis
+]) <inner_product_space_orthonormal_basis_corollary>
+
+#definition(title: "best approximation", [
+    let $V$ be a vector space, let $W subset V$ be a vector space, let $beta in V$ and $alpha, gamma in W$ then the *best approximation* $alpha$ satisfies
+    $
+        ||beta - alpha|| <= ||beta - gamma|| s0 forall gamma in W
+    $
+]) <best_approximation_definition>
+
+#theorem([
+    let $V$ be inner product space, let $W subset V$ be a subspace, let $beta in V$ then
+    + $alpha in W$ be best approximation of $beta$ iff $forall gamma in W s0 (beta - alpha | gamma) = 0$
+    + if best approximation to $beta$ in $W$ exists, then it is unique
+    + if $W$ is finite-dimensional and ${alpha_1, dots, alpha_n}$ is any orthonormal basis of $W$ then
+    $
+        alpha = sum_(k = 0)^n ((beta | alpha_k))/(||alpha_k||^2) alpha_k "is the unique best approximation of" beta
+    $
+]) <best_approximation_theorem>
+
+#definition(title: "orthogonal complement", [
+    let $V$ be an inner product space and $S subset V$ be any set, then *orthogonal complement* of $S$ is \ $S^bot = {alpha in V | forall beta in S s0 (alpha | beta) = 0}$
+]) <orthogonal_complement_definition>
+
+#definition(title: "orthogonal projection", [
+    the best approximation of #theref(<best_approximation_theorem>) is the *orthogonal projection of $beta$ on $W$*, if every $V$ has an orthogonal projection on $W$ then the mapping is *orthogonal projection of $V$ on $W$*
+]) <orthogonal_projection_definition>
+
+#corollary([
+    let $V$ be inner product space and $W subset V$ finite-dimensional subspace, let $E$ be orthogonal projection of $V -> W$ then $beta -> beta - E beta$ is orthogonal projection of $V -> W^bot$
+]) <orthogonal_complement_projection_corollary>
+
+#theorem([
+    let $V$ be inner product space, let $W subset V$ be finite-dimensional subspace, let $E$ be orthogonal projection of $V -> W$, then 
+    + $E in L(V, W)$ is idempotent
+    + $W^bot = null E$
+    + $V = W plus.circle W^bot$
+]) <orthogonal_projection_subspace_direct_sum_theorem>
+
+#corollary([
+    by #theref(<orthogonal_projection_subspace_direct_sum_theorem>) then
+    + $I - E$ is orthogonal projection of $V -> W^bot$
+    + $I - E in L(V, W^bot)$ be idempotent
+    + $I - E = null W$ 
+]) <orthogonal_projection_complement_corollary>
+
+#corollary(title: "Bessel's inequality", [
+    let $V$ be inner product space, let ${alpha_1, dots, alpha_n}$ be orthogonal set of non-zero vectors, let $beta in V$ then
+    $
+        sum_(k = 1)^n (|(beta | alpha_k)|^2)/(||alpha_k||^2) <= ||beta||^2
+    $
+]) <bessels_inequality_corollary>
+
