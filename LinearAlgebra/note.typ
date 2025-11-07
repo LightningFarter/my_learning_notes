@@ -166,7 +166,7 @@ $bold(A)$ is the *matrix of coefficients*
 
 #definition(title: "Identity Matrics", [
     $ I_(i j) = delta_(i j) = cases(
-        1 mif i = j \
+        1 mif i = j,
         0 mif i eq.not j
     ) $
     the $delta$ is called *Kronecker Delta*
@@ -1127,24 +1127,24 @@ which is the *Cramer's rule*
 define $U(alpha_1, dots, alpha_r) = f_1 (alpha_1) dots f_r (alpha_r)$ then $U in M^r (V)$ as $f_i in L(V, V)$
 
 #definition(title: "tensor product", [
-    let $L in M^r (V)$, $U in M^s (V)$ define function $L times.circle U in M^(r+s) (V)$ by
+    let $L in M^r (V)$, $U in M^s (V)$ define function $L times.o U in M^(r+s) (V)$ by
     $
-        (L times.circle U) (alpha_1, dots, alpha_(r+s)) = L(alpha_1, dots, alpha_r) U(alpha_(r + 1), dots, alpha_(r+s))
+        (L times.o U) (alpha_1, dots, alpha_(r+s)) = L(alpha_1, dots, alpha_r) U(alpha_(r + 1), dots, alpha_(r+s))
     $
-    then $L times.circle U$ is the *tensor product* of $L$ and $U$, which is not commutative
+    then $L times.o U$ is the *tensor product* of $L$ and $U$, which is not commutative
 ]) <tensor_product_definition>
 
 #lemma([
     let $L_1, L in M^r (V)$, let $U_1, U in M^s (V)$, let $N in M^t (V)$, let $c in K$ then
-    + $(c L_1 + L) times.circle U = c (L_1 times.circle U) + L times.circle U$
-    + $L times.circle (c M_1 + M) = c (L times.circle U_1) + L times.circle U$
-    + $(L times.circle U) times.circle N = L times.circle (U times.circle N)$
+    + $(c L_1 + L) times.o U = c (L_1 times.o U) + L times.o U$
+    + $L times.o (c M_1 + M) = c (L times.o U_1) + L times.o U$
+    + $(L times.o U) times.o N = L times.o (U times.o N)$
 ]) <tensor_product_distributive_lemma>
 
 #lemma([
     let $L_1, dots, L_k$ be multilinear functions on $V^(r_1), dots ,V^(r_n)$ ,then tensor product 
     $
-        L := L_1 times.circle dots times.circle L_n
+        L := L_1 times.o dots times.o L_n
     $
     is well defined, let $r = r_1 + dots + r_n$ then
     $
@@ -1156,7 +1156,7 @@ define $U(alpha_1, dots, alpha_r) = f_1 (alpha_1) dots f_r (alpha_r)$ then $U in
     let $K$ be a commutative ring with identity, $V$ be a free $K$-module of rank $n$ then $M^r (V)$ is a free $K$-module of rank $n^r$ \
     if ${f_1, dots, f_n}$ be a basis of $V^*$ then
     $
-        f_(j_1) times.circle dots times.circle f_(j_r) h0 1 <= j_1 <= n, dots, 1 <= j_r <= n
+        f_(j_1) times.o dots times.o f_(j_r) h0 1 <= j_1 <= n, dots, 1 <= j_r <= n
     $
     form a basis of $M^r (V)$
 ]) <multilinear_module_function_degree_theorem>
@@ -1208,7 +1208,7 @@ $
 #definition(title: "exterior product of field", [
     let $F$ be a field of characteristic $0$, $V$ be a vector space, then define *exterior product* or *wedge product* of $L in M^r (V)$, $U in M^s (V)$ by
     $
-        L and U = 1 / (r ! s !) pi_(r+s) (L times.circle M)
+        L and U = 1 / (r ! s !) pi_(r+s) (L times.o M)
     $
 ]) <field_exterior_product_definition>
 
@@ -1216,7 +1216,7 @@ let $I = (i_1, dots, i_r)$ a $r$-shuffle, $J = (j_1, dots, j_s)$ a $s$-shuffle, 
 $
     i_1 < dots < i_r < j_1 < dots < j_s
 $
-and set $E_I = f_i_1 times.circle dots times.circle f_i_r$, $E_J = f_j_1 times.circle dots times.circle f_j_s$, let determinant $D_I = pi_r (E_I)$ and $D_J = pi_s (E_J)$ then
+and set $E_I = f_i_1 times.o dots times.o f_i_r$, $E_J = f_j_1 times.o dots times.o f_j_s$, let determinant $D_I = pi_r (E_I)$ and $D_J = pi_s (E_J)$ then
 $
     D_I D_J = r! s! D_(I union J) \
     D_I and D_J = D_(I union J)
@@ -1233,14 +1233,14 @@ $
 
 #definition(title: "commutative ring with identity exterior product", [
     let $K$ be a commutative ring with identity, let $L in M^r (V), M in M^s (V)$, let $sigma in S_(r+s)$ \
-    define $psi (sigma) = (sign sigma)(L times.circle M)_sigma$ let $G = S_r plus.circle S_({r+1, dots, r+s})$ then define $tilde(psi) (tau G) = psi (tau)$ for $tau in S_(r+s)$ then let $H = tau G$ define
+    define $psi (sigma) = (sign sigma)(L times.o M)_sigma$ let $G = S_r plus.o S_({r+1, dots, r+s})$ then define $tilde(psi) (tau G) = psi (tau)$ for $tau in S_(r+s)$ then let $H = tau G$ define
     $
         L and M = sum_H tilde(psi) (H)
     $
 ]) <commutative_ring_with_identity_exterior_product_definition>
 
 $
-    L and M = sum_sigma (sign sigma) (L times.circle M)_sigma => r! s! L and M = pi_(r+s) (L times.circle M)
+    L and M = sum_sigma (sign sigma) (L times.o M)_sigma => r! s! L and M = pi_(r+s) (L times.o M)
 $
 
 #theorem([
@@ -1255,7 +1255,7 @@ $
 #definition(title: "Grassman ring", [
     let $K$ be a commutative ring with identity, and $V$ be a $k$-module, define
     $
-        Lambda (V) = Lambda^0 (V) plus.circle Lambda^1 (V) plus.circle dots plus.circle Lambda^n (V)
+        Lambda (V) = Lambda^0 (V) plus.o Lambda^1 (V) plus.o dots plus.o Lambda^n (V)
     $
     an $(n+1)$-tuple then the ring of $Lambda (V)$ is *Grassman ring* over $V^*$
 ]) <grassman_ring_definition>
@@ -1434,7 +1434,7 @@ to be *triangulable* is to be able to find a basis $cal(B)$ for $T in L(V, V)$ s
 #definition(title: "direct sum", [
     if #lemref(<linear_independent_spaces_equivalent_lemma>) holds, then we say $W = W_1 + dots + W_k$ is *direct sum* denoted as
     $
-        W = W_1 plus.circle dots plus.circle W_k
+        W = W_1 plus.o dots plus.o W_k
     $
 ]) <direct_sum_definition>
 
@@ -1445,13 +1445,13 @@ to be *triangulable* is to be able to find a basis $cal(B)$ for $T in L(V, V)$ s
 #lemma([
     let $E$ be a projection and $R = range E, s0 N = null E$ then
     + the vector $beta in R$ iff $E beta = beta$
-    + $V = R plus.circle N$
+    + $V = R plus.o N$
     + $alpha = E alpha + (alpha - E alpha)$ is unique expression
     it is called *projection on $R$ along $N$*
 ]) <projection_range_null_lemma>
 
 #theorem([
-    if $V = W_1 plus.circle dots plus.circle W_k$ then exists $E_1, dots, E_k in L(V, V)$ such that
+    if $V = W_1 plus.o dots plus.o W_k$ then exists $E_1, dots, E_k in L(V, V)$ such that
     + $E_i = E_i^2$ be a projection
     + $E_i E_j = 0 h0 i != j$
     + $I = E_1 + dots + E_k$
@@ -1460,7 +1460,7 @@ to be *triangulable* is to be able to find a basis $cal(B)$ for $T in L(V, V)$ s
 
 == Invariant Direct Sums
 
-let $V = W_1 plus.circle dots plus.circle W_k$ be a vector space, let $cal(B) = (cal(B)_1, dots, cal(B)_k)$ be a basis, where each $cal(B)_i$ be basis of $W_i$, then $A = [T]_cal(B)$ and $A_i = [T_i]_(cal(B)_i)$, $A$ has block form
+let $V = W_1 plus.o dots plus.o W_k$ be a vector space, let $cal(B) = (cal(B)_1, dots, cal(B)_k)$ be a basis, where each $cal(B)_i$ be basis of $W_i$, then $A = [T]_cal(B)$ and $A_i = [T_i]_(cal(B)_i)$, $A$ has block form
 $
     A = mat(
         A_1, 0, dots, 0;
@@ -1472,7 +1472,7 @@ $
 where $A$ is *direct sum* of $A_1, dots, A_k$
 
 #theorem([
-    let $T$ be a linear operator on vector space $V = W_1 plus.circle dots plus.circle W_k$, let $E_1, dots, E_k$ be projection of $W_1, dots, W_k$, then
+    let $T$ be a linear operator on vector space $V = W_1 plus.o dots plus.o W_k$, let $E_1, dots, E_k$ be projection of $W_1, dots, W_k$, then
     $
         T(W_i) subset W_i <=> T E_i = E_i T h0 forall i = 1, dots, k
     $
@@ -1492,7 +1492,7 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 
 #theorem(title: "Primary Decomposition Theorem", [
     let $T$ be a linear operator finite-dimensional vector space $V$ over field $F$, let $p$ be minimal polynomial of $T$, where $p = p_1^(r_1) dots p_k^(r_k)$, $p_i$ are distinct irreducible monic polynomials over $F$, and $r_i in bb(Z)^+$ \ for $i = 1, dots, k$ then
-    + $V = W_1 plus.circle dots plus.circle W_k$
+    + $V = W_1 plus.o dots plus.o W_k$
     + $T (W_i) subset W_i h0 i = 1, dots, k$
     + $T_i in L(W_i, W_i)$ where $T_i$ is restriction of $T$ on $W_i$, then minimal polynomial of $T_i$ is $p_i^(r_i)$
 ]) <primary_decomposition_theorem>
@@ -1570,13 +1570,13 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 
 #theorem(title: "Cyclic Decomposition Theorem", [
     let $V$ be a finite-dimensional, let $T in L(V, V)$, let $W_0$ be proper $T$-admissible subspace of $V$, then $exists s0 alpha_1, dots, alpha_r in V$ having $T$-annihilators $p_1, dots, p_r$ such that
-    + $V = W_0 plus.circle Z(alpha_1; T) plus.circle dots plus.circle Z(alpha_r; T)$
+    + $V = W_0 plus.o Z(alpha_1; T) plus.o dots plus.o Z(alpha_r; T)$
     + $p_k | p_(k-1), h0 k = 2, dots, r$
     + $p_1 dots p_r = det (x I - T)$
 ]) <cyclic_decomposition_theorem>
 
 #corollary([
-    let $V$ be a finite-dimensional vector space, let $T in L(V, V)$, if $W$ be $T$-admissible subspace of $V$ then $exists s0 W' plus.circle W = V suchthat T(W') subset W'$
+    let $V$ be a finite-dimensional vector space, let $T in L(V, V)$, if $W$ be $T$-admissible subspace of $V$ then $exists s0 W' plus.o W = V suchthat T(W') subset W'$
 ]) <admissible_subspace_complement_corollary>
 
 #corollary([
@@ -1597,7 +1597,7 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 ]) <nilpotent_characteristic_polynomial_corollary>
 
 #definition(title: "rational form", [
-    let $V = Z(alpha_1; T) plus.circle dots plus.circle Z(alpha_k; T)$, let basis $cal(B)_i = (alpha_i, T alpha_i, dots, T^(r_i) alpha_i)$, set basis $cal(B) = (cal(B)_1, dots, cal(B)_k)$ then
+    let $V = Z(alpha_1; T) plus.o dots plus.o Z(alpha_k; T)$, let basis $cal(B)_i = (alpha_i, T alpha_i, dots, T^(r_i) alpha_i)$, set basis $cal(B) = (cal(B)_1, dots, cal(B)_k)$ then
     $
         [T]_cal(B) = A = mat(
             A_1, 0, dots, 0;
@@ -1618,7 +1618,7 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 == The Jordan Form
 
 #definition(title: "elementary Jordan matrix", [
-    let $V$ be a finite-dimensional vector space, let $T in L(V, V)$, let $V = W_1 plus.circle dots plus.circle W_k$ by primary decomposition theorem, let $T_i = T |_W_i$, let $N_i = T_i - c_i I$ where $c_i$ is characteristic value of $T_i$, then $N_i$ is nilpotent and $[T_i] = J_1^((i)) plus.circle dots plus.circle J_(n_i)^((i))$ where
+    let $V$ be a finite-dimensional vector space, let $T in L(V, V)$, let $V = W_1 plus.o dots plus.o W_k$ by primary decomposition theorem, let $T_i = T |_W_i$, let $N_i = T_i - c_i I$ where $c_i$ is characteristic value of $T_i$, then $N_i$ is nilpotent and $[T_i] = J_1^((i)) plus.o dots plus.o J_(n_i)^((i))$ where
     $
         J_j^(i) = mat(
             c_i, 0, 0, dots, 0, 0;
@@ -1652,7 +1652,7 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 ]) <jordan_form_definition>
 
 #theorem([
-    for a finite-dimensional vector space $V$, with $T in L(V, V)$, having $A$ as Jordan form of $T$, by primary decomposition theorem, $V = W_1 plus.circle dots plus.circle W_k$, where characteristic polynomial of $T$ is \ $f = (x - c_i)^(d_i) dots (x - c_k)^(d_k)$ then
+    for a finite-dimensional vector space $V$, with $T in L(V, V)$, having $A$ as Jordan form of $T$, by primary decomposition theorem, $V = W_1 plus.o dots plus.o W_k$, where characteristic polynomial of $T$ is \ $f = (x - c_i)^(d_i) dots (x - c_k)^(d_k)$ then
     + $A_(j, j) = c_i$ which each $c_i$ appears $d_i = dim W_i$ times, $A_(j+1, j) = 1$ others $= 0$
     + $n_i = nullity (T - c_i I)$, and $T$ is diagonalizable iff $n_i = d_i s0 forall i$
     + $forall i s0 J_1^((i)) in F^(r_i times r_i)$ where $ p = (x - c_1)^(r_1) dots (x - c_k)^(r_k)$ is minimal polynomial of $T$
@@ -1751,13 +1751,13 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 == Semi-Simple Operators
 
 #definition(title: "semi-simple", [
-    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$, to say $T$ is *semi-simple* is to say that $forall W subset V$ be a $T$-invariant vector space, then $exists W' plus.circle W = V$ such that $W'$ is $T$-invariant
+    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$, to say $T$ is *semi-simple* is to say that $forall W subset V$ be a $T$-invariant vector space, then $exists W' plus.o W = V$ such that $W'$ is $T$-invariant
 ]) <semi_simple_definition>
 
 #lemma([
-    let $V$ be a finite-dimensional vector space, let $T in L(V, V)$, let $V = W_1 plus.circle dots plus.circle W_k$ and $p = p_1^(r_1) dots p_k^(r_k)$ be invariant subspaces and minimal polynomials by primary decomposition theorem, \ then $W_i = null p_i^(r_i) (T)$, let $W$ be any $T$-invariant subspace of $V$ then
+    let $V$ be a finite-dimensional vector space, let $T in L(V, V)$, let $V = W_1 plus.o dots plus.o W_k$ and $p = p_1^(r_1) dots p_k^(r_k)$ be invariant subspaces and minimal polynomials by primary decomposition theorem, \ then $W_i = null p_i^(r_i) (T)$, let $W$ be any $T$-invariant subspace of $V$ then
     $
-        W = (W inter W_1) plus.circle dots plus.circle (W inter W_k)
+        W = (W inter W_1) plus.o dots plus.o (W inter W_k)
     $
 ]) <invariant_subspace_direct_sum_lemma>
 
@@ -1918,7 +1918,7 @@ $
     let $V$ be inner product space, let $W subset V$ be finite-dimensional subspace, let $E$ be orthogonal projection of $V -> W$, then 
     + $E in L(V, W)$ is idempotent
     + $W^bot = null E$
-    + $V = W plus.circle W^bot$
+    + $V = W plus.o W^bot$
 ]) <orthogonal_projection_subspace_direct_sum_theorem>
 
 #corollary([
