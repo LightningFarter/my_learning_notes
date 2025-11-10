@@ -1935,3 +1935,37 @@ $
     $
 ]) <bessels_inequality_corollary>
 
+== Linear Functionals and Adjoints
+
+#theorem([
+    let $V$ be finite-dimensional inner product space, let $f in L(V, F)$, then $existsunique beta in V$ such that \
+    $f(alpha) = (alpha | beta) s0 forall alpha in V$
+]) <finie_dimensional_linear_functional_inner_p_theorem>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space, let $T in L(V, V)$ be arbitrary, then $existsunique T^* in L(V, V)$ such that $(T alpha | beta) = (alpha | T^* beta) s0 forall alpha, beta in V$
+]) <finite_dimensional_adjoint_existence_theorem>
+
+#theorem([
+    let $V$ be a finite-dimensional inner product space, let $T in L(V, V)$, let $cal(B) = (alpha_1, dots, alpha_n)$ be orthonormal basis of $V$, let $A = [T]_cal(B)$, then $A_(k j) = (T alpha_j | alpha_k)$
+]) <linear_operator_orthonormal_basis_inner_theorem>
+
+#corollary([
+    let $V$ be finite-dimensional inner product space, let $T in L(V, V)$, then in any orthonormal basis of $V$, $T^*$ is conjugate transpose of $T$
+]) <adjoint_conjugate_transpose_corollary>
+
+#definition(title: "adjoint", [
+    let $V$ be inner product space, $T in L(V, V)$, then if $exists T^* in L(V, V)$ such that \
+    $(T alpha | beta) = (alpha | T^* beta) s0 forall alpha, beta in V$ then say *$T$ has adjoint on $V$*
+]) <adjoint_definition>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space, let $T, U in L(V, V)$, let $c in F$ then
+    + $(T + U)^* = T^* + U^*$
+    + $(c T)^* = overline(c) T^*$
+    + $(T U)^* = U^* T^*$
+    + $(T^*)^* = T$
+]) <adjoint_linear_combination_theorem>
+
+for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$, if $T = T^*$ then $T$ is *self-adjoint* or *Hermitian*
+
