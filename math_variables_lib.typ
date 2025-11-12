@@ -97,3 +97,4 @@
 #let diag = "diag"
 #let real = "Re"
 #let ima = "Im"
+#let GL = "GL"

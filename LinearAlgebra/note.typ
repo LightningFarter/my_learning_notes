@@ -1969,3 +1969,80 @@ $
 
 for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$, if $T = T^*$ then $T$ is *self-adjoint* or *Hermitian*
 
+== Unitary Operations
+
+#definition(title: "isomorphism of inner product space", [
+    let $V, W$ be inner product space over field $F$, let $T in L(V, W)$, then $T$ *preserves inner product* if $(T alpha | T beta) = (alpha | beta) s0 forall alpha, beta in V$
+
+    an *isomorphism* of $V -> W$ is $T: V -> W$ bijection which preserves inner product, and $V, W$ are *isomporphic*
+]) <isomorphism_inner_product_space_definition>
+
+#theorem([
+    let $V, W$ be finite-dimensional inner product space over $F$, with $dim V = dim W$, let $T in L(V, W)$ then the followings are equivalent
+    + $T$ preserves inner product
+    + $T$ is an isomorphism
+    + $T$ carries every orthonormal basis of $V$ to an orthonormal basis of $W$
+    + $T$ carries some orthonormal basis of $V$ to an orthonormal basis of $W$
+]) <isomorphism_inner_product_equivalent_theorem>
+
+#corollary([
+    let $V, W$ be finite-dimensional inner product space over $F$ \
+    then $V, W$ are isomorphic iff $dim V = dim W$
+]) <isomorphic_inner_dimension_corollary>
+
+#theorem([
+    let $V, W$ be inner product space over $F$, let $T in L(V, W)$, \
+    then $T$ preserves inner product iff $||T alpha|| = ||alpha|| s0 forall alpha in V$
+]) <preserve_inner_product_same_norm_theorem>
+
+#definition(title: "unitary operator", [
+    a *unitary operator* on inner product space is an isomorphism onto itself
+]) <unitary_operator_definition>
+
+#theorem([
+    let $V$ be an inner product space, let $U in L(V, V)$, then $U$ is unitary iff $exists U^*$ and $U U^* = U^* U = I$
+]) <unitary_adjoint_product_identity_theorem>
+
+#definition(title: "unitary matrix", [
+    a matrix $A$ is *unitary* iff $A^* A = I$
+]) <unitary_matrix_definition>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space, let $U in L(V, V)$, then $U$ is unitary iff $[U]_cal(B)$ is unitary matrix in some or every ordered orthonormal basis $cal(B)$ of $V$
+]) <unitary_operator_matrix_orthonormal_basis_theorem>
+
+#definition(title: "orthogonal matrix", [
+    let $A in bb(R)^(n times n)$ or $A in bb(C)^(n times n)$, then $A$ is *orthogonal* if $A^t A = I$
+]) <orthogonal_matrix_definition>
+
+#definition(title: $T^+(n)$, [
+    define $T^+(n) = {A in M_(n times n)(bb(C)) | (forall j) A_(j j) > 0 and (forall j < k) A_(j k) = 0}$
+    which is a lower triangular matrix with positive diagonal entries
+]) <lower_triangular_positive_diagonal_matrix_definition>
+
+#definition(title: "general linear group", [
+    define $GL(n) = {A in M_(n times n)(bb(C)) | det A != 0}$, which is *general linear group*, a group of invertible $n times n$ matrix
+]) <genearl_linear_group>
+
+#definition(title: "unitary group", [
+    define *unitary group* $U(n) = {A in GL(n) | A^* A = I}$
+]) <unitary_group>
+
+#definition(title: "orthogonal group", [
+    define *orthogonal group* $O(n) = {A in GL(n) | A^t A = I}$
+]) <unitary_group>
+
+#theorem([
+    $forall B in GL(n) s0 existsunique M in T^+(n) suchthat M B$ is unitary
+]) <gram_schmidt_unitary_transform_theorem>
+
+#corollary([
+    $forall B in GL(n) s0 existsunique N in T^+(n), existsunique U in U(n) suchthat B = N U$
+]) <unitary_lower_triangular_decomposition_corollary>
+
+#definition(title: "unitary/diagonal equivalent", [
+    let $A, B in M_(n times n)(bb(C))$ then $B$ is *unitarily equivalent to* $A$ if $exists P in U(n) suchthat B = P^(-1) A P$
+
+    then $B$ is *orthognoally equivalent to* $A$ if $exists P in O(n) suchthat B = P^t A P$
+]) <unitary_diagonal_equivalent_definition>
+
