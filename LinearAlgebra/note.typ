@@ -2046,3 +2046,62 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     then $B$ is *orthognoally equivalent to* $A$ if $exists P in O(n) suchthat B = P^t A P$
 ]) <unitary_diagonal_equivalent_definition>
 
+== Normal Operators
+
+#definition(title: "normal operator", [
+    let $V$ be a finite-dimensional inner product space, let $T in L(V, V)$, then $T$ is *normal* if $T T^* = T^* T$
+]) <normal_operator_definition>
+
+#theorem([
+    let $V$ be inner product space, let $T in L(V, V)$ be self-adjoint, then characteristic voalues of $T$ are real, and characteristic vectors of $T$ associated with distinct characteristic values are orthogonal
+]) <self_adjoint_characteristic_real_orthogonal_theorem>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space and $dim V > 0$, then $forall T in L(V, V)$ such that $T$ is self-adjoint has a non-zero characterisitc vector
+]) <self_adjoint_finite_dimensional_exists_characteristic_vector_theorem>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space, let $T in L(V, V)$, let $W subset V$ be subspace invariant under $T$, then $W^bot$ is invariant under $T^*$
+]) <invariant_adjoint_orthogonal_complement_theorem>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space, let $T in L(V, V)$ be self-adjoint, then $exists cal(B) = {alpha_1, dots, alpha_n}$ be orthonormal basis of $V$ such that each $alpha_i$ is characteristic vector of $T$
+]) <self_adjoint_orthogonal_basis_characteristic_vector_theorem>
+
+#corollary([
+    let $A in bb(C)^(n times n)$ be Hermitian, then exists $P in U(n)$ such that $P^(-1) A P$ is diagonal
+
+    let $A in bb(R)^(n times n)$ be symmetric, then exists $P in O(n)|_bb(R)$ such that $P^(-1) A P$ is diagonal
+]) <diagonal_hermitian_symmetric_similar_corollary>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space, let $T in L(V, V)$ be normal, let $alpha in V$, \
+    then $T alpha = c alpha <=> T^* alpha = overline(c) alpha$ for some $c in bb(C)$
+]) <characteristic_value_adjoint_conjugate_theorem>
+
+#definition(title: "normal matrix", [
+    let $A in bb(C)^(n times n)$ then $A$ is *normal* if $A A^* = A^* A$
+]) <normal_matrix_definition>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space, let $T in L(V, V)$, let $cal(B)$ be orthonormal basis of $V$, let $A = [T]_cal(B)$ be upper-triangular, then $T$ is normal iff $A$ is diagonal
+]) <normal_upper_triangular_diagonal_theorem>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space, let $T in L(V, V)$, then $exists cal(B)$ be orthonormal basis of $V$ such that $[T]_cal(B)$ is upper-triangular
+]) <exists_upper_triangular_orthonormal_basis_theorem>
+
+#corollary([
+    let $A in bb(C)^(n times n)$ then $exists U in U(n) suchthat U^(-1) A U$ is upper-triangular
+]) <upper_triangular_unitary_similar_corollary>
+
+#theorem([
+    let $V$ be finite-dimensional complex inner product space, let $T in L(V, V)$ be normal, then $exists cal(B) = {alpha_i}$ be orthonormal basis of $V$ such that each $alpha_i$ be characteristic vectors of $T$
+]) <normal_orthonormal_basis_characteristic_vector_theorem>
+
+#corollary([
+    let $A in bb(C)^(n times n)$ be normal, then $exists P in U(n) suchthat P^(-1) A P$ is diagonal
+]) <normal_unitary_similar_diagonal_corollary>
+
+#pagebreak()
+
