@@ -1804,34 +1804,34 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 == Inner Products
 
 #definition(title: "inner product", [
-    let field $F$ be $bb(C)$ or $bb(R)$, let $V$ be a vector space over $F$, *inner product* $( . | . )$ on $V$ is $(V, V) -> F$, let $alpha, beta, gamma in V$ and let $c in F$ then define
-    + $(alpha + beta | gamma) = (alpha | gamma) + (beta | gamma)$
-    + $(c alpha | beta) = c (alpha | beta)$
-    + $(beta | alpha) = overline((alpha | beta))$
-    + $(alpha | alpha) > 0 mif alpha != 0$
-    then imply $(alpha | c beta + gamma) = overline(c) (alpha | beta) + (alpha | gamma)$
+    let field $F$ be $bb(C)$ or $bb(R)$, let $V$ be a vector space over $F$, *inner product* $inpd(., .)$ on $V$ is $(V, V) -> F$, let $alpha, beta, gamma in V$ and let $c in F$ then define
+    + $inpd(alpha + beta, gamma) = inpd(alpha, gamma) + inpd(beta, gamma)$
+    + $inpd(c alpha, beta) = c inpd(alpha, beta)$
+    + $inpd(beta, alpha) = overline(inpd(alpha, beta))$
+    + $inpd(alpha, alpha) > 0 mif alpha != 0$
+    then imply $inpd(alpha, c beta + gamma) = overline(c) inpd(alpha, beta) + inpd(alpha, gamma)$
 ]) <inner_product_definition>
 
 let $F$ be $bb(R)$ or $bb(C)$, let $alpha, beta in F^n$ which $[alpha] = [x_1, dots, x_n]$, $[beta] = [y_1, dots, y_n]$ then \
 the *standard inner product* is defined as
 $
-    (alpha | beta) = sum_(i=1)^n x_i overline(y_i)
+    inpd(alpha, beta) = sum_(i=1)^n x_i overline(y_i)
 $
 let $X, Y in F^(n times 1)$ and let $Q in F^(n times n)$ be invertible then inner product can also be present as
 $
-    (X | Y) = Y^* Q^* Q X^*
+    inpd(X, Y) = Y^* Q^* Q X^*
 $
 when $Q = I$ then it is standard inner product
 
-the *norm* $||alpha||$ is denoted as $||alpha||^2 = (alpha | alpha)$ then 
+the *norm* $||alpha||$ is denoted as $||alpha||^2 = inpd(alpha, alpha)$ then 
 $
-    ||alpha plus.minus beta||^2 = ||alpha||^2 plus.minus 2 real (alpha | beta) + ||beta||^2 \
-    (alpha | beta) = 1/4 ||alpha + beta||^2 - 1/4 ||alpha - beta||^2 + i/4 ||alpha + i beta||^2 - i/4 ||alpha - i beta||^2 \
+    ||alpha plus.minus beta||^2 = ||alpha||^2 plus.minus 2 real inpd(alpha, beta) + ||beta||^2 \
+    inpd(alpha, beta) = 1/4 ||alpha + beta||^2 - 1/4 ||alpha - beta||^2 + i/4 ||alpha + i beta||^2 - i/4 ||alpha - i beta||^2 \
     = 1/4 sum_(n=1)^4 i^n ||alpha + i^n beta||^2
 $
-let $cal(B) = (gamma_1, dots, gamma_k)$ be a basis, and $[alpha]_cal(B) = X, s0 [beta]_cal(B) = Y$ let $G_(j k) = (gamma_k | gamma_j)$ then
+let $cal(B) = (gamma_1, dots, gamma_k)$ be a basis, and $[alpha]_cal(B) = X, s0 [beta]_cal(B) = Y$ let $G_(j k) = inpd(gamma_k, gamma_j)$ then
 $
-    (alpha | beta) = Y^* G X
+    inpd(alpha, beta) = Y^* G X
 $
 where $G$ is the *matrix of inner product in ordered basis* $cal(B)$ then $G = Q^* Q$ which $G^* = G$ and additinally
 $
@@ -1848,14 +1848,14 @@ $
     if $V$ is an inner product space, then let $alpha, beta in V$ and $c in F$ then
     + $||c alpha|| = |c| ||alpha||$
     + $||alpha|| > 0 s0 forall alpha != 0$
-    + $|(alpha | beta)| <= ||alpha|| ||beta||$ #h0 is the *Cauchy-Schwarz inequality* only equals when $beta = ((beta | alpha))/(||alpha||^2)alpha$
+    + $|inpd(alpha, beta)| <= ||alpha|| ||beta||$ #h0 is the *Cauchy-Schwarz inequality* only equals when $beta = (inpd(beta, alpha))/(||alpha||^2)alpha$
     + $||alpha + beta|| <= ||alpha|| + ||beta||$
 ]) <inner_product_norm_theorem>
 
 #definition(title: "orthogonal and orthonormal", [
-    let $alpha, beta in V$ where $V$ is a inner product space, then $alpha$ is *orthogonal* to $beta$ if $(alpha | beta) = 0$, which is reflexive
+    let $alpha, beta in V$ where $V$ is a inner product space, then $alpha$ is *orthogonal* to $beta$ if $inpd(alpha, beta) = 0$, which is reflexive
 
-    let $S subset V$ such that $forall alpha, beta in S, s0 alpha != beta, s0 (alpha | beta) = 0 s0$ then $S$ is an *orthogonal set*
+    let $S subset V$ such that $forall alpha, beta in S, s0 alpha != beta, s0 inpd(alpha, beta) = 0 s0$ then $S$ is an *orthogonal set*
 
     let $S subset V$ be orthogonal, if $forall alpha in S, s0 ||alpha|| = 1$ then $S$ is an *orthonormal set*
 ]) <orthogonal_orthonormal_definition>
@@ -1867,7 +1867,7 @@ $
 #corollary([
     let $beta$ be a vector of linear combination of orthogonal set ${alpha_1, dots, alpha_m}$ then
     $
-        beta = sum_(k = 1)^m ((beta | alpha_k))/(||alpha_k||^2) alpha_k
+        beta = sum_(k = 1)^m (inpd(beta, alpha_k))/(||alpha_k||^2) alpha_k
     $
 ]) <orthogonal_linear_combination_corollary>
 
@@ -1877,7 +1877,7 @@ $
     where $S$ is constructed by *Gram-Schmidt orthogonalization process*
     having $alpha_1 = beta_1$ and
     $
-        alpha_(m + 1) = beta_(m + 1) - sum_(k = 1)^m ((beta_(m+1) | alpha_k))/(||alpha_k||^2) alpha_k
+        alpha_(m + 1) = beta_(m + 1) - sum_(k = 1)^m (inpd(beta_(m+1), alpha_k))/(||alpha_k||^2) alpha_k
     $
 ]) <gram_schmidt_orthogonalization_process_theorem>
 
@@ -1894,16 +1894,16 @@ $
 
 #theorem([
     let $V$ be inner product space, let $W subset V$ be a subspace, let $beta in V$ then
-    + $alpha in W$ be best approximation of $beta$ iff $forall gamma in W s0 (beta - alpha | gamma) = 0$
+    + $alpha in W$ be best approximation of $beta$ iff $forall gamma in W s0 inpd(beta - alpha, gamma) = 0$
     + if best approximation to $beta$ in $W$ exists, then it is unique
     + if $W$ is finite-dimensional and ${alpha_1, dots, alpha_n}$ is any orthonormal basis of $W$ then
     $
-        alpha = sum_(k = 0)^n ((beta | alpha_k))/(||alpha_k||^2) alpha_k "is the unique best approximation of" beta
+        alpha = sum_(k = 0)^n (inpd(beta, alpha_k))/(||alpha_k||^2) alpha_k "is the unique best approximation of" beta
     $
 ]) <best_approximation_theorem>
 
 #definition(title: "orthogonal complement", [
-    let $V$ be an inner product space and $S subset V$ be any set, then *orthogonal complement* of $S$ is \ $S^bot = {alpha in V | forall beta in S s0 (alpha | beta) = 0}$
+    let $V$ be an inner product space and $S subset V$ be any set, then *orthogonal complement* of $S$ is \ $S^bot = {alpha in V | forall beta in S s0 inpd(alpha, beta) = 0}$
 ]) <orthogonal_complement_definition>
 
 #definition(title: "orthogonal projection", [
@@ -1931,7 +1931,7 @@ $
 #corollary(title: "Bessel's inequality", [
     let $V$ be inner product space, let ${alpha_1, dots, alpha_n}$ be orthogonal set of non-zero vectors, let $beta in V$ then
     $
-        sum_(k = 1)^n (|(beta | alpha_k)|^2)/(||alpha_k||^2) <= ||beta||^2
+        sum_(k = 1)^n (|inpd(beta, alpha_k)|^2)/(||alpha_k||^2) <= ||beta||^2
     $
 ]) <bessels_inequality_corollary>
 
@@ -1939,15 +1939,15 @@ $
 
 #theorem([
     let $V$ be finite-dimensional inner product space, let $f in L(V, F)$, then $existsunique beta in V$ such that \
-    $f(alpha) = (alpha | beta) s0 forall alpha in V$
+    $f(alpha) = inpd(alpha, beta) s0 forall alpha in V$
 ]) <finie_dimensional_linear_functional_inner_p_theorem>
 
 #theorem([
-    let $V$ be finite-dimensional inner product space, let $T in L(V, V)$ be arbitrary, then $existsunique T^* in L(V, V)$ such that $(T alpha | beta) = (alpha | T^* beta) s0 forall alpha, beta in V$
+    let $V$ be finite-dimensional inner product space, let $T in L(V, V)$ be arbitrary, then $existsunique T^* in L(V, V)$ such that $inpd(T alpha, beta) = inpd(alpha, T^* beta) s0 forall alpha, beta in V$
 ]) <finite_dimensional_adjoint_existence_theorem>
 
 #theorem([
-    let $V$ be a finite-dimensional inner product space, let $T in L(V, V)$, let $cal(B) = (alpha_1, dots, alpha_n)$ be orthonormal basis of $V$, let $A = [T]_cal(B)$, then $A_(k j) = (T alpha_j | alpha_k)$
+    let $V$ be a finite-dimensional inner product space, let $T in L(V, V)$, let $cal(B) = (alpha_1, dots, alpha_n)$ be orthonormal basis of $V$, let $A = [T]_cal(B)$, then $A_(k j) = inpd(T alpha_j, alpha_k)$
 ]) <linear_operator_orthonormal_basis_inner_theorem>
 
 #corollary([
@@ -1956,7 +1956,7 @@ $
 
 #definition(title: "adjoint", [
     let $V$ be inner product space, $T in L(V, V)$, then if $exists T^* in L(V, V)$ such that \
-    $(T alpha | beta) = (alpha | T^* beta) s0 forall alpha, beta in V$ then say *$T$ has adjoint on $V$*
+    $inpd(T alpha, beta) = inpd(alpha, T^* beta) s0 forall alpha, beta in V$ then say *$T$ has adjoint on $V$*
 ]) <adjoint_definition>
 
 #theorem([
@@ -1972,7 +1972,7 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
 == Unitary Operations
 
 #definition(title: "isomorphism of inner product space", [
-    let $V, W$ be inner product space over field $F$, let $T in L(V, W)$, then $T$ *preserves inner product* if $(T alpha | T beta) = (alpha | beta) s0 forall alpha, beta in V$
+    let $V, W$ be inner product space over field $F$, let $T in L(V, W)$, then $T$ *preserves inner product* if $inpd(T alpha, T beta) = inpd(alpha, beta) s0 forall alpha, beta in V$
 
     an *isomorphism* of $V -> W$ is $T: V -> W$ bijection which preserves inner product, and $V, W$ are *isomporphic*
 ]) <isomorphism_inner_product_space_definition>
@@ -2104,4 +2104,59 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
 ]) <normal_unitary_similar_diagonal_corollary>
 
 #pagebreak()
+
+= Operators on Inner Product Spaces
+
+== Forms on Inner Product Spaces
+
+#definition(title: "sesqui-linear form", [
+    a *sesqui-linear form* on real or complex vector space $V$ is function $f : V times V -> F$ such that
+    + $f(c alpha + beta, gamma) = c f(alpha, gamma) + f(beta, gamma)$
+    + $f(alpha, c beta + gamma) = overline(c) f(alpha, beta) + f(alpha, gamma)$
+    $forall alpha, beta, gamma in V$ and $forall c in F$
+]) <sesqui_linear_form_definition>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space, let $f$ be a sesqui-linear form on $V$, then $exists T in L(V, V)$ such that $f(alpha, beta) = (T alpha | beta) s0 forall alpha, beta in V$ where $f -> T$ is an isomorphism of space of forms onto $L(V, V)$
+]) <exists_linear_operator_sesqui_linear_form_theorem>
+
+#corollary([
+    $inpd(f, g) = tr (T_f T_g^*)$ defines an inner product on space of sesqui-linear forms such that 
+    $
+        inpd(f, g) = sum_(j, k) f(alpha_k, alpha_j) overline(g(alpha_k, alpha_j))
+    $
+]) <inner_product_space_sesqui_linear_form_corollary>
+
+#definition(title: "matrix of sesqui-linear form in ordered basis", [
+    let $f$ be sesqui-linear form and $cal(B) = {alpha_1, dots, alpha_n}$ be arbitrary ordered basis of $V$, let $A in M_(n times n)(F)$ where $A_(j k) = f(alpha_k, alpha_j)$, then it is called *matrix of $f$ in the ordered basis $cal(B)$*
+]) <matrix_of_sesqui_linear_form_in_ordered_basis_definition>
+
+#theorem([
+    let $f$ be sesqui-linear form on finite-dimensional complex inner product space $V$, then $exists cal(B)$ be orthonormal basis of $V$ such that matrix of $f$ is upper-triangular
+]) <upper_triangular_orthonormal_basis_sesqui_linear_form_theorem>
+
+#definition(title: "Hermitian sesqui-linear form", [
+    let $f$ be sesqui-linear form on real or complex vector space $V$, it is *Hermitian* if \
+    $f(alpha, beta) = overline(f(beta, alpha)) s0 forall alpha, beta in V$
+]) <hermitian_sesqui_linear_form_definition>
+
+#theorem([
+    let $V$ be complex vector space, let $f$ be sesqui-linear form on $V$, if $f(alpha, alpha) in bb(R) s0 forall alpha$ then $f$ is Hermitian
+]) <sesqui_linear_same_entry_real_hermitian_theorem>
+
+#corollary([
+    let $V$ be complex finite-dimensional inner product space, let $T in L(V, V)$  \
+    then $T$ is self-adjoint iff $inpd(T alpha, alpha) in bb(R) s0 forall alpha in V$
+]) <self_adjoint_sesqui_linear_form_corollary>
+
+#theorem(title: "Principal Axis Theorem", [
+    let $V$ be finite-dimensional inner product space, $forall f$ be Hermitian sesqui-linear form, $exists cal(B)$ be orthonormal ordered basis of $V$ such that matrix of $f$ in $cal(B)$ be $A = diag(c_1, dots, c_n) s0 forall c_1, dots, c_n in bb(R)$
+]) <principal_axis_theorem>
+
+#corollary([
+    by #theref(<principal_axis_theorem>), let $x, y in V$ then
+    $
+        f(sum_j x_j alpha_j, sum_k y_k alpha_k) = sum_j c_j x_j overline(y_j)
+    $
+]) <principal_axis_theorem_corollary>
 

@@ -98,3 +98,4 @@
 #let real = "Re"
 #let ima = "Im"
 #let GL = "GL"
+#let inpd(x, y) = $lr(chevron.l #x | #y chevron.r)$
