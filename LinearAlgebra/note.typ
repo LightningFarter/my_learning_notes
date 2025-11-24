@@ -2160,3 +2160,55 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     $
 ]) <principal_axis_theorem_corollary>
 
+== Positive Forms
+
+#definition(title: "non-negative/positive sesqui-linear form", [
+    let $f$ be a sesqui-linear form on vector space $V$ over field $bb(C)$ or $bb(R)$, $f$ is *non-negative* if $f$ is Hermitian and $f(alpha, alpha) >= 0 s0 forall alpha in V$, $f$ is *positive* if $f$ is Hermitian and $f(alpha, alpha) > 0 s0 forall alpha != 0$
+]) <non_negative_positive_sesqui_linear_form_definition>
+
+#theorem([
+    let $F$ be field of $bb(R)$ or $bb(C)$, let $A in F^(n times n)$, let $g$ be function such that $g(X, Y) = Y^* A X$ is a positive sesqui-linear form on space $F^(n times 1)$ iff $exists P in F^(n times n)$ be invertible such that $A = P^* P$
+]) <positive_sesqui_linear_form_invertible_adjoint_product_theorem>
+
+#definition(title: "principal minors", [
+    let $A in F^(n times n)$, the *principal minors* of $A$ is $Delta_k (A)$ defined as
+    $
+        Delta_k (A) = det mat(
+            A_(1 1), dots, A_(1, k);
+            dots.v, dots.down, dots.v;
+            A_(k 1), dots, A_(k k)
+        ), h0 1<= k <= n
+    $
+]) <principal_minors_definition>
+
+#lemma([
+    let $A in F^(n times n)$ then the followins are equivalent
+    + $exists P$ be upper-triangular and $P_(k k) = 1 s0 (1 <= k <= n)$ such that $B = A P$ is lower-triangular
+    + $Delta_k (A) != 0 h0 1 <= k <= n$
+]) <upper_lower_triangular_principal_minors_equivalent_lemma>
+
+#theorem([
+    let $f$ be sesqui-linear form on finite-dimensional vector space $V$, let $A$ be matrix of $f$ in ordered basis $cal(B)$, then $f$ is positive sesqui-linear form iff $A = A^* and Delta_k (A) > 0 s0 (1 <= k <= n)$
+]) <positive_sesqui_linear_form_self_adjoint_principal_minors_theorem>
+
+#definition(title: "non-negative/positive linear operator", [
+    let $V$ be finite-dimensional inner product space, let $T in L(V, V)$, then \
+    $T$ is *non-negative linear operator* if $T = T^* and inpd(T alpha, alpha) >= 0 s0 forall alpha in V$ \
+    $T$ is *positive linear operator* if $T = T^* and inpd(T alpha, alpha) > 0 s0 forall alpha != 0$
+]) <non_negative_positive_linear_operator_definition>
+
+#theorem([
+    let $A in bb(C)^(n times n)$ then the followings are equivalent
+    + $A$ is *positive*, such that $sum_j sum_k A_(k j) x_j overline(x_k) > 0 h0 forall x_1, dots, x_n in bb(C)$ not all $0$
+    + $inpd(X, Y) = Y^* A X$ is an inner product on $bb(C)^(n times 1)$
+    + for standard inner product $inpd(X, Y) = Y^* X$ on $bb(C)^(n times 1)$, $T in L(V, V) s0 T : X -> A X$ is positive
+    + $exists P in bb(C)^(n times n)$ be invertible such that $A = P^* P$
+    + $A = A^* and Delta_k (A) > 0 h0 (1 <= k <= n)$
+
+    let $A in bb(R)^(n times n)$ then the followings are equivalent
+    + $A = A^t$ and $sum_j sum_k A_(k j) x_j x_k > 0 h0 forall x_1, dots, x_n in bb(R)$ not all $0$
+    + $inpd(X, Y) = Y^t A X$ be inner product on $bb(R)^(n times 1)$
+    + for standard inner product $inpd(X, Y) = Y^t X$ on $bb(R)^(n times 1)$, $T in L(V, V) s0 T : X -> A X$ is positive
+    + $exists P in bb(R)^(n times n)$ be invertible such that $A = P^t P$
+]) <positive_matrix_equivalent_theorem>
+
