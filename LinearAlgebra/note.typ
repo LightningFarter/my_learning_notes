@@ -2212,3 +2212,142 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     + $exists P in bb(R)^(n times n)$ be invertible such that $A = P^t P$
 ]) <positive_matrix_equivalent_theorem>
 
+== More on Forms
+
+#theorem([
+    let $V$ be complex vector space, let $f$ be sesqui-linear form on $V$, let $cal(B) = {alpha_1, dots, alpha_r}$ be basis of finite-dimensional subspace $W subset V$, let $M in bb(C)^(r times r) suchthat M_(j k) = f(alpha_k, alpha_j)$ and \
+    $W' = {beta in V | f(alpha, beta) = 0}$, then $W' subset V$ is a subspace and $W inter W' = {0}$ iff $exists M^(-1)$, if so, then \
+    $V = W plus.o W'$
+]) <sesqui_linear_orthogonal_subspace_direct_sum_theorem>
+
+#definition(title: "projection in sesqui-linear form", [
+    let $E in L(V, W)$, let $alpha in W$ and $alpha' in W'$, define *projection of $V$ on $W$* determined by \
+    $V = W plus.o W'$ such that $E alpha = alpha$ and $E alpha' = 0$
+
+    $E$ is orthogonal projection iff $W' = W^bot$
+]) <projection_sesqui_linear_definition>
+
+#theorem([
+    let $V$ be complex vector space, let $f$ be sesqui-linear form on $V$, let $A in bb(C)^(n times n)$ in ordered basis \
+    $cal(B) = {alpha_1, dots, alpha_n}$ of $V$, if $Delta_k (A) != 0$ for $1 <= k <= n$ then $existsunique P$ be upper-triangular such that
+    + $P_(k k) = 1 h0 1 <= k <= n$
+    + $P^* A P$ is upper-triangular
+]) <upper_triangular_principal_minor_upper_triangular_sim_theorem>
+
+== Spectral Theory
+
+#theorem(title: "Spectral Theorem", [
+    let $V$ be finite-dimensional complex inner product space, let $T$ be normal operator on $V$ \
+    or let $V$ be finite-dimensional real inner product space, let $T$ be self-adjoint operator on $V$
+
+    let $c_1, dots, c_k$ be distinct characteristic values of $T$, let $W_j$ be characteristic space associated with $c_j$, let $E_j in L(V, W_j)$ be orthogonal projection, then
+    + $W_j bot W_i$ when $i != j$
+    + $V = W_1 plus.o dots plus.o W_k$
+    + $T = c_1 E_1 + dots + c_k E_k$
+]) <spectral_theorem>
+
+#definition(title: "spectral resolution", [
+    by #theref(<spectral_theorem>), the *spectral resolution* of $T$ is $T = c_1 E_1 + dots + c_k E_k$ \
+    the *spectrum* of $T$ is $c_1, dots, c_k$ \
+    the family of projections ${E_1, dots, E_k}$ is *resolution of the identity defined by $T$* where \
+    $I = E_1 + dots + E_k$
+]) <spectral_resolution_definition>
+
+#corollary([
+    if $e_j = product_(i != j) ((x - c_i) / (c_j - c_i))$ then $E_j = e_j (T) h0 1 <= j <= k$
+]) <spectral_projection_polynomial_corollary>
+
+#definition(title: "function on diagonalizable normal operator", [
+    let $T$ be diagonalizable normal operator on finite-dimensional inner product space $V$ over field $F$ and \
+    $T = sum_(j = 1)^k c_j E_j$ is the spectral resolution, let $f$ be a function such that domain of $f$ includes spectrum of $T$ with values in $F$, then $f(T) in L(V, V)$ is defined by
+    $
+        f(T) = sum_(j = 1)^k f(c_j) E_j
+    $
+]) <function_diagonalizable_normal_operator_definition>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space $V$ over field $F$, let $T in L(V, V)$ be diagonalizable normal operator with spectrum $S$, let $f$ be function having domain contains $S$ with values in $F$, then $f(T)$ is diagonalizable normal operaotr with spectrum $f(S)$
+
+    let $U : V -> V'$ be unitary, and $T' = U T U^*$ then $S$ is spectrum of $T'$ and $f(T') = U f(T) U^*$
+]) <dig_normal_function_eq_spectrum_unitary_transform_theorem>
+
+#corollary([
+    following #theref(<dig_normal_function_eq_spectrum_unitary_transform_theorem>), let $cal(B) = {alpha_1, dots, alpha_n}$ be ordered basis of $V$ such that \
+    $D = [T]_cal(B) = diag(d_1, dots, d_n)$, then $[f(T)]_cal(B) = f(D) = diag(f(d_1), dots, f(d_n))$, if $cal(B)' = {alpha'_1, dots, alpha'_n}$ be other ordered basis of $V$, let $P in bb(C)^(n times n) suchthat alpha'_j = sum_i P_(i j) alpha_i$ then $[f(T)]_cal(B)' = P^(-1) f(D) P$
+]) <diagonal_normal_function_matrix_corollary>
+
+#definition(title: "function on matrix", [
+    by #corref(<diagonal_normal_function_matrix_corollary>), let $A = P^(-1) D P$ then define $f(A) = P^(-1) f(D) P$
+]) <function_on_matrix_definition>
+
+#theorem([
+    let $A in bb(C)^(n times n)$ be normal and $c_1, dots, c_k$ be distinct complex roots of $det(x I - A)$, let
+    $
+        e_i = product_(j != i) ((x - c_j) / (c_i - c_j)) h0 1 <= i <= k
+    $
+    and $E_i = e_i (A)$, then $E_i E_j = 0$ for $i != j$ and $E_i^2 = E_i, s0 E_i^* = E_i, s0 I = E_1 + dots + E_k$
+
+    let $f$ be complex valued function with domain includes $c_1, dots, c_k$ then
+    $
+        f(A) = f(c_1) E_1 + dots + f(c_k) E_k \
+        A = c_1 E_1 + dots + c_k E_k
+    $
+]) <normal_matrix_projection_property_theorem>
+
+#theorem([
+    let $T$ be diagonalizable normal operator on finite-dimensional inner product space $V$ then
+    + $T$ is self-adjoint iff each characteristic value of $T$ is real
+    + $T$ is non-negative iff each characteristic value of $T$ is non-negative
+    + $T$ is unitary iff each characteristic value of $T$ has absolute value $1$
+]) <diagonalizable_normal_characteristic_self_ad_nonn_unitary_theorem>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space, let $T in L(V, V)$ be non-negative, then \
+    $existsunique N in L(V, V)$ be non-negative such that $N^2 = T$
+]) <non_negative_operator_unique_sqrt_theorem>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space, let $T in L(V, V)$, then $exists U in L(V, V)$ be unitary and $existsunique N in L(V, V)$ be non-negative such that $T = U N$, if $exists T^(-1)$ then $U$ is unique
+]) <polar_decomposition_linear_operator_theorem>
+
+#definition(title: "root of family of operators", [
+    let $cal(F)$ be family of operators on inner product space $V$ over field $F$, let $r : cal(F) -> F$ with values in $F$, then $r$ is *root of $cal(F)$* if $exists alpha in V, alpha!= 0 suchthat T alpha = r(T) alpha h0 forall T in cal(F)$
+
+    for $r : cal(F) -> F$, then define $V(r) = {alpha in V | T alpha = r(T) alpha h0 forall T in cal(F)}$
+]) <root_of_family_of_operators_definition>
+
+#theorem([
+    let $cal(F)$ be commutating family of diagonalizable normal operators on finite-dimensional inner product space $V$ over field $F$, then $cal(F)$ on ly have finite numbers of roots, let $r_1, dots, r_k$ be distinct roots of $cal(F)$
+    + $V(r_i) bot V(r_j) h0 i != j$
+    + $V = V(r_1) plus.o dots plus.o V(r_k)$
+]) <commutative_diagonalizable_normal_family_root_characteristic_vector_set_orthogonal_theorem>
+
+#corollary([
+    by #theref(<commutative_diagonalizable_normal_family_root_characteristic_vector_set_orthogonal_theorem>), let $P_j in L(V, V(r_k))$ be orthogonal projection for $1 <= j <= k$ then
+    + $P_i P_j = 0$ when $i != j$
+    + $I = P_1 + dots + P_k$
+    + $forall T in cal(F)$ is as form $T = sum_j r_j (T) P_j$
+]) <orthogonal_projection_family_com_diag_nor_root_corollary>
+
+#definition(title: "resolution of identity of family", [
+    the family of orthogonal projections ${P_1, dots, P_k}$ is *resolution of the identity determined by $cal(F)$*
+
+    *spectral resolution of $T$ in terms of $cal(F)$* is $T = sum_j r_j (T) P_j$
+]) <resolution_of_identity_of_family_definition>
+
+#definition(title: "self-adjoint algebra of operators", [
+    *self-adjoint algebra of operators* on inner product space $V$ is linear subalgebra $cal(A) subset L(V, V)$ such that if $T in cal(A)$ then $T^* in cal(A)$
+]) <self_adjoint_algebra_of_operators_definition>
+
+#definition(title: "self-adjoint algebra generated by family", [
+    let $V$ be finite-dimensional inner product space, let $cal(F)$ be family of linear operators on $V$, *self-adjoint algebras generated by $cal(F)$* is the smallest self-adjoint algebra contains $cal(F)$
+]) <self_adjoint_algebra_generated_family_definition>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space, let $cal(F)$ be commuting family of diagonalizable normal operators on $V$ over field $F$, let $cal(A)$ be self-adjoint algebra generated by $cal(F) union {I}$, let ${P_1, dots, P_k}$ be resolution of identity defined by $cal(F)$, then $cal(A) = {T in L(V, V) | T = sum_(j = 1)^k c_j P_j}$, let $c_1, dots, c_k in F$
+]) <self_adjoint_family_generated_algebra_theorem>
+
+#corollary([
+    by #theref(<self_adjoint_family_generated_algebra_theorem>), $exists T in cal(A) suchthat (forall T' in cal(A) s0 exists p in F[x] ) in.rev T' = p(T)$
+]) <self_adjoint_family_genertated_algebra_polynomail_corollary>
+
