@@ -2351,3 +2351,98 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     by #theref(<self_adjoint_family_generated_algebra_theorem>), $exists T in cal(A) suchthat (forall T' in cal(A) s0 exists p in F[x] ) in.rev T' = p(T)$
 ]) <self_adjoint_family_genertated_algebra_polynomail_corollary>
 
+== Further Properties on Normal Operators
+
+#lemma([
+    let $W$ be an inner product space, let $N in L(W, W)$ be normal, then $null N = (range N)^bot$
+]) <normal_operator_null_range_orthogonal_complement_lemma>
+
+#lemma([
+    let $W$ be inner product space, let $N in L(W, W)$ be normal, let $alpha in W$, if $N^2 alpha = 0$ then $N alpha = 0$
+]) <normal_operator_null_square_lemma>
+
+#lemma([
+    let $W$ be inner product space over field $bb(F)$, let $T in L(W, W)$ be normal, let $f in bb(F)[x]$ then $f(T)$ is also normal
+]) <normal_polynomail_normal_lemma>
+
+#lemma([
+    let $W$ be inner product space over field $bb(F)$, let $T in L(W, W)$ be normal, let $f, g in bb(F)[x]$ such that $gcd(f, g) = 1$, let $alpha, beta in W$ such that $f(T) alpha = 0$ and $g(T) beta = 0$ then $inpd(alpha, beta) = 0$
+]) <relatively_prime_polynomial_null_orthogonal_lemma>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, V)$ be normal, \
+    let $p = p_1 dots p_k$ be minimal polynomial of $T$ each $p_j$ be prime and $deg p_j = 1, 2$ with multiplicity $1$, let $W_j$ be $null p_j (T)$ then
+    + $W_j bot W_k h0 j != k$
+    + $V = W_1 plus.o dots plus.o W_k$
+    + $W_j$ is invariant under $T$ and $p_j$ is minimal polynomail of $T|_W_j$
+    + $forall j s0 exists e_j in bb(F)[x] suchthat e_j (T) in L(V, W_j)$ be orthogonal projection
+]) <normal_invariant_decomposition_minimal_poly_theorem>
+
+#definition(title: "primary components of inner product space under linear operator", [
+    by #theref(<normal_invariant_decomposition_minimal_poly_theorem>), each $W_j$ are *primanry components of $V$ under $T$*
+]) <primary_components_linear_product_space_linear_operator_definition>
+
+#corollary([
+    let $V$ be finite-dimensional inner product space, let $T in L(V, V)$ be normal, let $W_1, dots, W_k$ be primary components of $V$ under $T$, let $W subset V$ be subspace, then
+    $
+        W = sum_(j = 1)^k (W inter W_j)
+    $
+]) <sum_of_inter_primary_components_subspace_corollary>
+
+#lemma([
+    let $V$ be inner product space over field $bb(R)$, let $S in L(V, V)$ be normal such that $S^2 + I = 0$, \
+    let $alpha, beta in V$ such that $S alpha = beta$ then
+    + $S^* alpha = -beta$
+    + $S^* beta = alpha$
+    + $inpd(alpha, beta) = 0$
+    + $||alpha|| = ||beta||$
+]) <normal_operator_square_eq_minus1_property_lemma>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space over field $bb(R)$, let $T in L(V, V)$ be normal, let minimal polynomial of $T$ be $p = (x - a)^2 + b^2, s0 a, b in bb(R) s0 b != 0$ then $exists s in bb(N) in.rev p^s$ is characteristic polynomial of $T$, then $exists s0 V_1, dots, V_s subset V$ be subspaces such that
+    + $V_j bot V_k h0 j != k$
+    + $V = V_1 plus.o dots plus.o V_s$
+    + $exists cal(B)_j = {alpha_j, beta_j}$ be orthonormal basis of $V_j$ such that
+    $
+        & T alpha_j = a alpha_j + b beta_j \
+        & T beta_j = -b alpha_j + a beta_j
+    $
+]) <real_inner_product_space_primary_components_decomposition_theorem>
+
+#corollary([
+    by condition from #theref(<real_inner_product_space_primary_components_decomposition_theorem>), $T$ is invertible and $T^* = (a^2 + b^2) T^(-1)$
+]) <invertible_normal_operator_adjoint_corollary>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space, let $T in L(V, V)$ be normal, let $U in L(V, V)$ such that $T U = U T$ then $T^* U = U T^*$ and every subspace invariant under $T$ is invariant under $T^*$
+]) <commute_normal_operator_adjoint_invariant_theorem>
+
+#theorem([
+    let $V$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, V)$ be normal, \
+    $exists alpha_1, dots, alpha_r in V$ be non-zero and $T$-annihilators $e_1, dots, e_r in bb(F)[x]$ such that
+    + $V = Z(alpha_1, T) plus.o dots plus.o Z(alpha_r, T)$
+    + $e_(k + 1) | e_k h0 1 <= k <= r - 1$
+    + $Z(alpha_j, T) bot Z(alpha_k, T)$
+]) <primary_decomposition_normal_operation_theorem>
+
+#corollary([
+    let $A in bb(R)^(n times n)$ be normal, then $exists P in O(n) in.rev P^(-1) A P$ is rational canonical form
+
+    let $A in bb(C)^(n times n)$ be normal, then $exists P in U(n) in.rev P^(-1) A P$ is rational canonical form
+]) <unitarily_orthogonally_equiv_rational_canonical_form_corollary>
+
+#definition(title: "unitary transformation", [
+    let $V, V'$ be inner product space over $bb(F)$, let $U in L(V, V')$ is *unitary transformation* if $U$ is an isomorphism
+
+    if $T in L(V, V)$ and $T' in L(V', V')$ then $T, T'$ are *unitarily equivalent* if $exists U in L(V, V')$ be unitary such that $U T U^-1 = T'$
+]) <unitary_transformation_definition>
+
+#lemma([
+    let $V, V'$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, V)$ and $T' in L(V', V')$ then $T$ is unitarily equivalent to $T'$ iff $exists cal(B)$ be orthonormal basis of $V$, $exists cal(B)'$ be orthonormal basis of $V'$ such that $[T]_cal(B) = [T']_cal(B)'$
+]) <unitary_equivalent_orthonoraml_basis_eq_lemma>
+
+#theorem([
+    let $V, V'$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, V)$ be normal, \
+    let $T' in L(V', V')$ be normal, then $T$ is unitarily equivalent to $T'$ iff $T$ and $T'$ have same characteristic polynomial
+]) <same_characteristic_polynomail_unitarily_equivalent_theorem>
+
