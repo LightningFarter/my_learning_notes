@@ -2446,3 +2446,52 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     let $T' in L(V', V')$ be normal, then $T$ is unitarily equivalent to $T'$ iff $T$ and $T'$ have same characteristic polynomial
 ]) <same_characteristic_polynomail_unitarily_equivalent_theorem>
 
+#pagebreak()
+
+= Bilinear Forms
+
+== Bilinear Forms
+
+#definition(title: "bilinear form", [
+    let $V$ be vector space over field $bb(F)$, then *bilinear form* $f$ is defined as $f : V times V -> bb(F)$ in bilinear form space $L(V, V, bb(F))$ such that
+    + $f(alpha + c beta, gamma) = f(alpha, gamma) + c f(beta, gamma)$
+    + $f(alpha, beta + c gamma) = f(alpha, beta) + c f(alpha, gamma)$
+    $alpha, beta, gamma in V, s0 c in bb(F)$
+]) <bilinear_form_definition>
+
+#definition(title: "matrix of bilinear form", [
+    let $V$ be finite-dimensional vector space over field $bb(F)$, let $cal(B) = {alpha_1, dots, alpha_n}$ be ordered basis of $V$, let $f in L(V, V, bb(F))$, then *matrix of $f$ in ordered basis $cal(B)$* is $A in bb(F)^(n times n)$ such that $A_(i j) = f(alpha_i, alpha_j)$ denoted as $[f]_cal(B)$
+]) <matrix_bilinear_form_definition>
+
+#theorem([
+    let $V$ be finite-dimensional vector space over field $bb(F)$, $forall cal(B)$ be basis of $V$ such that \
+    $Phi_cal(B) : L(V, V, bb(F)) -> bb(F)^(n times n)$ is an isomorphism
+]) <bilinear_matrix_isomorphism_theorem>
+
+#corollary([
+    let $V$ be finite-dimensional vector space over field $bb(F)$, let $cal(B) = {alpha_1, dots, alpha_n}$ be ordered basis of $V$, let $cal(B)^* = {L_1, dots, L_n}$ be ordered basis of $V^*$, then $f_(i j) (alpha, beta) = L_i (alpha) L_j (beta) s0 alpha, beta in V$ is a basis of $L(V, V, bb(F))$ such that $dim L(V, V, bb(F)) = n^2$
+]) <bilinear_form_space_dimension_corollary>
+
+#theorem([
+    let $V$ be finite-dimensional vector space over field $bb(F)$, let $f in L(V, V, bb(F))$, let $L_f, R_f in L(V, V^*)$ such that $(L_f alpha) (beta) = f(alpha, beta) = (R_f beta) alpha$ then $rank L_f = rank R_f$
+]) <bilinear_form_left_right_rank_equiv_theorem>
+
+#definition(title: "rank of bilinear form", [
+    let $V$ be a finite-dimensional vector space over field $bb(F)$, let $f in L(V, V, bb(F))$ then the *rank* of $f$ is defined as $rank f = rank L_f = rank R_f$
+]) <bilinear_form_rank_definition>
+
+#corollary([
+    rank of bilinear form is equal to rank of matrix of the form in any ordered basis
+]) <bilinear_rank_ordered_basis_corollary>
+
+#corollary([
+    let $V$ be $n$-dimensional vector space over field $bb(F)$, let $f in L(V, V, bb(F))$ then the following are equivalent
+    + $rank f = n$
+    + $forall alpha in V s0 exists beta in V in.rev f(alpha, beta) != 0$
+    + $forall beta in V s0 exists alpha in V in.rev f(alpha, beta) != 0$
+]) <full_rank_bilinear_form_corollary>
+
+#definition(title: "non-degenerate bilinear form", [
+    let $V$ be vector space over field $bb(F)$, let $f in L(V, V, bb(F))$ then $f$ is *non-degenerate* or *non-singular* iff $exists cal(B)$ be ordered basis of $V$ such that $[f]_cal(B)$ is non-singular
+]) <non_degenerate_bilinear_form_definition>
+
