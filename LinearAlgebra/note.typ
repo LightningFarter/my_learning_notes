@@ -2495,3 +2495,48 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     let $V$ be vector space over field $bb(F)$, let $f in L(V, V, bb(F))$ then $f$ is *non-degenerate* or *non-singular* iff $exists cal(B)$ be ordered basis of $V$ such that $[f]_cal(B)$ is non-singular
 ]) <non_degenerate_bilinear_form_definition>
 
+== Symmetric Bilinear Forms
+
+#definition(title: "symmetric bilinear form", [
+    let $V$ be vector space over field $bb(F)$, let $f in L(V, V, bb(F))$ then $f$ is *symmetric* if \
+    $f(alpha, beta) = f(beta, alpha) s0 forall alpha, beta in V$
+]) <symmetric_bilinear_form_definition>
+
+#definition(title: "quadratic form of symmetric bilinear form", [
+    let $V$ be vector space over field $bb(F)$, let $f in L(V, V, bb(F))$ be symmetric, then *quadratic form associated with $f$* is defined as $q(alpha) = f(alpha, alpha)$
+
+    the *polarization identity* is $f(alpha, beta) = 1 / 4 q (alpha + beta) - 1 / 4 q (alpha - beta)$
+]) <quadratic_form_symmetric_bilinear_form_definition>
+
+#theorem([
+    let $V$ be finite-dimensional vector space over characteristic $0$ field $bb(F)$, let $f in L(V, V, bb(F))$ be symmetric, then $exists cal(B)$ be ordered basis of $V$ such that $[f]_cal(B)$ is diagonal matrix
+]) <symmetric_bilinear_form_diagonal_matrix_theorem>
+
+#corollary([
+    let $bb(F)$ be subfield of $bb(C)$, let $A in bb(F)^(n times n)$ be symmetric, then $exists P in bb(F)^(n times n)$ be invertible such that $P^t A P$ is diagonal
+]) <symmetric_matrix_diagonal_corollary>
+
+#theorem([
+    let $V$ be finite-dimensional vector space over $bb(C)$, let $f in L(V, V, bb(C))$ be symmetric of rank $r$, then \
+    $exists cal(B) = {beta_1, dots, beta_n}$ an ordered basis of $V$ such that
+    + $[f]_cal(B)$ is diagonal
+    + $f(beta_j, beta_j) = cases(
+        1 h0 1 <= j <= r,
+        0 h0 j > r
+    )$
+]) <symmetric_bilinear_form_diagonalize_complex_theorem>
+
+#theorem([
+    let $V$ be $n$-dimensional vector space over $bb(R)$, let $f in L(V, V, bb(R))$ be symmetric of rank $r$, then \
+    $exists cal(B) = {beta_1, dots, beta_n}$ an ordered basis of $V$ such that
+    + $[f]_cal(B)$ is diagonal
+    + $f(beta_j, beta_j) = cases(
+        plus.minus 1 h0 & 1 <= j <= r,
+        0 h0 & j > r
+    )$
+    + number of $beta_j$ such that $f(beta_j, beta_j) = 1$ is independent of choice of basis
+
+    let $V = V^+ plus.o V^- plus.o V^bot$, where $V^+ = {alpha in V | f(alpha, alpha) > 0}$, $V^- = {alpha in V | f(alpha, alpha) < 0}$, \
+    $V^bot = {alpha in V | f(alpha, alpha) = 0}$, then the *signature* of $f$ is $dim V^+ - dim V^-$
+]) <symmetric_bilinear_form_diagonalize_real_theorem>
+
