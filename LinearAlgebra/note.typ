@@ -2540,3 +2540,35 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     $V^bot = {alpha in V | f(alpha, alpha) = 0}$, then the *signature* of $f$ is $dim V^+ - dim V^-$
 ]) <symmetric_bilinear_form_diagonalize_real_theorem>
 
+== Skew-Symmetric Bilinear Forms
+
+#definition(title: "skew-symmetric bilinear form", [
+    let $bb(F) subset bb(C)$ be a field, let $V$ be vector space over $bb(F)$, let $f in L(V, V, bb(F))$, then $f$ is *skew-symmetric* if $f(alpha, beta) = -f(beta, alpha) h0 alpha, beta in V$
+]) <skew_symmetric_bilinear_form_definition>
+
+#theorem([
+    let $V$ be vector space over field $bb(F) subset bb(C)$, let $f in L(V, V, bb(F))$ be skew-symmetric, then $exists alpha_1, beta_1, dots, alpha_k, beta_k$ such that
+    + $f(alpha_j, beta_j) = 1 h0 j = 1, dots, k$
+    + $f(alpha_i, beta_j) = f(alpha_i, alpha_j) = f(beta_i, beta_j) = 0 h0 i != j$
+    + let each $W_i = span(alpha_i, beta_i)$ and $f|_W_0 = 0$ then 
+    $
+        V = W_1 plus.o dots plus.o W_k plus.o W_0
+    $
+]) <skew_symmetric_bilinear_form_direct_sum_theorem>
+
+#theorem([
+    let $V$ be $n$-dimensional vector space over field $bb(F) subset bb(C)$, let $f in L(V, V, bb(F))$ be skew-symmetric, then
+    + $rank f = 2 k h0 k in bb(N)$
+    + $exists cal(B)$ be ordered basis of $V$ such that $
+        [f]_cal(B) = ( op(plus.o, limits: #true)_(i=1)^k mat(0, 1; -1, 0) ) plus.o 0_((n - 2 k) times (n - 2 k))
+    $
+    + if $dim V = 2 k$ then exists $cal(B)$ be ordered basis of $V$ such that$
+        [f]_cal(B) = mat(0, J; -J, 0) h0 suchthat J = mat(
+            0, dots, 0, 1;
+            0, dots, 1, 0;
+            dots.v, dots.down, dots.v, dots.v;
+            1, dots, 0, 0
+        )
+    $
+]) <skew_symmetric_bilinear_form_matrix_theorem>
+
