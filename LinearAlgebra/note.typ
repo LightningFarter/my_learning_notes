@@ -2572,3 +2572,72 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     $
 ]) <skew_symmetric_bilinear_form_matrix_theorem>
 
+== Groups Preserving Bilinear Forms
+
+#definition(title: "preservation in bilinear form", [
+    let $V$ be vector space over field $bb(F)$, let $f in L(V, V, bb(F))$, let $T in L(V, V)$ then $T$ *preserves* $f$ if \
+    $f(T alpha, T beta) = f(alpha, beta) h0 forall alpha, beta in V$
+
+    if $S, T$ preserves $f$ then $S T$ preserves $f$
+]) <preserve_bilinear_form_definition>
+
+#theorem([
+    let $V$ be finite-dimensional vector space over field $bb(F)$, let $f in L(V, V, bb(F))$ be non-degenerate then \
+    $S = {T in L(V, V) | f(T alpha, T beta) = f(alpha, beta) s0 forall alpha, beta in V}$ is a group under linear operation composition
+]) <bilinear_form_preserve_linear_operator_group_theorem>
+
+#corollary([
+    let $V$ be finite-dimensional vector space over field $bb(F)$, let $f in L(V, V, bb(F))$ be non-degenerate, let $cal(B)$ be ordered basis of $V$, let $q(alpha) = f(alpha, alpha) s0 forall alpha in V$ be quadratic form, then
+    + $T$ preserves $f <=> [T]^t_cal(B) [f]_cal(B) [T]_cal(B) = [f]_cal(B)$
+    + $T$ preserves $f <=> T$ preserves $q$
+]) <bilinear_form_perserve_linear_operator_corollary>
+
+#definition(title: "orthogonal group", [
+    let $V$ be $n$-dimensional vector space over field $bb(F) = bb(C)$ or $bb(R)$, let $f(alpha, beta) = sum_(j=1)^n x_i y_i$ then the group preserving $f$ is the *orthogonal group*, its matrix is *orthogonal matrix* $M in bb(F)^(n times n) in.rev M^t M = I$, the orthogonal group is denoted as $O(n, bb(F))$
+]) <orthogonal_group_definition>
+
+#definition(title: "pseudo-orthogonal group", [
+    let $V$ be $n$-dimensional vector space over field $bb(R)$, let $f in L(V, V, bb(R))$ be symmetric with quadratic form
+    $
+        q(x_1, dots, x_n) = sum_(j = 1)^p x_j^2 - sum_(j = p + 1)^n x_j^2 h0 p in bb(N)
+    $
+    then the group preserves $f$ is the *pseudo-orthogonal group*
+
+    when $p = n$ then we have $O(n, bb(R))$, if $p = r$ or $p = n - r$ we each are negative, hence the number of groups of $f$ is
+    $
+        cases(
+            (n + 1) / 2 h0 n "is odd",
+            (n + 2) / 2 h0 n "is even"
+        )
+    $
+]) <pseudo_orthogonal_group_definition>
+
+#theorem([
+    let $V$ be $n$-dimensional vector space over $bb(C)$, let $f in L(V, V, bb(C))$ be non-degenerate symmetric, then group preserves $f$ is isomorphic to $O(n, bb(C))$
+]) <bilinear_preserve_group_isomorphic_complex_orthogonal_theorem>
+
+#theorem([
+    let $V$ be $n$-dimensional vector space over $bb(R)$, let $f in L(V, V, bb(R))$ be non-degenerate symmetric, then group preserves $f$ is isomorphic to pseudo-orthogonal group of $bb(C)^(n times n)$
+]) <bilinear_presere_group_isomorphic_real_pseudo_orthogonal_theorem>
+
+#definition(title: "Lorentz group", [
+    let $f in L(bb(R)^4, bb(R)^4, bb(R))$ with quadratic form
+    $
+        q(x, y, z, t) = t^2 - x^2 - y^2 - z^2
+    $
+    then $T in L(bb(R)^4, bb(R)^4)$ preserves $f$ is *Lorentz Trnasformation*, the group preserves $f$ is *Lorentz group*
+
+    let $H = {A in bb(C)^(2 times 2) | A^* = A}$ is a group, then
+    $
+        Phi(x, y, z, t) = mat(
+            t + x, y + i z;
+            y - i z, t - x
+        )
+    $
+    is an isomorphism from $bb(R)^4 -> H$, and $q(alpha) = det Phi(alpha)$
+
+    let $U_M (A) = M A M^*, s0 A in H$ then $U_M$ preserves determinant iff $|det U_M| = 1$, then
+    + let $M_1, M_2 in bb(C)^(2 times 2)$, then $U_M_1 = U_M_2 <=> M_2 = c M_1$ for some $c$
+    + not all Lorentz transformation is obtained from $U_M$
+]) <lorentz_group_definition>
+
