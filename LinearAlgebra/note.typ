@@ -78,18 +78,20 @@
 
 == Fields
 
-Let $F$ be a field, must satisfy:
+Let $bb(F)$ be a field, must satisfy:
 
 #definition([
-    $ x + y = y + x  h1 forall x , y in F $
-    $ x + (y + z) = (x + y) + z h1 forall x, y, z in F $
-    $ exists excl s0 0 in F suchthat x + 0 = x h1 forall x in F $
-    $ forall x in F s0 exists s0 (-x) suchthat x + (-x) = 0 $
-    $ x y = y x h0 forall x, y in F $
-    $ x (y z) = (x y) z h0 forall x, y, z in F $
-    $ exists excl s0 1 in F suchthat x 1 = x h0 forall x in F $
-    $ forall x eq.not 0, x in F, s0 exists s0 x^(-1) suchthat x x^(-1) = 1 $
-    $ x (y + z) = x y + x z h0 forall x, y, z in F $
+    $
+        & x + y = y + x  h1 forall x , y in bb(F) \
+        & x + (y + z) = (x + y) + z h1 forall x, y, z in bb(F) \
+        & exists excl s0 0 in bb(F) suchthat x + 0 = x h1 forall x in bb(F) \
+        & forall x in bb(F) s0 exists s0 (-x) suchthat x + (-x) = 0 \
+        & x y = y x h0 forall x, y in bb(F) \
+        & x (y z) = (x y) z h0 forall x, y, z in bb(F) \
+        & exists excl s0 1 in bb(F) suchthat x 1 = x h0 forall x in bb(F) \
+        & forall x eq.not 0, x in bb(F), s0 exists s0 x^(-1) suchthat x x^(-1) = 1 \
+        & x (y + z) = x y + x z h0 forall x, y, z in bb(F) \
+    $
 ]) <field_axioms>
 
 == Systems of Linear Equations
@@ -97,10 +99,12 @@ Let $F$ be a field, must satisfy:
 *Linear equations* has form of:
 
 #example([
-    $ A_(1 1) x_1 + A_(1 2) x_2 + dots + A_(1 n) x_n = y_1 $
-    $ A_(2 1) x_1 + A_(2 2) x_2 + dots + A_(2 n) x_n = y_2 $
-    $ dots.v h1 dots.v h3 h1 dots.v h1 dots.v $
-    $ A_(m 1) x_1 + A_(m 2) x_2 + dots + A_(m n) x_n = y_m $
+    $
+        & A_(1 1) x_1 + A_(1 2) x_2 + dots + A_(1 n) x_n h0 = y_1 \
+        & A_(2 1) x_1 + A_(2 2) x_2 + dots + A_(2 n) x_n h0 = y_2 \
+        & h0 dots.v h1 h0 dots.v h1 h1 dots.v h2 s0 dots.v \
+        & A_(m 1) x_1 + A_(m 2) x_2 + dots + A_(m n) x_n = y_m
+    $
 ]) <linear_equation_example>
 
 If $y_1 = y_2 = dots = y_m = 0$ is a solution, the system is *homogeneous*.
@@ -108,7 +112,9 @@ If $y_1 = y_2 = dots = y_m = 0$ is a solution, the system is *homogeneous*.
 *Linear Combination* has form of:
 
 #example([
-    $ ( c_1 A_(1 1) + dots + c_m A_(m 1) ) x_1 + dots + (c_1 A_(1 n) + dots + c_m A_(m n) ) x_n = c_1 y_1 + dots + c_m y_m $
+    $
+        ( c_1 A_(1 1) + dots + c_m A_(m 1) ) x_1 + dots + (c_1 A_(1 n) + dots + c_m A_(m n) ) x_n = c_1 y_1 + dots + c_m y_m
+    $
 ]) <linear_combination_example>
 
 Linear equations are *equivalent* if each equation is linear combination of other in each system.
@@ -118,45 +124,43 @@ Linear equations are *equivalent* if each equation is linear combination of othe
 ]) <linear_equation_equivilance_theorem>
 
 #exercise([
-    + prove if two homogeneous of linear equation in two unknowns have same solution, they are equivalent
-    + prove each subfield of complex number contains every rational number
-    + prove each field of characteristic $0$ contains  rational number field
+    + if two homogeneous of linear equation in two unknowns have same solution, they are equivalent
+    + each subfield of complex number contains every rational number
+    + each field of characteristic $0$ contains  rational number field
 ]) <exercise_linear_equations>
 
 == Matrics and Elementary Row Operations
 
-We could abbreviate Linear system of #exref(<linear_equation_example>) as:
-$ bold(A) bold(X) = bold(Y) $
-where
+We could abbreviate Linear system of #exref(<linear_equation_example>) as $A X = Y$ where
 $
-    bold(A) = mat(A_(1 1), dots, A_(1 n) ; 
+    A = mat(A_(1 1), dots, A_(1 n) ; 
         dots.v , , dots.v ;
         A_(m 1), dots, A_(m n)
     ) h1
-    bold(X) = vec(x_1, dots.v, x_n) h1
-    bold(Y) = vec(y_1, dots.v, y_n)
+    X = vec(x_1, dots.v, x_n) h1
+    Y = vec(y_1, dots.v, y_n)
 $
-$bold(A)$ is the *matrix of coefficients*
+$A$ is the *matrix of coefficients*
 
 #definition(title: "Elementary Row Operation", [
-    + $e(bold(A))_(i j) = bold(A)_(i j) h0 mif i eq.not r h0 e(bold(A))_(r j) = c bold(A)_(r j)$
-    + $e(bold(A))_(i j) = bold(A)_(i j) h0 mif i eq.not r h0 e(bold(A))_(r j) = bold(A)_(r j) + c bold(A)_(s j)$
-    + $e(bold(A))_(i j) = bold(A)_(i j) h0 mif i eq.not r and i eq.not s h0 e(bold(A))_(r j) = bold(A)_(s j) h0 e(bold(A))_(s j) = bold(A)_(r j)$
+    + $e(A)_(i j) = A_(i j) h0 mif i eq.not r h0 e(A)_(r j) = c A_(r j)$
+    + $e(A)_(i j) = A_(i j) h0 mif i eq.not r h0 e(A)_(r j) = A_(r j) + c A_(s j)$
+    + $e(A)_(i j) = A_(i j) h0 mif i eq.not r and i eq.not s h0 e(A)_(r j) = A_(s j) h0 e(A)_(s j) = A_(r j)$
 ]) <elementary_row_operation_definition>
 
 #theorem([
     $
         "let" E "be set of all elementary row operations" \
-        forall e in E s0 exists s0 e' in E suchthat e'(e(bold(A))) = e(e'(bold(A))) = bold(A)
+        forall e in E s0 exists s0 e' in E suchthat e'(e(A)) = e(e'(A)) = A
     $
 ]) <elementary_row_operation_exists_inverse_theorem>
 
 #definition(title: "Row-Equivalent", [
-    for $bold(A), bold(B) in F^(m times n)$, $bold(B)$ is row-equivalent to $bold(A)$ if $bold(B)$ is obtainable from a series of elementary row operations from $bold(A)$
+    for $A, B in bb(F)^(m times n)$, $B$ is row-equivalent to $A$ if $B$ is obtainable from a series of elementary row operations from $A$
 ]) <row_equivalent_definition>
 
 #theorem([
-    if $bold(A), bold(B) in F^(m times n)$ are row-equivalent, then homogeneous system $bold(A) bold(X) = bold(0) h0 bold(B) bold(X) = bold(0)$ has exact same solution
+    if $A, B in bb(F)^(m times n)$ are row-equivalent, then homogeneous system $A X = 0, s0 B X = 0$ has exact same solution
 ]) <homogeneous_row_equivalent_theorem>
 
 #definition(title: "Row-Reduced", [
@@ -165,54 +169,56 @@ $bold(A)$ is the *matrix of coefficients*
 ]) <row_reduced_definition>
 
 #definition(title: "Identity Matrics", [
-    $ I_(i j) = delta_(i j) = cases(
-        1 mif i = j,
-        0 mif i eq.not j
-    ) $
+    $
+        I_(i j) = delta_(i j) = cases(
+            1 mif i = j,
+            0 mif i eq.not j
+        )
+    $
     the $delta$ is called *Kronecker Delta*
 ]) <identity_matrics_definition>
 
 #theorem([
-    every $m times n$ matrix over $F$ is row-equivalent to a row-reduced matrix
+    every $m times n$ matrix over $bb(F)$ is row-equivalent to a row-reduced matrix
 ]) <row_reduced_equivalent_theorem>
 
 #exercise([
-    + prove interchange of two rows can be acomplished by a finite series of other two type of row operations
+    + interchange of two rows can be acomplished by a finite series of other two type of row operations
 ]) <exercise_row_operations>
 
 == Row-Reduced Echelon Matrics
 
 #definition(title: "Row-Reduced Echelon", [
-    for $bold(R) in F^(m times n)$ to be row-reduced echelon:
-    + $bold(R)$ is row-reduced
+    for $R in bb(F)^(m times n)$ to be row-reduced echelon:
+    + $R$ is row-reduced
     + all row of full $0$ entries is below any non-zero row
     + if there are $r$ non-zero rows in $R$, where the leading non-zero entry of row $i$ occurs in $k_i$, $i = 1, dots, r$ then $k_1 < k_2 < dots < k_r$
 ]) <row_reduced_echelon_definition>
 
 #theorem([
-    every $bold(A) in F^(m times n)$ is row-equivalent to a row-reduced echelon
+    every $A in bb(F)^(m times n)$ is row-equivalent to a row-reduced echelon
 ]) <row_echelon_equivalence_theorem>
 
 #theorem([
-    for matrix $bold(A) in F^(m times n)$ if $m < n$ then $bold(A) bold(X) = bold(0)$ has non-trivial solution
+    for matrix $A in bb(F)^(m times n)$ if $m < n$ then $A X = 0$ has non-trivial solution
 ]) <non_trivial_solution_homogeneous_theorem>
 
 #theorem([
-    a homogeneous equation $bold(A) bold(X) = bold(0)$ is row-equivalent to $bold(I)$ iff it has only trivial solution
+    a homogeneous equation $A X = 0$ is row-equivalent to $I$ iff it has only trivial solution
 ]) <homogeneous_trivial_solution_identity_theorem>
 
 == Matrix Multiplication
 
 #definition(title: "Matrix Multiplication", [
     $
-        "let" bold(A) in F^(m times n) , s0 bold(B) in F^(n times p), s0 bold(A) bold(B) = bold(C), " where " bold(C) in F^(m times p) \
+        "let" A in bb(F)^(m times n) , s0 B in bb(F)^(n times p), s0 A B = C, " where " C in bb(F)^(m times p) \
         "then " C_(i j) = sum_(r = 1)^n A_(i r) B_(r j)
     $
 ]) <matrix_multiplication_definition>
 
 #theorem([
-    if $bold(A), bold(B), bold(C)$ are matrices over field $F$ has product $bold(B) bold(C), bold(A)(bold(B) bold(C))$ defined, then so are
-    $bold(A B), bold((A B) C)$, #s0 moreover, $bold(A (B C) = (A B) C)$
+    if $A, B, C$ are matrices over field $bb(F)$ has product $B C, A(B C)$ defined, then so are
+    $A B, (A B) C$, #s0 moreover, $A (B C) = (A B) C$
 ]) <matrix_product_defined_associative_theorem>
 
 #definition(title: "Elementary Matrix", [
@@ -220,27 +226,27 @@ $bold(A)$ is the *matrix of coefficients*
 ]) <elementary_matrix_definition>
 
 #theorem([
-    let $e$ be elementary row operation, and $bold(E) = e(bold(I))$ then for every $bold(A)_(m times n)$, #s0 $e(bold(A)) = bold(E A)$
+    let $e$ be elementary row operation, and $E = e(I)$ then for every $A_(m times n)$, #s0 $e(A) = E A$
 ]) <elementary_row_operation_matrix_equivalence_theorem>
 
 #corollary([
-    let $bold(A), bold(B) in F^(m times n)$ then $bold(B)$ is row-equivalent to $bold(A)$ iff $bold(B = P A)$ where $bold(P)$ is product of a series of elementary row operation
+    let $A, B in bb(F)^(m times n)$ then $B$ is row-equivalent to $A$ iff $B = P A$ where $P$ is product of a series of elementary row operation
 ]) <row_equivalent_elementary_row_operation_corollary>
 
 == Invertible Matrix
 
 #definition([
-    let $bold(A), bold(B) in F^(n times n)$ if $bold(A B = I)$, $bold(A)$ is the *left inverse* of $bold(B)$ and $bold(B)$ is the *right inverse* of $bold(A)$, if $bold(A B = B A = I)$ then it is a *two-sided inverse* and $bold(A)$ is said to be invertible
+    let $A, B in bb(F)^(n times n)$ if $A B = I$, $A$ is the *left inverse* of $B$ and $B$ is the *right inverse* of $A$, if $A B = B A = I$ then it is a *two-sided inverse* and $A$ is said to be invertible
 ]) <matrix_inverse_definition>
 
 #lemma([
-    if $bold(A)$ has left inverse $bold(B)$ and right inverse $bold(C)$, then $bold(B = C)$
+    if $A$ has left inverse $B$ and right inverse $C$, then $B = C$
 ]) <matrix_left_right_inverse_lemma>
 
 #theorem([
-    let $bold(A), bold(B) in F^(n times n)$
-    + if $bold(A)$ is invertible, so is $bold(A)^(-1)$ and $(bold(A)^(-1))^(-1) = bold(A)$
-    + if both $bold(A), bold(B)$ are invertible, so is $bold(A B)$ and $(bold(A B))^(-1) = bold(B)^(-1) bold(A)^(-1)$
+    let $A, B in bb(F)^(n times n)$
+    + if $A$ is invertible, so is $A^(-1)$ and $(A^(-1))^(-1) = A$
+    + if both $A, B$ are invertible, so is $A B$ and $(A B)^(-1) = B^(-1) A^(-1)$
 ]) <matrix_inverse_product_invertibility_theorem>
 
 #corollary([
@@ -252,26 +258,26 @@ $bold(A)$ is the *matrix of coefficients*
 ]) <elementary_matrix_invertibility_theorem>
 
 #theorem([
-    for $bold(A) in F^(n times n)$, the following are equivalent
-    + $bold(A)$ is invertible
-    + $bold(A)$ is row-equivalent to identity matrix
-    + $bold(A)$ is product of elementary matrics
-    + homogeneous system $bold(A X = 0)$ has only trivial solution
-    + $bold(A X = Y)$ has solution $bold(X)$ for each $bold(Y)_(n times 1)$
+    for $A in bb(F)^(n times n)$, the following are equivalent
+    + $A$ is invertible
+    + $A$ is row-equivalent to identity matrix
+    + $A$ is product of elementary matrics
+    + homogeneous system $A X = 0$ has only trivial solution
+    + $A X = Y$ has solution $X$ for each $Y_(n times 1)$
 ]) <invertible_row_equivalence_identity_elementary_product_relation_theorem>
 
 #corollary([
-    + let $bold(A) in F^(n times n)$, if a $bold(E)_k dots bold(E)_1 bold(A) = bold(I)$ then $bold(E)_k dots bold(E)_1 bold(I) = bold(A)^(-1)$ \
-    + let $bold(A), bold(B) in F^(m times n)$ then $bold(B)$ is row-equivalent to $bold(A)$ iff $bold(B = P A)$ where $bold(P)$ is an invertible $m times m$ matrix \
+    + let $A in bb(F)^(n times n)$, if a $E_k dots E_1 A = I$ then $E_k dots E_1 I = A^(-1)$ \
+    + let $A, B in bb(F)^(m times n)$ then $B$ is row-equivalent to $A$ iff $B = P A$ where $P$ is an invertible $m times m$ matrix \
     + a square matrix with left or right inverse is invertible \
-    + let $bold(A = A_1 dots A_k)$ where $bold(A_1), dots, bold(A_k)$ are square matrics, then $bold(A)$ is invertible iff all $bold(A_1), dots, bold(A_k)$ are invertible
+    + let $A = A_1 dots A_k$ where $A_1, dots, A_k$ are square matrics, then $A$ is invertible iff all $A_1, dots, A_k$ are invertible
 ]) <inverse_elementary_row_operation_corollary>
 
 #exercise([
-    + an *upper-triangular* matrix is $A in F^(n times n) mif A_(i j) = 0, forall i > j$, prove an upper-triangular matrix has no $0$ entries in diagonal iff it is invertible
-    + let $A in F^(m times n), B in F^(n times m), s0 n < m$ prove $A B$ is not invertible
-    + prove there is a finite series of row and column operations such that any matrix $A$ can be transformed into $R = P A Q$, where $R$ is both a row-reduced echelon and column-reduced echelon matrix
-    + prove *Hilbert matrics* $H$ is invertible and $H^(-1)$ has all integer entries
+    + an *upper-triangular* matrix is $A in bb(F)^(n times n) mif A_(i j) = 0, forall i > j$, then an upper-triangular matrix has no $0$ entries in diagonal iff it is invertible
+    + let $A in bb(F)^(m times n), B in bb(F)^(n times m), s0 n < m$ then $A B$ is not invertible
+    + there is a finite series of row and column operations such that any matrix $A$ can be transformed into $R = P A Q$, where $R$ is both a row-reduced echelon and column-reduced echelon matrix
+    + *Hilbert matrics* $H$ is invertible and $H^(-1)$ has all integer entries
     $ 
         H = mat(
             1, 1/2, dots, 1/n;
@@ -290,7 +296,7 @@ $bold(A)$ is the *matrix of coefficients*
 
 #definition(title: "Vector Space", [
     a vector space consists of:
-    + a field $F$ of scalars
+    + a field $bb(F)$ of scalars
     + a set $V$ of vectors
     + an addition operation on a pair of vectors, say $alpha , beta, gamma in V$
         - $alpha + beta in V$
@@ -298,7 +304,7 @@ $bold(A)$ is the *matrix of coefficients*
         - $alpha + (beta + gamma) = (alpha + beta) + gamma$
         - $existsunique 0 in V suchthat alpha + 0 = alpha h0 forall alpha in V$
         - $forall alpha in V s0 existsunique -alpha in V suchthat alpha + (-alpha) = 0$
-    + a scalar multiplation operator, say $alpha, beta in V$, and $c, c_1, c_2 in F$
+    + a scalar multiplation operator, say $alpha, beta in V$, and $c, c_1, c_2 in bb(F)$
         - $1 alpha = alpha h0 forall alpha in V$
         - $(c_1 c_2) alpha = c_1 (c_2 alpha)$
         - $c (alpha + beta) = c alpha + c beta$
@@ -306,31 +312,33 @@ $bold(A)$ is the *matrix of coefficients*
 ]) <vector_space_definition>
 
 #definition(title: "Linear Combination", [
-    vector $beta in V$ is said to be linear combination of $alpha_1 , dots, alpha_n in V$ provided scalars $c_1, dots, c_n in F$ iff
-    $ beta = c_1 alpha_1 + dots + c_n alpha_n = sum^n_(k=1) c_k alpha_k $
+    vector $beta in V$ is said to be linear combination of $alpha_1 , dots, alpha_n in V$ provided scalars $c_1, dots, c_n in bb(F)$ iff
+    $
+        beta = c_1 alpha_1 + dots + c_n alpha_n = sum^n_(k=1) c_k alpha_k
+    $
 ]) <linear_combination_definition>
 
 == Subspaces
 
 #definition(title: "Subspace", [
-    let $V$ be a vector space over field $F$, the subspace $W$ over field $F$ is a subset of $V$ which itself is a vector space with the same operators
+    let $V$ be a vector space over field $bb(F)$, the subspace $W$ over field $bb(F)$ is a subset of $V$ which itself is a vector space with the same operators
 ]) <subspace_definition>
 
 #theorem([
-    a non-empty subset $W$ of $V$ is a subspace of $V$ over field $F$ iff $s0 forall alpha, beta in W, s0 c in F, s0 c alpha + beta in W$
+    a non-empty subset $W$ of $V$ is a subspace of $V$ over field $bb(F)$ iff $s0 forall alpha, beta in W, s0 c in bb(F), s0 c alpha + beta in W$
 ]) <subspace_definition_equivalence_theorem>
 
 a *Hermitian matrix* is a square matrix over complex number where $A_(j k) = overline(A_(k j))$ or $A = A^*$
 
 #lemma([
     $
-        "let" bold(A) in F^(m times n), s0 bold(B), bold(C) in F^(n times p), s0 d in F \
-        bold(A) (d bold(B) + bold(C)) = d ( bold(A B) ) + bold(A C)
+        "let" A in bb(F)^(m times n), s0 B, C in bb(F)^(n times p), s0 d in bb(F) \
+        A (d B + C) = d ( A B ) + A C
     $
 ]) <matrix_is_vector_space_lemma>
 
 #theorem([
-    let $V$ be a vector space over $F$, the intersection of any collection of subspace of $V$ is a subspace of $V$
+    let $V$ be a vector space over $bb(F)$, the intersection of any collection of subspace of $V$ is a subspace of $V$
 ]) <subspace_intersection_is_subspace_theorem>
 
 #definition([
@@ -344,19 +352,23 @@ a *Hermitian matrix* is a square matrix over complex number where $A_(j k) = ove
 
 #definition([
     let $S_1, dots, S_n$ be subsets of vector space $V$, the set of all sums
-    $ alpha_1 + dots + alpha_n, h0 alpha_1 in S_1, s0 dots , s0 alpha_n in S_n $
+    $
+        alpha_1 + dots + alpha_n, h0 alpha_1 in S_1, s0 dots , s0 alpha_n in S_n
+    $
     is denoted as
-    $ S_1 + dots + S_n = sum_(k = 1)^n S_k $
+    $
+        S_1 + dots + S_n = sum_(k = 1)^n S_k 
+    $
 ]) <subset_sum_definition>
 
-the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m times n)$ is called *row space* of $A$
+the subspace of $bb(F)^n$ over field $bb(F)$ spanned by row vectors of matrix $A in bb(F)^(m times n)$ is called *row space* of $A$
 
 == Bases and Dimension
 
 #definition([
-    for vector space $V$ over field $F$, a subspace $S$ is *linear dependent* iff
+    for vector space $V$ over field $bb(F)$, a subspace $S$ is *linear dependent* iff
     $
-        exists s0 0 != alpha_1, dots, alpha_n in S, s0 c_1, dots, c_n in F "not all" 0 suchthat sum_(k = 1)^n c_k alpha_k = 0
+        exists s0 0 != alpha_1, dots, alpha_n in S, s0 c_1, dots, c_n in bb(F) "not all" 0 suchthat sum_(k = 1)^n c_k alpha_k = 0
     $
     otherwise it is called *linear independent*
 ]) <linear_dependent_definition>
@@ -367,7 +379,7 @@ the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m
 ]) <basis_definition>
 
 #example([
-    a standard basis of $F^n$ has form of:
+    a standard basis of $bb(F)^n$ has form of:
     $
         epsilon.alt_1 = (1, 0, dots, 0) \
         epsilon.alt_2 = (0, 1, dots, 0) \
@@ -413,7 +425,7 @@ the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m
 ]) <linear_independent_subset_basis_corollary>
 
 #corollary([
-    let $bold(A) in F^(n times n)$ has its row vectors linear independent, then $bold(A)$ is invertible
+    let $A in bb(F)^(n times n)$ has its row vectors linear independent, then $A$ is invertible
 ]) <row_vector_independence_invertible_matrix_corollary>
 
 #theorem([
@@ -421,7 +433,7 @@ the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m
 ]) <dimension_of_sum_subspaces_theorem>
 
 #exercise([
-    + prove that $A in F^(m times n)$ has dimension $m n$ by exhibiting its standard basis
+    + prove that $A in bb(F)^(m times n)$ has dimension $m n$ by exhibiting its standard basis
     + prove $V$ a vector space of $bb(Q)$ representing $bb(R)$ is not finite-dimensional 
 ]) <exercise_base_dimensions>
 
@@ -439,11 +451,11 @@ the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m
 ]) <coordinate_matrix_definition>
 
 #theorem([
-    let $bold(P)_(n times n)$ be invertible matrix over $F$, $V$ be an $n$-dimensional vector space with ordered basis $cal(B)$. there is a unique ordered basis $cal(B)'$ for each $alpha$ such that
+    let $P_(n times n)$ be invertible matrix over $bb(F)$, $V$ be an $n$-dimensional vector space with ordered basis $cal(B)$. there is a unique ordered basis $cal(B)'$ for each $alpha$ such that
     $
-        [alpha]_cal(B) = bold(P) [alpha]_cal(B)' \
-        [alpha]_cal(B)' = bold(P)^(-1) [alpha]_cal(B) \
-        bold(P) = mat([alpha'_1]_cal(B), dots, [alpha'_n]_cal(B))
+        [alpha]_cal(B) = P [alpha]_cal(B)' \
+        [alpha]_cal(B)' = P^(-1) [alpha]_cal(B) \
+        P = mat([alpha'_1]_cal(B), dots, [alpha'_n]_cal(B))
     $
 ]) <ordered_basis_transforming_theorem>
 
@@ -454,12 +466,12 @@ the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m
 ]) <row_equivalent_same_row_space_theorem>
 
 #theorem([
-    let $bold(R)$ be a row-reduced echelon matrix, then the non-zero rows of $bold(R)$ forms a basis of row space of $bold(R)$
+    let $R$ be a row-reduced echelon matrix, then the non-zero rows of $R$ forms a basis of row space of $R$
 ]) <row_reduced_echelon_non_zero_row_space_theorem>
 
 #theorem([
-    $"let" m, n > 0 s0 m, n in N, s0 F "be a field", s0 W "be a subspace of " F^n "and" dim W <= m$ \
-    then exists unique row-reduced echelon matrix over $F$ which has $W$ as its row space
+    $"let" m, n > 0 s0 m, n in N, s0 bb(F) "be a field", s0 W "be a subspace of " bb(F)^n "and" dim W <= m$ \
+    then exists unique row-reduced echelon matrix over $bb(F)$ which has $W$ as its row space
 ]) <row_space_unique_row_reduced_echelon_theorem>
 
 #corollary([
@@ -467,7 +479,7 @@ the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m
 ]) <any_matrix_row_reduced_echelon_uniqueness_corollary>
 
 #corollary([
-    let $bold(A), bold(B) in F^(m times n)$, then $bold(A)$ and $bold(B)$ are row-equivalent iff they have the same row space
+    let $A, B in bb(F)^(m times n)$, then $A$ and $B$ are row-equivalent iff they have the same row space
 ]) <same_row_space_row_equivalence_corollary>
 
 #pagebreak()
@@ -477,7 +489,7 @@ the subspace of $F^n$ over field $F$ spanned by row vectors of matrix $A in F^(m
 == Linear Transformations
 
 #definition(title: "Linear Transformation", [
-    let $V, W$ be vector spaces over field $F$, a linear transformation from $V$ to $W$ is a function \
+    let $V, W$ be vector spaces over field $bb(F)$, a linear transformation from $V$ to $W$ is a function \
     $T: V arrow W$ such that $T(c alpha + beta) = c(T alpha) + T beta$
 ]) <linear_transformation_definition>
 
@@ -485,55 +497,55 @@ if $V$ is a vector space, an *identity transformation* $I$ is defined by $I alph
 an *zero transformation* $0$ is defined by $0 alpha = 0$ 
 
 #theorem([
-    let $V$ be a finite-dimensional vector space over field $F$, let ${alpha_1, dots, alpha_n}$ be an ordered basis of $V$, let $W$ be a vector space over $F$, and let $beta_1, dots, beta_n$ be any vectors in $W$, then
+    let $V$ be a finite-dimensional vector space over field $bb(F)$, let ${alpha_1, dots, alpha_n}$ be an ordered basis of $V$, let $W$ be a vector space over $bb(F)$, and let $beta_1, dots, beta_n$ be any vectors in $W$, then
     $
         existsunique T : V arrow W suchthat T alpha_i = beta_i, h0 i = 1, dots, n
     $
 ]) <exists_unique_linear_transformation_theorem>
 
 #definition([
-    let $V, W$ be vector spaces over field $F$, let $T : V -> W$, the *null space* of $T$ is the set of all vectors $alpha$ such that $T alpha = 0$ \
+    let $V, W$ be vector spaces over field $bb(F)$, let $T : V -> W$, the *null space* of $T$ is the set of all vectors $alpha$ such that $T alpha = 0$ \
     let $V$ be a finite-dimensional vector space, the *rank* of $T$ is the dimension of range of $T$, the *nullity* of $T$ is the dimension of null space of $T$
 ]) <null_space_rank_nullity_definition>
 
 #theorem([
-    let $V$ be finite-dimensional and $W$ be any vector space over $F$, let $T : V -> W$ be a linear transformation, then
+    let $V$ be finite-dimensional and $W$ be any vector space over $bb(F)$, let $T : V -> W$ be a linear transformation, then
     $
         rank T + nullity T = dim V
     $
 ]) <rank_nullity_dim_relation_theorem>
 
 #theorem([
-    if $bold(A) in F^(m times n)$ then $ "row" rank bold(A) = "column" rank bold(A) $
+    if $A in bb(F)^(m times n)$ then $ "row" rank A = "column" rank A $
 ]) <row_column_rank_equality_theorem>
 
 == The Algebra of Linear Transformation
 
 #theorem([
-    let $V, W$ be vector spaces over field $F$, #s0 $T, U$ be linear transformations from $V$ into $W$ then functions $ (T + U)(alpha) := T alpha + U alpha$, #s0 $(c T)(alpha) := c (T alpha)$ where the set of linear transformations $ T, U$ spanned form a vector space over field $F$
+    let $V, W$ be vector spaces over field $bb(F)$, #s0 $T, U$ be linear transformations from $V$ into $W$ then functions $ (T + U)(alpha) := T alpha + U alpha$, #s0 $(c T)(alpha) := c (T alpha)$ where the set of linear transformations $ T, U$ spanned form a vector space over field $bb(F)$
 ]) <linear_transformation_set_vector_space_theorem>
 
 #theorem([
-    let $V$ be $n$-dimensional and $W$ be $m$-dimensional vector space over $F$, then the linear transformation vector space $L(V, W)$ is finite-dimensional and has dimension $m n$
+    let $V$ be $n$-dimensional and $W$ be $m$-dimensional vector space over $bb(F)$, then the linear transformation vector space $L(V, W)$ is finite-dimensional and has dimension $m n$
 ]) <linear_transformation_dimension_relation_theorem>
 
 #theorem([
-    let $V, W, Z$ be vector spaces over field $F$, #s0 let linear transformations $T : V -> W, s0 U : W -> Z$ then $(U T)(alpha) := U(T(alpha))$ is a linear transformation such that $U T : V -> W$
+    let $V, W, Z$ be vector spaces over field $bb(F)$, #s0 let linear transformations $T : V -> W, s0 U : W -> Z$ then $(U T)(alpha) := U(T(alpha))$ is a linear transformation such that $U T : V -> W$
 ]) <composed_linear_transformation_theorem>
 
 #definition(title: "linear operator", [
-    let $V$ be a vector space over field $F$, then $T : V -> V$ is a *linear operator* on $V$
+    let $V$ be a vector space over field $bb(F)$, then $T : V -> V$ is a *linear operator* on $V$
 ]) <linear_operator_definition>
 
 #lemma([
-    let $V$ be a vector space over field $F$, $s0$ let $U, T_1, T_2$ be linear operators on $V$, $s0$ let $c in F$
+    let $V$ be a vector space over field $bb(F)$, $s0$ let $U, T_1, T_2$ be linear operators on $V$, $s0$ let $c in bb(F)$
     + $I U = U I = U$
     + $U (T_1 + T_2) = U T_1 + U T_2 h0 (T_1 + T_2) U = T_1 U + T_2 U$
     + $c (U T_1) = (c U) T_1 = U (c T_1)$
 ]) <linear_operator_lemma>
 
 #theorem([
-    let $V, W$ be vector spaces over field $F$, let $T : V -> W$ be linear transformation \
+    let $V, W$ be vector spaces over field $bb(F)$, let $T : V -> W$ be linear transformation \
     if $T$ is invertible, then $T^(-1) : W -> V$ is linear transformation
 ]) <linear_transformation_inverse_theorem>
 
@@ -544,7 +556,7 @@ for a linear transformation $T$ to be *non-singular* is $T alpha = 0$ implies $a
 ]) <non_singularity_linear_independent_subset_theorem>
 
 #theorem([
-    let $V, W$ be finite-dimensional vector spaces over field $F$ such that $dim V = dim W$, let $T : V -> W$ be linear transformation then the followings are equivalent
+    let $V, W$ be finite-dimensional vector spaces over field $bb(F)$ such that $dim V = dim W$, let $T : V -> W$ be linear transformation then the followings are equivalent
     + $T$ is invertible
     + $T$ is non-singular
     + $T$ is onto
@@ -554,37 +566,37 @@ for a linear transformation $T$ to be *non-singular* is $T alpha = 0$ implies $a
 
 == Isomorphism
 
-if $V, W$ are vector spaces over field $F$, any bijection transformation $T : V -> W$ is called *isomorphism* of $V$ onto $W$
+if $V, W$ are vector spaces over field $bb(F)$, any bijection transformation $T : V -> W$ is called *isomorphism* of $V$ onto $W$
 
 #theorem([
-    every $n$-dimensional vector space over field $F$ is isomorphic to space $F^n$
+    every $n$-dimensional vector space over field $bb(F)$ is isomorphic to space $bb(F)^n$
 ]) <n_dimensional_n_tuple_isomorphism_theorem>
 
 == Representation of Transformations by Matrices
 
 #theorem([
-    let $V$ be $n$-dimensional, $W$ be $m$-dimensional vector spaces over field $F$, let $cal(B)$ be ordered basis of $V$, and $cal(B)'$ be ordered basis of $W$
+    let $V$ be $n$-dimensional, $W$ be $m$-dimensional vector spaces over field $bb(F)$, let $cal(B)$ be ordered basis of $V$, and $cal(B)'$ be ordered basis of $W$
     $
-        forall s0 T : V -> W s0 exists bold(A) in F^(m times n) suchthat [T alpha]_(cal(B)') 
-        = bold(A) [alpha]_(cal(B)) h0 forall alpha in V
+        forall s0 T : V -> W s0 exists A in bb(F)^(m times n) suchthat [T alpha]_(cal(B)') 
+        = A [alpha]_(cal(B)) h0 forall alpha in V
     $
-    furthermore, $T -> A$ is a bijection between $L(V, W)$ and $F^(m times n)$
+    furthermore, $T -> A$ is a bijection between $L(V, W)$ and $bb(F)^(m times n)$
 ]) <linear_transformation_matrices_representation_existence_theorem>
 
-$bold(A)$ in #theref(<linear_transformation_matrices_representation_existence_theorem>) is called *matrix of * $T$ * relative to the ordered bases * $cal(B), cal(B)'$ deonted as $[T]_cal(B)^cal(B)'$
+$A$ in #theref(<linear_transformation_matrices_representation_existence_theorem>) is called *matrix of * $T$ * relative to the ordered bases * $cal(B), cal(B)'$ deonted as $[T]_cal(B)^cal(B)'$
 
 #theorem([
-    let $V, W, Z$ be finite-dimensional vector space over field $F$, let $cal(B), cal(B)', cal(B)''$ be ordered basis of $V, W, Z$ respectively, let $T : V -> W, s0 U : W -> Z$, if $bold(A)$ be matrix of $T$ relative to $(cal(B), cal(B)')$, and $bold(B)$ be matrix of $U$ relative to $(cal(B)', cal(B)'')$, then matrix of $U T$ relative to $(cal(B), cal(B)'')$ be $bold(C) = bold(B) bold(A)$
+    let $V, W, Z$ be finite-dimensional vector space over field $bb(F)$, let $cal(B), cal(B)', cal(B)''$ be ordered basis of $V, W, Z$ respectively, let $T : V -> W, s0 U : W -> Z$, if $A$ be matrix of $T$ relative to $(cal(B), cal(B)')$, and $B$ be matrix of $U$ relative to $(cal(B)', cal(B)'')$, then matrix of $U T$ relative to $(cal(B), cal(B)'')$ be $C = B A$
 ]) <linear_transformation_composition_matrix_representation_theorem>
 
 #definition([
-    let $bold(A), bold(B) in F^(n times n)$, then $bold(B)$ is similar to $bold(A)$ over $F$ if exists invertible $bold(P) in F^(n times n)$ such that $bold(B) = bold(P)^(-1) bold(A) bold(P)$
+    let $A, B in bb(F)^(n times n)$, then $B$ is similar to $A$ over $bb(F)$ if exists invertible $P in bb(F)^(n times n)$ such that $B = P^(-1) A P$
 ]) <similar_matrix_definition>
 
 #theorem([
-    let $V$ be finite-dimensional vector space over field $F$ let $cal(B) = {alpha_1, dots, alpha_n}$ and $cal(B)' = {alpha'_1, dots, alpha'_n}$ be ordered basis of $V$; let $T$ be linear operator on $V$, if $bold(P) = [ [alpha'_1]_cal(B), dots, [alpha'_n]_cal(B) ]$ be $n times n$ matrix, then
+    let $V$ be finite-dimensional vector space over field $bb(F)$ let $cal(B) = {alpha_1, dots, alpha_n}$ and $cal(B)' = {alpha'_1, dots, alpha'_n}$ be ordered basis of $V$; let $T$ be linear operator on $V$, if $P = [ [alpha'_1]_cal(B), dots, [alpha'_n]_cal(B) ]$ be $n times n$ matrix, then
     $
-        [T]_cal(B)' = bold(P)^(-1) [T]_cal(B) bold(P)
+        [T]_cal(B)' = P^(-1) [T]_cal(B) P
     $
     if $U$ is invertible operator on $V$ defined by $U alpha_j = alpha'_j, s0 j = 1 , dots, n$ then
     $
@@ -595,25 +607,25 @@ $bold(A)$ in #theref(<linear_transformation_matrices_representation_existence_th
 == Linear Functionals
 
 #definition(title: "linear functional", [
-    let $V$ be a vector space over field $F$, a *linear functional* $f : V -> F$ is a linear transformation from $V$ to $F$ such that
+    let $V$ be a vector space over field $bb(F)$, a *linear functional* $f : V -> bb(F)$ is a linear transformation from $V$ to $bb(F)$ such that
     $
         f( c alpha + beta) = c f(alpha) + f(beta)
     $
 ]) <linear_functional_definition>
 
 #definition(title: "dual space", [
-    let $V$ be a vector space over field $F$, then $L(V, F)$ is a *dual space* of $V$ denoted as $V^*$
+    let $V$ be a vector space over field $bb(F)$, then $L(V, bb(F))$ is a *dual space* of $V$ denoted as $V^*$
 ]) <dual_space_definition>
 
 #corollary([
-    let $V$ be a vector space over field $F$, and let $V^*$ be its dual space, then
+    let $V$ be a vector space over field $bb(F)$, and let $V^*$ be its dual space, then
     $
         dim V^* = dim V
     $
 ]) <dual_space_dimension_corollary>
 
 #theorem([
-    let $V$ be a finite-dimensional vector space over field $F$ with an ordered basis $cal(B) = {alpha_1, dots, alpha_n}$\
+    let $V$ be a finite-dimensional vector space over field $bb(F)$ with an ordered basis $cal(B) = {alpha_1, dots, alpha_n}$\
     There is a unique basis $cal(B)' = {f_1, dots, f_n }$ such that $f_i(alpha_j) = delta_(i j)$, and for each function $f in V^*$ that
     $
         f = sum_(i=1)^n f(alpha_i) f_i
@@ -625,11 +637,11 @@ $bold(A)$ in #theref(<linear_transformation_matrices_representation_existence_th
 ]) <linear_functional_uniqueness_theorem>
 
 #definition(title: "annihilator", [
-    let $V$ be a vector space over field $F$, and $S$ is a subset of $V$ #s0 the *annihilator* of $S$ denoted as $S^0$ is the set of linear functionals $f$ on $V$ such that $f(alpha) = 0 s0 forall alpha in S$
+    let $V$ be a vector space over field $bb(F)$, and $S$ is a subset of $V$ #s0 the *annihilator* of $S$ denoted as $S^0$ is the set of linear functionals $f$ on $V$ such that $f(alpha) = 0 s0 forall alpha in S$
 ]) <annihilator_definition>
 
 #theorem([
-    let $V$ be a finite-dimensional vector space over field $F$, and let $W$ be a subspace of $V$, then
+    let $V$ be a finite-dimensional vector space over field $bb(F)$, and let $W$ be a subspace of $V$, then
     $
         dim W + dim W^0 = dim V
     $
@@ -653,7 +665,7 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
 == The Double Dual
 
 #theorem([
-    let $V$ be finite-dimensional vector space over field $F$, for each $alpha in V$ define
+    let $V$ be finite-dimensional vector space over field $bb(F)$, for each $alpha in V$ define
     $
         L_(alpha) (f) = f(alpha), h0 f in V^*
     $
@@ -661,14 +673,14 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
 ]) <double_dual_isomorphism_theorem>
 
 #corollary([
-    let $V$ be finite-dimensional vector space over field $F$, let $L$ be a linear functional on dual space $V^*$ of $V$, then
+    let $V$ be finite-dimensional vector space over field $bb(F)$, let $L$ be a linear functional on dual space $V^*$ of $V$, then
     $
         existsunique alpha in V suchthat L(f) = f(alpha) h0 forall f in V^*
     $
 ]) <exists_unique_dual_linear_functional_corollary>
 
 #corollary([
-    let $V$ be finite-dimensional vector space over field $F$, then each basis of $V^*$ is the dual of some basis for $V$
+    let $V$ be finite-dimensional vector space over field $bb(F)$, then each basis of $V^*$ is the dual of some basis for $V$
 ]) <vector_space_linear_functional_basis_dual_corollary>
 
 #theorem([
@@ -686,10 +698,10 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
 ]) <hyperspace_linear_functional_null_theorem>
 
 #lemma([
-    let $V$ be vector space over field $F$, let $f, g in L(V, F)$
+    let $V$ be vector space over field $bb(F)$, let $f, g in L(V, bb(F))$
     $
         g = c f <=> null f subset null g <=> (f(alpha) = 0 => g(alpha) = 0) \
-        c in F, s0 alpha in V
+        c in bb(F), s0 alpha in V
     $
 ]) <linear_functional_scalar_multiple_lemma>
 
@@ -700,7 +712,7 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
 == The Transpose of a Linear Transformation
 
 #theorem([
-    let $V, W$ be vector spaces over field $F$, then \
+    let $V, W$ be vector spaces over field $bb(F)$, then \
     $
         "for each linear transformation" T : V -> W \
         existsunique T^t : W^* -> V^* suchthat \
@@ -710,7 +722,7 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
 ]) <transpose_definition_theorem>
 
 #theorem([
-    let $V, W$ be vector spaces over field $F$, let $T in L(V, W)$, then
+    let $V, W$ be vector spaces over field $bb(F)$, let $T in L(V, W)$, then
     $
         null T^t = (range T)^0
     $
@@ -720,7 +732,7 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
 ]) <null_annihilator_transpose_theorem>
 
 #theorem([
-    let $V, W$ be finite-dimensional vector space over field $F$, let $cal(B)$ be basis of $V$ with dual basis $cal(B)^*$, let $cal(B)'$ be basis of $W$ with dual basis of $cal(B)'^*$, let $T in L(V, W)$ where
+    let $V, W$ be finite-dimensional vector space over field $bb(F)$, let $cal(B)$ be basis of $V$ with dual basis $cal(B)^*$, let $cal(B)'$ be basis of $W$ with dual basis of $cal(B)'^*$, let $T in L(V, W)$ where
     $
         [T]_cal(B)^cal(B)' = A h0 [T^t]_(cal(B)'^*)^(cal(B)^*) = B \
         "then" A_(i j) = B_(j i)
@@ -728,11 +740,11 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
 ]) <transpose_matrix_representation_theorem>
 
 #definition(title: "matrix transpose", [
-    let $A in F^(m times n)$, then *transpose* of $A$ is $A^t in F^(n times m)$ defined as $A^t_(i j) = A_(j i)$
+    let $A in bb(F)^(m times n)$, then *transpose* of $A$ is $A^t in bb(F)^(n times m)$ defined as $A^t_(i j) = A_(j i)$
 ]) <matrix_transpose_definition>
 
 #theorem([
-    let $A in F^(m times n)$ , then row rank $A = $ column rank $A$
+    let $A in bb(F)^(m times n)$ , then row rank $A = $ column rank $A$
 ]) <row_column_rank_transpose_theorem>
 
 #pagebreak()
@@ -742,10 +754,10 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
 == Algebras
 
 #definition(title: "Linear Algebra", [
-    let $F$ be a field, a *linear algebra* over field $F$ is a vector space $cal(A)$ over field $F$ with additional *multiplication* operator for each pair of $alpha, beta in cal(A)$, where $alpha beta$ is the *product*, such that
+    let $bb(F)$ be a field, a *linear algebra* over field $bb(F)$ is a vector space $cal(A)$ over field $bb(F)$ with additional *multiplication* operator for each pair of $alpha, beta in cal(A)$, where $alpha beta$ is the *product*, such that
     + $alpha (beta gamma) = (alpha beta) gamma$
     + $alpha (beta + gamma) = alpha beta + alpha gamma h0 (alpha + beta) gamma = alpha gamma + beta gamma$
-    + $c (alpha beta) = (c alpha) beta = alpha (c beta), h0 c in F$
+    + $c (alpha beta) = (c alpha) beta = alpha (c beta), h0 c in bb(F)$
     if $exists s0 1 in cal(A) suchthat 1 alpha = alpha 1 = alpha, s0 alpha in cal(A)$ then $cal(A)$ is *linear algebra with identity* \
     if $alpha beta = beta alpha h0 alpha, beta in cal(A)$ then $cal(A)$ is *commutative linear algebra*
 ]) <linear_algebra_definition>
@@ -753,7 +765,7 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
 == The Algebra of Polynomials
 
 #definition(title: "polynomial", [
-    let $F[x]$ be a subspace of $F^infinity$ spanned by vectors $1, x, x^2, dots$, then $F[x]$ is *polynomial* over $F$
+    let $bb(F)[x]$ be a subspace of $bb(F)^infinity$ spanned by vectors $1, x, x^2, dots$, then $bb(F)[x]$ is *polynomial* over $bb(F)$
 ]) <polynomial_definition>
 
 let $f$ be polynomial such that $f = sum_(i=0)^infinity c_i x^i$, if $c_n = 1$ and $c_k = 0 s0 forall k > n$ then, $deg f = n$\
@@ -761,7 +773,7 @@ if $deg f = n, s0 c_n = 1$, then $f$ is *monic polynomial* \
 if $deg f = 0$, then $f$ is *scalar polynomial*
 
 #theorem([
-    let $f, g$ be non-zero polynomials over field $F$
+    let $f, g$ be non-zero polynomials over field $bb(F)$
     + $f g$ is non-zero polynomial
     + $deg (f g) = deg f + deg g$
     + $f, g$ be monic polynomial $=> f g$ be monic polynomial
@@ -770,15 +782,15 @@ if $deg f = 0$, then $f$ is *scalar polynomial*
 ]) <polynomial_degree_theorem>
 
 #corollary([
-    the set of all polynomials over field $F$ is a commutative linear algebra
+    the set of all polynomials over field $bb(F)$ is a commutative linear algebra
 ]) <polynomial_linear_algebra_corollary>
 
 #corollary([
-    if $f, g, h in F[x] suchthat f != 0, s0 f g = f h$ then $g = h$
+    if $f, g, h in bb(F)[x] suchthat f != 0, s0 f g = f h$ then $g = h$
 ]) <polynomial_cancelation_corollary>
 
 #definition([
-    let $cal(A)$ be a linear algebra with identity over field $F$, identity denoted as $1$ and set $alpha^0 = 1 s0 forall alpha in cal(A)$ and
+    let $cal(A)$ be a linear algebra with identity over field $bb(F)$, identity denoted as $1$ and set $alpha^0 = 1 s0 forall alpha in cal(A)$ and
     $
         "for each" f = sum_(i=0)^n f_i x^i \
         "define" f(alpha) = sum_(i=0)^n f_i alpha^i
@@ -786,17 +798,17 @@ if $deg f = 0$, then $f$ is *scalar polynomial*
 ]) <polynomial_association_definition>
 
 #theorem([
-    let $cal(A)$ be linear algebra with identity over field $F$, let $f, g in F[x]$, let $alpha in cal(A)$, and $c in F$, then
+    let $cal(A)$ be linear algebra with identity over field $bb(F)$, let $f, g in bb(F)[x]$, let $alpha in cal(A)$, and $c in bb(F)$, then
     + $(c f + g) (alpha) = c f(alpha) + g(alpha)$
     + $(f g) (alpha) = f(alpha) g(alpha)$
 ]) <linear_algebra_polynomial_linearlity_theorem>
 
 == Lagrange Interpolation
 
-let $V in F[x]$ and $F$ be a field \
+let $V in bb(F)[x]$ and $bb(F)$ be a field \
 *Lagrange interpolation forula* is as form
 $
-    f = sum_(i=0)^n f(t_i) P_i, h0 f in V, h0 t_i in F \
+    f = sum_(i=0)^n f(t_i) P_i, h0 f in V, h0 t_i in bb(F) \
     P_i = product_(j != i) ((x - t_j)/(t_i - t_j))
 $
 let $L_i (f) = f(t_i) suchthat L_j (P_i) = P_i (t_j) = delta_(i j)$, then
@@ -809,38 +821,38 @@ $
     )
 $
 
-if $f in F[x]$ is polynomial let polynomial functions denoted as $f^~ in L(F[x], F)$
+if $f in bb(F)[x]$ is polynomial let polynomial functions denoted as $f^~ in L(bb(F)[x], bb(F))$
 
 #definition([
-    let $F$ be a field, let $cal(A), cal(A)^~$ be linear algebras over $F$, then $cal(A) tilde.equiv cal(A)^~$ if there is a bijection $alpha -> alpha^~$ of $cal(A) -> cal(A)^~$ such that
+    let $bb(F)$ be a field, let $cal(A), cal(A)^~$ be linear algebras over $bb(F)$, then $cal(A) tilde.equiv cal(A)^~$ if there is a bijection $alpha -> alpha^~$ of $cal(A) -> cal(A)^~$ such that
     + $(c alpha + d beta)^~ = c alpha^~ + d beta^~$
     + $(alpha beta)^~ = alpha^~ beta^~$
-    for $c, d in F, s0 alpha, beta in cal(A)$\
+    for $c, d in bb(F), s0 alpha, beta in cal(A)$\
     the mapping is called an *isomorphism* of $cal(A)$ onto $cal(A)^~$
 ]) <polynomial_functions_isomorphism_definition>
 
 #theorem([
-    if $F$ contains infinite number of distinct elements,\
-    then $f -> f^~$ is an isomorphism of $F[x] -> L(F[x], F)$
+    if $bb(F)$ contains infinite number of distinct elements,\
+    then $f -> f^~$ is an isomorphism of $bb(F)[x] -> L(bb(F)[x], bb(F))$
 ]) <polynomial_functions_isomorphism_theorem>
 
 == Polynomial Ideals
 
 #lemma([
-    let $f, d in F[x]$ be non-zero, such that $deg d <= deg f$, then $exists g in F[x] suchthat$
+    let $f, d in bb(F)[x]$ be non-zero, such that $deg d <= deg f$, then $exists g in bb(F)[x] suchthat$
     $
         f - d g = 0 s0 or s0 deg(f - d g) < deg f
     $
 ]) <degree_reduce_lemma>
 
 #theorem([
-    let $f, d in F[x], s0 d != 0$ then, $existsunique q, r in F[x]$ where
+    let $f, d in bb(F)[x], s0 d != 0$ then, $existsunique q, r in bb(F)[x]$ where
     + $f = d g + r$
     + $r = 0 s0 or s0 deg r < deg d$
 ]) <polynomial_division_theorem>
 
 #definition(title: "polynomial division", [
-    let $f, d in F[x], s0 d != 0$, let $q in F[x] suchthat f = d q$ then
+    let $f, d in bb(F)[x], s0 d != 0$, let $q in bb(F)[x] suchthat f = d q$ then
     - $d$ *divides* $f$
     - $f$ is *divisible* by $d$
     - $f$ is *multiple* of $d$
@@ -848,28 +860,28 @@ if $f in F[x]$ is polynomial let polynomial functions denoted as $f^~ in L(F[x],
 ]) <polynomial_division_definition>
 
 #corollary([
-    let $f in F[x], s0 c in F$ then $f$ is divisible by $x - c$ iff $f (c) = 0$
+    let $f in bb(F)[x], s0 c in bb(F)$ then $f$ is divisible by $x - c$ iff $f (c) = 0$
 ]) <divisible_corollary>
 
 #definition(title: "root of polynomial", [
-    let $F$ be a field, $c in F, f in F[x]$ then $c$ is a *root* or *zero* of $f$ if $f(c) = 0$
+    let $bb(F)$ be a field, $c in bb(F), f in bb(F)[x]$ then $c$ is a *root* or *zero* of $f$ if $f(c) = 0$
 ]) <polynomial_root_definition>
 
 #corollary([
-    a polynomial $f$ of degree $n$ has at most $n$ roots in $F$ 
+    a polynomial $f$ of degree $n$ has at most $n$ roots in $bb(F)$ 
 ]) <polynomial_root_bound_corollary>
 
 #theorem(title: "Taylor's Formula", [
-    let $F$ be a field of characteristic $0$, $c in F, s0 n in N, s0 n > 0, s0 f in F[x], s0 deg f <= n$ then
+    let $bb(F)$ be a field of characteristic $0$, $c in bb(F), s0 n in N, s0 n > 0, s0 f in bb(F)[x], s0 deg f <= n$ then
     $
         f = sum_(k = 0)^n (D^k f)/(k !) (c) (x - c)^k
     $
 ]) <taylor_formula_theorem>
 
-let $c in F, f in F[x]$, the *multiplicity* of $c$ as a root of $f$ is the largest $r in N suchthat f = (x - c)^r g$ for some $g in F[x]$
+let $c in bb(F), f in bb(F)[x]$, the *multiplicity* of $c$ as a root of $f$ is the largest $r in N suchthat f = (x - c)^r g$ for some $g in bb(F)[x]$
 
 #theorem([
-    let $F$ be a field of characteristic $0$, $f in F[x], deg f <= n, c in F$, $c$ is a root of $f$ of multiplicity  $r$ iff
+    let $bb(F)$ be a field of characteristic $0$, $f in bb(F)[x], deg f <= n, c in bb(F)$, $c$ is a root of $f$ of multiplicity  $r$ iff
     $
         (D^k f)(c) = 0 h0 1 <= k <= r - 1 \
         (D^r)(c) != 0
@@ -877,58 +889,58 @@ let $c in F, f in F[x]$, the *multiplicity* of $c$ as a root of $f$ is the large
 ]) <multiplicity_differentiation_theorem>
 
 #definition(title: "Ideal", [
-    let $F$ be a field, an *ideal* of $F[x]$ is a subspace $M$ such that
+    let $bb(F)$ be a field, an *ideal* of $bb(F)[x]$ is a subspace $M$ such that
     $
-        f g in M h0 forall f in F[x], s0 g in M
+        f g in M h0 forall f in bb(F)[x], s0 g in M
     $
 ]) <ideal_definition>
 
-let $d in F[x]$ then $d F[x]$ is *principal ideal generated by* $d$ \
-let $d_1, dots, d_n in F[x]$ then $d_1 F[x] + dots + d_n F[x]$ is ideal *generated* by $d_1, dots, d_n$
+let $d in bb(F)[x]$ then $d bb(F)[x]$ is *principal ideal generated by* $d$ \
+let $d_1, dots, d_n in bb(F)[x]$ then $d_1 bb(F)[x] + dots + d_n bb(F)[x]$ is ideal *generated* by $d_1, dots, d_n$
 
 #theorem([
-    let $F$ be a field, $M$ be any non-zero ideal in $F[x]$, then $existsunique d in F[x]$ be monic polynomial such that $M$ is principal ideal generated by $d$
+    let $bb(F)$ be a field, $M$ be any non-zero ideal in $bb(F)[x]$, then $existsunique d in bb(F)[x]$ be monic polynomial such that $M$ is principal ideal generated by $d$
 ]) <monic_principal_ideal_theorem>
 
 #corollary([
-    let $F$ be a field, if $p_1, dots, p_n in F[x]$ not all $0$, $existsunique d in F[x]$ be monic where
-    + $d F[x]$ is the ideal generated by $p_1, dots, p_n$
+    let $bb(F)$ be a field, if $p_1, dots, p_n in bb(F)[x]$ not all $0$, $existsunique d in bb(F)[x]$ be monic where
+    + $d bb(F)[x]$ is the ideal generated by $p_1, dots, p_n$
     + $d$ divides each of $p_i$
     + $d$ is divisible by any $g$ that $g$ divides all $p_i$ 
 ]) <monic_principal_ideal_corollary>
 
 #definition(title: "polynomial GCD", [
-    let $F$ be a field, $p_1, dots, p_n in F[x]$ not all $0$ \
-    then monic polynomial $d$ generated by ideal $p_1 F[x] + dots + p_n F[x]$ is called *greatest common divisor* of $p_1, dots, p_n$ \
-    $p_1, dots, p_n$ are *relatively prime* if $d = 1$ or $p_1 F[x] + dots + p_n F[x] = F[x]$
+    let $bb(F)$ be a field, $p_1, dots, p_n in bb(F)[x]$ not all $0$ \
+    then monic polynomial $d$ generated by ideal $p_1 bb(F)[x] + dots + p_n bb(F)[x]$ is called *greatest common divisor* of $p_1, dots, p_n$ \
+    $p_1, dots, p_n$ are *relatively prime* if $d = 1$ or $p_1 bb(F)[x] + dots + p_n bb(F)[x] = bb(F)[x]$
 ]) <polynomial_GCD_definition>
 
 #exercise([
-    + prove if $F$ is a field, then any intersection of ideals of $F[x]$ is a ideal
-    + let $K$ be a subfield of $F$ then prove ideal in $K$ has same monic generator as ideal in $F$
+    + prove if $bb(F)$ is a field, then any intersection of ideals of $bb(F)[x]$ is a ideal
+    + let $K$ be a subfield of $bb(F)$ then prove ideal in $K$ has same monic generator as ideal in $bb(F)$
 ]) <exercise_ideal>
 
 == The Prime Factorization of a Polynomial
 
 #definition(title: "prime and irreducible polynomials", [
-    let $F$ be a field, then $f in F[x]$ is *reducible over* $F$ if $exists g, h in F[x]$ which $deg g >= 1, deg h >= 1$ such that $f = g h$, otherwise $f$ is *irreducible over* $F$ \
-    A non-scalar irreducible polynomial over $F$ is called a *prime polynomial over* $F$, or *prime* in $F[x]$
+    let $bb(F)$ be a field, then $f in bb(F)[x]$ is *reducible over* $bb(F)$ if $exists g, h in bb(F)[x]$ which $deg g >= 1, deg h >= 1$ such that $f = g h$, otherwise $f$ is *irreducible over* $bb(F)$ \
+    A non-scalar irreducible polynomial over $bb(F)$ is called a *prime polynomial over* $bb(F)$, or *prime* in $bb(F)[x]$
 ]) <prime_irreducible_polynomial_definition>
 
 #theorem([
-    let $F$ be a field, $p, f, g in F[x]$, if $p$ is prime, and $p$ divides $f g$ then either $p$ divides $f$ or $p$ divides $g$
+    let $bb(F)$ be a field, $p, f, g in bb(F)[x]$, if $p$ is prime, and $p$ divides $f g$ then either $p$ divides $f$ or $p$ divides $g$
 ]) <prime_divide_factor_theorem>
 
 #corollary([
-    continue by #theref(<prime_divide_factor_theorem>), let $f_1, dots, f_n in F[x]$ and $p$ divides $f_1 dots f_n$ then $p$ divides at least one of $f_1, dots, f_n$
+    continue by #theref(<prime_divide_factor_theorem>), let $f_1, dots, f_n in bb(F)[x]$ and $p$ divides $f_1 dots f_n$ then $p$ divides at least one of $f_1, dots, f_n$
 ]) <prime_divide_factor_corollary>
 
 #theorem([
-    let $F$ be a field, $f in F[x]$ be monic can be factorized into a product of monic prime polynomials in one unordered form
+    let $bb(F)$ be a field, $f in bb(F)[x]$ be monic can be factorized into a product of monic prime polynomials in one unordered form
 ]) <polynomial_prime_factorization_theorem>
 
 #theorem([
-    let $F$ be a field, let $f in F[x]$ be monic and let $f = p_1^(n_1) dots p_k^(n_k)$ be prime factorization and let
+    let $bb(F)$ be a field, let $f in bb(F)[x]$ be monic and let $f = p_1^(n_1) dots p_k^(n_k)$ be prime factorization and let
     $
         f_j = f / p_j^(n_j) = product_(i != j) p_i^(n_i) h0 1 <= j <= k
     $
@@ -936,15 +948,15 @@ let $d_1, dots, d_n in F[x]$ then $d_1 F[x] + dots + d_n F[x]$ is ideal *generat
 ]) <polynomial_factor_exclude_theorem>
 
 #theorem([
-    let $F$ be a field, $f in F[x]$ is product of distinct prime iff $p$ is relatively prime to $p'$ which is the formal derivative
+    let $bb(F)$ be a field, $f in bb(F)[x]$ is product of distinct prime iff $p$ is relatively prime to $p'$ which is the formal derivative
 ]) <formal_derivative_prime_polynomial_theorem>
 
 #definition(title: "algebraically closed", [
-    a field $F$ is *algebraically closed* if $deg p = 1 s0 forall p in F[x]$ be prime
+    a field $bb(F)$ is *algebraically closed* if $deg p = 1 s0 forall p in bb(F)[x]$ be prime
 ]) <algebraically_closed_definition>
 
 #exercise([
-    let $f, g, p in F[x]$ then if $f - g | p$ then $f$ is *congruent to* $g$ *modulo* $p$ denoted as $f equiv q mod p$
+    let $f, g, p in bb(F)[x]$ then if $f - g | p$ then $f$ is *congruent to* $g$ *modulo* $p$ denoted as $f equiv q mod p$
     + prove congruence is equivalence relation, thus is reflexive, symmetric, and transitive
 ]) <exercise_prive_factor_polynomial>
 
@@ -1046,7 +1058,7 @@ $
 
 == Additional Properties of Determinants
 
-let $A in F^(r times r), C in F^(s times s), B in F^(r times s)$ then
+let $A in bb(F)^(r times r), C in bb(F)^(s times s), B in bb(F)^(r times s)$ then
 $
     det mat(A , B; 0, C) = (det A) (det C)
 $
@@ -1076,14 +1088,14 @@ $
 which is the *Cramer's rule*
 
 #remark([
-    + let $A in F^(n times n) mif A^t = -A$ then $A$ is *skew-symmetric* then if $n$ is odd, $det A = 0$
-    + let $A in F^(n times n) mif A A^t = I$ then $A$ is *orthogonal* then $det A = plus.minus 1$
-    + let $A in F^(n times n) mif A A^* = I$ then $A$ is *unitary* then $| det A | = 1$
-    + the *determinant rank* of $A in F^(n times n)$ is the largest $r$ such that $det A_r != 0$ where $A_r in F^(r times r)$ a submatrix of $A$, determinant rank is equal to row/column rank
+    + let $A in bb(F)^(n times n) mif A^t = -A$ then $A$ is *skew-symmetric* then if $n$ is odd, $det A = 0$
+    + let $A in bb(F)^(n times n) mif A A^t = I$ then $A$ is *orthogonal* then $det A = plus.minus 1$
+    + let $A in bb(F)^(n times n) mif A A^* = I$ then $A$ is *unitary* then $| det A | = 1$
+    + the *determinant rank* of $A in bb(F)^(n times n)$ is the largest $r$ such that $det A_r != 0$ where $A_r in bb(F)^(r times r)$ a submatrix of $A$, determinant rank is equal to row/column rank
 ])
 
 #exercise([
-    + let $V$ be a vector space over field $F$, $B in F^(n times n)$, set $L_B : V -> V$ where $L_B(A) = B A$, same, $R_B : V -> V$ where $R_B(A) = A B$ then show that
+    + let $V$ be a vector space over field $bb(F)$, $B in bb(F)^(n times n)$, set $L_B : V -> V$ where $L_B(A) = B A$, same, $R_B : V -> V$ where $R_B(A) = A B$ then show that
         - $det L_B = (det B)^n$
         - $det R_B = (det B)^n$
 ]) <additional_determinant_exercise>
@@ -1206,7 +1218,7 @@ $
 == The Grassman Ring
 
 #definition(title: "exterior product of field", [
-    let $F$ be a field of characteristic $0$, $V$ be a vector space, then define *exterior product* or *wedge product* of $L in M^r (V)$, $U in M^s (V)$ by
+    let $bb(F)$ be a field of characteristic $0$, $V$ be a vector space, then define *exterior product* or *wedge product* of $L in M^r (V)$, $U in M^s (V)$ by
     $
         L and U = 1 / (r ! s !) pi_(r+s) (L times.o M)
     $
@@ -1272,20 +1284,20 @@ $
 == Characteristic Values
 
 #definition(title: "characteristic value", [
-    let $F$ be a field, $V$ be a vector space over $F$, $T in L(V, V)$, $alpha in V$ then a *characterisitc value* of $T$ is $c in F suchthat T alpha = c alpha$
+    let $bb(F)$ be a field, $V$ be a vector space over $bb(F)$, $T in L(V, V)$, $alpha in V$ then a *characterisitc value* of $T$ is $c in bb(F) suchthat T alpha = c alpha$
     + any $alpha in V suchthat T alpha = c alpha$ is called *characteristic vector* of $T$ associated with $c$
     + $W = {alpha in V | alpha T = c alpha}$ is *characteristic space* associated with $c$
 ]) <characteristic_value_definition>
 
 #theorem([
-    let $V$ be a vector space over field $F$, $T in L(V, V)$, $c in F$ then the followings are equivalent
+    let $V$ be a vector space over field $bb(F)$, $T in L(V, V)$, $c in bb(F)$ then the followings are equivalent
     + $c$ is a characteristic value of $T$
     + the operator $(T - c I)$ is singular
     + $det (T - c I) = 0$
 ]) <characteristic_singular_det_equivalent_theorem>
 
 #definition(title: "characteristic value for matrix", [
-    let $A in F^(n times n)$, then a *characteristic value of $A$ in $F$* is $c in F$ such that $(A - c I)$ is singular
+    let $A in bb(F)^(n times n)$, then a *characteristic value of $A$ in $bb(F)$* is $c in bb(F)$ such that $(A - c I)$ is singular
 
     the polynomial $f(x) = det (x I - A)$ is the *characteristic polynomial*
 ]) <characteristic_value_matrix_definition>
@@ -1299,7 +1311,7 @@ $
 ]) <diagonalizable_definition>
 
 #lemma([
-    if $T alpha = c alpha$ then $f(T) alpha = f(c) alpha s0 forall f in F[x]$
+    if $T alpha = c alpha$ then $f(T) alpha = f(c) alpha s0 forall f in bb(F)[x]$
 ]) <polynomial_linear_transform_characteristic_value_lemma>
 
 #lemma([
@@ -1320,7 +1332,7 @@ $
 == Annihilating Polynomials
 
 #definition(title: "minimal polynomial of linear operator", [
-    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$, a *minimal polynomial* for $T$ is the unique monic generator of the ideal of polynomial $p in F[x]$ such that $p$ annihilate $T$
+    let $V$ be a finite-dimensional vector space over field $bb(F)$, let $T in L(V, V)$, a *minimal polynomial* for $T$ is the unique monic generator of the ideal of polynomial $p in bb(F)[x]$ such that $p$ annihilate $T$
 ]) <minimal_polynomial_linear_operator_definition>
 
 #theorem([
@@ -1356,7 +1368,7 @@ $
 #lemma([
     if $W$ be an invariant subspace of $T$, then $W$ is invariant under any polynomial of $T$
 
-    thus $forall alpha in V, s0 S_T (alpha, W)$ is an ideal in $F[x]$
+    thus $forall alpha in V, s0 S_T (alpha, W)$ is an ideal in $bb(F)[x]$
 ]) <invariant_subspace_polynomial_lemma>
 
 #definition(title: "conductor generator", [
@@ -1364,9 +1376,9 @@ $
 ]) <conductor_generator_definition>
 
 #lemma([
-    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$ where minimal polynomial $p$ is 
+    let $V$ be a finite-dimensional vector space over field $bb(F)$, let $T in L(V, V)$ where minimal polynomial $p$ is 
     $
-        p = (x - c_1)^(r_1) dots (x - c_k)^(r_k) h0 c_i in F
+        p = (x - c_1)^(r_1) dots (x - c_k)^(r_k) h0 c_i in bb(F)
     $
     let $W$ be a proper subset of $V$ where $T(W) subset W$ then $exists alpha in V$ sucht that
     + $alpha in.not W$
@@ -1376,15 +1388,15 @@ $
 to be *triangulable* is to be able to find a basis $cal(B)$ for $T in L(V, V)$ such that $[L]_cal(B)$ is a triangular matrix
 
 #theorem([
-    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$, then $T$ is triangulable iff minimal polynomial of $T$ is products of linear polynomials
+    let $V$ be a finite-dimensional vector space over field $bb(F)$, let $T in L(V, V)$, then $T$ is triangulable iff minimal polynomial of $T$ is products of linear polynomials
 ]) <linear_operator_triangulable_linear_poly_theorem>
 
 #corollary([
-    let $F$ be an algebraically closed, then every $A in M_(n times n)(F)$ is triangulable
+    let $bb(F)$ be an algebraically closed, then every $A in M_(n times n)(bb(F))$ is triangulable
 ]) <algebraically_closed_triangulable_corollary>
 
 #theorem([
-    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$, then $T$ is diagonalizable iff minimal polynomial $p$ of $T$ is product of 
+    let $V$ be a finite-dimensional vector space over field $bb(F)$, let $T in L(V, V)$, then $T$ is diagonalizable iff minimal polynomial $p$ of $T$ is product of 
     $
         p = (x - c_1) dots (x - c_k) h0 c_i in K "be distinct"
     $
@@ -1403,11 +1415,11 @@ to be *triangulable* is to be able to find a basis $cal(B)$ for $T in L(V, V)$ s
 ]) <expanding_invariant_commuting_family_lemma>
 
 #theorem([
-    let $V$ be a finite-dimensional vector space over field $F$, let $cal(F)$ be commuting family of triangulable linear operations on $V$, then exists $cal(B)$ be an ordered basis that $forall T in cal(F), s0 [T]_cal(B)$ is triangular matrix
+    let $V$ be a finite-dimensional vector space over field $bb(F)$, let $cal(F)$ be commuting family of triangulable linear operations on $V$, then exists $cal(B)$ be an ordered basis that $forall T in cal(F), s0 [T]_cal(B)$ is triangular matrix
 ]) <simultaneous_triangulation_theorem>
 
 #corollary([
-    let $cal(F)$ be a comuting family of $n times n$ matrices over algebraically closed field $F$, then exists non-singular $P in F^(n times n)$ such that $P^(-1) A P$ is upper-triangular for all $A in cal(F)$
+    let $cal(F)$ be a comuting family of $n times n$ matrices over algebraically closed field $bb(F)$, then exists non-singular $P in bb(F)^(n times n)$ such that $P^(-1) A P$ is upper-triangular for all $A in cal(F)$
 ]) <similar_upper_triangular_algebraically_closed_corollary>
 
 #theorem([
@@ -1491,7 +1503,7 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 == The Primary Decomposition Theorem
 
 #theorem(title: "Primary Decomposition Theorem", [
-    let $T$ be a linear operator finite-dimensional vector space $V$ over field $F$, let $p$ be minimal polynomial of $T$, where $p = p_1^(r_1) dots p_k^(r_k)$, $p_i$ are distinct irreducible monic polynomials over $F$, and $r_i in bb(Z)^+$ \ for $i = 1, dots, k$ then
+    let $T$ be a linear operator finite-dimensional vector space $V$ over field $bb(F)$, let $p$ be minimal polynomial of $T$, where $p = p_1^(r_1) dots p_k^(r_k)$, $p_i$ are distinct irreducible monic polynomials over $bb(F)$, and $r_i in bb(Z)^+$ \ for $i = 1, dots, k$ then
     + $V = W_1 plus.o dots plus.o W_k$
     + $T (W_i) subset W_i h0 i = 1, dots, k$
     + $T_i in L(W_i, W_i)$ where $T_i$ is restriction of $T$ on $W_i$, then minimal polynomial of $T_i$ is $p_i^(r_i)$
@@ -1508,10 +1520,85 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 ]) <nilpotent_definition>
 
 #theorem([
-    let $T$ be a linear operator on finite-dimensional vector space $V$ over field $F$, if minimal polynomial of $T$ decomposes over $F$ into product of linear polynomials, then exists diagonalizable operator $D$ on $V$, and nilpotent operator $N$ on $V$ such that
+    let $T$ be a linear operator on finite-dimensional vector space $V$ over field $bb(F)$, if minimal polynomial of $T$ decomposes over $bb(F)$ into product of linear polynomials, then exists diagonalizable operator $D$ on $V$, and nilpotent operator $N$ on $V$ such that
     + $T = D + N$
     + $D N = N D$
 ]) <diagonalizable_nilpotent_decomposition_theorem>
+
+== Matrix Limits and Markov Chains
+
+#definition(title: "limit of matrix", [
+    let $L, A_1, A_2, dots in bb(F)^(n times m)$ then sequence $A_1, A_2, dots$ *converges* to $L$ or has limit $L$ if
+    $
+        lim_(k -> infinity) (A_k)_(i j) = L_(i j) h0 1 <= i <= n, s0 1 <= j <= m \
+        "or" lim_(k -> infinity) A_k = L
+    $
+]) <matrix_limit_definition>
+
+#theorem([
+    let $A_1, A_2, dots in bb(F)^(n times m)$ be a sequence converges to $L in bb(F)^(n times m)$, then $forall P in bb(F)^(r times n), forall Q in bb(F)^(m times s)$ that
+    $
+        lim_(k -> infinity) P A_k = P L h0 lim_(k -> infinity) A_k Q = L Q
+    $
+]) <matrix_limit_product_theorem>
+
+#theorem([
+    let $bb(F)$ be algebraically closed field, let $A in bb(F)^(n times n)$, let $c_1, dots, c_n$ be characteristic values of $A$ such that $|c_1| = dots = |c_n| = 1$ and $A$ is diagonalizable, then
+    $
+        exists lim_(k -> infinity) A^k
+    $
+]) <matrix_limit_exponent_existence_theorem>
+
+#definition(title: "Markov Chain", [
+    let $M, M' in bb(R)^(n times n)$ of non-negative entries, let $v in bb(R)^n$ of non-negative entries, let $u in bb(R)^n$ of all entries $1$ then
+    + $M$ is *transition matrix* iff $M^t u = u$
+    + $v$ is *probability vector* iff $u^t v = 1$
+    + if $M, M'$ are transition matrix, then $M M'$ are transition matrix
+    + if $M$ is transition matrix, $v$ is probability vector, then $M v$ is probability vector
+
+    stochastic process that can be modeled by transition matrix, as *Markov process*, the possible states in the process is *Markov chain*
+
+    for a state once entered, it will not able to get out is called the *absorbing state*, if for every state exists finite steps probability to enter absorbing state then it is a *absorbing Markov chain*
+]) <markov_chain_definition>
+
+#definition(title: "regular transition matrix", [
+    let $M in bb(R)^(n times n)$ be transition matrix, then $M$ is *regular* if $exists k in bb(N) in.rev M^k$ has only positive entries
+]) <regular_transition_matrix_definition>
+
+#definition(title: "row and column sum of matrix", [
+    let $A in bb(C)^(n times n)$ define
+    $
+        & rho_j (A) = sum_(k = 1)^n |A_(k j)| h0 j = 1, dots, n \
+        & nu_j (A) = sum_(k = 1)^n |A_(j k)| h0 j = 1, dots, n \
+        & rho (A) = sup_(j = 1)^n rho_j h0 nu (A) = sup_(j = 1)^n nu_j \
+        & "each be" bold("row/column sum")
+    $
+]) <row_column_sum_matrix_definition>
+
+#definition(title: "Gerschgorin disk", [
+    let $A in bb(C)^(n times n)$, define *Gerschgorin disk* $C_j = {z in bb(C) | |z - A_(j j)| < rho_j (A)- |A_(j j)|}$
+
+    then every characteristic value is contained in a $C_j$
+]) <gerschgorin_disk_definition>
+
+#corollary([
+    let $A in bb(C)^(n times n)$, let $c_1, dots, c_n$ be characteristic values of $A$ then
+    + $|c_j| <= min(rho(A), nu(A))$
+    + if $A$ is transition matrix then $|c_j| <= 1$ and $exists c_k = 1$
+]) <gerschgorin_disk_corollary>
+
+#theorem([
+    let $A in bb(R)^(n times n)$ be regular transition matrix, then
+    + multiplicity of $x - 1$ is $1$
+    + $lim_(k -> infinity) A^k$ exists
+    + $L = lim_(k -> infinity) A^k$ is transition matrix
+    + $A L = L A = L$
+    + $exists v in bb(R)^n$ be probability vector such that columns of $L = v plus.o dots plus.o v$ which $v$ is associated with characteristic value $1$
+    + $forall w in bb(R)^n$ be probability vector $lim_(k -> infinity) A^k w = v$
+    the probability vector $v$ is the *fixed probability vector* or *stationary vector*
+]) <regular_transition_matrix_theorem>
+
+
 
 #pagebreak()
 
@@ -1520,13 +1607,13 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 == Cyclic Subspaces and Annihilators
 
 #definition(title: "cyclic vector", [
-    let $alpha in V$ be any vector in vector space $V$, the *$T$-cyclic subspace generated by $alpha$* is the subspace $Z(alpha; T)$, where for all $g in F[x], s0 g(T)alpha in Z(alpha; T)$
+    let $alpha in V$ be any vector in vector space $V$, the *$T$-cyclic subspace generated by $alpha$* is the subspace $Z(alpha; T)$, where for all $g in bb(F)[x], s0 g(T)alpha in Z(alpha; T)$
 
     if $Z(alpha; T) = V$ then $alpha$ is *cyclic vector* for $T$
 ]) <cyclic_vector_definition>
 
 #definition(title: "T-annihilator", [
-    let $V$ be a vector space, $alpha in V$, the *$T$-annihilator of $alpha$* is the ideal $M(alpha; T) subset F[x]$ of all $g in F[x]$ that $g(T) alpha = 0$
+    let $V$ be a vector space, $alpha in V$, the *$T$-annihilator of $alpha$* is the ideal $M(alpha; T) subset bb(F)[x]$ of all $g in bb(F)[x]$ that $g(T) alpha = 0$
 
     the unique monic polynomial $p_alpha$ which generates $M(alpha; T)$ is also called *$T$-annihilator of $alpha$*
 ]) <T-annihilator_definition>
@@ -1612,7 +1699,7 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 ]) <rational_form_definition>
 
 #theorem([
-    let $F$ be a field, let $B in F^(n times n)$ then $existsunique A ~ B$ where $A$ is of rational form
+    let $bb(F)$ be a field, let $B in bb(F)^(n times n)$ then $existsunique A ~ B$ where $A$ is of rational form
 ]) <rational_form_uniqueness_theorem>
 
 == The Jordan Form
@@ -1655,37 +1742,37 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
     for a finite-dimensional vector space $V$, with $T in L(V, V)$, having $A$ as Jordan form of $T$, by primary decomposition theorem, $V = W_1 plus.o dots plus.o W_k$, where characteristic polynomial of $T$ is \ $f = (x - c_i)^(d_i) dots (x - c_k)^(d_k)$ then
     + $A_(j, j) = c_i$ which each $c_i$ appears $d_i = dim W_i$ times, $A_(j+1, j) = 1$ others $= 0$
     + $n_i = nullity (T - c_i I)$, and $T$ is diagonalizable iff $n_i = d_i s0 forall i$
-    + $forall i s0 J_1^((i)) in F^(r_i times r_i)$ where $ p = (x - c_1)^(r_1) dots (x - c_k)^(r_k)$ is minimal polynomial of $T$
+    + $forall i s0 J_1^((i)) in bb(F)^(r_i times r_i)$ where $ p = (x - c_1)^(r_1) dots (x - c_k)^(r_k)$ is minimal polynomial of $T$
     + $nullity (T - c_i I)^j = $ number of elementary Jordan block of size $j times j$
 ]) <jordan_form_remark_theorem>
 
 == Computation of Invariant Factors
 
 #definition(title: "row operations and equivalence on polynomials", [
-    let $M in F[x]^(n times m)$ over polynomial of field $F$ be a matrix, then the *elementary row operations* is defined as
-    + $M_(i .) <- c M_(i .) h0 c in F$
-    + $M_(i .) <- M_(i .) + f M_(j .) h0 f in F[x], s0 i != j$
+    let $M in bb(F)[x]^(n times m)$ over polynomial of field $bb(F)$ be a matrix, then the *elementary row operations* is defined as
+    + $M_(i .) <- c M_(i .) h0 c in bb(F)$
+    + $M_(i .) <- M_(i .) + f M_(j .) h0 f in bb(F)[x], s0 i != j$
     + $M_(i .) <- M_(j .) "while" M_(j .) <- M_(i .)$
-    An *elementary matrix* is $M in F[x]^(m times m)$ that can be obtained by a series of row operation from $I_(m times m)$ and let $e$ be row operation function, then $e(M) = e(I) M$
+    An *elementary matrix* is $M in bb(F)[x]^(m times m)$ that can be obtained by a series of row operation from $I_(m times m)$ and let $e$ be row operation function, then $e(M) = e(I) M$
 
-    let $N, M in F[x]^(n times m)$ to said to be *row-equivalent* iff exists finite series of row operation that converts $N$ to $M$ or $M$ to $N$
+    let $N, M in bb(F)[x]^(n times m)$ to said to be *row-equivalent* iff exists finite series of row operation that converts $N$ to $M$ or $M$ to $N$
     $
         M = M_0 <-> M_1 <-> dots <-> M_k = N
     $
-    if $N$ is row-equivalent to $M$ then $N = P M$ where $P in F[x]^(n times n)$ be product of elementary matrix
+    if $N$ is row-equivalent to $M$ then $N = P M$ where $P in bb(F)[x]^(n times n)$ be product of elementary matrix
 
     the *elementary column operations* and *column-equivalence* is defined similarly
 ]) <row_op_eq_poly_definition>
 
 #lemma([
-    let $M in F[x]^(m times n)$ where $M_(. 1) != 0$, let $p = gcd(M_(1 1), dots, M_(m 1))$, then $M$ is row-equivalent to \ $N in F[x]^(m times n)$ where
+    let $M in bb(F)[x]^(m times n)$ where $M_(. 1) != 0$, let $p = gcd(M_(1 1), dots, M_(m 1))$, then $M$ is row-equivalent to \ $N in bb(F)[x]^(m times n)$ where
     $
         N_(. 1) = mat(p; 0; dots.v; 0)
     $
 ]) <row_equivalent_gcd_1st_col_lemma>
 
 #theorem([
-    let $P in F[x]^(m times m)$ then the followings are equivalent
+    let $P in bb(F)[x]^(m times m)$ then the followings are equivalent
     + $P$ is invertible
     + $det(P) != 0 and deg (det(P)) = 0$
     + $P$ is row-equivalent to $I_(m times m)$
@@ -1693,36 +1780,36 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 ]) <invertible_polynomial_matrices_equivalent_theorem>
 
 #corollary([
-    let $M, N in F[x]^(m times n)$ then $N$ is row-equivalent to $M$ iff $exists P in F[x]^(m times m)$ be invertible such that \ $N = P M$
+    let $M, N in bb(F)[x]^(m times n)$ then $N$ is row-equivalent to $M$ iff $exists P in bb(F)[x]^(m times m)$ be invertible such that \ $N = P M$
 ]) <row_eq_invertible_transform_corollary>
 
 #definition(title: "equivalent of polynomial matrices", [
-    let $N, M in F[x]^(m times n)$ is said to be *equivalent* then exists a series of row or column operations that
+    let $N, M in bb(F)[x]^(m times n)$ is said to be *equivalent* then exists a series of row or column operations that
     $
         M = M_0 <-> M_1 <-> dots <-> M_k = N
     $
 ]) <equivalent_polynomial_matrices_definition>
 
 #theorem([
-    let $M, N in F[x]^(m times n)$ then $N$ is equivalent to $M$ iff $exists P in F[x]^(m times m), s0 exists Q in F[x]^(n times n)$ both invertible such that $N = P M Q$
+    let $M, N in bb(F)[x]^(m times n)$ then $N$ is equivalent to $M$ iff $exists P in bb(F)[x]^(m times m), s0 exists Q in bb(F)[x]^(n times n)$ both invertible such that $N = P M Q$
 ]) <equivalent_polynomial_theorem>
 
 #theorem([
-    let $A in F[x]^(n times n)$ and let $p_1, dots, p_r$ be invariant factors of $A$ then $x I - A$ is equivalent to $diag(p_1, dots, p_r, 1, dots, 1)$
+    let $A in bb(F)[x]^(n times n)$ and let $p_1, dots, p_r$ be invariant factors of $A$ then $x I - A$ is equivalent to $diag(p_1, dots, p_r, 1, dots, 1)$
 ]) <invariant_factors_polynomial_eq_diag_theorem>
 
 #definition(title: "Smith Normal Form", [
-    let $N in F[x]^(m times n)$ then $N$ is in *(Smith) normal form* if
+    let $N in bb(F)[x]^(m times n)$ then $N$ is in *(Smith) normal form* if
     + $N_(i j) = 0 h0 forall i != j$
     + $N_(1, 1) | N_(2, 2) | dots | N_(k, k)$ where $k = min(n, m)$
 ]) <smith_normal_form_definition>
 
 #theorem([
-    let $M in F[x]^(m times n)$ then $M$ is equivalent to $N in F[x]^(m times n)$ which is in Smith normal form
+    let $M in bb(F)[x]^(m times n)$ then $M$ is equivalent to $N in bb(F)[x]^(m times n)$ which is in Smith normal form
 ]) <smith_normal_form_equivalent_theorem>
 
 #definition(title: [$delta$ function for polynomial matrices], [
-    let $M in F[x]^(m times n)$ and let $1 <= k <= min(m, n)$, let
+    let $M in bb(F)[x]^(m times n)$ and let $1 <= k <= min(m, n)$, let
     $
         I = (i_1, dots, i_k) h0 1 <= i_1 <= dots <= i_k <= m \
         J = (j_1, dots, j_k) h0 1 <= j_1 <= dots <= j_k <= n \
@@ -1736,11 +1823,11 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 ]) <delta_function_polynomial_matrices_definition>
 
 #theorem([
-    if $M, N in F[x]^(m times n)$ are equivalent then $delta_k (M) = delta_k (N) h0 1 <= k <= min(m, n)$
+    if $M, N in bb(F)[x]^(m times n)$ are equivalent then $delta_k (M) = delta_k (N) h0 1 <= k <= min(m, n)$
 ]) <equivalent_polynomial_matrices_delta_theorem>
 
 #corollary([
-    for each $M in F[x]^(m times n) s0 existsunique N in F[x]^(m times n)$ in Smith normal form, where
+    for each $M in bb(F)[x]^(m times n) s0 existsunique N in bb(F)[x]^(m times n)$ in Smith normal form, where
     $
         N_(k k) = (delta_k (M)) / (delta_(k-1) (M)) h0 1 <= k <= min(n, m)
     $
@@ -1751,7 +1838,7 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 == Semi-Simple Operators
 
 #definition(title: "semi-simple", [
-    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$, to say $T$ is *semi-simple* is to say that $forall W subset V$ be a $T$-invariant vector space, then $exists W' plus.o W = V$ such that $W'$ is $T$-invariant
+    let $V$ be a finite-dimensional vector space over field $bb(F)$, let $T in L(V, V)$, to say $T$ is *semi-simple* is to say that $forall W subset V$ be a $T$-invariant vector space, then $exists W' plus.o W = V$ such that $W'$ is $T$-invariant
 ]) <semi_simple_definition>
 
 #lemma([
@@ -1762,37 +1849,37 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 ]) <invariant_subspace_direct_sum_lemma>
 
 #lemma([
-    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$, if minimal polynomial of $T$ is a prime polynomial over $F$ then $T$ is semi-simple
+    let $V$ be a finite-dimensional vector space over field $bb(F)$, let $T in L(V, V)$, if minimal polynomial of $T$ is a prime polynomial over $bb(F)$ then $T$ is semi-simple
 ]) <prime_minimal_polynomial_semi_simple_lemma>
 
 #theorem([
-    let $V$ be a finite-dimensional vector space over field $F$, let $T in L(V, V)$ then $T$ is semi-simple iff minimal polynomial of $T$ is $p = p_1 dots p_k$ where $p_1, dots, p_k$ are distinct prime polynomials over $F$
+    let $V$ be a finite-dimensional vector space over field $bb(F)$, let $T in L(V, V)$ then $T$ is semi-simple iff minimal polynomial of $T$ is $p = p_1 dots p_k$ where $p_1, dots, p_k$ are distinct prime polynomials over $bb(F)$
 ]) <distinct_prime_polynomial_semi_simple_theorem>
 
 #corollary([
-    let $V$ be a finite-dimensional vector space over algebraically closed field $F$, let $T in L(V, V)$ then $T$ is semi-simple iff $T$ is diagnoalizable
+    let $V$ be a finite-dimensional vector space over algebraically closed field $bb(F)$, let $T in L(V, V)$ then $T$ is semi-simple iff $T$ is diagnoalizable
 ]) <algebraically_closed_semi_simple_diagonalizable_corollary>
 
 #lemma(title: "Taylor's Formula", [
-    let $F$ be a field of characteristic zero, and let $g, h in F[x]$, if $f in F[x] suchthat deg f <= n$ then
+    let $bb(F)$ be a field of characteristic zero, and let $g, h in bb(F)[x]$, if $f in bb(F)[x] suchthat deg f <= n$ then
     $
         f(g) = f(h) + f^((1))(h)(g-h) + (f^((2))(h))/2(g-h)^2 + dots + (f^((n))(h))/(n!)(g-h)^n
     $
 ]) <taylor_formula_polynomial_extension_lemma>
 
 #lemma([
-    let $F subset bb(C)$ be a field, let $f in F[x]$, let $f'$ be formal derivative of $f$, then the followings are equivalent
-    + $f$ is product of distinct prime polynomial over $F$
+    let $bb(F) subset bb(C)$ be a field, let $f in bb(F)[x]$, let $f'$ be formal derivative of $f$, then the followings are equivalent
+    + $f$ is product of distinct prime polynomial over $bb(F)$
     + $gcd(f, f') = 1$
     + $f$ has no repeated roots in $bb(C)$
 ]) <product_distinct_prime_polynomial_equivalent_lemma>
 
 #theorem([
-    let $F subset bb(C)$ be a field, let $V$ be a finite-dimensional vector space over $F$, let $T in L(V, V)$, let $cal(B)$ be an ordered basis of $V$, let $A = [T]_cal(B)$, then $T$ is semi-simple iff $A$ is similar to a diagonal matrix over $bb(C)$
+    let $bb(F) subset bb(C)$ be a field, let $V$ be a finite-dimensional vector space over $bb(F)$, let $T in L(V, V)$, let $cal(B)$ be an ordered basis of $V$, let $A = [T]_cal(B)$, then $T$ is semi-simple iff $A$ is similar to a diagonal matrix over $bb(C)$
 ]) <semi_simple_similar_diagonal_matrix_complex_theorem>
 
 #theorem([
-    let $F subset bb(C)$ be a field, let $V$ be a finite-dimensional vector space over $F$, let $T in L(V, V)$ then $existsunique S$ be semi-simple, $existsunique N$ be nilpotent over $V$ such that
+    let $bb(F) subset bb(C)$ be a field, let $V$ be a finite-dimensional vector space over $bb(F)$, let $T in L(V, V)$ then $existsunique S$ be semi-simple, $existsunique N$ be nilpotent over $V$ such that
     + T = S + N
     + S N = N S
 ]) <semi_simple_nilpotent_decomposition_theorem>
@@ -1804,7 +1891,7 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
 == Inner Products
 
 #definition(title: "inner product", [
-    let field $F$ be $bb(C)$ or $bb(R)$, let $V$ be a vector space over $F$, *inner product* $inpd(., .)$ on $V$ is $(V, V) -> F$, let $alpha, beta, gamma in V$ and let $c in F$ then define
+    let field $bb(F)$ be $bb(C)$ or $bb(R)$, let $V$ be a vector space over $bb(F)$, *inner product* $inpd(., .)$ on $V$ is $(V, V) -> bb(F)$, let $alpha, beta, gamma in V$ and let $c in bb(F)$ then define
     + $inpd(alpha + beta, gamma) = inpd(alpha, gamma) + inpd(beta, gamma)$
     + $inpd(c alpha, beta) = c inpd(alpha, beta)$
     + $inpd(beta, alpha) = overline(inpd(alpha, beta))$
@@ -1812,12 +1899,12 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
     then imply $inpd(alpha, c beta + gamma) = overline(c) inpd(alpha, beta) + inpd(alpha, gamma)$
 ]) <inner_product_definition>
 
-let $F$ be $bb(R)$ or $bb(C)$, let $alpha, beta in F^n$ which $[alpha] = [x_1, dots, x_n]$, $[beta] = [y_1, dots, y_n]$ then \
+let $bb(F)$ be $bb(R)$ or $bb(C)$, let $alpha, beta in bb(F)^n$ which $[alpha] = [x_1, dots, x_n]$, $[beta] = [y_1, dots, y_n]$ then \
 the *standard inner product* is defined as
 $
     inpd(alpha, beta) = sum_(i=1)^n x_i overline(y_i)
 $
-let $X, Y in F^(n times 1)$ and let $Q in F^(n times n)$ be invertible then inner product can also be present as
+let $X, Y in bb(F)^(n times 1)$ and let $Q in bb(F)^(n times n)$ be invertible then inner product can also be present as
 $
     inpd(X, Y) = Y^* Q^* Q X^*
 $
@@ -1845,7 +1932,7 @@ $
 ]) <inner_product_space_definition>
 
 #theorem([
-    if $V$ is an inner product space, then let $alpha, beta in V$ and $c in F$ then
+    if $V$ is an inner product space, then let $alpha, beta in V$ and $c in bb(F)$ then
     + $||c alpha|| = |c| ||alpha||$
     + $||alpha|| > 0 s0 forall alpha != 0$
     + $|inpd(alpha, beta)| <= ||alpha|| ||beta||$ #h0 is the *Cauchy-Schwarz inequality* only equals when $beta = (inpd(beta, alpha))/(||alpha||^2)alpha$
@@ -1938,7 +2025,7 @@ $
 == Linear Functionals and Adjoints
 
 #theorem([
-    let $V$ be finite-dimensional inner product space, let $f in L(V, F)$, then $existsunique beta in V$ such that \
+    let $V$ be finite-dimensional inner product space, let $f in L(V, bb(F))$, then $existsunique beta in V$ such that \
     $f(alpha) = inpd(alpha, beta) s0 forall alpha in V$
 ]) <finie_dimensional_linear_functional_inner_p_theorem>
 
@@ -1960,7 +2047,7 @@ $
 ]) <adjoint_definition>
 
 #theorem([
-    let $V$ be finite-dimensional inner product space, let $T, U in L(V, V)$, let $c in F$ then
+    let $V$ be finite-dimensional inner product space, let $T, U in L(V, V)$, let $c in bb(F)$ then
     + $(T + U)^* = T^* + U^*$
     + $(c T)^* = overline(c) T^*$
     + $(T U)^* = U^* T^*$
@@ -1972,13 +2059,13 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
 == Unitary Operations
 
 #definition(title: "isomorphism of inner product space", [
-    let $V, W$ be inner product space over field $F$, let $T in L(V, W)$, then $T$ *preserves inner product* if $inpd(T alpha, T beta) = inpd(alpha, beta) s0 forall alpha, beta in V$
+    let $V, W$ be inner product space over field $bb(F)$, let $T in L(V, W)$, then $T$ *preserves inner product* if $inpd(T alpha, T beta) = inpd(alpha, beta) s0 forall alpha, beta in V$
 
     an *isomorphism* of $V -> W$ is $T: V -> W$ bijection which preserves inner product, and $V, W$ are *isomporphic*
 ]) <isomorphism_inner_product_space_definition>
 
 #theorem([
-    let $V, W$ be finite-dimensional inner product space over $F$, with $dim V = dim W$, let $T in L(V, W)$ then the followings are equivalent
+    let $V, W$ be finite-dimensional inner product space over $bb(F)$, with $dim V = dim W$, let $T in L(V, W)$ then the followings are equivalent
     + $T$ preserves inner product
     + $T$ is an isomorphism
     + $T$ carries every orthonormal basis of $V$ to an orthonormal basis of $W$
@@ -1986,12 +2073,12 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
 ]) <isomorphism_inner_product_equivalent_theorem>
 
 #corollary([
-    let $V, W$ be finite-dimensional inner product space over $F$ \
+    let $V, W$ be finite-dimensional inner product space over $bb(F)$ \
     then $V, W$ are isomorphic iff $dim V = dim W$
 ]) <isomorphic_inner_dimension_corollary>
 
 #theorem([
-    let $V, W$ be inner product space over $F$, let $T in L(V, W)$, \
+    let $V, W$ be inner product space over $bb(F)$, let $T in L(V, W)$, \
     then $T$ preserves inner product iff $||T alpha|| = ||alpha|| s0 forall alpha in V$
 ]) <preserve_inner_product_same_norm_theorem>
 
@@ -2103,6 +2190,88 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     let $A in bb(C)^(n times n)$ be normal, then $exists P in U(n) suchthat P^(-1) A P$ is diagonal
 ]) <normal_unitary_similar_diagonal_corollary>
 
+== Singular Value Decomposition and Pseudoinverse
+
+#theorem(title: "singular value decomposition", [
+    let $V, W$ be finite-dimensional inner product space of $dim V = n, s0 dim W = m$, let $T in L(V, W)$ such that $rank T = r$, then $exists cal(B) = {alpha_1, dots, alpha_n}, s0 exists cal(B)' = {beta_1, dots, beta_m}$ each be orthonormal basis of $V, W$, then $exists sigma_1 >= dots >= sigma_r$ such that
+    $
+        T(alpha_j) = cases(
+            sigma_j beta_j h0 & 1 <= j <= r,
+            0 & r < j <= n
+        )
+    $
+    then $sigma^2_j$ is the characteristic vectors of $T^* T$
+]) <singular_value_decomposition_definition>
+
+#definition(title: "singular value", [
+    from #theref(<singular_value_decomposition_definition>), the values $sigma_1, dots, sigma_r, dots, sigma_n$ are the *singular value* where $sigma_j = 0$ when $j > r$, define the singular values of matrix $T$ in any basis be the same as singular values of $T$
+]) <singular_value_definition>
+
+#theorem(title: "singular value decomposition for matrix", [
+    let $A in bb(C)^(n times m)$ such that $rank A = r$ with singular values $sigma_1 >= dots >= sigma_r > 0$, then define $Sigma in bb(R)^(n times m)$ as
+    $
+        Sigma_(j k) = cases(
+            sigma_j h0 & j = k <= r,
+            0 & "otherwise"
+        )
+    $
+    then $exists U in bb(C)^(n times n), exists V in bb(C)^(m times m)$ be column matrix of basis $cal(B), cal(B)'$ of #theref(<singular_value_decomposition_definition>) such that
+    $
+        A = U Sigma V^*
+    $
+]) <singular_value_decompostion_matrix_theorem>
+
+#theorem(title: "polar decomposition", [
+    let $A in bb(C)^(n times n)$, then $existsunique U in bb(C)^(n times n)$ be unitary and $existsunique P in bb(C)^(n times n)$ be positive semi-definite such that
+    $
+        A = U P
+    $
+]) <matrix_polar_decomposition_theorem>
+
+#definition(title: "pseudoinverse", [
+    let $V, W$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, W)$, let $L = T|_(coim T)$, then *pseudoinverse* of $T$ denoted as $T^dagger$ is
+    $
+        T^dagger (alpha) = cases(
+            L^(-1) (alpha) h0 & alpha in coim T,
+            0 & alpha in null T
+        )
+    $
+]) <pseudoinverse_definition>
+
+#theorem([
+    let $V, W$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, W)$, \
+    let $cal(B) = {alpha_1, dots, alpha_n}$ be orthonormal basis of $V$, let $cal(B)' = {beta_1, dots, beta_m}$ be orthonormal basis of $W$, let $sigma_1 >= dots >= sigma_r > 0$ be singular values of $T$, then 
+    $
+        T^dagger (beta_j) = cases(
+            1/sigma_j alpha_j h0 & 1 <= j <= r,
+            0 & r < j
+        )
+    $
+]) <pseudoinverse_singular_value_theorem>
+
+#corollary([
+    let $A in bb(C)^(n times m)$ which $rank A = r$ with singular values $sigma_1 >= dots >= sigma_r > 0$ by singular value depomposition $A = U Sigma V^*$, then pseudoinverse of $A$ is $A^dagger = V Sigma^dagger U^*$ such that
+    $
+        Sigma^dagger_(j k) = cases(
+            1 / sigma_j delta_(j k) h0 & 1 <= j <= r,
+            0 & r < j
+        )
+    $
+]) <pseudoinverse_matrix_corollary>
+
+#lemma([
+    let $V, W$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, W)$, then 
+    + $T^dagger T in L(V, coim T)$ be orthogonal projection
+    + $T T^dagger in L(W, range T)$ be orthogonal projection
+]) <pseudoinverse_self_orthogonal_projection_lemma>
+
+#theorem([
+    let $V, W$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, W)$, let $alpha in V, beta in W$ such that $alpha = T^dagger beta$ then
+    + if $exists T^(-1)$ then if $exists alpha' in V in.rev T alpha' = beta => ||alpha|| <= ||alpha'||$ with equal iff $alpha = alpha'$
+    + if $exists.not T^(-1)$ then $||T alpha - beta|| <= ||T alpha' - beta|| s0 forall alpha' in V$ with equal iff $alpha = alpha'$
+]) <pseudoinverse_self_best_approximation_theorem>
+
+
 #pagebreak()
 
 = Operators on Inner Product Spaces
@@ -2110,10 +2279,10 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
 == Forms on Inner Product Spaces
 
 #definition(title: "sesqui-linear form", [
-    a *sesqui-linear form* on real or complex vector space $V$ is function $f : V times V -> F$ such that
+    a *sesqui-linear form* on real or complex vector space $V$ is function $f : V times V -> bb(F)$ such that
     + $f(c alpha + beta, gamma) = c f(alpha, gamma) + f(beta, gamma)$
     + $f(alpha, c beta + gamma) = overline(c) f(alpha, beta) + f(alpha, gamma)$
-    $forall alpha, beta, gamma in V$ and $forall c in F$
+    $forall alpha, beta, gamma in V$ and $forall c in bb(F)$
 ]) <sesqui_linear_form_definition>
 
 #theorem([
@@ -2128,7 +2297,7 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
 ]) <inner_product_space_sesqui_linear_form_corollary>
 
 #definition(title: "matrix of sesqui-linear form in ordered basis", [
-    let $f$ be sesqui-linear form and $cal(B) = {alpha_1, dots, alpha_n}$ be arbitrary ordered basis of $V$, let $A in M_(n times n)(F)$ where $A_(j k) = f(alpha_k, alpha_j)$, then it is called *matrix of $f$ in the ordered basis $cal(B)$*
+    let $f$ be sesqui-linear form and $cal(B) = {alpha_1, dots, alpha_n}$ be arbitrary ordered basis of $V$, let $A in M_(n times n)(bb(F))$ where $A_(j k) = f(alpha_k, alpha_j)$, then it is called *matrix of $f$ in the ordered basis $cal(B)$*
 ]) <matrix_of_sesqui_linear_form_in_ordered_basis_definition>
 
 #theorem([
@@ -2163,15 +2332,15 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
 == Positive Forms
 
 #definition(title: "non-negative/positive sesqui-linear form", [
-    let $f$ be a sesqui-linear form on vector space $V$ over field $bb(C)$ or $bb(R)$, $f$ is *non-negative* if $f$ is Hermitian and $f(alpha, alpha) >= 0 s0 forall alpha in V$, $f$ is *positive* if $f$ is Hermitian and $f(alpha, alpha) > 0 s0 forall alpha != 0$
+    let $f$ be a sesqui-linear form on vector space $V$ over field $bb(C)$ or $bb(R)$, $f$ is *non-negative* or if $f$ is Hermitian and $f(alpha, alpha) >= 0 s0 forall alpha in V$, $f$ is *positive* if $f$ is Hermitian and $f(alpha, alpha) > 0 s0 forall alpha != 0$
 ]) <non_negative_positive_sesqui_linear_form_definition>
 
 #theorem([
-    let $F$ be field of $bb(R)$ or $bb(C)$, let $A in F^(n times n)$, let $g$ be function such that $g(X, Y) = Y^* A X$ is a positive sesqui-linear form on space $F^(n times 1)$ iff $exists P in F^(n times n)$ be invertible such that $A = P^* P$
+    let $bb(F)$ be field of $bb(R)$ or $bb(C)$, let $A in bb(F)^(n times n)$, let $g$ be function such that $g(X, Y) = Y^* A X$ is a positive sesqui-linear form on space $bb(F)^(n times 1)$ iff $exists P in bb(F)^(n times n)$ be invertible such that $A = P^* P$
 ]) <positive_sesqui_linear_form_invertible_adjoint_product_theorem>
 
 #definition(title: "principal minors", [
-    let $A in F^(n times n)$, the *principal minors* of $A$ is $Delta_k (A)$ defined as
+    let $A in bb(F)^(n times n)$, the *principal minors* of $A$ is $Delta_k (A)$ defined as
     $
         Delta_k (A) = det mat(
             A_(1 1), dots, A_(1, k);
@@ -2182,7 +2351,7 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
 ]) <principal_minors_definition>
 
 #lemma([
-    let $A in F^(n times n)$ then the followins are equivalent
+    let $A in bb(F)^(n times n)$ then the followins are equivalent
     + $exists P$ be upper-triangular and $P_(k k) = 1 s0 (1 <= k <= n)$ such that $B = A P$ is lower-triangular
     + $Delta_k (A) != 0 h0 1 <= k <= n$
 ]) <upper_lower_triangular_principal_minors_equivalent_lemma>
@@ -2258,15 +2427,15 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
 ]) <spectral_projection_polynomial_corollary>
 
 #definition(title: "function on diagonalizable normal operator", [
-    let $T$ be diagonalizable normal operator on finite-dimensional inner product space $V$ over field $F$ and \
-    $T = sum_(j = 1)^k c_j E_j$ is the spectral resolution, let $f$ be a function such that domain of $f$ includes spectrum of $T$ with values in $F$, then $f(T) in L(V, V)$ is defined by
+    let $T$ be diagonalizable normal operator on finite-dimensional inner product space $V$ over field $bb(F)$ and \
+    $T = sum_(j = 1)^k c_j E_j$ is the spectral resolution, let $f$ be a function such that domain of $f$ includes spectrum of $T$ with values in $bb(F)$, then $f(T) in L(V, V)$ is defined by
     $
         f(T) = sum_(j = 1)^k f(c_j) E_j
     $
 ]) <function_diagonalizable_normal_operator_definition>
 
 #theorem([
-    let $V$ be finite-dimensional inner product space $V$ over field $F$, let $T in L(V, V)$ be diagonalizable normal operator with spectrum $S$, let $f$ be function having domain contains $S$ with values in $F$, then $f(T)$ is diagonalizable normal operaotr with spectrum $f(S)$
+    let $V$ be finite-dimensional inner product space $V$ over field $bb(F)$, let $T in L(V, V)$ be diagonalizable normal operator with spectrum $S$, let $f$ be function having domain contains $S$ with values in $bb(F)$, then $f(T)$ is diagonalizable normal operaotr with spectrum $f(S)$
 
     let $U : V -> V'$ be unitary, and $T' = U T U^*$ then $S$ is spectrum of $T'$ and $f(T') = U f(T) U^*$
 ]) <dig_normal_function_eq_spectrum_unitary_transform_theorem>
@@ -2311,13 +2480,13 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
 ]) <polar_decomposition_linear_operator_theorem>
 
 #definition(title: "root of family of operators", [
-    let $cal(F)$ be family of operators on inner product space $V$ over field $F$, let $r : cal(F) -> F$ with values in $F$, then $r$ is *root of $cal(F)$* if $exists alpha in V, alpha!= 0 suchthat T alpha = r(T) alpha h0 forall T in cal(F)$
+    let $cal(F)$ be family of operators on inner product space $V$ over field $bb(F)$, let $r : cal(F) -> bb(F)$ with values in $bb(F)$, then $r$ is *root of $cal(F)$* if $exists alpha in V, alpha!= 0 suchthat T alpha = r(T) alpha h0 forall T in cal(F)$
 
-    for $r : cal(F) -> F$, then define $V(r) = {alpha in V | T alpha = r(T) alpha h0 forall T in cal(F)}$
+    for $r : cal(F) -> bb(F)$, then define $V(r) = {alpha in V | T alpha = r(T) alpha h0 forall T in cal(F)}$
 ]) <root_of_family_of_operators_definition>
 
 #theorem([
-    let $cal(F)$ be commutating family of diagonalizable normal operators on finite-dimensional inner product space $V$ over field $F$, then $cal(F)$ on ly have finite numbers of roots, let $r_1, dots, r_k$ be distinct roots of $cal(F)$
+    let $cal(F)$ be commutating family of diagonalizable normal operators on finite-dimensional inner product space $V$ over field $bb(F)$, then $cal(F)$ on ly have finite numbers of roots, let $r_1, dots, r_k$ be distinct roots of $cal(F)$
     + $V(r_i) bot V(r_j) h0 i != j$
     + $V = V(r_1) plus.o dots plus.o V(r_k)$
 ]) <commutative_diagonalizable_normal_family_root_characteristic_vector_set_orthogonal_theorem>
@@ -2344,11 +2513,11 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
 ]) <self_adjoint_algebra_generated_family_definition>
 
 #theorem([
-    let $V$ be finite-dimensional inner product space, let $cal(F)$ be commuting family of diagonalizable normal operators on $V$ over field $F$, let $cal(A)$ be self-adjoint algebra generated by $cal(F) union {I}$, let ${P_1, dots, P_k}$ be resolution of identity defined by $cal(F)$, then $cal(A) = {T in L(V, V) | T = sum_(j = 1)^k c_j P_j}$, let $c_1, dots, c_k in F$
+    let $V$ be finite-dimensional inner product space, let $cal(F)$ be commuting family of diagonalizable normal operators on $V$ over field $bb(F)$, let $cal(A)$ be self-adjoint algebra generated by $cal(F) union {I}$, let ${P_1, dots, P_k}$ be resolution of identity defined by $cal(F)$, then $cal(A) = {T in L(V, V) | T = sum_(j = 1)^k c_j P_j}$, let $c_1, dots, c_k in bb(F)$
 ]) <self_adjoint_family_generated_algebra_theorem>
 
 #corollary([
-    by #theref(<self_adjoint_family_generated_algebra_theorem>), $exists T in cal(A) suchthat (forall T' in cal(A) s0 exists p in F[x] ) in.rev T' = p(T)$
+    by #theref(<self_adjoint_family_generated_algebra_theorem>), $exists T in cal(A) suchthat (forall T' in cal(A) s0 exists p in bb(F)[x] ) in.rev T' = p(T)$
 ]) <self_adjoint_family_genertated_algebra_polynomail_corollary>
 
 == Further Properties on Normal Operators
@@ -2640,4 +2809,21 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     + let $M_1, M_2 in bb(C)^(2 times 2)$, then $U_M_1 = U_M_2 <=> M_2 = c M_1$ for some $c$
     + not all Lorentz transformation is obtained from $U_M$
 ]) <lorentz_group_definition>
+
+== Additional Topics
+
+#definition(title: "Hessian matrix", [
+    let $f : bb(R)^n -> bb(R) suchthat f in C^(3-)$ let $p = (p_1, dots, p_n)$ then define *Hessian matrix* be $H in bb(R)^(n times n)$
+    $
+        H_(i j) (p) = (partial^2 f (p))/((partial x_i) (partial x_j))
+    $
+]) <hessian_matrix_definition>
+
+#theorem(title: "the second derivative test", [
+    let $f : bb(R)^n -> bb(R) suchthat f in C^(3-)$, let $p = (x_1, dots, x_n)$ be critical point of $f$, let $A(p)$ be Hessian of $f$ on $p$ of characteristic values $c_1, dots, c_n$ if $rank A = n$
+    + if $c_i > 0 h0 i = 1, dots, n$ then $f$ has local minimum at $p$
+    + if $c_i < 0 h0 i = 1, dots, n$, then $f$ has local maximum at $p$
+    + if $exists c_i < 0 and exists c_j > 0$, then $f$ has saddle point at $p$
+    + if $rank(A) != n$ and $exists.not c_i < 0 and exists.not c_j > 0$, then the test is inconslusive
+]) <the_second_derivative_test_theorem>
 
