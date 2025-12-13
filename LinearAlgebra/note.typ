@@ -433,8 +433,8 @@ the subspace of $bb(F)^n$ over field $bb(F)$ spanned by row vectors of matrix $A
 ]) <dimension_of_sum_subspaces_theorem>
 
 #exercise([
-    + prove that $A in bb(F)^(m times n)$ has dimension $m n$ by exhibiting its standard basis
-    + prove $V$ a vector space of $bb(Q)$ representing $bb(R)$ is not finite-dimensional 
+    + that $A in bb(F)^(m times n)$ has dimension $m n$ by exhibiting its standard basis
+    + $V$ a vector space of $bb(Q)$ representing $bb(R)$ is not finite-dimensional 
 ]) <exercise_base_dimensions>
 
 == Coordinates
@@ -482,6 +482,10 @@ the subspace of $bb(F)^n$ over field $bb(F)$ spanned by row vectors of matrix $A
     let $A, B in bb(F)^(m times n)$, then $A$ and $B$ are row-equivalent iff they have the same row space
 ]) <same_row_space_row_equivalence_corollary>
 
+#exercise([
+    let $A in bb(F)^(n times m)$ of equation $A X = Y$ then equation has solution iff $rank A$ is equal to rank of augmented matrix of the system
+]) <computation_concerning_subspace_exercise>
+
 #pagebreak()
 
 = Linear Transformations
@@ -518,6 +522,15 @@ an *zero transformation* $0$ is defined by $0 alpha = 0$
 #theorem([
     if $A in bb(F)^(m times n)$ then $ "row" rank A = "column" rank A $
 ]) <row_column_rank_equality_theorem>
+
+#exercise([
+    + let $V = bb(F)^(n times n)$, let $B in V$ be fixed and let $T(A) = A B - B A$ then $T in L(V, V)$
+    + let $V = bb(F)^(n times 1)$, let $W = bb(F)^(m times 1)$, let $A in bb(F)^(m times n)$ be fixed, let $T in L(V, W)$ be $T(X) = A X$ then that $T = 0 <=> A = 0$
+    + let $V$ be $n$-dimensional vector space over field $bb(F)$, let $T in L(V, V)$ such that $null T = range T$ then $n$ is even
+    + let $V$ be vector space, let $T in L(V, V)$ then the followings are equivalent 
+        + $null T inter range T = {0}$
+        + $T(T alpha) = 0 => T alpha = 0$
+]) <linear_transformation_exercise>
 
 == The Algebra of Linear Transformation
 
@@ -564,6 +577,17 @@ for a linear transformation $T$ to be *non-singular* is $T alpha = 0$ implies $a
     + $exists "basis" {alpha_1, dots, alpha_n} "for" V suchthat {T alpha_1, dots, T alpha_n}$ is basis of $W$ 
 ]) <equal_dimension_linear_transform_equivalency_theorem>
 
+#exercise([
+    + let $T in L(bb(F)^n, bb(F)^m)$, let $U in L(bb(F)^m, bb(F)^n)$ then if $n < m => T U$ is not invertible
+    + let $V$ be vector space over field $bb(F)$, let $T in L(V, V)$ such that $T^2 = 0$ then $range T = null T$
+    + let $V$ be finite-dimensional vector space over field $bb(F)$, let $T, U in L(V, V)$ such that $T U = I$ then $T$ is invertible and $U = T^(-1)$, but if $V$ is not finite-dimensional the statement does not hold
+    + let $A in bb(F)^(m times n)$, let $T in L(bb(F)^(n times 1), bb(F)^(m times 1))$ and $T (X) = A X$ then
+        + if $m < n$ then $T$ may be onto but singular
+        + if $m > n$ then $T$ may be non-singular but not onto
+    + let $V$ be finite-dimensional vector space, let $T in L(V, V)$ such that $rank T^2 = rank T$ then $null T inter range T = {0}$
+    + let $V = bb(F)^(m times n)$, let $W = bb(F)^(p times m)$, let $B in bb(F)^(p times m)$ be fixed, let $T in L(V, W)$ be $T (A) = B A$ then $T$ is invertible iff $p = m$ and $B$ is invertible
+]) <algebra_linear_transformation_exercise>
+
 == Isomorphism
 
 if $V, W$ are vector spaces over field $bb(F)$, any bijection transformation $T : V -> W$ is called *isomorphism* of $V$ onto $W$
@@ -571,6 +595,12 @@ if $V, W$ are vector spaces over field $bb(F)$, any bijection transformation $T 
 #theorem([
     every $n$-dimensional vector space over field $bb(F)$ is isomorphic to space $bb(F)^n$
 ]) <n_dimensional_n_tuple_isomorphism_theorem>
+
+#exercise([
+    + $bb(F)^(n times m) tilde.equiv bb(F)^(n m)$
+    + let $V, W$ be finite-dimensional vector space over field $bb(F)$, then $V tilde.equiv W <=> dim V = dim W$
+    + let $V, W$ be vector space over field $bb(F)$, let $U in L(V, W)$ be isomorphism, let $T in L(V, V)$ be \ $T = U T U^(-1)$ then $T$ is isomorphism of $L(V, V) -> L(W, W)$
+]) <linear_transformation_isomorphism_exercise>
 
 == Representation of Transformations by Matrices
 
@@ -603,6 +633,17 @@ $A$ in #theref(<linear_transformation_matrices_representation_existence_theorem>
         [T]_cal(B)' = [U]^(-1)_cal(B) [T]_cal(B) [U]_cal(B)
     $
 ]) <linear_operator_similar_theorem>
+
+#exercise([
+    + let $V$ be finite-dimensional vector space over field $bb(F)$, let $S, T in L(V, V)$, then $exists cal(B), cal(B)'$ be ordered basis such that $[S]_cal(B) = [T]_cal(B)'$ iff $exists U in L(V, V)$ be invertible such that $T = U S U^(-1)$
+    + let $W = bb(F)^(n times 1)$, let $A in bb(F)^(n times n)$ then $A$ defines $L_A in L(W, W)$ be $L_A (X) = A X$, where \ $forall T_W in L(W, W) s0 exists L_A = T_W "for some" A in bb(F)^(n times n)$ \ let $V$ be $n$-dimensional vector space over field $bb(F)$, let $cal(B)$ be ordered basis of $V$, define \ $U alpha = [alpha]_cal(B) s0 forall alpha in V$ then $U$ is an isomorphism $V -> W$, if $T in L(V, V)$ then \ $U T U^(-1) in L(W, W)$ and $U T U^(-1) = L_A$ for some $A in bb(F)^(n times n)$
+    + let $V$ be $n$-dimensional vector space over field $bb(F)$, let $cal(B) = {alpha_1, dots, alpha_n}$ be ordered basis of $V$, then
+        + $exists T in L(V, V) suchthat T alpha_j = alpha_(j + 1) h0 j = 1, dots, n - 1 "and" T alpha_n = 0$ with $A = [T]_cal(B)$
+        + $T^n = 0 and T^(n - 1) != 0$
+        + let $S in L(V, V) suchthat S^n = 0 and S^(n - 1) != 0$ then $exists cal(B)'$ be ordered basis of $V$ such that $[S]_cal(B)' = A$
+        + let $M, N in bb(F)^(n times n) suchthat M^n = N^n = 0 and M^(n - 1) != 0 != N^(n - 1)$ then $M tilde N$
+    + let $V, W$ be finite-dimensional vector space over field $bb(F)$, let $T in L(V, W)$, let $cal(B) = {alpha_1, dots, alpha_n}$ and let $cal(B)' = {beta_1, dots, beta_m}$ be ordered basis of $V, W$, define $E^(p, q) in L(V, W)$ be $E^(p, q)(alpha_i) = delta_(i q) beta_p$ then $E^(p, q)$ for $1 <= p <= m$ and $1 <= q <= n$ form a basis of $L(V, W)$, let $T in L(V, W)$ then $ T = sum_(p = 1)^m sum_(q = 1)^n A_(p q) E^(p, q) $ for some $A in bb(F)^(m times n)$ with $A = [T]_(cal(B) times cal(B)')$
+]) <representation_transformation_matrix_exercise>
 
 == Linear Functionals
 
@@ -658,8 +699,17 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
 ]) <subspace_annihilator_equivilant_corollary>
 
 #exercise([
-    + prove that $(W_1 + W_2)^0 = W_1^0 inter W_2^0$
-    + prove that $(W_1 inter W_2)^0 = W_1^0 + W_2^0$
+    + let $A, B in bb(F)^(n times n)$ then $tr (A B) = tr (B A)$, if $A tilde B$ then $tr A = tr B$
+    + let $A, B in bb(C)^(n times n)$ then $A B - B A = I$ is impossible
+    + let $m, n in bb(Z)^+$, let $bb(F)$ be a field, let $f_1, dots, f_m in L(bb(F)^n, bb(F))$, let $alpha in bb(F)^n$ define $T alpha = (f_1(alpha), dots, f_m (alpha))$ then $T in L(bb(F)^n, bb(F)^m)$ and $forall T in L(F^n, bb(F)^m) s0 exists f_1, dots f_m in.rev T alpha = (f_1(alpha), dots, f_m (alpha))$
+    + let $V$ be finite-dimensional vector space, let $W_1, W_2 subset V$ be subspaces, then
+        + $(W_1 + W_2)^0 = W_1^0 inter W_2^0$
+        + $(W_1 inter W_2)^0 = W_1^0 + W_2^0$
+    + let $V$ be finite-dimensional vector space over field $bb(F)$, let $W subset V$ be subspace, let $f in L(W, bb(F))$, then $exists g in L(V, bb(F)) suchthat g(alpha) = f(alpha) s0 forall alpha in W$
+    + let $bb(F) subset bb(C)$ be field, let $V$ be vector space over $bb(F)$, let $f, g in L(V, bb(F))$ and define $h(alpha) = f(alpha) g(alpha)$, then if $h in L(V, bb(F)) => f = 0 or g = 0$
+    + let $bb(F)$ be field of characteristic $0$, let $V$ be finite-dimensional vecotr space over $bb(F)$, \ let $alpha_1, dots, alpha_m in V$ each not $0$ with $m$ finite, then $exists f in L(V, bb(F)) in.rev f(alpha_i) != 0 h0 i = 1, dots, m$
+    + let $W = bb(F)^(n times n)$ over field $bb(F)$, let $f in L(bb(F)^(n times n), bb(F)) in.rev f(A B) = f(B A) s0 forall A, B in W$, then $exists c in bb(F)$ such that $f = c tr$, if $f(I) = n => f = tr$ is uniquely defined
+    + let $W = bb(F)^(n times n)$ over field $bb(F)$, then subspace $W_0 = {C in bb(F)^(n times n) | A B - B A, s0 A, B in bb(F)^(n times n)}$ is matrices of $0$ trace
 ]) <exercise_linear_functionals>
 
 == The Double Dual
@@ -709,6 +759,14 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
     let $g, f_1, dots, f_r$ be linear functionals on vector space $V$ with null space $N, N_1, dots, N_r$, then $g$ is linear combination of $f_1, dots, f_r$ iff $N_1 inter dots inter N_r subset N$
 ]) <linear_functional_linear_combination_theorem>
 
+#exercise([
+    + let $n in bb(Z)^+$, let $bb(F)$ be a field, let $W = {(x_1, dots, x_n) in bb(F)^n | x_1 + dots + x_n = 0}$, then
+        + $forall f in W^0$ can be written as $f(x_1, dots, x_n) = c_1 x_1 + dots + c_n x_n$
+        + dual $W^*$ can be defined as $f(x_1, dots, x_n) = c_1 x_1 + dots + c_n x_n$ such that $c_1 + dots + c_n = 0$
+    + let $V$ be vector space over field $bb(F)$, let ${g_1, dots, g_r}$ be any basis of $W^0$ then $ W = op(inter, limits: #true)_(i = 1)^r N_g_i $
+    + let $S$ be a set, let $bb(F)$ be a field, let $V(S ; bb(F)) = {f : S -> bb(F)}$ be a vector space, let $W subset V(S ; bb(F))$ be $n$-dimensional subspace, then $exists x_1, dots, x_n in S$ and $exists f_1, dots, f_n in W in.rev f_i (x_i) = delta_(i j)$
+]) <double_dual_exercise>
+
 == The Transpose of a Linear Transformation
 
 #theorem([
@@ -746,6 +804,17 @@ if $V$ is a finite-dimensional vector space with a subspace $W$ such that $dim W
 #theorem([
     let $A in bb(F)^(m times n)$ , then row rank $A = $ column rank $A$
 ]) <row_column_rank_transpose_theorem>
+
+#exercise([
+    + let $V = bb(F)^(n times n)$ over field $bb(F)$, let $B in V$ be fixed, let $T in L(V, V)$ as $T (A) = A B - B A$ and let $f = tr$, then $T^t f = 0$
+    + let $V$ be finite-dimensional vector space over field $bb(F)$, let $T in L(V, V)$, let $c in bb(F)$ and let $alpha in V$ such that $T alpha = c alpha, s0 alpha != 0$ then $exists f in V^* s0 f != 0 in.rev T^t f = c f$
+    + let $A in bb(R)^(m times n)$, then $A = 0 <=> tr (A^t A) = 0$
+    + let $V$ be finite-dimensional vector space over field $bb(F)$, let $T in L(V, V)$ then $Phi : T -> T^t$ is an isomorphism of $L(V, V) -> L(V^*, V^*)$
+    + let $V = bb(F)^(n times n)$ over field $bb(F)$, let $B in V$ be fixed then define $f_B (A) = tr (B^t A)$ then
+        + $f_B in L(V, bb(F))$
+        + $forall f in V^* exists B in bb(F)^(n times n) in.rev f_B = f$
+        + $Phi : B -> f_B$ is an isomorphism of $V -> V^*$
+]) <transpose_linear_transformation_exercise>
 
 #pagebreak()
 
@@ -916,8 +985,8 @@ let $d_1, dots, d_n in bb(F)[x]$ then $d_1 bb(F)[x] + dots + d_n bb(F)[x]$ is id
 ]) <polynomial_GCD_definition>
 
 #exercise([
-    + prove if $bb(F)$ is a field, then any intersection of ideals of $bb(F)[x]$ is a ideal
-    + let $K$ be a subfield of $bb(F)$ then prove ideal in $K$ has same monic generator as ideal in $bb(F)$
+    + if $bb(F)$ is a field, then any intersection of ideals of $bb(F)[x]$ is a ideal
+    + let $K$ be a subfield of $bb(F)$ then ideal in $K$ has same monic generator as ideal in $bb(F)$
 ]) <exercise_ideal>
 
 == The Prime Factorization of a Polynomial
@@ -957,7 +1026,7 @@ let $d_1, dots, d_n in bb(F)[x]$ then $d_1 bb(F)[x] + dots + d_n bb(F)[x]$ is id
 
 #exercise([
     let $f, g, p in bb(F)[x]$ then if $f - g | p$ then $f$ is *congruent to* $g$ *modulo* $p$ denoted as $f equiv q mod p$
-    + prove congruence is equivalence relation, thus is reflexive, symmetric, and transitive
+    + congruence is equivalence relation, thus is reflexive, symmetric, and transitive
 ]) <exercise_prive_factor_polynomial>
 
 #pagebreak()
@@ -2190,88 +2259,6 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     let $A in bb(C)^(n times n)$ be normal, then $exists P in U(n) suchthat P^(-1) A P$ is diagonal
 ]) <normal_unitary_similar_diagonal_corollary>
 
-== Singular Value Decomposition and Pseudoinverse
-
-#theorem(title: "singular value decomposition", [
-    let $V, W$ be finite-dimensional inner product space of $dim V = n, s0 dim W = m$, let $T in L(V, W)$ such that $rank T = r$, then $exists cal(B) = {alpha_1, dots, alpha_n}, s0 exists cal(B)' = {beta_1, dots, beta_m}$ each be orthonormal basis of $V, W$, then $exists sigma_1 >= dots >= sigma_r$ such that
-    $
-        T(alpha_j) = cases(
-            sigma_j beta_j h0 & 1 <= j <= r,
-            0 & r < j <= n
-        )
-    $
-    then $sigma^2_j$ is the characteristic vectors of $T^* T$
-]) <singular_value_decomposition_definition>
-
-#definition(title: "singular value", [
-    from #theref(<singular_value_decomposition_definition>), the values $sigma_1, dots, sigma_r, dots, sigma_n$ are the *singular value* where $sigma_j = 0$ when $j > r$, define the singular values of matrix $T$ in any basis be the same as singular values of $T$
-]) <singular_value_definition>
-
-#theorem(title: "singular value decomposition for matrix", [
-    let $A in bb(C)^(n times m)$ such that $rank A = r$ with singular values $sigma_1 >= dots >= sigma_r > 0$, then define $Sigma in bb(R)^(n times m)$ as
-    $
-        Sigma_(j k) = cases(
-            sigma_j h0 & j = k <= r,
-            0 & "otherwise"
-        )
-    $
-    then $exists U in bb(C)^(n times n), exists V in bb(C)^(m times m)$ be column matrix of basis $cal(B), cal(B)'$ of #theref(<singular_value_decomposition_definition>) such that
-    $
-        A = U Sigma V^*
-    $
-]) <singular_value_decompostion_matrix_theorem>
-
-#theorem(title: "polar decomposition", [
-    let $A in bb(C)^(n times n)$, then $existsunique U in bb(C)^(n times n)$ be unitary and $existsunique P in bb(C)^(n times n)$ be positive semi-definite such that
-    $
-        A = U P
-    $
-]) <matrix_polar_decomposition_theorem>
-
-#definition(title: "pseudoinverse", [
-    let $V, W$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, W)$, let $L = T|_(coim T)$, then *pseudoinverse* of $T$ denoted as $T^dagger$ is
-    $
-        T^dagger (alpha) = cases(
-            L^(-1) (alpha) h0 & alpha in coim T,
-            0 & alpha in null T
-        )
-    $
-]) <pseudoinverse_definition>
-
-#theorem([
-    let $V, W$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, W)$, \
-    let $cal(B) = {alpha_1, dots, alpha_n}$ be orthonormal basis of $V$, let $cal(B)' = {beta_1, dots, beta_m}$ be orthonormal basis of $W$, let $sigma_1 >= dots >= sigma_r > 0$ be singular values of $T$, then 
-    $
-        T^dagger (beta_j) = cases(
-            1/sigma_j alpha_j h0 & 1 <= j <= r,
-            0 & r < j
-        )
-    $
-]) <pseudoinverse_singular_value_theorem>
-
-#corollary([
-    let $A in bb(C)^(n times m)$ which $rank A = r$ with singular values $sigma_1 >= dots >= sigma_r > 0$ by singular value depomposition $A = U Sigma V^*$, then pseudoinverse of $A$ is $A^dagger = V Sigma^dagger U^*$ such that
-    $
-        Sigma^dagger_(j k) = cases(
-            1 / sigma_j delta_(j k) h0 & 1 <= j <= r,
-            0 & r < j
-        )
-    $
-]) <pseudoinverse_matrix_corollary>
-
-#lemma([
-    let $V, W$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, W)$, then 
-    + $T^dagger T in L(V, coim T)$ be orthogonal projection
-    + $T T^dagger in L(W, range T)$ be orthogonal projection
-]) <pseudoinverse_self_orthogonal_projection_lemma>
-
-#theorem([
-    let $V, W$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, W)$, let $alpha in V, beta in W$ such that $alpha = T^dagger beta$ then
-    + if $exists T^(-1)$ then if $exists alpha' in V in.rev T alpha' = beta => ||alpha|| <= ||alpha'||$ with equal iff $alpha = alpha'$
-    + if $exists.not T^(-1)$ then $||T alpha - beta|| <= ||T alpha' - beta|| s0 forall alpha' in V$ with equal iff $alpha = alpha'$
-]) <pseudoinverse_self_best_approximation_theorem>
-
-
 #pagebreak()
 
 = Operators on Inner Product Spaces
@@ -2614,6 +2601,87 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     let $V, V'$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, V)$ be normal, \
     let $T' in L(V', V')$ be normal, then $T$ is unitarily equivalent to $T'$ iff $T$ and $T'$ have same characteristic polynomial
 ]) <same_characteristic_polynomail_unitarily_equivalent_theorem>
+
+== Singular Value Decomposition and Pseudoinverse
+
+#theorem(title: "singular value decomposition", [
+    let $V, W$ be finite-dimensional inner product space of $dim V = n, s0 dim W = m$, let $T in L(V, W)$ such that $rank T = r$, then $exists cal(B) = {alpha_1, dots, alpha_n}, s0 exists cal(B)' = {beta_1, dots, beta_m}$ each be orthonormal basis of $V, W$, then $exists sigma_1 >= dots >= sigma_r$ such that
+    $
+        T(alpha_j) = cases(
+            sigma_j beta_j h0 & 1 <= j <= r,
+            0 & r < j <= n
+        )
+    $
+    then $sigma^2_j$ is the characteristic vectors of $T^* T$
+]) <singular_value_decomposition_definition>
+
+#definition(title: "singular value", [
+    from #theref(<singular_value_decomposition_definition>), the values $sigma_1, dots, sigma_r, dots, sigma_n$ are the *singular value* where $sigma_j = 0$ when $j > r$, define the singular values of matrix $T$ in any basis be the same as singular values of $T$
+]) <singular_value_definition>
+
+#theorem(title: "singular value decomposition for matrix", [
+    let $A in bb(C)^(n times m)$ such that $rank A = r$ with singular values $sigma_1 >= dots >= sigma_r > 0$, then define $Sigma in bb(R)^(n times m)$ as
+    $
+        Sigma_(j k) = cases(
+            sigma_j h0 & j = k <= r,
+            0 & "otherwise"
+        )
+    $
+    then $exists U in bb(C)^(n times n), exists V in bb(C)^(m times m)$ be column matrix of basis $cal(B), cal(B)'$ of #theref(<singular_value_decomposition_definition>) such that
+    $
+        A = U Sigma V^*
+    $
+]) <singular_value_decompostion_matrix_theorem>
+
+#theorem(title: "polar decomposition", [
+    let $A in bb(C)^(n times n)$, then $existsunique U in bb(C)^(n times n)$ be unitary and $existsunique P in bb(C)^(n times n)$ be positive semi-definite such that
+    $
+        A = U P
+    $
+]) <matrix_polar_decomposition_theorem>
+
+#definition(title: "pseudoinverse", [
+    let $V, W$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, W)$, let $L = T|_(coim T)$, then *pseudoinverse* of $T$ denoted as $T^dagger$ is
+    $
+        T^dagger (alpha) = cases(
+            L^(-1) (alpha) h0 & alpha in coim T,
+            0 & alpha in null T
+        )
+    $
+]) <pseudoinverse_definition>
+
+#theorem([
+    let $V, W$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, W)$, \
+    let $cal(B) = {alpha_1, dots, alpha_n}$ be orthonormal basis of $V$, let $cal(B)' = {beta_1, dots, beta_m}$ be orthonormal basis of $W$, let $sigma_1 >= dots >= sigma_r > 0$ be singular values of $T$, then 
+    $
+        T^dagger (beta_j) = cases(
+            1/sigma_j alpha_j h0 & 1 <= j <= r,
+            0 & r < j
+        )
+    $
+]) <pseudoinverse_singular_value_theorem>
+
+#corollary([
+    let $A in bb(C)^(n times m)$ which $rank A = r$ with singular values $sigma_1 >= dots >= sigma_r > 0$ by singular value depomposition $A = U Sigma V^*$, then pseudoinverse of $A$ is $A^dagger = V Sigma^dagger U^*$ such that
+    $
+        Sigma^dagger_(j k) = cases(
+            1 / sigma_j delta_(j k) h0 & 1 <= j <= r,
+            0 & r < j
+        )
+    $
+]) <pseudoinverse_matrix_corollary>
+
+#lemma([
+    let $V, W$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, W)$, then 
+    + $T^dagger T in L(V, coim T)$ be orthogonal projection
+    + $T T^dagger in L(W, range T)$ be orthogonal projection
+]) <pseudoinverse_self_orthogonal_projection_lemma>
+
+#theorem([
+    let $V, W$ be finite-dimensional inner product space over field $bb(F)$, let $T in L(V, W)$, let $alpha in V, beta in W$ such that $alpha = T^dagger beta$ then
+    + if $exists T^(-1)$ then if $exists alpha' in V in.rev T alpha' = beta => ||alpha|| <= ||alpha'||$ with equal iff $alpha = alpha'$
+    + if $exists.not T^(-1)$ then $||T alpha - beta|| <= ||T alpha' - beta|| s0 forall alpha' in V$ with equal iff $alpha = alpha'$
+]) <pseudoinverse_self_best_approximation_theorem>
 
 #pagebreak()
 
