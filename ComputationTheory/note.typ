@@ -362,8 +362,8 @@ DK test example
 
 == Turing Machine
 
-#definition(title: "turing machine", [
-    a *turing machine* (one tape) is defined as $M = (Q, Sigma, Gamma, delta, q_0, q_"accept", q_"reject")$ such that
+#definition(title: "Turing machine", [
+    a *Turing machine* (one tape) is defined as $M = (Q, Sigma, Gamma, delta, q_0, q_"accept", q_"reject")$ such that
     + $Q$ is the finite set of states
     + $Sigma$ is the finite set of input alphebat such that $blank in.not Sigma$
     + $Gamma$ is the finite set of tape alphebat such that $Sigma subset Gamma$ and $blank in Gamma$
@@ -374,7 +374,7 @@ DK test example
 ]) <turing_machine_definition>
 
 #definition(title: "configuration", [
-    let $M = (Q, Sigma, Gamma, delta, q_0, q_i, q_j)$ and $q_0, dots, q_n in Q$ such that $n = i$ or $n = j$, let $*$ denote any alphebat in $Gamma$, then a *configuration* of turing machine is a snapshot of the state and tape in the execution of the turing machine as $* * * * q_k * * * *$ for $q_k$ denote current step, and head looking at index $4$ (0-base)
+    let $M = (Q, Sigma, Gamma, delta, q_0, q_i, q_j)$ and $q_0, dots, q_n in Q$ such that $n = i$ or $n = j$, let $*$ denote any alphebat in $Gamma$, then a *configuration* of Turing machine is a snapshot of the state and tape in the execution of the Turing machine as $* * * * q_k * * * *$ for $q_k$ denote current step, and head looking at index $4$ (0-base)
 
     let input be $w$ then
     + the *start configuration* is $q_0 w$
@@ -384,4 +384,56 @@ DK test example
 
     when the configuration moves through a rule, then the former ones *yeilds* the new configuration
 ]) <turing_machine_configuration_definition>
+
+#definition(title: "Turing-recognizable", [
+    let $L$ be a language, let $w$ be a string, let $M$ be Turing machine, if $L$ is *Turing-recognizable* then $forall w in L s0 exists M suchthat M(w)$ halts and accept, otherwise might reject or loop
+]) <turing_recognizable_definition>
+
+#definition(title: "Turing-decidable", [
+    let $L$ be a language, let $w$ be a string, let $M$ be Turing machine, if $L$ is *Turing-decidable* or *decidable* then $(forall w in L and forall w' in.not L) s0 exists M suchthat M(w)$ halts and accept, and $M(w')$ halts and rejects
+]) <turing_decidable_definition>
+
+== Variants of Turing Machines
+
+#definition(title: "multitape Turing machine", [
+    a *$k$-tape Turing machine* is defined as $M = (Q, Sigma, Gamma, delta, q_0, q_"accept", q_"reject")$ such that
+    + $Q$ is the finite set of states
+    + $Sigma$ is the finite set of input alphebat such that $blank in.not Sigma$
+    + $Gamma$ is the finite set of tape alphebat such that $Sigma subset Gamma$ and $blank in Gamma$
+    + $delta : Q times Gamma^k -> Q times Gamma^k times {L, R, S}^k$ be the state transition function
+    + $q_0 in Q$ is the start state
+    + $q_"accept" in Q$ is the accept state
+    + $q_"reject" in Q$ is the reject state where $q_"reject" != q_"accept"$
+]) <multitape_turing_machine_definition>
+
+#theorem([
+    every multitape Turing machine has an equivalent single-tape Turing machine
+]) <multitape_single_tape_eq_theorem>
+
+#corollary([
+    a language is Turing-recognizable iff some multitape Turing machine recognizes it
+]) <multitape_turing_recognizable_corollary>
+
+#definition(title: "nondeterministic Turing machine", [
+    a *nondeterministic Turing machine* (one tape) is defined as $M = (Q, Sigma, Gamma, delta, q_0, q_"accept", q_"reject")$ such that
+    + $Q$ is the finite set of states
+    + $Sigma$ is the finite set of input alphebat such that $blank in.not Sigma$
+    + $Gamma$ is the finite set of tape alphebat such that $Sigma subset Gamma$ and $blank in Gamma$
+    + $delta : Q times Gamma -> cal(P)(Q times Gamma times {L, R})$ be the state transition function
+    + $q_0 in Q$ is the start state
+    + $q_"accept" in Q$ is the accept state
+    + $q_"reject" in Q$ is the reject state where $q_"reject" != q_"accept"$
+]) <nondeterministic_turing_machine_definition>
+
+#theorem([
+    every nondeterministic Turing machine has an equivalent deterministic Turing machine
+]) <nondeterministic_deterministic_turing_machine_eq_theorem>
+
+#corollary([
+    a language is Turing-recognizable iff some nondeterministic Turing machine recognizes it
+]) <nondeterministic_turing_recognizable_corollary>
+
+#corollary([
+    a language is decidable iff some nondeterministic Turing machine decides it
+]) <nondeterministic_turing_decidable_corollary>
 
