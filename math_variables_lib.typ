@@ -101,3 +101,4 @@
 #let inpd(x, y) = $lr(chevron.l #x | #y chevron.r)$
 #let coim = "coim"
 #let blank = "␣"
+#let tenc(x) = $lr(chevron.l #x chevron.r)$

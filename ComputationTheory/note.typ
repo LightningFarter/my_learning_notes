@@ -437,3 +437,59 @@ DK test example
     a language is decidable iff some nondeterministic Turing machine decides it
 ]) <nondeterministic_turing_decidable_corollary>
 
+#definition(title: "enumerator", [
+    a *enumerator* of Turing machine $M$ is a Turing machine that enumerates all strings that is recognized by $M$
+]) <enumerator_definition>
+
+#theorem([
+    a language is Turing-recognizable iff some enumerator enumerates it
+]) <turing_recognizable_enumerator_eq_theorem>
+
+#definition(title: "encoding of Turing machine", [
+    we denote the *encoding* a Turing machine $M$ as $chevron.l M chevron.r$ a string that describes the Turing machine $M$
+]) <encoding_turing_machine_definition>
+
+#pagebreak()
+
+= Decidablity
+
+#theorem([
+    $A_"DFA" = {chevron.l B, w chevron.r | B "is a DFA that accepts string" w}$ is decidable language
+]) <a_dfa_decidable_theorem>
+
+#theorem([
+    $A_"NFA" = {chevron.l B, w chevron.r | B "is a NFA that accepts string" w}$ is decidable language
+]) <a_nfa_decidable_theorem>
+
+#theorem([
+    $A_"REX" = {chevron.l R, w chevron.r | R "is a regular expression that generates string" w}$ is a decidable language
+]) <a_rex_decidable_theorem>
+
+#theorem([
+    $E_"DFA" = {chevron.l A chevron.r | A "is a DFA and" L(A) = emptyset}$ is a decidable language
+]) <e_dfa_decidable_theorem>
+
+#theorem([
+    $"EQ"_"DFA" = {chevron.l A, B chevron.r | A, B "are DFA and" L(A) = L(B)}$ is a decidable langauge
+]) <eq_dfa_decidable_theorem>
+
+#theorem([
+    $A_"CFG" = {chevron.l G, w chevron.r | G "is CFG that generates string" w}$ is a decidable langauge
+]) <a_cfg_decidable_theorem>
+
+#theorem([
+    $E_"CFG" = {chevron.l G chevron.r | G "is CFG and" L(G) = emptyset}$ is a decidable language
+]) <e_cfg_decidable_theorem>
+
+#theorem([
+    $"EQ"_"CFG" = {chevron.l G, H chevron.r | G, H "is CFG and" L(G) = L(H)}$ is an undecidable language
+]) <eq_cfg_undecidable_theorem>
+
+#theorem([
+    $A_"CFL" = {chevron.l C, w chevron.r | C "is a CFL which generates string" w}$ is a decidable langauge
+]) <a_cfg_decidable_theorem>
+
+#theorem([
+    $A_"TM" = {chevron.l M, w chevron.r | M "is a Turing machine that accepts string" w}$ is an undecidable langauge
+]) <a_tm_undecidable_theorem>
+
