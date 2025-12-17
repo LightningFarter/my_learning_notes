@@ -1120,9 +1120,12 @@ let $d_1, dots, d_n in bb(F)[x]$ then $d_1 bb(F)[x] + dots + d_n bb(F)[x]$ is id
 ]) <determinant_exists_corollary>
 
 #exercise([
-    + let $D$ be $n$-linear alternating function over commutative ring $K$ with identity, then
-        + $D(A) = 0$ if $A$ has an empty row
-        + $D(B) = D(A)$ if $B$ can be obtained by multiple and add row operation
+    let $bb(K)$ be commutative ring with identity, let $bb(F)$ be a field
+    + let $A in bb(K)^(2 times 2)$, define $adj A = mat(A_(2 2), -A_(1 2); -A_(2 1), A_(1 1))$ then
+        + $(adj A) A = A (adj A) = (det A) I$
+        + $det (adj A) = det A$
+        + $adj (A^t) = (adj A)^t$
+    + let $$
 ]) <exercise_determinant_functions>
 
 == Permutations and the Uniqueness of Determinants
