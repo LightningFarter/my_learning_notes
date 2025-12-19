@@ -1125,7 +1125,19 @@ let $d_1, dots, d_n in bb(F)[x]$ then $d_1 bb(F)[x] + dots + d_n bb(F)[x]$ is id
         + $(adj A) A = A (adj A) = (det A) I$
         + $det (adj A) = det A$
         + $adj (A^t) = (adj A)^t$
-    + let $$
+    + let $A in bb(F)^(2 times 2)$, then $A$ is invertible iff $det A != 0$
+    + let $A in bb(F)^(2 times 2) in.rev A^2 = 0$, let $c in bb(F)$, then $det (c I - A) = c^2$
+    + let $bb(F) subset bb(C)$ be field, let $n in bb(Z)^+$, let $j_1, dots, j_n, k_1, dots, k_n in bb(Z)^+$ each less than $n$, let $A in bb(F)^(n times n)$, define $ D(A) = product_(i = 1)^n A_(j_i k_i) $ then $D$ is $n$-linear $<=> j_1, dots, j_n$ are distinct
+    + $det|_(M_(2 times 2)(bb(K)))$ is alternating and $2$-linear over column vectors
+    + let $D in Lambda^n (bb(K))$, let $A, B in bb(K)^(n times n)$, then
+        + one of a columns of $A$ is $0$ $=> D(A) = 0$
+        + $A$ can be obtained by adding scalar multiple of rows to another from $B => D(A) = D(B)$
+    + let $D in Lambda^2 (bb(K))$, let $A, B in bb(K)^(2 times 2)$, then
+        + $D(A) = (det A) D(I)$
+        + $det (A B) = (det A) (det B)$
+    + let $A, B in bb(F)^(n times n)$, let $D : M_(n times n)(bb(F)) -> bb(F) in.rev D(A B) = D(A) D(B) s0 forall A, B$, then either of the two is true
+        + $D(A) = 0 h0 forall A$
+        + $D(I) = 1$ and $(D(A) != 0 <=> A "is invertible")$
 ]) <exercise_determinant_functions>
 
 == Permutations and the Uniqueness of Determinants
@@ -1157,6 +1169,14 @@ $
         det (A B) = (det A) (det B)
     $
 ]) <determinant_product_theorem>
+
+#exercise([
+    let $bb(F)$ be a field
+    + let $A in bb(F)^(n times n)$ be invertible, then $det A != 0$
+    + let $A in bb(F)^(2 times 2)$, then $det (I + A) = 1 + det A <=> tr A = 0$
+    + let $A in bb(F)^(n times n)$, then $det A = A_(1 1) A_(2 2) dots A_(n n)$
+    + let $sigma in S_n, s0 T(x_1, dots, x_n) = (x_sigma_1, dots, x_sigma_n)$ is invertible and $T in L(bb(F)^n, bb(F)^n)$
+])
 
 == Additional Properties of Determinants
 
