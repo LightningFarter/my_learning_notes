@@ -1176,7 +1176,19 @@ $
     + let $A in bb(F)^(2 times 2)$, then $det (I + A) = 1 + det A <=> tr A = 0$
     + let $A in bb(F)^(n times n)$, then $det A = A_(1 1) A_(2 2) dots A_(n n)$
     + let $sigma in S_n, s0 T(x_1, dots, x_n) = (x_sigma_1, dots, x_sigma_n)$ is invertible and $T in L(bb(F)^n, bb(F)^n)$
-])
+    + let $S = {A in bb(F)^(n times n)}$ be a set, let $V = L(S, bb(F))$ be vector space, let $W = L(Lambda^n (bb(F)), bb(F))$ be a set, then $W subset V$ is a subspace
+    + let $T in L(bb(F)^n, bb(F)^n)$, define $D_T (alpha_1, dots, alpha_n) = det( T alpha_1, dots, T alpha_n)$, let $cal(B)$ be ordered basis of $bb(F)^n$, then
+        + $D_T in Lambda^n (bb(F))$
+        + if $exists c in bb(F) in.rev c = det(T epsilon.alt_1, dots, T epsilon.alt_n)$, then $det(T alpha_1, dots, T alpha_n) = c det(alpha_1, dots, alpha_n)$
+        + $det [T]_cal(B) = c$
+    + let $sigma in S_n$, let $A, B in bb(F)^(n times n)$, $A$ with row vectors $alpha_1, dots, alpha_n$, define $sigma(A) in bb(F)^(n times n)$ with row vectors $alpha_sigma_1, dots, alpha_sigma_n$, then
+        + $sigma(A B) = sigma(A) B$ and $sigma(A) = sigma(I) A$
+        + $sigma^(-1)(I) = sigma(I)^(-1)$
+    + let $sigma, tau in S_n$, let $f : S_n -> bb(Z)$ such that $f(sigma tau) = f(sigma) f(tau)$ then $f$ is one of the followings
+        + $f = 0$
+        + $f = 1$
+        + $f = sign$
+]) <permutation_uniqueness_determinant_exercise>
 
 == Additional Properties of Determinants
 
@@ -1209,17 +1221,35 @@ $
 $
 which is the *Cramer's rule*
 
-#remark([
-    + let $A in bb(F)^(n times n) mif A^t = -A$ then $A$ is *skew-symmetric* then if $n$ is odd, $det A = 0$
-    + let $A in bb(F)^(n times n) mif A A^t = I$ then $A$ is *orthogonal* then $det A = plus.minus 1$
-    + let $A in bb(F)^(n times n) mif A A^* = I$ then $A$ is *unitary* then $| det A | = 1$
-    + the *determinant rank* of $A in bb(F)^(n times n)$ is the largest $r$ such that $det A_r != 0$ where $A_r in bb(F)^(r times r)$ a submatrix of $A$, determinant rank is equal to row/column rank
-])
-
 #exercise([
-    + let $V$ be a vector space over field $bb(F)$, $B in bb(F)^(n times n)$, set $L_B : V -> V$ where $L_B(A) = B A$, same, $R_B : V -> V$ where $R_B(A) = A B$ then show that
-        - $det L_B = (det B)^n$
-        - $det R_B = (det B)^n$
+    let $bb(F)$ be a field, let $bb(K)$ be commutative ring with identity
+    + let $A in bb(F)^(n times n)$ be skew-symmetric, then $det A = 0$
+    + let $A in bb(F)^(n times n)$ be orthogonal, then $det A = plus.minus 1$
+    + let $A in bb(F)^(n times n)$ be unitary, then $|det A| = 1$
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $T, U in L(V, V)$, then
+        + $det (T U) = (det T) (det U)$
+        + $T$ is invertible $<=> det T != 0$
+    + let $A in bb(K)^(n times n)$, and $A_j in bb(K)^(r_j times r_j)$ for $j = 1, dots, k$ and $r_j in bb(Z)^+$ such that $
+        A = mat(
+            A_1, 0, dots, 0;
+            0, A_2, dots, 0;
+            dots.v, dots.v, dots.down, dots.v;
+            0, 0, dots, A_k
+        )
+    $ then $det A = (det A_1) (det A_2) dots (det A_k)$
+    + let $V = bb(F)^(n times n)$ a vector space, let $A, B in V$, let $T_B in L(V, V)$ by $T_B (A) = A B - B A$ then $det T_B = 0$
+    + let $A in bb(F)^(n times n)$, then $r times r$ *submatrix* is obtained by deleting $(n - r)$ rows and columns, and the *determinant rank* of $A$ is $max r in.rev sup_((j_1, k_1), dots, (j_r, k_r)) det A[j_1 | k_1] dots [j_r | k_r] != 0$, then \ $rank A = "determinant" rank A$
+    + let $A in bb(F)^(n times n)$, there are at most $n$ distinct $c in bb(F)$ such that $det (c I - A) = 0$
+    + let $A, B in bb(F)^(n times n)$, if $A$ is invertible, then there are at most $n$ scalar $c in bb(f)$ such that $c A + B$ is not invertible
+    + let $V = bb(F)^(n times n)$ be vector space, let $A, B in V$, define $L_B, R_B in L(V, V)$ as $L_B (A) = B A$ and $R_B (A) = A B$, then
+        + $det L_B = (det B)^n$
+        + $det R_B = (det B)^n$
+    + let $V in bb(C)^(n times n)$ be vector space, let $B in V$, define $M_B in L(V, V)$ as $M_B (A) = B A B^*$, then $det M_B = |det B|^(2 n)$ \ let $H = {A in V | A^* = A}$ be a set, then $H$ is vector space over $bb(R)$, define $T_B = B A B^*$ be $T_B in L(H, bb(R))$, then $det T_B = |det B|^(2 n)$
+    + let $A, B, C, D in bb(F)^(n times n)$ be commuting, then $
+        det(mat(
+            A, B; C, D
+        )) = det(A D - B C)
+    $
 ]) <additional_determinant_exercise>
 
 == Modules
@@ -1451,6 +1481,18 @@ $
     + $dim W = dim W_1 + dots + dim W_k$
 ]) <diagonalizable_equivalence_theorem>
 
+#exercise([
+    let $bb(F)$ be a field
+    + let $V$ be $n$-dimensional vector space over $bb(F)$, then characteristic value of $I in V$ is $1$, with characteristic polynomail $(x-1)^n$
+    + let $A in bb(F)^(n times n)$ be triangular, then characteristic values of $A$ are $A_(i i)$ for $i = 1, dots, n$
+    + let $V$ be $n$-dimensional vector space, let $T in L(V, V)$ with $n$ distinct characteristic values, then $T$ is diagonalizable
+    + let $A, B in bb(F)^(n times n)$, if $(I - A B)$ is invertible, then $(I - B A)$ is invertible, and \ $(I - B A)^(-1) = I + B (I - A B)^(-1) A$, also for each $A, B in bb(F)$, $A B$ and $B A$ has same characteristic values in $bb(F)$
+    + let $V = {f : bb(R) -> bb(R)}$ be a vector space, let $T in L(V, V)$ as $
+        (T f)(x) = integral^x_0 f(t) d t
+    $ then $T$ has no characteristic values
+    + let $A in bb(F)^(n times n)$ be diagonal, with characteristic polynomial $(x - c_1)^(d_1) dots (x - c_k)^(d_k)$, let \ $V = {B in bb(F)^(n times n) | B A = A B}$, then $dim V = d_1^2 + dots + d_k^2$
+]) <characteristic_values_exercise>
+
 == Annihilating Polynomials
 
 #definition(title: "minimal polynomial of linear operator", [
@@ -1465,6 +1507,16 @@ $
     let $V$ be a finite-dimensional vector space, $T in L(V, V)$, if $f$ is the characteristic polynomial of $T$ then $f(T) = 0$\
     or say, minimal polynomial divides characteristic polynomial of $T$
 ]) <cayley_hamilton_theroem>
+
+#exercise([
+    let $bb(F)$ be a field
+    + let $V$ be finite-dimensional vector space, then
+        + minimal polynomial of $I$ is $m_T = x - 1$
+        + minimal polynomial of $0$ is $m_0 = 0$
+    + let $V$ be $n$-dimensional vector space, let $T in L(V, V)$, let $exists k in bb(Z)^+ in.rev T^k = 0$ then $T^n = 0$
+    + let $A in bb(F)^(n times n)$ with characteristic polynomail $f = (x - c_1)^(d_1) dots (x - c_k)^(d_k)$ then \ $tr A = c_1 d_1 + dots + c_k d_k$
+    + let $V = bb(F)^(n times n)$ be vector space, let $A, B in V$, let $T in L(V, V)$ as $T(B) = A B$, then $m_T = m_A$
+]) <annihilating_polynomial_exercise>
 
 == Invariant Subspaces
 
@@ -1524,6 +1576,16 @@ to be *triangulable* is to be able to find a basis $cal(B)$ for $T in L(V, V)$ s
     $
 ]) <diagonalizable_minimal_polynomial_factor_theorem>
 
+#exercise([
+    let $bb(F)$ be a field
+    + let $V$ be a vector space over $bb(F)$, let $T in L(V, V)$, let $W subset V$ be invariant subspace for $T$, then $m_(T|_W) | m_T$
+    + let $A in bb(F)^(n times n)$ such that $A^2 = A$, then $A$ is similar to diagonal matrix
+    + let $V$ be $n$-dimensional vector space, let $T in L(V, V)$ be diagonalizable, let $W subset$ be invariant subspace for $T$, then $T|_W$ is diagonalizable
+    + let $V$ be finite-dimensional vector space over field $bb(C)$, let $T in L(V, V)$, then $T$ is diagonalizable iff $exists f in bb(C)[x]$ of distinct roots such that $f(T) = 0$
+    + let $V$ be vector space, let $T in L(V, V)$, if $forall W subset V$ is invariant under $T$, then $T = c I$ for some $c in bb(F)$
+    + let $V$ be finite-dimensional vector space over algebraically closed field $bb(F)$, let $T in L(V, V)$, let $f in bb(F)[x]$, then $c$ is characteristic value of $f(T)$ iff $c = f(t)$ for $t$ be characteristic value of $T$
+]) <invariant_subspace_exercise>
+
 == Simultaneous Triangulation; Simultaneous Diagonalization
 
 #definition(title: "invariant family of operators", [
@@ -1547,6 +1609,12 @@ to be *triangulable* is to be able to find a basis $cal(B)$ for $T in L(V, V)$ s
 #theorem([
     let $cal(F)$ be a comuting family of diagonalizable linear operator on finite-dimensional space $V$, then there exists $cal(B)$ be an ordered basis that $forall T in cal(F), s0 [T]_cal(B)$ is diagonal matrix
 ]) <simultaneous_diagonalization_theorem>
+
+#exercise([
+    let $bb(F)$ be a field
+    + let $V$ be $n$-dimensional vector space, let $T in L(V, V)$ with $n$ distinct characteristic values, then any $U in L(V, V)$ such that $U T = T U => exists f in bb(F)[x] in.rev U = f(T)$
+    + let $V = bb(F)^(n times n)$ be vector space, let $A, B in V$, let $T_A in L(V, V)$ as $T_A (B) = A B - B A$, let \ $cal(F) = {T_A | A in bb(F)^(n times n) "be diagonal"}$ be a family, then $cal(F)$ is simultaneously diagonalizable
+]) <simultaneous_diagonalization_exercise>
 
 == Direct-Sum Decomposition
 
@@ -1592,6 +1660,16 @@ to be *triangulable* is to be able to find a basis $cal(B)$ for $T in L(V, V)$ s
     + $range E_i = W_i$
 ]) <projection_direct_sum_theorem>
 
+#exercise([
+    let $bb(F)$ be a field
+    + let $V$ be finite-dimensional vector space, let $W_1 subset V$ be a subspace, then $exists W_2 subset V$ be subspace such that $V = W_1 plus.o W_2$
+    + let $V$ be finite-dimensional vector space, let $W_1, dots, W_k$ be subspace such that $V = W_1 + dots + W_k$ and $dim V = dim W_1 + dots + dim W_k$ then $V = W_1 plus.o dots plus.o W_k$
+    + let $E$ be projection on $R$ along $N$, then $(I - E)$ is the projection on $N$ along $R$
+    + let $V$ be vector space over $bb(R)$, let $E in L(V, V) in.rev E^2 = E$, then $(I + E)$ is invertible
+    + let $bb(F)$ be subfield of $bb(C)$, let $V$ be finite-dimensional vector space over $bb(F)$, let $E_1, dots, E_k$ be projections on $V$ such that $E_1 + dots + E_k = I$, then $E_i E_j = 0 h0 i!= j$
+    + let $V$ be vector space, let $W_1, dots, W_k$ be subspaces of $V$ such that $V = W_1 plus.o dots plus.o W_k$, and let \ $V_j = W_1 + dots + W_(j - 1) + W_(j + 1) + dots + W_k$, then $V^* = V_1^0 plus.o dots plus.o V_k^0$
+]) <direct_sum_decomposition_exercise>
+
 == Invariant Direct Sums
 
 let $V = W_1 plus.o dots plus.o W_k$ be a vector space, let $cal(B) = (cal(B)_1, dots, cal(B)_k)$ be a basis, where each $cal(B)_i$ be basis of $W_i$, then $A = [T]_cal(B)$ and $A_i = [T_i]_(cal(B)_i)$, $A$ has block form
@@ -1622,6 +1700,17 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
     if exists $k$ distinct scalars $c_1, dots, c_k$ and $k$ non-zero operatiors $E_1, dots, E_k$ satisfy 1, 2, 3 then $T$ is diagonalizable and 4, 5 are satisfied
 ]) <diagonalizable_projection_condition_theorem>
 
+#exercise([
+    + let $V$ be a vector space, let $E$ be projection on $V$, let $T in L(V, V)$, then
+        + $range E$ is invariant under $T <=> E T E = T E$
+        + if both $range E, null E$ are invariant under $T <=> E T = T E$
+    + let $V$ be finite-dimensional vector space, let $T in L(V, V)$, let $R = range T$, let $N = null T$, then $R, N$ are independent iff $V = R plus.o V$
+    + let $V$ be a vector space, let $T in L(V, V)$, let $V = W_1 plus.o dots plus.o W_k$ with each $W_i$ invariant under $T$, let $T_i = T|_W_i$, then
+        + $det T = (det T_1) dots (det T_k)$
+        + $x_T = x_T_1 dots x_T_k$
+        + $m_T = lcm(m_T_1, dots, m_T_k)$
+]) <invariant_direct_sums_exercise>
+
 == The Primary Decomposition Theorem
 
 #theorem(title: "Primary Decomposition Theorem", [
@@ -1646,6 +1735,21 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
     + $T = D + N$
     + $D N = N D$
 ]) <diagonalizable_nilpotent_decomposition_theorem>
+
+#exercise([
+    let $bb(F)$ be a field
+    + let $V = {f in bb(F)[x] | deg f <= n}$ be a vector space, then $D$ on $V$ is nilpotent
+    + let $V$ be finite-dimensional vector space over field $bb(F)$, let $T in L(V, V)$ with characteristic polynomail $f = x_T = (x - c_1)^(d_1) dots (x - c_k)^(d_k)$ and minimal polynomail \ $p = m_T = (x - c_1)^(r_1) dots (x - c_k)^(r_k)$, let $W_i = null (T - c_i I)^(r_i)$, then
+        + $W_i = {alpha in V | (T - c_i I)^m alpha = 0}$ for some $m in bb(Z)^+$
+        + $dim W_i = d_i$
+    + let $V$ be finite-dimensional vector space over $bb(C)$, let $T in L(V, V)$ with $T = D + N$, $D$ is the diagonalizable part, let $g in bb(C)[x]$, then diagonalizable part of $g(T)$ is $g(D)$
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $T in L(V, V) in.rev rank(T) = 1$, then $T$ is either diagonalizable or nilpotent, but not both
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $T in L(V, V)$ commutes with every diagonalizable linear operator on $V$, then $T = c I$ for some $c in bb(F)$
+    + let $V = bb(F)^(n times n)$ be vector space, let $A, B in V$, define $T in L(V, V)$ as $T(B) = A B - B A$, if $A$ is nilpotent matrix, then $T$ is nilpotent operator
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $T in L(V, V)$, let $p = p_1^(r_1) dots p_k^(r_k)$ be minimal polynomail of $T$, let $V = W_1 plus.o dots plus.o W_k$ be primary decomposition of $T$, let $W subset V$ be subspace invariant under $T$, then $W = (W inter W_1) plus.o dots plus.o (W inter W_k)$
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $T in L(V, V)$, then $exists alpha in V in.rev p_alpha = m^T$ which $p_alpha$ generates $M(alpha; T)$
+    + let $V$ be $n$-dimensional vector space, let $N in L(V, V)$ be nilpotent, then $x_N = x^n$
+]) <primary_decomposition_exercise>
 
 == Matrix Limits and Markov Chains
 
