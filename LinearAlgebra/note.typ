@@ -1873,6 +1873,18 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
     if $A$ is a companion matrix of polynomial $p$, then $p$ is both characteristic and minimal polynomial of $A$
 ]) <companion_matrix_polynomail_char_min_corollary>
 
+#exercise([
+    let $bb(F)$ be a field
+    + let $T in L(bb(F)^2, bb(F)^2)$, let $alpha in V, s0 alpha != 0, exists.not c in bb(F) in.rev T alpha = c alpha => Z(alpha; T) = V$, then $T$ has cyclic vector or $T = c I$ for some $c in bb(F)$
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $T in L(V, V)$ such that $T^2$ has cyclic vector, then $T$ has cyclic vector
+    + let $V$ be $n$-dimensional vector space over $bb(F)$, let $N in L(V, V)$ be nilpotent, let $N^(n - 1) != 0$, let \ $alpha in V$ such that $N^(n - 1) alpha != 0$, then $alpha$ is a cyclic vector of $N$
+    + if $A$ is the companion matrix of a monic polynomial $p$, then $p = x_A$
+    + let $V$ be $n$-dimensional vector space, let $T in L(V, V)$ be diagonalizable, then
+        + if $T$ has cyclic vector, then $T$ has $n$ distinct characteristic values
+        + if $T$ has $n$ distinct values and ${alpha_1, dots, alpha_n}$ is a basis of charactieristic vectors for $T$, then \ $alpha = alpha_1 + dots + alpha_n$ is a cyclic vector for $T$
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $T in L(V, V)$ has a cyclic vector, let $U in L(V, V)$ such that $U T = T U$ then $exists f in bb(F)[x] in.rev U = f(T)$
+]) <cyclic_subspaces_annihilators_exercise>
+
 == Cyclic Decopmosition and the Rational Form
 
 #definition(title: "T-admissible", [
@@ -1928,6 +1940,25 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
     let $bb(F)$ be a field, let $B in bb(F)^(n times n)$ then $existsunique A ~ B$ where $A$ is of rational form
 ]) <rational_form_uniqueness_theorem>
 
+#exercise([
+    let $bb(F)$ be field
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $T in L(V, V)$, let $R = range T$, let $N = null T$, then
+        + $exists R'$ be complementary $T$-invariant subspace iff $R inter N = {0}$
+        + if $R inter N = {0}$ then $N$ is the unique $T$-invariant subspace complementary ot $R$
+    + let $V$ be vector space over $bb(F)$, let $T in L(V, V)$, let $f in bb(F)[x]$, let $alpha in V$, let $f alpha = f(T) alpha$, let $V_1, dots, V_k$ be $T$-invariant subspace and $V = V_1 plus.o dots plus.o V_k$ then $f V = f V_1 plus.o dots plus.o f V_k$, then if $alpha, beta in V$ such that $M(alpha; T) = M(beta; T)$ then $M(f alpha; T) = M(f beta; T)$
+    + let $A, B in bb(F)^(3 times 3)$ then $A tilde B <=> x_A = x_B and m_A = m_B$
+    + let $bb(F) subset bb(C)$, let $A, B in bb(F)^(n times n)$ then $A tilde B$ over $bb(C)$ then $A tilde B$ over $bb(F)$
+    + let $A in bb(C)^(n times n)$, if every characteristic value of $A$ is real, then $exists B in bb(R)^(n times n) in.rev A tilde B$
+    + let $V$ be finite-dimensional vector space, let $T in L(V, V)$, then \ $exists alpha in V in.rev (exists f in bb(F)[x] in.rev f(T) alpha = 0 => f(T) = 0)$
+    + let $bb(F) subset bb(C)$, let $A in bb(F)^(n times n)$, let $p = m_A$, let $A in bb(C)^(n times n)$, let $f = m_A$, then $p = f$
+    + let $A in bb(R)^(n times n) in.rev A^2 + I = 0$, then $n = 2k$ for some $k in bb(Z)$, and $A tilde mat(0, -I; I, 0)$
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $T in L(V, V)$ then if $x_T = m_T = p^k$ for some irreducible $p in bb(F)[x]$ and $k in bb(Z)$, then no non-trivial $T$-invariant subspace has complementary $T$-invariant subspace
+    + let $T$ be diagonalizable operator, then every $T$-invariant subspace has a complementary $T$-invariant subspace
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $T in L(V, V)$, then $T$ has cyclic vector iff $forall U in L(V, V) in.rev U T = T U => exists f in bb(F)[x] in.rev U = f(T)$
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $T in L(V, V)$, then $forall alpha in V, s0 alpha != 0$ is a cyclic vector of $T <=> x_T$ is irreducible over $bb(F)$
+    + let $A in bb(R)^(n times n)$, let $T in L(bb(R)^n, bb(R)^n) in.rev [T] = A$, let $U in L(bb(C)^n), bb(C)^n in.rev [U] = A$, if the only subspace invariant under $T$ are $R^n$ and ${0}$ then $U$ is diagonalizable
+]) <cyclic_decomposition_rational_form_exercise>
+
 == The Jordan Form
 
 #definition(title: "elementary Jordan matrix", [
@@ -1971,6 +2002,16 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
     + $forall i s0 J_1^((i)) in bb(F)^(r_i times r_i)$ where $ p = (x - c_1)^(r_1) dots (x - c_k)^(r_k)$ is minimal polynomial of $T$
     + $nullity (T - c_i I)^j = $ number of elementary Jordan block of size $j times j$
 ]) <jordan_form_remark_theorem>
+
+#exercise([
+    let $bb(F)$ be field
+    + let $N_1, N_2 in bb(F)^(3 times 3)$ be nilpotent, then $N_1 tilde N_2 <=> m_N_1 = m_N_2$
+    + let $A, B in bb(F)^(n times n) in.rev x_A = x_B = f = (x - c_1)^(d_1) dots (x - c_k)^(d_k)$ and $m_A = m_B$, if $forall d_i <= 3 => A tilde B$
+    + let $n in bb(Z)^+, s0 n >= 2$, let $N in bb(F)^(n times n) in.rev N^n = 0 and N^(n - 1) != 0$, then $N$ has no square root
+    + let $N_1, N_2 in bb(F)^(6 times 6) in.rev m_N_1 = m_N_2 and nullity N_1 = nullity N_2$ then $N_1 tilde N_2$
+    + let $A, B in bb(F)^(n times n) in.rev x_A = x_B = f = (x - c_1)^(d_1) dots (x - c_k)^(d_k)$ and $m_A = m_B$ with solution spaces $(A - c_i I), (B - c_i I)$ same dimension for each $i$, and $forall d_i <= 6$ then $A tilde B$
+    + let $N in bb(F)^(k times k)$ be elementary nilpotent, then $N^t tilde N$, and $forall A in bb(C)^(n times n) s0 A tilde A^t$
+]) <jordan_from_exercise>
 
 == Computation of Invariant Factors
 
@@ -2061,6 +2102,11 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
     where $N$ is the *normal form* of $M$ and $N_(1 1), dots, N_(k k)$ is the *invariant factors* of $M$ for $k = min(n, m)$
 ]) <polynomial_matrices_unique_normal_form_invariant_corollary>
 
+#exercise([
+    let $bb(F)$ be field
+    + let $V$ be finite-dimensional vector space, let $T in L(V, V)$, let $A = [T]_cal(B)$ for some ordered basis $cal(B)$ of $V$, then $T$ has cyclic vector iff determinant of $(n - 1) times (n - 1)$ submatrices of $x I - A$ are relatively prime
+]) <computation_invariant_factors_exercise>
+
 == Semi-Simple Operators
 
 #definition(title: "semi-simple", [
@@ -2110,6 +2156,13 @@ where $A$ is *direct sum* of $A_1, dots, A_k$
     + S N = N S
 ]) <semi_simple_nilpotent_decomposition_theorem>
 
+#exercise([
+    let $bb(F) subset bb(C)$ be field
+    + let $V$ be vector space over $bb(F)$, let $N in L(V, V)$ be nilpotent, let $f in bb(F)[x]$, then semi-simple part of $f(N) = c I$ for some $c in bb(F)$
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $T in L(V, V)$ be semi-simple, let $f in bb(F)[x]$, then $f(T)$ is semi-simple
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $T in L(V, V)$, let $f in bb(F)[x]$, then $T$ is semi-simple iff when $f(T)$ is nilpotent $=> f(T) = 0$
+]) <semi_simple_operators_exercise>
+
 #pagebreak()
 
 = Inner Product Spaces
@@ -2150,6 +2203,24 @@ where $G$ is the *matrix of inner product in ordered basis* $cal(B)$ then $G = Q
 $
     X^* G X > 0, h0 X != 0
 $
+
+#exercise([
+    + let $V$ be vector space, and $inpd(space, space)$ be inner product on $V$, then
+        + $inpd(0, beta) = 0 h0 forall beta in V$
+        + $inpd(alpha, beta) = 0 h0 forall beta in V => alpha = 0$
+    + let $V$ be vector space over field $bb(F)$, sum of two inner products on $V$ is inner product of $V$, and positive multiple of inner product on $V$ is inner product on $V$
+    + let $A in bb(R)^(2 times 2)$, let $X, Y in bb(R)^(2 times 1)$, let $f_A (X, Y) = Y^t A X$, then $f_A$ is inner product on $bb(R)^(2 times 1) <=> h0 A = A^t, A_(1 1) > 0, A_(2 2) > 0, det A > 0$
+    + let $V$ be vector space over $bb(R)$ or $bb(C)$, with inner product, then the inner product satisfies *parallelogram law* $||alpha + beta||^2 + ||alpha - beta||^2 = 2 ||alpha||^2 + 2 ||beta||^2$
+    + let $V$ be finite-dimensional vector space over field $bb(F)$, let $cal(B) = {alpha_1, dots, alpha_n}$ be basis of $V$, let $inpd(space, space)$ be inner product on $V$, let $c_1, dots, c_n in bb(F)$, then $existsunique alpha in V in.rev inpd(alpha, alpha_j) = c_j$ for all $j$
+    + let $V$ be complex vector space, let $J : V -> V$ be *conjugation* satisfies \ $J(alpha + beta) = J(alpha) + J(beta), s0 J(c alpha) = overline(c) J(alpha), s0 J(J(alpha)) = alpha h0 alpha, beta in V, s0 c in bb(C)$, let $f$ be inner product on $W$, then
+        + $W = {alpha in V | J alpha = alpha}$ is vector space over $bb(R)$
+        + $forall alpha V existsunique beta, gamma in W in.rev alpha = beta + i gamma$
+        + $J alpha = beta - i gamma$ defines a conjugation on $V$ such that $J alpha = alpha$ iff $alpha in W$
+        + $J$ is the only conjugation on $V$ of this property
+        + $existsunique g$ be inner product on $V$ such that $g(alpha, beta) = f(alpha, beta) h0 forall alpha, beta in W$
+        + $g(J alpha, J beta) = g(beta, alpha) h0 forall alpha, beta in V$
+    + let $W$ be finite-dimensional real subspace of complex vector space $V$, then $forall alpha in V existsunique beta, gamma in W in.rev alpha = beta + i gamma <=> forall cal(B)$ be basis of $W$ is also basis of $V$
+]) <inner_product_exercise>
 
 == Inner Product Spaces
 
@@ -2248,6 +2319,25 @@ $
     $
 ]) <bessels_inequality_corollary>
 
+#exercise([
+    + let $V$ be inner product space, let $alpha, beta, gamma in V$, let *distance* be defined as $d(alpha, beta) = ||alpha - beta||$, then 
+        + $d(alpha, beta) >= 0$
+        + $d(alpha, beta) = 0 <=> alpha = beta$
+        + $d(alpha, beta) = d(beta, alpha)$
+        + $d(alpha, beta) <= d(alpha, gamma) + d(gamma, beta)$
+    + let $V$ be inner product space, let $alpha, beta in V$, then $alpha = beta <=> inpd(alpha, gamma) = inpd(beta, gamma) s0 forall gamma in V$
+    + let $V$ be finite-dimensional inner product space, let ${alpha_1, dots, alpha_n}$ be orthonormal basis of $V$, let $alpha, beta in V$, then $
+        inpd(alpha, beta) = sum_(k = 1)^n inpd(alpha, alpha_k) overline(inpd(beta, alpha_k))
+    $
+    + let $W$ be finite-dimensional subspace of inner product space $V$, let $E in L(V, W)$ be orthogonal projection, let $alpha, beta in V$, then $inpd(E alpha, beta) = inpd(alpha, E beta)$
+    + let $V$ be inner product space, let $S subset V$ be subset, then $(S^bot)^bot supset span S$, and when $V$ is finite-dimensional, then $(S^bot)^bot = span S$
+    + let $V$ be finite-dimensional inner product space, let $cal(B) = {alpha_1, dots, alpha_n}$ be orthonormal basis of $V$, let $T in L(V, V)$, let $A = [T]_cal(B)$, then $A_(i j) = inpd(T alpha_j, alpha_i)$
+    + let $V = W_1 plus.o W_2$ be vector space, let $f_1, f_2$ be inner products on $W_1, W_2$ respectively, then $existsunique f$ as inner product on $V$ such that
+        + $W_2 = W_1^bot$
+        + $f(alpha, beta) = f_k (alpha, beta) h0 alpha, beta in W_k, s0 k = 1, 2$
+    + let $V$ be inner product space, let $W subset V$ be finite-dimensional subspace, if $E in L(V, W)$ such that $||E alpha|| <= ||alpha|| h0 forall alpha in V$ then $E$ is the orthogonal projection on $W$
+]) <inner_product_spaces_exercise>
+
 == Linear Functionals and Adjoints
 
 #theorem([
@@ -2281,6 +2371,15 @@ $
 ]) <adjoint_linear_combination_theorem>
 
 for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$, if $T = T^*$ then $T$ is *self-adjoint* or *Hermitian*
+
+#exercise([
+    + let $V$ be finite-dimensional inner product space, let $T in L(V, V)$ be invertible, then $T^*$ is invertible, and $(T^*)^(-1) = (T^(-1))^*$
+    + let $V$ be finite-dimensional inner product space, let $T in L(V, V)$, then $range T^* = (null T)^bot$
+    + let $V$ be inner product space, let $alpha, beta, gamma in V$, then $T alpha = inpd(alpha, beta) gamma$ defines a linear operator on $V$, and has adjoint
+    + let $T, U$ be self-adjoint operator, then $T U$ is self-adjoint iff $T U = U T$
+    + let $V$ be finite-dimensional inner product space, let $E in L(V, V)$ be idempotent, then $E$ is self-adjoint iff $E E^* = E^* E$
+    + let $V$ be finite-dimensional complex inner product space, let $T in L(V, V)$, then $T$ is self-adjoint iff $inpd(T alpha,alpha) in bb(R) h0 forall alpha in V$
+]) <linear_functionals_adjoints_exercise>
 
 == Unitary Operations
 
@@ -2359,6 +2458,37 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     then $B$ is *orthognoally equivalent to* $A$ if $exists P in O(n) suchthat B = P^t A P$
 ]) <unitary_diagonal_equivalent_definition>
 
+#exercise([
+    + let $V = bb(C)^(n times n)$ be space with inner product $inpd(A, B) = tr (A B^*)$, let $M, A in V$, let $T_M in L(V, V)$ defined as $T_M (A) = M A$, then $T_M$ is unitary iff $M$ is unitary matrix
+    + let $V subset bb(C)$ be vector space over $bb(R)$, let $alpha, beta in V$, then
+        + $inpd(alpha, beta) = real(alpha, overline(beta))$ defines an inner product on $V$
+        + $V tilde.equiv bb(R)^2$
+        + for each $gamma in V$, let $M_gamma in L(V, V)$ as $M_gamma (alpha) = gamma alpha$ then $(M_gamma)^* = M_overline(gamma)$
+    + let $V = bb(R)^2$ with standard inner product, let $U in L(V, V)$ be unitary, then $ [U] = mat(cos theta, -sin theta; sin theta, cos theta) "or" mat(cos theta, sin theta; sin theta, -cos theta) $ for some $theta in bb(R)$, $0 <= theta < 2 pi$, let $U_theta$ be the first matrix, then $U_theta^* = U_(-theta)$
+    + let $V$ be finite-dimensional inner product space, let $W subset V$ be subspace, then $V = W plus.o W^bot$, then $forall alpha in V s0 existsunique beta in W s0 existsunique gamma in W^bot s0 in.rev alpha = beta + gamma$, then define $U in L(V, V)$ as $U alpha = beta - gamma$ then $U$ is both self-adjoint and unitary
+    + let $V$ be complex inner product space, let $T in L(V, V)$ be self-adjoint, let $alpha, beta in V$, then
+        + $||alpha + i T alpha|| = ||alpha - i T alpha|| h0 forall alpha in V$
+        + $alpha + i T alpha = beta + i T beta <=> alpha = beta$
+        + $I plus.minus i T$ is non-singular
+        + if $V$ is finite-dimensional, then $U = (I - i T) (I + i T)^(-1)$ which is the *Cayley transform* of $T$
+    + let $theta in bb(R)$, then $mat(cos theta, -sin theta; sin theta, cos theta)$ is unitarily equivalent to $mat(e^(i theta), 0; 0, e^(-i theta))$
+    + let $V$ be finite-dimensional inner product space, let $T in L(V, V)$ be positive, let $p_T$ be inner product on $V$ as $p_T (alpha, beta) = inpd(T alpha, beta)$, let $U in L(V, V)$, and $U^*$ be adjoint respect to $inpd(space, space)$, then $U$ is unitary respect to $p_T <=> T = U^* T U$
+    + let $V$ be finite-dimensional inner product space, let $alpha, beta in V$, let $T_(alpha, beta) in L(V, V)$ as \ $T_(alpha, beta) (gamma) = inpd(gamma, beta) alpha$, then 
+        + $T_(alpha, beta)^* = T_(beta, alpha)$
+        + $tr T_(alpha, beta) = inpd(alpha, beta)$
+        + $T_(alpha, beta) T_(gamma, delta) = T_(alpha, inpd(beta, gamma) delta)$
+    + let $V$ be $n$-dimensional inner product space over field $bb(F)$, then $existsunique T in L(V, V)$ such that \ $||T_(alpha, beta)||^2 = ||alpha||^2 ||beta||^2 h0 forall alpha, beta in V$, and $L(V, V) tilde.equiv bb(F)^(n times n)$
+    + let $V, W$ be finite-dimensional inner product spaces, of $dim V = dim W$, let $U in L(V, W)$ be isomorphism, then
+        + $T -> U T U^(-1)$ is an isomorphism of $L(V, V) -> L(W, W)$
+        + $tr (U T U^(-1)) = tr T h0 forall T in L(V, V)$
+        + $U T_(alpha, beta) U^(-1) = T_(U alpha, U beta)$
+        + $(U T U^(-1))^* = U T^* U^(-1)$
+        + if $L(V, V)$ has inner product $inpd(T_1, T_2) = tr(T_1 T_2^*)$ and similar for $L(W, W)$, then $T -> U T U^(-1)$ is an inner product space isomorphism
+    + let $V$ be inner product space, a *rigid motion* is $T : V -> V$ with $||T alpha - T beta|| = ||alpha - beta||$ for $alpha, beta in V$, then
+        + let $V = bb(R)^2$ with standard inner product, and $T(0) = 0$ then $T$ is linear and unitary
+        + every rigid motion in $bb(R)^2$ is either translation $->$ rotation, or translation $->$ reflection
+]) <unitary_operators_exercise>
+
 == Normal Operators
 
 #definition(title: "normal operator", [
@@ -2415,6 +2545,21 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
 #corollary([
     let $A in bb(C)^(n times n)$ be normal, then $exists P in U(n) suchthat P^(-1) A P$ is diagonal
 ]) <normal_unitary_similar_diagonal_corollary>
+
+#exercise([
+    + let $V$ be finite-dimensional complex inner product space, let $T in L(V, V)$ be normal, then
+        + $T$ is self-adjoint iff every characteristic value are in $bb(R)$
+        + $T$ is positive iff every characteristic value are positive
+        + $T$ is unitary iff every characteristic value $|c| = 1$
+    + let $V$ be finite-dimensional inner product space, let $T in L(V, V)$ be both positive and unitary, then $T = I$
+    + $T$ is normal iff $T = T_1 + i T_2$ where $T_1, T_2$ are self-adjoint operators which commutes
+    + let $A in bb(R)^(n times n)$ be symmetric, then $exists B in bb(R)^(n times n) in.rev B^3 = A$
+    + let $A in bb(C)^(n times n)$ be positive, then $exists B in bb(R)^(n times n) in.rev B^2 = A$
+    + normal and nilpotent operator is $0$
+    + if $T$ is normal operator, then characteristic vectors of $T$ associated with distinct characteristic values are orthogonal
+    + let $V$ be finite-dimensional complex inner product space, let $T in L(V, V)$, then $exists f in bb(C)[x]$ such that $T^* = f(T)$
+    + if $T, U$ be normal commutes, then $T U$ is normal
+]) <normal_operators_exercise>
 
 #pagebreak()
 
@@ -2473,6 +2618,11 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     $
 ]) <principal_axis_theorem_corollary>
 
+#exercise([
+    + let $V$ be inner product space, let $f$ be sesqui-linear form, let $T_f in L(V, V) in.rev f(alpha, beta) = inpd(T alpha, beta)$, then $f$ is *non-degenerate* iff $T_f$ is non-singular
+    + let $V$ be finite-dimensional vector space, let $f$ be sesqui-linear form, then $forall S in L(V, V) s0 exists S'$ such that $f(S alpha, beta) = f(alpha, S' beta) h0 forall alpha, beta in V$
+]) <forms_inner_product_spaces_exercise>
+
 == Positive Forms
 
 #definition(title: "non-negative/positive sesqui-linear form", [
@@ -2524,6 +2674,20 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     + for standard inner product $inpd(X, Y) = Y^t X$ on $bb(R)^(n times 1)$, $T in L(V, V) s0 T : X -> A X$ is positive
     + $exists P in bb(R)^(n times n)$ be invertible such that $A = P^t P$
 ]) <positive_matrix_equivalent_theorem>
+
+#exercise([
+    + let $bb(F)$ be a field, let $A in bb(F)^(n times n)$ be positive, then $A_(i i) > 0 h0 i = 1, dots, n$
+    + let $V$ be finite-dimensional inner product space, let $T, U in L(V, V)$, then denote $T < U$ if $U - T$ is positive, then
+        + $T < U and U < T equiv F_0$
+        + $T < U and U < S -> T < S$
+        + $T < U and 0 < S arrow.not S T < S U$
+    + let $V$ be finite-dimensional inner product space, let $W subset V$ be subspace, let $E in L(V, W)$ be orthogonal projection, then $forall c > 0 s0 c I + E$ is positive
+    + let $A in bb(C)^(n times n)$ be self-adjoint, then $exists c in bb(R) in.rev c I + A$ is positive
+    + let $V$ be finite-dimensional inner product space, let $T, U in L(V, V)$ be positive, then
+        + $T U$ is positive iff $U T = T U$
+        + $(T + U)$ is positive
+        + characteristic value of $S T$ is positive
+]) <positive_forms_exercise>
 
 == More on Forms
 
@@ -2663,6 +2827,53 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
 #corollary([
     by #theref(<self_adjoint_family_generated_algebra_theorem>), $exists T in cal(A) suchthat (forall T' in cal(A) s0 exists p in bb(F)[x] ) in.rev T' = p(T)$
 ]) <self_adjoint_family_genertated_algebra_polynomail_corollary>
+
+#exercise([
+    let $bb(F)$ be a field of $bb(R)$ or $bb(C)$
+    + let $A in bb(F)^(n times n)$ be non-negative, then $exists B in bb(F)^(n times n)$ be non-negative such that $B^2 = A$
+    + let $A in bb(C)^2 in.rev A^* = -A$, let $B = e^A$, then
+        + $det B = e^(tr A)$
+        + $B^* = e^(-A)$
+        + $B$ is unitary
+    + let $V$ be finite-dimensional inner product space, let $T, U in L(V, V)$ be normal and commutes, then $(T + U)$ and $U T$ are normal
+    + let $V$ be finite-dimensional complex inner product space, let $T in L(V, V)$, then the followings are equivalent
+        + $T$ is normal
+        + $||T alpha|| = ||T^* alpha|| h0 forall alpha in V$
+        + $T = T_1 + i T_2 h0 T_1, T_2 in L(V, V)$ be self-adjoint and $T_1 T_2 = T_2 T_1$
+        + $alpha in V s0 c in bb(F) s0 T alpha = c alpha -> T^* alpha = overline(c) alpha$
+        + there is orthonormal basis of $V$ consisting of characteristic vectors of $T$
+        + there is orthonormal basis $cal(B)$ of $V$ such that $[T]_cal(B)$ is diagonal
+        + three is $g in bb(C)[x]$ such that $T^* = g(T)$
+        + $forall W subset V$ be subspace invariant under $T$ is invariant under $T^*$
+        + $existsunique N, U in L(V, V)$ such that $N$ is non-negative, $U$ is unitary, and $T = N U$
+        + $T = c_1 E_1 + dots + c_k E_k$ where $I = E_1 + dots + E_k, s0 E_i E_j = 0$ for $i != j$, and $E_j^2 = E_j = E^*_j$
+    + any commuting family of normal operators on finite-dimensional inner product space generates a commutative self-adjoint algebra of normal operators
+    + let $V$ be finite-dimensional complex inner product space, let $U in L(V, V)$ be unitary such that $U alpha = alpha -> alpha = 0$, let $f(z) = i (1 + z)/(1 - z)$ for $z != 1$, then
+        + $f(U) = i(I + U) (I - U)^(-1)$
+        + $f(U)$ is self-adjoint
+        + $forall T in L(V, V) s0 U = (T - i I) (T + i I)^(-1)$ is unitary and $T = f(U)$
+    + let $V = bb(C)^(n times n)$ be vector space with inner product $inpd(A, B) = tr(A B^*)$, then let $A, B in V$, then let each family below varies $B$ over all diagonal matrices are commutative self-adjoint algebra
+        + $L_B (A) = B A$
+        + $R_B (A) = A B$ in this case $L_B$ is unitarily equivalent to $R_B'$
+        + $T_B (A) = B A - A B$
+    + let $V = bb(C)^(n times n)$ be vector space with inner product $inpd(A, B) = tr(A B^*)$, let $G$ be the group of unitary matrices $V$, let $B, B_1, B_2 in G$, let $C_B in L(V, V)$ as $C_B (A) = B A B^(-1)$, then
+        + $C_B$ is unitary
+        + $C_(B_1 B_2) = C_B_1 C_B_2$
+        + $exists.not U in L(V, V)$ be unitary such that $U L_B U^(-1) = C_B h0 forall B in G$
+    + let $V$ be finite-dimensional inner product space, let $cal(F)$ be family of linear operators on $V$ over field $bb(F)$, let $cal(A)$ be self-adjoint algebra generated by $cal(F)$, then
+        + each root of $cal(A)$ defines a root of $cal(F)$
+        + each root $r$ of $cal(A)$ is multiplicative function on $cal(A)$, let $T, U in cal(A)$, let $c in bb(F)$, then
+            - $r(T U) = r(T) r(U)$
+            - $r(c T + U) = c r(T) + r(U)$
+    + let $V$ be finite-dimensional inner product space, let $cal(F)$ be commuting family of diagonalizable normal operators on $V$, let $cal(A)$ be self-adjoint algebra generated by $cal(F) union {I}$, then each root $s$ of $cal(A)$ is different from $0$ and for each root $r$ of $cal(F)$ exists root $s$ of $cal(A)$ such that $s(T) = r(T) h0 forall T in cal(F)$
+    + let $V$ be finite-dimensional inner product space, let $cal(F)$ be commuting family of diagonalizable normal operators on $V$ over field $bb(F)$, let $cal(A)_0$ be self-adjoint algebra generated by $cal(F)$, let $cal(A)$ be self-adjoint algebra generated by $cal(F) union {I}$, then
+        + $cal(A) = {c I + T | c in bb(F) s0 T in cal(A)_0}$
+        + exists at most $1$ root $r$ of $cal(A)$ such that $r(T) = 0 h0 forall T in cal(A)_0$
+        + if exists root of $cal(A)$ be $0$ in $cal(A)_0$, then let $P_1, dots, P_k$ be resolution of identity defined by $cal(F)$, then it may be index as the way $cal(A)_0$ represented as $
+            T = sum_(j = 2)^k c_j P_j
+        $
+        + $cal(A) = cal(A)_0 <=> $ each root $r$ of $cal(A)$ exists $T in cal(A)_0 in.rev r(T) != 0$
+]) <spectral_theory_exercise>
 
 == Further Properties on Normal Operators
 
@@ -2889,6 +3100,18 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     let $V$ be vector space over field $bb(F)$, let $f in L(V, V, bb(F))$ then $f$ is *non-degenerate* or *non-singular* iff $exists cal(B)$ be ordered basis of $V$ such that $[f]_cal(B)$ is non-singular
 ]) <non_degenerate_bilinear_form_definition>
 
+#exercise([
+    let $bb(F)$ be a field
+    + let $n in bb(Z)^+$, let $V = bb(C)^(n times n)$ be vector space, let $f in L(V, V, bb(C))$ as \ $f(A, B) = n tr(A B) - tr(A) tr(B)$, then
+        + let $V_1 = {A in V | tr A = 0}$, let $f_1 = f|_V_1$, then $f_1$ is non-degenerate
+        + let $V_2 = {A in V | tr A = 0 and A^* = -A}$, let $f_2 = f|_V_2$, then $f_2$ is negative definite
+        + let $W = {A in V | f(A, B) = 0 s0 forall B in V}$, then $W$ is subspace of $V$
+    + let $V$ be finite-dimensional vector space, let $W = {beta in V | f(alpha, beta) = 0 s0 forall alpha in V}$ be subspace, then $rank f = dim V - dim W$
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $f in L(V, V, bb(F))$, let $V_1 subset V$ be subset such that $f|_V_1$ is non-degenerate, then $rank V >= dim V_1$
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $f, g in L(V, V, bb(F))$, let $g$ be non-singular, then $exists T_1, T_2 in L(V, V) in.rev f(alpha, beta) = g(T_1 alpha, beta) = g(alpha, T_2 beta) h0 forall alpha, beta in V$
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $f in L(V, V, bb(F))$, then $exists L_1, L_2 in V^*$ such that $f(alpha, beta) = L_1(alpha) L_2(beta) <=> rank f = 1$
+]) <bilinear_forms_exercise>
+
 == Symmetric Bilinear Forms
 
 #definition(title: "symmetric bilinear form", [
@@ -2934,6 +3157,43 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     $V^bot = {alpha in V | f(alpha, alpha) = 0}$, then the *signature* of $f$ is $dim V^+ - dim V^-$
 ]) <symmetric_bilinear_form_diagonalize_real_theorem>
 
+#exercise([
+    + let $bb(F) subset bb(C)$ be field, let $V$ be finite-dimensional vector space over $bb(F)$, let $S$ be set of symmetric bilinear forms on $V$, let $Q$ be set of all quadratic forms on $V$, then
+        + $S subset L(V, V, bb(F))$ is a subspace
+        + $Q subset {f : V -> bb(F)}$ is a subspace
+        + $Q tilde.equiv S$
+        + let $U in L(V, V)$, let $q in Q$, then $(U^dagger q)(alpha) = q (U alpha)$ defines a quadratic form $U^dagger q$ on $V$
+        + $U^dagger in Q$
+        + $U^dagger$ is invertible iff $U$ is invertible
+    + let $A in bb(R)^(n times n)$, let $q$ be quadratic form on $bb(R)^n$ as $q(x_1, dots, x_n) = sum_(i, j) A_(i j) x_i x_j$, then \ $exists U in L(bb(R)^n, bb(R)^n)$ such that $
+        (U^dagger q)(x_1, dots, x_n) = sum_(i = 1)^n c_i x_i^2
+    $ where $c_i = 1, -1, 0 h0 i = 1, dots, n$
+    + let $f in L(bb(R)^n, bb(R)^n, bb(R))$ be symmetric, then $exists cal(B)$ be ordered basis of $bb(R)$ such that $[f]_cal(B)$ is diagonal
+    + let $V = {A in bb(C)^(2 times 2) | A^* = A}$ be space over $bb(R)$, then
+        + $q(A) = det A$ defines a quadratic form $q$ on $V$
+        + let $W = {A in V | tr A = 0}$, then $f in L(V, V, bb(R))$ determined by $q$ is negative definite on $W$
+    + let $V$ be finite-dimensional vector space over field $bb(F)$, let $f in L(V, V, bb(F))$ be non-degenerate symmetric, then $forall T in L(V, V) s0 exists T' in V in.rev f(T alpha, beta) = f(alpha, T' beta) h0 forall alpha, beta in V$ and
+        - $(T_1 T_2)' = T'_2 T'_1$
+        - $(c_1 T_1 + c_2 T_2)' = c_1 T'_1 + c_2 T'_2$
+        - $(T')' = T$
+    + let $V$ be finite-dimensional vector space over field $bb(F)$, let $f in L(V, V, bb(f))$ be non-degenerate symmetric, associate $f$ with $L_f$ as isomorphism of $V tilde.equiv V^*$, then for each $cal(B) = {alpha_1, dots, alpha_n}$ be basis of $V$, $existsunique cal(B)' = {alpha'_1, dots, alpha'_n}$ be basis of $V$ such that $f(alpha_i, alpha'_j) = delta_(i j)$, and $forall alpha in V$ that $
+        alpha = sum_(i = 1)^n f(alpha, alpha'_i) alpha_i = sum_(i = 1)^n f(alpha_i, alpha) alpha'_i
+    $ let $T, T' in L(V, V)$, let $[f]_cal(B) = A$, then
+        + $[T']_cal(B)' = [T]^t_cal(B)$
+        + $tr T = tr (T') = sum_i f(T alpha_i, alpha'_i)$
+        + $alpha'_i = sum_j (A^(-1))_(i j) alpha_j = sum_j (A^(-1))_(j i) alpha_j$
+    + let $bb(F)$ be a field, let $V = bb(F)^(n times 1)$, let $A in bb(F)^(n times n)$ be invertible, let $f in L(V, V, bb(F))$ as $f(X, Y) = X^t A Y$, let $P in bb(F)^(n times n)$, let $cal(B)$ be basis of $V$ of column $P$, let $cal(B)'$ defined similar, then $cal(B)'$ consists of columns of $A^(-1) (P^t)^(-1)$
+    + let $V$ be finite-dimensional vector space over field $bb(F)$, let $f in L(V, V, bb(F))$, let $W subset V$ be subspace, let $W^bot = {alpha in V | f(alpha, beta) = 0 h0 forall beta in V}$, then
+        + $W^bot$ is a subspace
+        + $V = {0}^bot$
+        + $V^bot = {0} <=> f$ is non-degenerate
+        + $rank f = dim V - dim V^bot$
+        + if $dim V = n$ and $dim W = m$, then $dim W^bot >= n - m$
+        + $f|_W$ is non-degenerate iff $W inter W^bot = {0}$
+        + $V = W plus.o W^bot$ iff $f|_W$ is non-degenerate
+    + let $V$ be finite-dimensional vector space over $bb(C)$, let $f in L(V, V, bb(C))$ be non-degenerate symmetric, then $exists cal(B)$ be basis of $V$ such that $cal(B)' = cal(B)$ 
+]) <symmetric_bilinear_forms_exercise>
+
 == Skew-Symmetric Bilinear Forms
 
 #definition(title: "skew-symmetric bilinear form", [
@@ -2965,6 +3225,22 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
         )
     $
 ]) <skew_symmetric_bilinear_form_matrix_theorem>
+
+#exercise([
+    let $bb(F)$ be a field
+    + let $V$ be vector space over $bb(F)$, let $S = {f in L(V, V, bb(F)) | f(alpha, beta) = -f(beta, alpha) h0 forall alpha, beta in V}$, then $S subset L(V, V, bb(F))$ be subset
+    + let $f, g in L(bb(C)^n, bb(C)^n, bb(C))$ with $f$ symmetric and $g$ skew-symmetric, if $f + g = 0 => f = g = 0$
+    + let $V$ be $n$-dimensional vector space over $bb(F) subset bb(C)$, then
+        + $(P f)(alpha, beta) = 1/2 f(alpha, beta) - 1/2 f(beta, alpha)$ defines $P in L(L(V, V, bb(F)), L(V, V, bb(F)))$
+        + $P^2 = P$ is a projection
+        + $rank P = (n (n - 1))/2 h0 nullity P = (n (n + 1))/2$
+        + let $U in L(V, V)$, then $(U^dagger f)(alpha, beta) = f(U alpha, U beta)$ defines $U^dagger in L(L(V, V, bb(F)), L(V, V, bb(F)))$
+    + let $V$ be vector space over field $bb(F)$, let $f in L(V, V, bb(F))$, let $L_f, R_f in V^*$ such that \ $f(alpha, beta) = L_f (alpha)(beta) = R_f (beta)(alpha)$, then $f$ is skew-symmetric iff $L_f = -R_f$
+    + let $V$ be finite-dimensional vector space over $bb(F)$, let $L_1, L_2 in L(V, V, bb(F))$, then \ $f(alpha, beta) = L_1 (alpha) L_2 (beta) - L_1 (beta) L_2 (alpha)$ defines a skew-symmetric bilinear form on $V$, and $f = 0$ iff $L_1, L_2$ are linearly dependent
+    + let $V$ be finite-dimensional vector space over $bb(F) subset bb(C)$, let $f in L(V, V, bb(F))$ be skew-symmetric, then $rank f = 2 <=> exists L_1, L_2 in V^*$ be linearly independent such that $f$ is defined as previous formula
+    + let $f in L(bb(R)^3, bb(R)^3, bb(R))$, then $f$ can be defined as prevous formula
+    + let $V$ be finite-dimensional vector space over $bb(F) subset bb(C)$, let $f, g in L(V, V, bb(F))$ be skew-symmetric, then $exists T in L(V, V)$ be invertible, such that $f(T alpha, T beta) = g(alpha, beta) h0 forall alpha, beta in V$ iff \ $rank f = rank g$
+]) <skew-symmetric_bilinear_form_exercise>
 
 == Groups Preserving Bilinear Forms
 

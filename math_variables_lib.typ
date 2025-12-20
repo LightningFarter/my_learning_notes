@@ -29,13 +29,32 @@
 #let c-exr = counter("exr")
 
 #let make-env(kind, c: none, color: blue, title: none, body: content) = {
-    if c != none { c.step() }
-    block[#lightfill(color, [
-        *#kind* #if c != none {context [#c-ch.display("1").#c-sch.display("1").#c.display("1")]}
-        #if title != none {[*-- #title*]}:
+  if c != none { c.step() }
 
-        #body
-    ])]
+  // header line (short, won’t affect page breaks much)
+  let head = [
+    *#kind*
+    #if c != none {
+      context [
+        #c-ch.display("1").#c-sch.display("1").#c.display("1")
+      ]
+    }
+    #if title != none { [ *-- #title* ] }
+  ]
+
+  // Use a normal-flow block that can break across pages
+  // and apply a background fill using `block` styling rather than boxing everything.
+  block(
+    inset: (x: 10pt, y: 8pt),
+    radius: 6pt,
+    width: 100%,
+    // fill: color.lighten(90%),
+    stroke: (paint: color.darken(20%), thickness: 0.6pt),
+  )[
+    #head
+    \
+    #body
+  ]
 }
 
 #let theorem(title: none, body) = make-env("Theorem", c: c-thm, color: col-thm, title: title, body: body)
