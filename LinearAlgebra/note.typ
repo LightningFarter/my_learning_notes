@@ -3311,6 +3311,18 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     + not all Lorentz transformation is obtained from $U_M$
 ]) <lorentz_group_definition>
 
+#exercise([
+    + let $M in O(n, bb(C))$, then $M^t, overline(M), M^* in O(n, bb(C))$
+    + let $M in O(n, bb(C))$, let $M' tilde M$, then $M' in O(n, bb(C))$
+    + let $M in O(n, bb(C))$, let $y_j = sum_(k = 1)^n M_(j k) x_k$ then $sum_(j = 1)^n y_j^2 = sum_(j = 1)^n x_j^2$
+    + let $M in bb(C)^(n times n)$ with columns $M_1, dots, M_n$, then $M in O(n, bb(C)) <=> M^t_j M_k = delta_(j k) h0 1 <= j, k <= n$
+    + let $X in bb(C)^(n times 1) in.rev X^t X = 1$, then $forall j s0 exists M in O(n, bb(C)) in.rev M X = I_(. j)$
+    + let $V = bb(C)^(n times 1)$ be vector space, let $A in bb(C)^(n times n)$, let $f in L(V, V, bb(C))$ as $f(X, Y) = X^t A Y$, then $f$ is invariant under $O(n, bb(C))$ iff $forall M in O(n, bb(C)) s0 A M = M A$
+    + let $S subset bb(C)^(n times n)$ be any set, let $S' = {A in bb(C)^(n times n) | A B = B A s0 forall B in S}$, then $S'$ is a linear algebra over $bb(C)$
+    + let $bb(F) subset bb(C)$ be field, let $V$ be finite-dimensional vector space over $bb(F)$, let $f in L(V, V, bb(F))$ be non-singular, let $T in L(V, V)$, then $T$ preserves $f$ iff $det T = plus.minus 1$
+    + let $bb(F) subset bb(C)$ be field, let $A in bb(F)^(n times n)$ be invertible, let $f in L(bb(F)^n, bb(F)^n, bb(F))$ be $f(X, Y) = X^t A Y$, let \ $M in bb(F)^(n times n)$, then $M$ preserves $f$ iff $A^(-1) M^t A = M^(-1)$
+]) <groups_perserving_bilinear_forms_exercise>
+
 == Additional Topics
 
 #definition(title: "Hessian matrix", [
