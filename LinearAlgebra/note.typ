@@ -2496,7 +2496,7 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
 ]) <normal_operator_definition>
 
 #theorem([
-    let $V$ be inner product space, let $T in L(V, V)$ be self-adjoint, then characteristic voalues of $T$ are real, and characteristic vectors of $T$ associated with distinct characteristic values are orthogonal
+    let $V$ be inner product space, let $T in L(V, V)$ be self-adjoint, then characteristic values of $T$ are real, and characteristic vectors of $T$ associated with distinct characteristic values are orthogonal
 ]) <self_adjoint_characteristic_real_orthogonal_theorem>
 
 #theorem([
