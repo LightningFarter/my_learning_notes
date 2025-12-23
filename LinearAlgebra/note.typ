@@ -2972,6 +2972,10 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
 
 == Singular Value Decomposition and Pseudoinverse
 
+#theorem([
+    let $bb(F)$ be a field, let $M in bb(F)^(n times m)$, then $range M = (null M^*)^bot$ and $range M^* = (null M)^bot$
+]) <matrix_range_null_adjoint_orthogonality_theorem>
+
 #theorem(title: "singular value decomposition", [
     let $V, W$ be finite-dimensional inner product space of $dim V = n, s0 dim W = m$, let $T in L(V, W)$ such that $rank T = r$, then $exists cal(B) = {alpha_1, dots, alpha_n}, s0 exists cal(B)' = {beta_1, dots, beta_m}$ each be orthonormal basis of $V, W$, then $exists sigma_1 >= dots >= sigma_r$ such that
     $
@@ -3050,6 +3054,31 @@ for $T in L(V, V)$ then $T = U_1 + i U_2$ where $U_1 = U_1^*$ and $U_2 = U_2^*$,
     + if $exists T^(-1)$ then if $exists alpha' in V in.rev T alpha' = beta => ||alpha|| <= ||alpha'||$ with equal iff $alpha = alpha'$
     + if $exists.not T^(-1)$ then $||T alpha - beta|| <= ||T alpha' - beta|| s0 forall alpha' in V$ with equal iff $alpha = alpha'$
 ]) <pseudoinverse_self_best_approximation_theorem>
+
+#definition(title: "matrix norms", [
+    let $bb(F)$ be a field, let $A in bb(F)^(n times m)$, then the *operation norm* of $A$ is
+    $
+        ||A||_"op" = sup_(||x|| = 1) ||A x||
+    $
+    is the largest singular value, and the *Frobenius norm* is 
+    $
+        ||A||_F = sqrt(sum_(j = 1)^m sum_(k = 1)^n |A_(j k)|^2) = sqrt(tr(A^* A))
+    $
+]) <matrix_norms_definition>
+
+#definition(title: "Schmidt decomposition", [
+    let $bb(F)$ be a field, let $A in bb(F)^(n times m)$, let singular value decomposition of $A$ be $A = U Sigma V^*$ where \ $rank A = r$, let $U$ be composed of column vectors $alpha_1, dots, alpha_n$, let $V^*$ be composed of column vectors $beta_1, dots, beta_m$, then the *Schmidt decomposition* of $A$ is
+    $
+        A = sum_(k = 1)^r sigma_k alpha_k beta_k 
+    $
+]) <schmidt_decompostition_definition>
+
+#theorem([
+    let $A in bb(C)^(n times m) in.rev null A = {0}$, then the projection $P_(range A) in bb(C)^(n times n)$ is given as
+    $
+        P_(range A) = A (A^* A)^(-1) A^*
+    $
+]) <range_projection_full_column_rank_matrix_calculation_theorem>
 
 #pagebreak()
 

@@ -31,31 +31,45 @@
 #let make-env(kind, c: none, color: blue, title: none, body: content) = {
   if c != none { c.step() }
 
-  // header line (short, won’t affect page breaks much)
-  let head = [
-    *#kind*
-    #if c != none {
-      context [
-        #c-ch.display("1").#c-sch.display("1").#c.display("1")
-      ]
-    }
-    #if title != none { [ *-- #title* ] }
-  ]
+  layout(size => {
+    let head = [
+      *#kind*
+      #if c != none { context [#c-ch.display("1").#c-sch.display("1").#c.display("1")] }
+      #if title != none { [*-- #title*] }
+    ]
 
-  // Use a normal-flow block that can break across pages
-  // and apply a background fill using `block` styling rather than boxing everything.
-  block(
-    inset: (x: 10pt, y: 8pt),
-    radius: 6pt,
-    width: 100%,
-    // fill: color.lighten(90%),
-    stroke: (paint: color.darken(20%), thickness: 0.6pt),
-  )[
-    #head
-    \
-    #body
-  ]
+    let inner = [
+      #head
+      \
+      #body
+    ]
+
+    // Measure at the current available width.
+    let probe = block(
+      width: 100%,
+      inset: (x: 10pt, y: 8pt),
+      radius: 6pt,
+    //   fill: color.lighten(85%),
+      stroke: (paint: color.darken(20%), thickness: 0.6pt),
+    )[ #inner ]
+
+    let h = measure(probe, width: size.width).height
+    let half = 50% * size.height
+
+    // Only allow splitting if it's taller than half a page/container.
+    let allow_split = h > half
+
+    block(
+      width: 100%,
+      breakable: allow_split,
+      inset: (x: 10pt, y: 8pt),
+      radius: 6pt,
+    //   fill: color.lighten(85%),
+      stroke: (paint: color.darken(20%), thickness: 0.6pt),
+    )[ #inner ]
+  })
 }
+
 
 #let theorem(title: none, body) = make-env("Theorem", c: c-thm, color: col-thm, title: title, body: body)
 #let lemma(title: none, body) = make-env("Lemma", c: c-lem, color: col-thm, title: title, body: body)
