@@ -125,3 +125,27 @@ Note the defined symbols are not symbols of the language, they only refer to the
 == Syntatical Variables
 
 A *syntatical variables* are symbols that vary through expressions of the language. A formula containing syntatical variables may have many meanings.
+
+#pagebreak()
+
+= First-Order Theories
+
+== Functions and Predicates
+
+To describe the language of a formal system, there are *logical concepts* which are common to all axiom systems, and *non-logical concepts*.
+
+By non-logical concepts, the concepts from set theory is used here.
+
+- $A, B$ are *sets* if they are a set of distinct objects
+- $a in A, s0 b in B$ are *elements* of $A, B$ be the objects in the set 
+- $F : A -> B$ is a mapping if it assigns elements $a$ as *arguments* an element $b$ as its *value* denote as $F(a)$ for $b$
+- $(a_1, dots, a_n)$ is *$n$-tuple* that is ordered collection objects not required to be distinct
+- map that assigns $n$-tuple of $A$ a value of $B$ is an *$n$-ary* function, call $1$-ary as *unary* and $2$-ary as *binary*
+- the subset $P$ of $n$-tuple of $A$ is a *predicate* of $A$, denote $P(a_1, dots, a_n)$ as $(a_1, dots, a_n) in P$
+- the $0$-ary function takes $(space)$ and assign it a value
+- the set of $0$-ary function assign values as objects of an axiom system is a *universe* of the axiom system
+- the elements of a universe is an *individual*
+- functions from universe to universe is *individual functions*
+- predicates of an universe is *individual predicates*
+- for any set $A$, there is binary predicates of same elements $(a, a)$, then this is *equality predicate*, then we use denote $=$ for the equality predicates of an universe
+
