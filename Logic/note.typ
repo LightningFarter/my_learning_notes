@@ -149,3 +149,41 @@ By non-logical concepts, the concepts from set theory is used here.
 - predicates of an universe is *individual predicates*
 - for any set $A$, there is binary predicates of same elements $(a, a)$, then this is *equality predicate*, then we use denote $=$ for the equality predicates of an universe
 
+== Truth Functions
+
+for logical concepts, we introduce objects $T, F$ called *truth values* to descrive a formula of a formal system
+
+a *truth function* is a function of ${T, F} -> {T, F}$, then define binary truth function $H_and$ such that if $a, b$ are truth value of formula $A, B$, then $H_and (a, b)$ is the truth value of $A and B$, and $H_and$ is defined as
+$
+    & H_and (T, T) = T \
+    & H_and (T, F) = H_and (F, T) = H_and (F, F) = F
+$
+
+also define binary truth function $H_or$ such that if $a, b$ are truth value of formula $A, B$, then $H_or (a, b)$ is the truth value of $A or B$, and $H_or$ is defined as
+$
+    & H_or (T, T) = H_or (T, F) = H_or (F, T) = T \
+    & H_or (F, F) = F
+$
+define binary truth function if ... then ... as $H_arrow$ such that truth value of $A -> B$ is $H_arrow (a, b)$, and defined as
+$
+    & H_arrow (T, T) = H_arrow (F, T) = H_arrow (F, F) = T \
+    & H_arrow (T, F) = F
+$
+define binary truth function iff as $H_arrow.l.r$ such that truth value of $A <-> B$ is $H_arrow.l.r (a, b)$, and defined as
+$
+    & H_arrow.l.r (T, T) = H_arrow.l.r (F, F) = T \
+    & H_arrow.l.r (T, F) = H_arrow.l.r (F, T) = F
+$
+define unary truth function not as $not$, then $not A$ has truth value $H_not (a)$ defined as
+$
+    H_not (T) = F h0 H_not (F) = T
+$
+
+\
+
+let $a, b$ be truth values of formulas $A, B$, then 
+$
+    & A -> B equiv not A or B h3 & H_arrow (a, b) equiv H_or (H_not (a), b) \
+    & A and B equiv not (A -> not B) h3 & H_and (a, b) equiv H_not (H_arrow (a, H_not (b))) \
+    & A <-> B equiv (A -> B) and (B -> A) h1 & H_arrow.l.r (a, b) equiv H_and (H_arrow (a, b), H_arrow (b, a))
+$
