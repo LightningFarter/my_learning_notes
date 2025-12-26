@@ -135,3 +135,5 @@
 #let coim = "coim"
 #let blank = "␣"
 #let tenc(x) = $lr(chevron.l #x chevron.r)$
+#let Union = $op(union.big, limits: #true)$
+#let Inter = $op(inter.big, limits: #true)$
