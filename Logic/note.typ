@@ -187,3 +187,18 @@ $
     & A and B equiv not (A -> not B) h3 & H_and (a, b) equiv H_not (H_arrow (a, H_not (b))) \
     & A <-> B equiv (A -> B) and (B -> A) h1 & H_arrow.l.r (a, b) equiv H_and (H_arrow (a, b), H_arrow (b, a))
 $
+
+== Variables and Quantifiers
+
+*individual varialbes* are virables that varies through individuals in the formal system, simply call then variables in the context
+
+then define qunatifier symbols $forall$ as *for all* and $exists$ as *for some* or *exists ... such that*
+
+then for variables that is alone without the quantifier, it is *free variable*, for varialbles that comes with quantifier, then it is *bounded variable*
+
+then for quantifier, we can define each with the other, let $A$ be an formula, let $x$ be an individual variable, then
+$
+    & forall x A equiv not exists x not A \
+    & exists x A equiv not forall x not A
+$
+
