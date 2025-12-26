@@ -147,7 +147,7 @@ let $Omega$ be sample space, then it is *fair* experiment if $bb(P)(A) = 1/(|Ome
     + $bb(P)(A^c) = 1 - bb(P)(A)$
     + if $B supset A$, then $bb(P)(B) = bb(P)(A) + bb(P)(B \\ A) >= bb(P)(A)$
     + $bb(P)(A union B) = bb(P)(A) + bb(P)(B) - bb(P)(A inter B)$
-    + let $A_1, dots, A_n in cal(F)$ be disjoint, then $
+    + let $A_1, dots, A_n in cal(F)$, then $
         bb(P)(Union_(i = 1)^n A_i) = sum_(i = 1)^n bb(P)(A_i) - sum_(i < j) bb(P)(A_i inter A_j) dots + (-1)^(n + 1) bb(P)(A_1 inter dots inter A_n)
     $
 ]) <probability_inclusion_exclusion_lemma>
