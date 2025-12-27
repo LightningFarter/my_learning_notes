@@ -78,53 +78,84 @@
 
 == Axiom Systems
 
-The first mathematical laws cannot be proved, it needs to be accepted before deriving any other laws. Those laws to be accepted are *axioms* which conveys some *basic concepts*. 
+#definition(title: "axioms and basic concepts", [
+    The first mathematical laws cannot be proved, it needs to be accepted before deriving any other laws. Those laws to be accepted are *axioms* which conveys some *basic concepts*. 
+]) <axioms_basic_concepts_meaning_definition>
 
-Mathematics should explain the basic concepts and axioms so that its audiences accept it. Then he define derived concepts to prove theorems about basic and derived concepts. Then construct system of basic concepts, derived concepts, axioms, and theorems, called *axiom system*
+#proposition([
+    Mathematics should explain the basic concepts and axioms so that its audiences accept it. Then he define derived concepts to prove theorems about basic and derived concepts. Then construct system of basic concepts, derived concepts, axioms, and theorems, called *axiom system*
+]) <axiom_system_proposition>
 
 == Formal Systems
 
-An axiom or theorem can be viewed as a *sentence*, thus a concrete object, or a *meaning of a sentence*. 
+#proposition([
+    An axiom or theorem can be viewed as a *sentence*, thus a concrete object, or a *meaning of a sentence*. 
+]) <axiom_theorem_view_point_proposition>
 
-Proof dealing with concrete objects in constructive manner is *finitary*. A proof is finitary if we can *visualize* the proof.
+#definition(title: "finitary", [
+    Proof dealing with concrete objects in constructive manner is *finitary*. A proof is finitary if we can *visualize* the proof.
+]) <finitary_definition>
 
-The study of axioms and theorems as sentences is called *syntatical study* of axiom systems.
-The study of meaning of the sentences is called *semantical study* of axiom systems.
+#definition(title: "syntatical and semantical study", [
+    The study of axioms and theorems as sentences is called *syntatical study* of axiom systems.
 
-For syntatical study, we need *formal system*, namely syntatical part of an axiom system.
+    The study of meaning of the sentences is called *semantical study* of axiom systems.
+]) <syntatical_semantical_study_definition>
 
-Formal system consists of *language*, *axioms*, and *rules of inference*.
+#definition(title: "formal system", [
+    For syntatical study, we need *formal system*, namely syntatical part of an axiom system. Formal system consists of *language*, *axioms*, and *rules of inference*.
+]) <formal_system_definition>
 
-Language consists of *symbols*, a finite sequence of symbols of a language is an *expression*, each appearance of an expression is an *occurence*. For expressions to be meaningfull, it must state some facts, which made it a *formula* of a language. Denote language of a formal system $F$ as $L(F)$
+#definition(title: "language", [
+    Language consists of *symbols*, a finite sequence of symbols of a language is an *expression*, each appearance of an expression is an *occurence*. For expressions to be meaningfull, it must state some facts, which made it a *formula* of a language. Denote language of a formal system $F$ as $L(F)$
+]) <language_definition>
 
-Axioms should be formula of the language of the formal system.
+#definition(title: "axioms", [
+    Axioms should be formula of the language of the formal system.
+]) <axioms_definition>
 
-Rules state that under certain condition, some formulas called *hypotheses* can *infer* a formula called *conclusion*. A formal system should have two laws:
-+ the axioms of $F$ are theorems of $F$
-+ if all hypothesis of a rule of $F$ are theorems of $F$, then the conclusion of the rule is a theorem of $F$
-Then a formula is a theorem of $F$ iff it follows the rules.
+#definition(title: "rules", [
+    Rules state that under certain condition, some formulas called *hypotheses* can *infer* a formula called *conclusion*. A formal system should have two laws:
+    + the axioms of $F$ are theorems of $F$
+    + if all hypothesis of a rule of $F$ are theorems of $F$, then the conclusion of the rule is a theorem of $F$
+    Then a formula is a theorem of $F$ iff it follows the rules.
+]) <rules_definition>
 
-A *generalized inductive definition* is process that define a set of laws $S_0$ by rule 1, then define laws given theorems in $S_0$ as $S_1$, then go on for $S_omega$ such that no further theorems can be derived.
+#definition(title: "generalized inductive definition", [
+    A *generalized inductive definition* is process that define a set of laws $S_0$ by rule 1, then define laws given theorems in $S_0$ as $S_1$, then go on for $S_omega$ such that no further theorems can be derived.
+]) <generalized_inductive_definition>
 
-To prove every theorem of $F$ has property $P$, then is suffice to prove
-+ every axiom of $F$ has property $P$
-+ if all hypotheses of rule of $F$ have property $P$, then conclusion of the rule has property $P$
+#definition(title: "prove by induction on theorems", [
+    To prove every theorem of $F$ has property $P$, then is suffice to prove
+    + every axiom of $F$ has property $P$
+    + if all hypotheses of rule of $F$ have property $P$, then conclusion of the rule has property $P$
 
-Then for each member of sets $S_0, S_1, dots S_omega$ has property $P$, which is prove by *induction on theorems*, the hypotheses are *induction hypotheses*
+    Then for each member of sets $S_0, S_1, dots S_omega$ has property $P$, which is prove by *induction on theorems*, the hypotheses are *induction hypotheses*
+]) <prove_by_induction_on_theorems>
 
-A rule of formal system $F$ is *finite* if it has only finitely many hypotheses.
+#definition(title: "finite rule", [
+    A rule of formal system $F$ is *finite* if it has only finitely many hypotheses.
+]) <finite_rule_definition>
 
-A *proof* in $F$ mean a finite sequence of formulas, which are conclusions of some theorems. If the last formula of proof $P$ is $A$, then $P$ is proof of $A$.
+#definition(title: "proof", [
+    A *proof* in $F$ mean a finite sequence of formulas, which are conclusions of some theorems. If the last formula of proof $P$ is $A$, then $P$ is proof of $A$.
+]) <proof_definition>
 
-A formula $A$ of $F$ is a theorem iff there is a proof of $A$, denoted as $tack_F dots$ as abbreviation of $dots$ is a theorem of $F$
+#proposition([
+    A formula $A$ of $F$ is a theorem iff there is a proof of $A$, denoted as $tack_F dots$ as abbreviation of $dots$ is a theorem of $F$
+]) <theorem_proof_proposition>
 
-For abbreviations, we introduce *defined symbols*, the formulas using defined symbols are *defined formulas*, for each defined symbols, there must be *definition* of the symbols.
-
-Note the defined symbols are not symbols of the language, they only refer to the actual symbols abbreviated in the language.
+#definition(title: "defined symbols", [
+    For abbreviations, we introduce *defined symbols*, the formulas using defined symbols are *defined formulas*, for each defined symbols, there must be *definition* of the symbols.
+    
+    Note the defined symbols are not symbols of the language, they only refer to the actual symbols abbreviated in the language.
+]) <defined_symbols_definition>
 
 == Syntatical Variables
 
-A *syntatical variables* are symbols that vary through expressions of the language. A formula containing syntatical variables may have many meanings.
+#definition(title: "syntatical variables", [
+    A *syntatical variables* are symbols that vary through expressions of the language. A formula containing syntatical variables may have many meanings.
+]) <syntatical_variables_definition>
 
 #pagebreak()
 
@@ -132,73 +163,144 @@ A *syntatical variables* are symbols that vary through expressions of the langua
 
 == Functions and Predicates
 
-To describe the language of a formal system, there are *logical concepts* which are common to all axiom systems, and *non-logical concepts*.
+#definition(title: "logical and non-logical concepts", [
+    To describe the language of a formal system, there are *logical concepts* which are common to all axiom systems, and *non-logical concepts*.
+]) <logical_nonlogical_concepts_definition>
 
-By non-logical concepts, the concepts from set theory is used here.
-
-- $A, B$ are *sets* if they are a set of distinct objects
-- $a in A, s0 b in B$ are *elements* of $A, B$ be the objects in the set 
-- $F : A -> B$ is a mapping if it assigns elements $a$ as *arguments* an element $b$ as its *value* denote as $F(a)$ for $b$
-- $(a_1, dots, a_n)$ is *$n$-tuple* that is ordered collection objects not required to be distinct
-- map that assigns $n$-tuple of $A$ a value of $B$ is an *$n$-ary* function, call $1$-ary as *unary* and $2$-ary as *binary*
-- the subset $P$ of $n$-tuple of $A$ is a *predicate* of $A$, denote $P(a_1, dots, a_n)$ as $(a_1, dots, a_n) in P$
-- the $0$-ary function takes $(space)$ and assign it a value
-- the set of $0$-ary function assign values as objects of an axiom system is a *universe* of the axiom system
-- the elements of a universe is an *individual*
-- functions from universe to universe is *individual functions*
-- predicates of an universe is *individual predicates*
-- for any set $A$, there is binary predicates of same elements $(a, a)$, then this is *equality predicate*, then we use denote $=$ for the equality predicates of an universe
+#definition(title: "non-logical concepts set theory terminology", [
+    By non-logical concepts, the concepts from set theory is used here.
+    - $A, B$ are *sets* if they are a set of distinct objects
+    - $a in A, s0 b in B$ are *elements* of $A, B$ be the objects in the set 
+    - $F : A -> B$ is a mapping if it assigns elements $a$ as *arguments* an element $b$ as its *value* denote as $F(a)$ for $b$
+    - $(a_1, dots, a_n)$ is *$n$-tuple* that is ordered collection objects not required to be distinct
+    - map that assigns $n$-tuple of $A$ a value of $B$ is an *$n$-ary* function, call $1$-ary as *unary* and $2$-ary as *binary*
+    - the subset $P$ of $n$-tuple of $A$ is a *predicate* of $A$, denote $P(a_1, dots, a_n)$ as $(a_1, dots, a_n) in P$
+    - the $0$-ary function takes $(space)$ and assign it a value
+    - the set of $0$-ary function assign values as objects of an axiom system is a *universe* of the axiom system
+    - the elements of a universe is an *individual*
+    - functions from universe to universe is *individual functions*
+    - predicates of an universe is *individual predicates*
+    - for any set $A$, there is binary predicates of same elements $(a, a)$, then this is *equality predicate*, then we use denote $=$ for the equality predicates of an universe
+]) <non_logical_concepts_set_theory_terminology_definition>
 
 == Truth Functions
 
-for logical concepts, we introduce objects $T, F$ called *truth values* to descrive a formula of a formal system
+#definition(title: "truth values", [
+    for logical concepts, we introduce objects $T, F$ called *truth values* to descrive a formula of a formal system
+]) <truth_values_definition>
 
-a *truth function* is a function of ${T, F} -> {T, F}$, then define binary truth function $H_and$ such that if $a, b$ are truth value of formula $A, B$, then $H_and (a, b)$ is the truth value of $A and B$, and $H_and$ is defined as
-$
-    & H_and (T, T) = T \
-    & H_and (T, F) = H_and (F, T) = H_and (F, F) = F
-$
+#definition(title: "truth function", [
+    a *truth function* is a function of ${T, F} -> {T, F}$
+]) <truth_function_definition>
 
-also define binary truth function $H_or$ such that if $a, b$ are truth value of formula $A, B$, then $H_or (a, b)$ is the truth value of $A or B$, and $H_or$ is defined as
-$
-    & H_or (T, T) = H_or (T, F) = H_or (F, T) = T \
-    & H_or (F, F) = F
-$
-define binary truth function if ... then ... as $H_arrow$ such that truth value of $A -> B$ is $H_arrow (a, b)$, and defined as
-$
-    & H_arrow (T, T) = H_arrow (F, T) = H_arrow (F, F) = T \
-    & H_arrow (T, F) = F
-$
-define binary truth function iff as $H_arrow.l.r$ such that truth value of $A <-> B$ is $H_arrow.l.r (a, b)$, and defined as
-$
-    & H_arrow.l.r (T, T) = H_arrow.l.r (F, F) = T \
-    & H_arrow.l.r (T, F) = H_arrow.l.r (F, T) = F
-$
-define unary truth function not as $not$, then $not A$ has truth value $H_not (a)$ defined as
-$
-    H_not (T) = F h0 H_not (F) = T
-$
+#definition(title: "And truth function", [
+    define binary truth function $H_and$ such that if $a, b$ are truth value of formula $A, B$, then $H_and (a, b)$ is the truth value of $A and B$, and $H_and$ is defined as
+    $
+        & H_and (T, T) = T \
+        & H_and (T, F) = H_and (F, T) = H_and (F, F) = F
+    $
+]) <and_truth_function_definition>
 
-\
+#definition(title: "Or truth function", [
+    define binary truth function $H_or$ such that if $a, b$ are truth value of formula $A, B$, then $H_or (a, b)$ is the truth value of $A or B$, and $H_or$ is defined as
+    $
+        & H_or (T, T) = H_or (T, F) = H_or (F, T) = T \
+        & H_or (F, F) = F
+    $
+]) <or_truth_function_definition>
 
-let $a, b$ be truth values of formulas $A, B$, then 
-$
-    & A -> B equiv not A or B h3 & H_arrow (a, b) equiv H_or (H_not (a), b) \
-    & A and B equiv not (A -> not B) h3 & H_and (a, b) equiv H_not (H_arrow (a, H_not (b))) \
-    & A <-> B equiv (A -> B) and (B -> A) h1 & H_arrow.l.r (a, b) equiv H_and (H_arrow (a, b), H_arrow (b, a))
-$
+#definition(title: "if then truth function", [
+    define binary truth function if ... then ... as $H_arrow$ such that truth value of $A -> B$ is $H_arrow (a, b)$, and defined as
+    $
+        & H_arrow (T, T) = H_arrow (F, T) = H_arrow (F, F) = T \
+        & H_arrow (T, F) = F
+    $
+]) <if_then_truth_function_definition>
+
+#definition(title: "iff truth function", [
+    define binary truth function iff as $H_arrow.l.r$ such that truth value of $A <-> B$ is $H_arrow.l.r (a, b)$, and defined as
+    $
+        & H_arrow.l.r (T, T) = H_arrow.l.r (F, F) = T \
+        & H_arrow.l.r (T, F) = H_arrow.l.r (F, T) = F
+    $
+]) <iff_truth_function_definition>
+
+#definition(title: "not truth function", [
+    define unary truth function not as $not$, then $not A$ has truth value $H_not (a)$ defined as
+    $
+        H_not (T) = F h0 H_not (F) = T
+    $
+]) <not_truth_function_definition>
+
+#proposition([
+    let $a, b$ be truth values of formulas $A, B$, then 
+    $
+        & A -> B equiv not A or B h3 & H_arrow (a, b) equiv H_or (H_not (a), b) \
+        & A and B equiv not (A -> not B) h3 & H_and (a, b) equiv H_not (H_arrow (a, H_not (b))) \
+        & A <-> B equiv (A -> B) and (B -> A) h1 & H_arrow.l.r (a, b) equiv H_and (H_arrow (a, b), H_arrow (b, a))
+    $
+]) <not_or_equivalence_function_proposition>
 
 == Variables and Quantifiers
 
-*individual varialbes* are virables that varies through individuals in the formal system, simply call then variables in the context
+#definition(title: "individual variables", [
+    *individual varialbes* are virables that varies through individuals in the formal system, simply call then variables in the context
+]) <individual_variables_definition>
 
-then define qunatifier symbols $forall$ as *for all* and $exists$ as *for some* or *exists ... such that*
+#definition(title: "quantifiers", [
+    to determine the formula substituting variables and grouping, we need quantifiers to bound the variable in the context of the language
 
-then for variables that is alone without the quantifier, it is *free variable*, for varialbles that comes with quantifier, then it is *bounded variable*
+    then define qunatifier symbols $forall$ as *for all* and $exists$ as *for some* or *exists ... such that*
+]) <quantifiers_definition>
 
-then for quantifier, we can define each with the other, let $A$ be an formula, let $x$ be an individual variable, then
-$
-    & forall x A equiv not exists x not A \
-    & exists x A equiv not forall x not A
-$
+#definition(title: "free and bound variable", [
+    then for variables that is alone without the quantifier, it is *free variable*, for varialbles that comes with quantifier, then it is *bound variable*
+]) <free_bound_variable_definition>
 
+#proposition([
+    then for quantifier, we can define each with the other, let $A$ be an formula, let $x$ be an individual variable, then
+    $
+        & forall x A equiv not exists x not A \
+        & exists x A equiv not forall x not A
+    $
+]) <quantifier_define_each_other_proposition>
+
+== First-Order Languages
+
+#definition(title: "first-order language", [
+    with all the components, we define a *first-order language* which has symbols
+    + individual variables $x, y, z, dots$
+    + for each $n$, the $n$-ary funciton symbols and $n$-ary predicate symbols
+    + symbols $not, or, exists$
+    + binary function symbol $=$
+
+    to define the names and some conventions
+    - the $0$-ary functions are called *constant*
+    - function symbols or predicate symbol other than $=$ are *non-logical symbols*, otherwise *logical symbols*
+    - sometimes ordering the variables as *alphabetical order*
+    - grouping uniquely defined by changing $A or B$ to $or A B$
+]) <first_order_language_definition>
+
+#definition(title: "terms", [
+    then define *terms* by generalized inductive definition
+    + a variable is a term
+    + if $u_1, dots, u_n$ are terms, and $f$ is $n$-ary function, then $f u_1 dots u_n$ is a term
+]) <terms_definition>
+
+#definition(title: "formula", [
+    an *atomic formula* is expression of form $p a_1 dots a_n$, where $p$ is $n$-ary function symbol, then define *formula* by generalized inductive definition
+    + atomic formula is a formula
+    + if $u$ is a formula, then $not u$ is a formula
+    + if $u, v$ are formulas, then $or u v$ is a formula
+    + if $u$ is a formula, then $exists x u$ is a formula
+
+    the *height* of a formula is the number of occurence of $not, or, exists$ in the formula
+]) <formula_definition>
+
+#proposition([
+    each first-order language is defined to have distinct $n$-ary function symbols, so then if two first-order language shares same function symbols, then they are identical
+]) <first_order_language_identical_proposition>
+
+#todo([
+    designator
+])
