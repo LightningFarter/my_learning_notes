@@ -301,6 +301,64 @@
     each first-order language is defined to have distinct $n$-ary function symbols, so then if two first-order language shares same function symbols, then they are identical
 ]) <first_order_language_identical_proposition>
 
-#todo([
-    designator
-])
+#definition(title: "designator", [
+    a *designator* is an expression which is either a term or a formula, has the form of $u v_1 dots v_n$, where $u$ is a symbol, and $v_1, dots, v_n$ are designators, $n in bb(N)$ is the *index* of $u$ determined by $u$
+]) <designator_definition>
+
+#definition(title: "compatible", [
+    two expressions are *compatible* if one of them can be obtained by adding some expressions to the right end of the other
+]) <compatible_definition>
+
+#lemma([
+    let $u_1, dots, u_n$ and $u'_1, dots, u'_n$ be designators, $u_1 dots u_n$ and $u'_1 dots u'_n$ are compatible, \ then $u_i = u'_i$ for $i = 1, dots, n$
+]) <compatible_equivalence_lemma>
+
+#theorem(title: "Formation Theorem", [
+    every designator can be written in form $u v_1 dots v_n$ where $u$ is symbol of index $n$ in only one way
+]) <formation_theorem>
+
+#lemma([
+    every occurence of a symbol in a designator $u$ begins an occurence of a designator in $u$
+]) <designator_begin_lemma>
+
+#theorem(title: "Occurence Theorem", [
+    let $u$ be symbol of index $n$, let $v_1, dots, v_n$ be designators, then any occurence of designator $v$ in $u v_1 dots v_n$ is either all of $u v_1 dots v_n$ or part of one in $v_i$
+]) <occurence_theorem>
+
+#definition([
+    define expression $b_x [a]$ as expression obtained by $b$ by replacing each occurence of $x$ by $a$
+]) <replacing_variable_expression_definition>
+
+#definition(title: "substitutible", [
+    let $A$ be formula, let $x, y$ be variable in $A$, then $x$ is *substitutible* in $A$ if every $x$ occur not in the form of $exists y B$ which is free
+
+    let $A_(x_1, dots, x_n) [a_1, dots, a_n]$ designate formula obtained by $A$ replacing $x_1, dots, x_n$ by $a_1, dots, a_n$, then $x_1, dots, x_n$ are restricted to be distinct variables and $a_1, dots, a_n$ are substitutible for $x_1, dots, x_n$ in the context
+]) <substitutible_definition>
+
+#proposition([
+    here we abbreviate:
+    + $or A B$ as $A or B$
+    + $not A or B$ as $A -> B$
+    + $not (A -> not B)$ as $A and B$
+    + $(A -> B) and (B -> A)$ as $A <-> B$
+    and adopt convention of association from right to left to omit parentheses
+
+    let $A_1, dots, A_n, B$ be formulas, then we say
+    + $A_1 or dots or A_n$ as at least one of $A_1, dots, A_n$ is true, for $n >= 1$
+    + $A_1 and dots A_n$ as all of $A_1, dots, A_n$ is true, for $n >= 1$
+    + $A_1 -> dots -> A_n -> B$ as if all $A_1, dots, A_n$ are true then $B$ is true, for $n >= 0$
+]) <associative_convention_proposition>
+
+#definition([
+    let $A, B, A_1, dots, A_n$ be formulas
+    here we name each operation
+    + $not A$ is the *negation* of $A$
+    + $A or B$ is the *disjunction* of $A, B$ and $A_1 or dots or A_n$ is *disjunction* of $A_1, dots, A_n$
+    + $A and B$ is the *conjunction* of $A, B$ and $A_1 and dots and A_n$ is *conjunction* of $A_1, dots, A_n$
+    + $A -> B$ is the *implication* of $B$
+    + $A <-> B$ is the *equivalence* of $B$
+    + $exists x A$ the *instantication* of $A$ by $x$
+    + $forall x A$ the *generalization* of $A$ by $x$
+    where $exists x$ is the *existential quantifiers* on $x$, and $forall x$ is the *universal quantifier* on $x$
+]) <operators_naming_definition>
+
