@@ -362,3 +362,54 @@
     where $exists x$ is the *existential quantifiers* on $x$, and $forall x$ is the *universal quantifier* on $x$
 ]) <operators_naming_definition>
 
+== Structures
+
+#definition(title: "structure", [
+    let $L$ be a first-order language, a *structure* $cal(A)$ for $L$ consists of
+    + set $|cal(A)| != emptyset$, the *universe* of $cal(A)$, where elements of $|cal(A)|$ are *individuals* of $cal(A)$
+    + $forall f in L$ be $n$-ary function symbol, $exists f_cal(A) : |cal(A)| -> |cal(A)|$ be $n$-ary function
+    + $forall p in L$ be $n$-ary predicate symbol, not $=$ symbol, $exists p_cal(A) in |cal(A)|$ be $n$-ary predicate
+]) <first_order_structure_definition>
+
+#definition(title: "name", [
+    let $L$ be first-order language, let $cal(A)$ be structure for $L$, then for each individual $a in |cal(A)|$, we choose a new constant as *name* of $a$
+
+    the first-order language obtained by assigning names to each individuals of $cal(A)$ is designated by $L(cal(A))$
+]) <first_order_name_definition>
+
+#definition(title: "variable-free", [
+    let $A$ be expression without variables, then it is *variable-free*
+]) <variable_free_definition>
+
+#definition([
+    let $L$ be first-order language, let $cal(A)$ be structure for $L$, let $a$ be variable-free term, then define $cal(A)(a)$ as
+    $
+        cases(
+            a h1 & a "is a name",
+            f_cal(A) (cal(A)(a_1), dots, cal(A)(a_n)) h0 & a = f a_1 dots a_n
+        )
+    $
+]) <individual_name_structure_definition>
+
+#definition(title: "closed formula", [
+    let $A$ be formula, then $A$ is *closed* if no variabe in $A$ is free
+]) <closed_formula_definition>
+
+#definition(title: [$cal(A)$-instance], [
+    let $L$ be first-order language, let $cal(A)$ be structure for $L$, let $A$ be formula, then $cal(A)$-instance of $A$ is closed formula of form $A[i_1, dots, i_n] in L(cal(A))$, which each $i_1, dots, i_n$ be names in $L(cal(A))$
+])
+
+#definition(title: "valid", [
+    let $L$ be first-order language, let $cal(A)$ be structure for $L$, let $A$ be formula. then $A$ is valid in $cal(A)$ if $forall A'$ be $cal(A)$-instance, $cal(A)(A') = T$
+
+    a closed formula $A$ is valid iff $cal(A)(A) = T$
+]) <first_order_valid_formula_definition>
+
+#lemma([
+    let $L$ be first-order language, let $cal(A)$ be structure for $L$, let $a$ be variable-free term in $L(cal(A))$, let $i$ be name of $cal(A)(a)$,
+    
+    let $b in L(cal(A))$ be term where no variables other than $x$ occurs, then $cal(A)(b_x [a]) = cal(A)(b_x [i])$
+
+    let $A in L(cal(A))$ be formula where no variables other than $x$ occurs, then $cal(A)(A_x [a]) = cal(A)(A_x [i])$
+]) <first_order_term_name_substitution_lemma>
+
