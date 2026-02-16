@@ -413,3 +413,58 @@
     let $A in L(cal(A))$ be formula where no variables other than $x$ occurs, then $cal(A)(A_x [a]) = cal(A)(A_x [i])$
 ]) <first_order_term_name_substitution_lemma>
 
+== Logical Axioms and Rules
+
+#definition(title: "type of axioms", [
+    let $L$ be language of a formal system, then an *axiom* is defined to be valid in given structure of $L$
+    - *logical axioms* are axioms be valid only with its logical truth values, which is *logical valid* in every structure of $L$
+    - *nonlogical axioms* are axioms be valid because of some property in structure $cal(A)$ for $L$, which is *nonlogical valid*
+
+    then we can define rules that leads to conclusion via logical inference, namely *logical consequence*
+    - *logical rules*, conclusion of logical consequence of the hypotheses
+    - *nonlogical rules*, conclusion of hypotheses only because certain property of structure $cal(A)$
+]) <type_axioms_definition>
+
+#definition(title: "logical axioms", [
+    let $L$ be first-order langauge, let $A, B$ be formula in $L$, let $x, y$ be variables, then we have axioms
+    + *proposition axiom*: $not A or A$
+    + *substitution axiom*: $A_x [a] -> exists x A$
+    + *identity axiom*: $x = x$
+    + *equality axiom*: 
+        - $x_1 = y_1 -> dots -> x_n = y_n -> f x_1 dots x_n = f y_1 dots y_n$ for $n$-ary function symbol $f$
+        - $x_1 = y_1 -> dots -> x_n = y_n -> p x_1 dots x_n = p y_1 dots y_n$ for $n$-ary predicate symbol $p$
+    
+    a *logical axiom* is law either proposition axiom, substitution axiom, identity axiom or equality axiom
+]) <logical_axioms_definition>
+
+#definition(title: "rules of inference", [
+    let $L$ be first-order language, let $A, B, C$ be formula, let $x$ be variable, define *rules of inference*
+    + *expansion rule*: $A => B or A$
+    + *contraction rule*: $A or A => A$
+    + *associative rule*: $A or (B or C) => (A or B) or C$
+    + *cut rule*: $(A or B) and (not A or C) => B or C$
+    + *$exists$-introduction rule*: if $x$ is not free in $B$, $A -> B => exists x A -> B$
+]) <rules_of_inference_definition>
+
+#definition(title: "first-order theory", [
+    now we define *first-order theorey* as a formal system $T$ such that
+    + $L(T)$ is first-order language
+    + axioms of $T$ are logical axioms of $L(T)$ and further nonlogical axioms
+    + rule of $T$ are
+        - expansion rule
+        - contraction rule
+        - associative rule
+        - cut rule
+        - $exists$-introduction rule
+]) <first_order_theory_definition>
+
+#definition(title: "model of first order theory", [
+    let $T$ be first order theory, the *model* of $T$ is a structure for $L(T)$ such that all of the nonlogical axioms of $T$ are valid
+
+    a formulat $A$ is *valid* in $T$ if it is valid in every model of $T$
+]) <model_first_order_theory_definition>
+
+#theorem(title: "validity theorem", [
+    let $T$ be a first-order theory, then every theorem of $T$ is valid
+]) <validity_theorem>
+
