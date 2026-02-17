@@ -468,3 +468,11 @@
     let $T$ be a first-order theory, then every theorem of $T$ is valid
 ]) <validity_theorem>
 
+#definition(title: "defineable", [
+    an $n$-ary function $H$ is *defineable* in terms of truth functions $H_1, dots, H_k$ if $H$ has definition
+    $
+        H(a_1, dots, a_n) = dots
+    $
+    where the right hand side is built up with $H_1, dots, H_k, a_1, dots, a_n$, commas and parentheses
+]) <defineable_definition>
+
