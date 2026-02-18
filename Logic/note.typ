@@ -357,7 +357,7 @@
     + $A and B$ is the *conjunction* of $A, B$ and $A_1 and dots and A_n$ is *conjunction* of $A_1, dots, A_n$
     + $A -> B$ is the *implication* of $B$
     + $A <-> B$ is the *equivalence* of $B$
-    + $exists x A$ the *instantication* of $A$ by $x$
+    + $exists x A$ the *instantiation* of $A$ by $x$
     + $forall x A$ the *generalization* of $A$ by $x$
     where $exists x$ is the *existential quantifiers* on $x$, and $forall x$ is the *universal quantifier* on $x$
 ]) <operators_naming_definition>
@@ -475,4 +475,72 @@
     $
     where the right hand side is built up with $H_1, dots, H_k, a_1, dots, a_n$, commas and parentheses
 ]) <defineable_definition>
+
+= Theorems in First-Order Theories
+
+== The Tautology Theorem
+
+#definition(title: "elementary formula", [
+    let $cal(T)$ be first-order theory, let $A$ be formula in $cal(T)$, then $A$ is *elementary* if either
+    - $A$ is atomic
+    - $A$ is an instantiation
+]) <elementary_formula_definition>
+
+#definition(title: "truth valuation", [
+    let $cal(T)$ be first-order theory, let $A$ be formula in $cal(T)$, then function $V : A |-> {T, F}$ is a *truth valuation* maps a set of elementary formulas in $T$ to set of truth values
+]) <truth_valuation_definition>
+
+#definition(title: "tautological consequence", [
+    let $cal(T)$ be first-order theory, let $B, A_1, dots, A_n$ be formulas in $cal(T)$, then $B$ is a *tautological consequence* of $A_1, dots, A_n$ if $V(B) = T$ for every truth valuation $V$ when $V(A_1) = dots = V(A_n)$
+
+    $B$ is *tautology* if $n = 0$
+]) <tautological_consequence_definition>
+
+#lemma([
+    let $cal(T)$ be first-order theory, let $A, B$ be formulas in $cal(T)$, then if $tack A or B$ then $tack B or A$
+]) <or_commutation_lemma>
+
+#lemma(title: "detachment rule", [
+    let $cal(T)$ be first-order theory, let $A, B$ be formulas in $cal(T)$, then if $tack A$ and $tack A -> B$ then $tack B$
+]) <detachment_rule_lemma>
+
+#corollary([
+    let $cal(T)$ be first-order theory, let $B, A_1, dots, A_n$ be formulas in $cal(T)$, then if $tack A_1, dots, tack A_n$ and \ $tack A_1 -> dots -> A_n -> B$, then $tack B$
+]) <detachment_rule_corollary>
+
+#lemma([
+    let $cal(T)$ be first-order theory, let $A_1, dots, A_n$ be formulas in $cal(T)$ where $n >= 2$, if $A_1 or dots or A_n$ is tautology, then $tack A_1 or dots or A_n$
+]) <tautology_to_theorem_lemma>
+
+#theorem(title: "tautology theorem", [
+    let $cal(T)$ be first-order theory, let $B, A_1, dots, A_n$ be formulas in $cal(T)$, if $B$ is tautological consequence of $A_1, dots, A_n$, and $tack A_1, dots, tack A_n$ then $tack B$
+]) <tautology_theorem>
+
+#corollary([
+    every tautology is a theorem
+]) <tautology_theorem_corollary>
+
+#proposition([
+    let $cal(T)$ be first-order theory, let $A, B, C$ be formulas in $cal(T)$, then the following are use cases of tautology theorem other than the detachment rule
+    + if $tack A <-> B$, then $tack A$ iff $tack B$
+    + if $tack A -> B$ and $tack B -> C$, then $tack A -> C$
+    + if $tack A <-> B$ and $tack B <-> C$, then $tack A <-> C$
+    + $tack A and B$ iff $tack A$ and $tack B$
+    + $tack A <-> B$ iff $tack A -> B$ and $tack B -> A$
+    + $tack A -> B$ iff $tack not B -> not A$
+]) <common_use_case_tautology_theorem_proposition>
+
+#definition(title: "theorem (generalized)", [
+    let $cal(T)$ be theory, then theorems of $cal(T)$ can be generalized by inductive definition as
+    + every substitution axiom, identity axiom, equality axiom, and nonlogical axiom is a theorem
+    + let $A_1, dots, A_n, B$ be formulas in $cal(T)$, if $A_1, dots, A_n$ for $n >= 0$ are theorems, and $B$ is tautological consequence of $A_1, dots, A_n$, then $B$ is a theorem
+    + let $A, B$ be formulas in $cal(T)$, if $A$ is a theorem and $B$ can be inferred from $A$ by $exists$-introduction rule, then $B$ is a theorem
+]) <generalized_theorem_definition>
+
+#definition(title: "proof by induction", [
+    let $cal(T)$ be theory, let $A, A_1, dots, A_n, B$ be formulas in $cal(T)$, the method *proof by induction* or *induction on theorems* is the method proving every theorem has property $P$ by
+    + every substitution axiom, identity axiom, equality axiom, and nonlogical axiom has property $P$
+    + if $A_1, dots, A_n$ have property $P$, and $B$ is tautological consequence of $A_1, dots, A_n$, \ then $B$ has property $P$
+    + if $A$ has property $P$ and $B$ can be inferred from $A$ by $exists$-introduction rule, then $B$ has property $P$
+]) <proof_by_induction_definition>
 
