@@ -544,3 +544,45 @@
     + if $A$ has property $P$ and $B$ can be inferred from $A$ by $exists$-introduction rule, then $B$ has property $P$
 ]) <proof_by_induction_definition>
 
+== Results on Qunatifiers
+
+#lemma(title: [$forall$-introduction rule], [
+    let $cal(T)$ be theory, let $A, B$ be formulas in $cal(T)$, let $x$ be variable, if $tack A -> B$ and $x$ is not free in $A$, then $tack A -> forall x B$
+]) <forall_introduction_rule_lemma>
+
+#lemma(title: "generalization rule", [
+    let $cal(T)$ be thoery, let $A$ be formula, let $x$ be variable, if $tack A$, then $tack forall x A$
+]) <generalization_rule_lemma>
+
+#definition(title: "instance", [
+    let $A$ be formula, then we say $A' = A_(x_1, dots, x_n)[y_1, dots, y_n]$ is a *instance* of $A$
+]) <formula_instance_definition>
+
+#lemma(title: "substitution rule", [
+    let $cal(T)$ be theory, let $A$ be formula, let $A'$ be instance of $A$, if $tack A$, then $tack A'$
+]) <substitution_rule_lemma>
+
+#theorem(title: "substitution theorem", [
+    let $cal(T)$ be theory, let $A$ be formula, let $x_1, dots, x_n, a_1, dots, a_n$ be variables, then
+    + $tack A_(x_1, dots, x_n)[a_1, dots, a_n] -> exists x_1 dots exists x_n A$
+    + $tack forall x_1 dots forall x_n A -> A_(x_1, dots, x_n)[a_1, dots, a_n]$
+]) <substitution_theorem>
+
+#lemma(title: "distribution rule", [
+    let $cal(T)$ be theory, let $A, B$ be formulas, let $x$ be variable, if $tack A -> B$, then
+    + $tack exists x A -> exists x B$
+    + $tack forall x A -> forall x B$
+]) <distribution_rule_lemma>
+
+#definition(title: "closure", [
+    let $A$ be formula, let $x_1, dots, x_n$ be all free variables in $A$, then $A' = forall x_1 dots forall x_n A$ is a *closure* of $A$
+]) <closure_definition>
+
+#theorem(title: "closure theorem", [
+    let $cal(T)$ be theory, let $A$ be formula, let $A'$ be closure of $A$, then $tack A$ iff $tack A'$
+]) <closure_theorem>
+
+#corollary([
+    let $cal(T)$ be theory, let $A$ be formula, let $A'$ be closure of $A$, let $cal(A)$ be strucutre of $cal(T)$, \ then $A$ is valid in $cal(A)$ iff $A'$ is valid in $cal(A)$
+]) <closure_validity_in_structure_corollary>
+
