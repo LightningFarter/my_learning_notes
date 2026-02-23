@@ -586,3 +586,28 @@
     let $cal(T)$ be theory, let $A$ be formula, let $A'$ be closure of $A$, let $cal(A)$ be strucutre of $cal(T)$, \ then $A$ is valid in $cal(A)$ iff $A'$ is valid in $cal(A)$
 ]) <closure_validity_in_structure_corollary>
 
+== The Deduction Theorem
+
+#definition([
+    let $cal(T)$ be theory, let $A_1, dots, A_n$ be formulas, then we designate $cal(T)[A_1, dots, A_n]$ as accepting $A_1, dots, A_n$ as new nonlogical axioms to $cal(T)$
+]) <expanding_nonlogical_axiom_definition>
+
+#theorem(title: "deduction theorem", [
+    let $cal(T)$ be theory, let $A, B$ be formula, let $A$ be closed, then $tack_cal(T) A -> B$ iff $tack_(cal(T)[A]) B$
+]) <deduction_theorem>
+
+#corollary([
+    let $cal(T)$ be theory, let $A_1, dots, A_n, B$ be formula in $cal(T)$, $A_1, dots, A_n$ be closed formula, then \ $tack_cal(T) A_1 -> dots -> A_n -> B$ iff $tack_(cal(T)[A_1, dots, A_n]) B$
+]) <deduction_theorem_corollary>
+
+#theorem(title: "theorem on constants", [
+    let $cal(T)$ be theory, let $cal(T)'$ be obtained by adding constants on $cal(T)$, let $A$ be formula in $cal(T)$, let $e_1, dots, e_n$ be new constants of $cal(T)'$, then $tack_cal(T) A$ iff $tack_cal(T)' A[e_1, dots, e_n]$
+]) <theorem_on_constants_theorem>
+
+#theorem([
+    let $cal(T)$ be theory, let $cal(T)'$ be obtained by adding constants $e_1, dots, e_n$ on $cal(T)$, let $A, B$ be formula in $cal(T)$ where $x_1, dots, x_n$ is all of the free variables in $A$, then
+    $
+        tack_cal(T) A -> B h0 "iff" h0 tack_cal(T)' A[e_1, dots, e_n] -> B[e_1, dots, e_n]
+    $
+]) <theorem_on_constant_deduction_theorem>
+
