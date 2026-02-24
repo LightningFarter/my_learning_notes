@@ -611,3 +611,43 @@
     $
 ]) <theorem_on_constant_deduction_theorem>
 
+== The Equivalence and Equality Theorems
+
+#theorem(title: "equivalence thoerem", [
+    let $cal(T)$ be theory, let $A, B_1, dots, B_n$ be formula in $cal(T)$, let $B_1, dots, B_n$ be part of $A$, let $A'$ be formula obtained by replacing $B_1, dots, B_n$ as $B'_1, dots, B'_n$, then
+    $
+        mif tack B_1 <-> B'_1, dots, tack B_n <-> B'_n \
+        => tack A <-> A'
+    $
+]) <equivalence_theorem>
+
+#definition(title: "variance of formula", [
+    let $A$ be formula, let $x, y$ be variables, let $B$ be part of $A$ and $y$ not free in $B$, then a *variance* of $A$ denote as $A'$ is obtained by a series of replacement of $exists x B$ to $exists y B_x [y]$
+]) <variance_of_formula_definition>
+
+#theorem(title: "variant theorem", [
+    let $cal(T)$ be theory, let $A$ be formula, let $A'$ be variant of $A$, then $tack A <-> A'$
+]) <variant_theorem>
+
+#theorem(title: "symmetry theorem", [
+    let $cal(T)$ be theory, let $a, b$ be terms, then $tack a = b <-> b = a$
+]) <symmetry_theorem>
+
+#theorem(title: "equality theorem", [
+    let $cal(T)$ be theory, let $b$ be term, let $a_1, dots, a_n$ be terms not in quantifiers, let $b'$ be variant of $b$ replacing $a_1, dots, a_n$ as $a'_1, dots, a'_n$, if $tack a_1 = a'_1, dots, tack a_n = a'_n$, then $tack b = b'$
+
+    let $A$ be formula, let $a_1, dots, a_n$ be terms not in quantifiers, let $A'$ be variant of $A$ replacing $a_1, dots, a_n$ as $a'_1, dots, a'_n$, if $tack a_1 = a'_1, dots, tack a_n = a'_n$, then $tack A <-> A'$
+]) <equality_theorem>
+
+#corollary([
+    let $cal(T)$ be theory, let $b$ be term, let $a_1, dots, a_n$ be replacable terms in $b$, let $b'$ be variant of $b$ obtained by replacing $a_1, dots, a_n$ to $a'_1, dots, a'_n$, then $tack a_1 = a'_1 -> dots -> tack a_n = a'_n -> b[a_1, dots, a_n] = b'[a'_1, dots, a'_n]$
+]) <equality_theorem_term_corollary>
+
+#corollary([
+    let $cal(T)$ be theory, let $A$ be formula, let $a_1, dots, a_n$ be replacable terms in $A$, let $A'$ be variant of $A$ obtained by replacing $a_1, dots, a_n$ to $a'_1, dots, a'_n$, then \ $tack a_1 = a'_1 -> dots -> tack a_n = a'_n -> (A[a_1, dots, a_n] <-> A'[a'_1, dots, a'_n])$
+]) <equality_theorem_formula_corollary>
+
+#corollary([
+    let $cal(T)$ be theory, let $A$ be formula, let $a, x$ be terms in $A$, let $x$ not in $a$, then $tack A_x [a] <-> exists x (x = a and A)$
+]) <equality_theorem_substitution_corollary>
+
