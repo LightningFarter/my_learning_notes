@@ -651,3 +651,19 @@
     let $cal(T)$ be theory, let $A$ be formula, let $a, x$ be terms in $A$, let $x$ not in $a$, then $tack A_x [a] <-> exists x (x = a and A)$
 ]) <equality_theorem_substitution_corollary>
 
+== Prenex Form
+
+#definition(title: "prenex form and prenex operations", [
+    let $cal(T)$ be theory, let $A$ be formula, let $B$ be open formula in $A$, let $x_1, dots, x_n$ be variables in $A$, let $Q_1, dots, Q_n$ be quantifiers $exists$ or $forall$, then $A' = Q_1 x_1 dots Q_n x_n B$ is a *prenex form*, where $Q_1 x_1 dots Q_n x_n$ is the *prefix*, and $B$ is the *matrix*
+
+    we then define *prenex operations* that turns a formula into prenex form, let $Q$ be $exists$ or $forall$, let $Q'$ be $exists$ if $Q$ is $forall$, $forall$ if $Q$ is $exists$
+    + replace $A$ by its variant
+    + replace part $not Q x B$ of $A$ by $Q' x not B$
+    + replace part $Q x B or C$ of $A$ by $Q x (B or C)$ where $x$ is not free in $C$
+    + replace part $B or Q x C$ of $A$ by $Q x (B or C)$ where $x$ is not free in $B$
+    + replace part $Q x B -> C$ of $A$ by $Q' x (B -> C)$ where $x$ is not free in $C$
+    + replace part $B -> Q x C$ of $A$ by $Q x (B -> C)$ where $x$ is not free in $B$
+    + replace part $Q x B and C$ of $A$ by $Q x (B and C)$ where $x$ is not free in $C$
+    + replace part $B and Q x C$ of $A$ by $Q x (B and C)$ where $x$ is not free in $B$
+]) <prenex_form>
+
