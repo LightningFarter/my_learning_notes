@@ -476,6 +476,8 @@
     where the right hand side is built up with $H_1, dots, H_k, a_1, dots, a_n$, commas and parentheses
 ]) <defineable_definition>
 
+#pagebreak()
+
 = Theorems in First-Order Theories
 
 == The Tautology Theorem
