@@ -74,16 +74,16 @@
 
 #pagebreak()
 
-= The Nature of Mathematical Logic
+= cal(T)he Nature of Mathematical Logic
 
 == Axiom Systems
 
 #definition(title: "axioms and basic concepts", [
-    The first mathematical laws cannot be proved, it needs to be accepted before deriving any other laws. Those laws to be accepted are *axioms* which conveys some *basic concepts*. 
+    cal(T)he first mathematical laws cannot be proved, it needs to be accepted before deriving any other laws. cal(T)hose laws to be accepted are *axioms* which conveys some *basic concepts*. 
 ]) <axioms_basic_concepts_meaning_definition>
 
 #proposition([
-    Mathematics should explain the basic concepts and axioms so that its audiences accept it. Then he define derived concepts to prove theorems about basic and derived concepts. Then construct system of basic concepts, derived concepts, axioms, and theorems, called *axiom system*
+    Mathematics should explain the basic concepts and axioms so that its audiences accept it. cal(T)hen he define derived concepts to prove theorems about basic and derived concepts. cal(T)hen construct system of basic concepts, derived concepts, axioms, and theorems, called *axiom system*
 ]) <axiom_system_proposition>
 
 == Formal Systems
@@ -97,9 +97,9 @@
 ]) <finitary_definition>
 
 #definition(title: "syntatical and semantical study", [
-    The study of axioms and theorems as sentences is called *syntatical study* of axiom systems.
+    cal(T)he study of axioms and theorems as sentences is called *syntatical study* of axiom systems.
 
-    The study of meaning of the sentences is called *semantical study* of axiom systems.
+    cal(T)he study of meaning of the sentences is called *semantical study* of axiom systems.
 ]) <syntatical_semantical_study_definition>
 
 #definition(title: "formal system", [
@@ -118,7 +118,7 @@
     Rules state that under certain condition, some formulas called *hypotheses* can *infer* a formula called *conclusion*. A formal system should have two laws:
     + the axioms of $F$ are theorems of $F$
     + if all hypothesis of a rule of $F$ are theorems of $F$, then the conclusion of the rule is a theorem of $F$
-    Then a formula is a theorem of $F$ iff it follows the rules.
+    cal(T)hen a formula is a theorem of $F$ iff it follows the rules.
 ]) <rules_definition>
 
 #definition(title: "generalized inductive definition", [
@@ -126,11 +126,11 @@
 ]) <generalized_inductive_definition>
 
 #definition(title: "prove by induction on theorems", [
-    To prove every theorem of $F$ has property $P$, then is suffice to prove
+    cal(T)o prove every theorem of $F$ has property $P$, then is suffice to prove
     + every axiom of $F$ has property $P$
     + if all hypotheses of rule of $F$ have property $P$, then conclusion of the rule has property $P$
 
-    Then for each member of sets $S_0, S_1, dots S_omega$ has property $P$, which is prove by *induction on theorems*, the hypotheses are *induction hypotheses*
+    cal(T)hen for each member of sets $S_0, S_1, dots S_omega$ has property $P$, which is prove by *induction on theorems*, the hypotheses are *induction hypotheses*
 ]) <prove_by_induction_on_theorems>
 
 #definition(title: "finite rule", [
@@ -159,12 +159,12 @@
 
 #pagebreak()
 
-= First-Order Theories
+= First-Order cal(T)heories
 
 == Functions and Predicates
 
 #definition(title: "logical and non-logical concepts", [
-    To describe the language of a formal system, there are *logical concepts* which are common to all axiom systems, and *non-logical concepts*.
+    cal(T)o describe the language of a formal system, there are *logical concepts* which are common to all axiom systems, and *non-logical concepts*.
 ]) <logical_nonlogical_concepts_definition>
 
 #definition(title: "non-logical concepts set theory terminology", [
@@ -183,28 +183,28 @@
     - for any set $A$, there is binary predicates of same elements $(a, a)$, then this is *equality predicate*, then we use denote $=$ for the equality predicates of an universe
 ]) <non_logical_concepts_set_theory_terminology_definition>
 
-== Truth Functions
+== cal(T)ruth Functions
 
 #definition(title: "truth values", [
-    for logical concepts, we introduce objects $T, F$ called *truth values* to descrive a formula of a formal system
+    for logical concepts, we introduce objects $cal(T), F$ called *truth values* to descrive a formula of a formal system
 ]) <truth_values_definition>
 
 #definition(title: "truth function", [
-    a *truth function* is a function of ${T, F} -> {T, F}$
+    a *truth function* is a function of ${cal(T), F} -> {cal(T), F}$
 ]) <truth_function_definition>
 
 #definition(title: "And truth function", [
     define binary truth function $H_and$ such that if $a, b$ are truth value of formula $A, B$, then $H_and (a, b)$ is the truth value of $A and B$, and $H_and$ is defined as
     $
-        & H_and (T, T) = T \
-        & H_and (T, F) = H_and (F, T) = H_and (F, F) = F
+        & H_and (cal(T), cal(T)) = cal(T) \
+        & H_and (cal(T), F) = H_and (F, cal(T)) = H_and (F, F) = F
     $
 ]) <and_truth_function_definition>
 
 #definition(title: "Or truth function", [
     define binary truth function $H_or$ such that if $a, b$ are truth value of formula $A, B$, then $H_or (a, b)$ is the truth value of $A or B$, and $H_or$ is defined as
     $
-        & H_or (T, T) = H_or (T, F) = H_or (F, T) = T \
+        & H_or (cal(T), cal(T)) = H_or (cal(T), F) = H_or (F, cal(T)) = cal(T) \
         & H_or (F, F) = F
     $
 ]) <or_truth_function_definition>
@@ -212,23 +212,23 @@
 #definition(title: "if then truth function", [
     define binary truth function if ... then ... as $H_arrow$ such that truth value of $A -> B$ is $H_arrow (a, b)$, and defined as
     $
-        & H_arrow (T, T) = H_arrow (F, T) = H_arrow (F, F) = T \
-        & H_arrow (T, F) = F
+        & H_arrow (cal(T), cal(T)) = H_arrow (F, cal(T)) = H_arrow (F, F) = cal(T) \
+        & H_arrow (cal(T), F) = F
     $
 ]) <if_then_truth_function_definition>
 
 #definition(title: "iff truth function", [
     define binary truth function iff as $H_arrow.l.r$ such that truth value of $A <-> B$ is $H_arrow.l.r (a, b)$, and defined as
     $
-        & H_arrow.l.r (T, T) = H_arrow.l.r (F, F) = T \
-        & H_arrow.l.r (T, F) = H_arrow.l.r (F, T) = F
+        & H_arrow.l.r (cal(T), cal(T)) = H_arrow.l.r (F, F) = cal(T) \
+        & H_arrow.l.r (cal(T), F) = H_arrow.l.r (F, cal(T)) = F
     $
 ]) <iff_truth_function_definition>
 
 #definition(title: "not truth function", [
     define unary truth function not as $not$, then $not A$ has truth value $H_not (a)$ defined as
     $
-        H_not (T) = F h0 H_not (F) = T
+        H_not (cal(T)) = F h0 H_not (F) = cal(T)
     $
 ]) <not_truth_function_definition>
 
@@ -313,7 +313,7 @@
     let $u_1, dots, u_n$ and $u'_1, dots, u'_n$ be designators, $u_1 dots u_n$ and $u'_1 dots u'_n$ are compatible, \ then $u_i = u'_i$ for $i = 1, dots, n$
 ]) <compatible_equivalence_lemma>
 
-#theorem(title: "Formation Theorem", [
+#theorem(title: "Formation cal(T)heorem", [
     every designator can be written in form $u v_1 dots v_n$ where $u$ is symbol of index $n$ in only one way
 ]) <formation_theorem>
 
@@ -321,7 +321,7 @@
     every occurence of a symbol in a designator $u$ begins an occurence of a designator in $u$
 ]) <designator_begin_lemma>
 
-#theorem(title: "Occurence Theorem", [
+#theorem(title: "Occurence cal(T)heorem", [
     let $u$ be symbol of index $n$, let $v_1, dots, v_n$ be designators, then any occurence of designator $v$ in $u v_1 dots v_n$ is either all of $u v_1 dots v_n$ or part of one in $v_i$
 ]) <occurence_theorem>
 
@@ -400,9 +400,9 @@
 ])
 
 #definition(title: "valid", [
-    let $L$ be first-order language, let $cal(A)$ be structure for $L$, let $A$ be formula. then $A$ is valid in $cal(A)$ if $forall A'$ be $cal(A)$-instance, $cal(A)(A') = T$
+    let $L$ be first-order language, let $cal(A)$ be structure for $L$, let $A$ be formula. then $A$ is valid in $cal(A)$ if $forall A'$ be $cal(A)$-instance, $cal(A)(A') = cal(T)$
 
-    a closed formula $A$ is valid iff $cal(A)(A) = T$
+    a closed formula $A$ is valid iff $cal(A)(A) = cal(T)$
 ]) <first_order_valid_formula_definition>
 
 #lemma([
@@ -447,10 +447,10 @@
 ]) <rules_of_inference_definition>
 
 #definition(title: "first-order theory", [
-    now we define *first-order theorey* as a formal system $T$ such that
-    + $L(T)$ is first-order language
-    + axioms of $T$ are logical axioms of $L(T)$ and further nonlogical axioms
-    + rule of $T$ are
+    now we define *first-order theorey* as a formal system $cal(T)$ such that
+    + $L(cal(T))$ is first-order language
+    + axioms of $cal(T)$ are logical axioms of $L(cal(T))$ and further nonlogical axioms
+    + rule of $cal(T)$ are
         - expansion rule
         - contraction rule
         - associative rule
@@ -459,13 +459,13 @@
 ]) <first_order_theory_definition>
 
 #definition(title: "model of first order theory", [
-    let $T$ be first order theory, the *model* of $T$ is a structure for $L(T)$ such that all of the nonlogical axioms of $T$ are valid
+    let $cal(T)$ be first order theory, the *model* of $cal(T)$ is a structure for $L(cal(T))$ such that all of the nonlogical axioms of $cal(T)$ are valid
 
-    a formulat $A$ is *valid* in $T$ if it is valid in every model of $T$
+    a formulat $A$ is *valid* in $cal(T)$ if it is valid in every model of $cal(T)$
 ]) <model_first_order_theory_definition>
 
 #theorem(title: "validity theorem", [
-    let $T$ be a first-order theory, then every theorem of $T$ is valid
+    let $cal(T)$ be a first-order theory, then every theorem of $cal(T)$ is valid
 ]) <validity_theorem>
 
 #definition(title: "defineable", [
@@ -478,44 +478,44 @@
 
 #pagebreak()
 
-= Theorems in First-Order Theories
+= cal(T)heorems in First-Order cal(T)heories
 
-== The Tautology Theorem
+== cal(T)he cal(T)autology cal(T)heorem
 
 #definition(title: "elementary formula", [
-    let $cal(T)$ be first-order theory, let $A$ be formula in $cal(T)$, then $A$ is *elementary* if either
+    let $cal(cal(T))$ be first-order theory, let $A$ be formula in $cal(cal(T))$, then $A$ is *elementary* if either
     - $A$ is atomic
     - $A$ is an instantiation
 ]) <elementary_formula_definition>
 
 #definition(title: "truth valuation", [
-    let $cal(T)$ be first-order theory, let $A$ be formula in $cal(T)$, then function $V : A |-> {T, F}$ is a *truth valuation* maps a set of elementary formulas in $T$ to set of truth values
+    let $cal(cal(T))$ be first-order theory, let $A$ be formula in $cal(cal(T))$, then function $V : A |-> {cal(T), F}$ is a *truth valuation* maps a set of elementary formulas in $cal(T)$ to set of truth values
 ]) <truth_valuation_definition>
 
 #definition(title: "tautological consequence", [
-    let $cal(T)$ be first-order theory, let $B, A_1, dots, A_n$ be formulas in $cal(T)$, then $B$ is a *tautological consequence* of $A_1, dots, A_n$ if $V(B) = T$ for every truth valuation $V$ when $V(A_1) = dots = V(A_n)$
+    let $cal(cal(T))$ be first-order theory, let $B, A_1, dots, A_n$ be formulas in $cal(cal(T))$, then $B$ is a *tautological consequence* of $A_1, dots, A_n$ if $V(B) = cal(T)$ for every truth valuation $V$ when $V(A_1) = dots = V(A_n)$
 
     $B$ is *tautology* if $n = 0$
 ]) <tautological_consequence_definition>
 
 #lemma([
-    let $cal(T)$ be first-order theory, let $A, B$ be formulas in $cal(T)$, then if $tack A or B$ then $tack B or A$
+    let $cal(cal(T))$ be first-order theory, let $A, B$ be formulas in $cal(cal(T))$, then if $tack A or B$ then $tack B or A$
 ]) <or_commutation_lemma>
 
 #lemma(title: "detachment rule", [
-    let $cal(T)$ be first-order theory, let $A, B$ be formulas in $cal(T)$, then if $tack A$ and $tack A -> B$ then $tack B$
+    let $cal(cal(T))$ be first-order theory, let $A, B$ be formulas in $cal(cal(T))$, then if $tack A$ and $tack A -> B$ then $tack B$
 ]) <detachment_rule_lemma>
 
 #corollary([
-    let $cal(T)$ be first-order theory, let $B, A_1, dots, A_n$ be formulas in $cal(T)$, then if $tack A_1, dots, tack A_n$ and \ $tack A_1 -> dots -> A_n -> B$, then $tack B$
+    let $cal(cal(T))$ be first-order theory, let $B, A_1, dots, A_n$ be formulas in $cal(cal(T))$, then if $tack A_1, dots, tack A_n$ and \ $tack A_1 -> dots -> A_n -> B$, then $tack B$
 ]) <detachment_rule_corollary>
 
 #lemma([
-    let $cal(T)$ be first-order theory, let $A_1, dots, A_n$ be formulas in $cal(T)$ where $n >= 2$, if $A_1 or dots or A_n$ is tautology, then $tack A_1 or dots or A_n$
+    let $cal(cal(T))$ be first-order theory, let $A_1, dots, A_n$ be formulas in $cal(cal(T))$ where $n >= 2$, if $A_1 or dots or A_n$ is tautology, then $tack A_1 or dots or A_n$
 ]) <tautology_to_theorem_lemma>
 
 #theorem(title: "tautology theorem", [
-    let $cal(T)$ be first-order theory, let $B, A_1, dots, A_n$ be formulas in $cal(T)$, if $B$ is tautological consequence of $A_1, dots, A_n$, and $tack A_1, dots, tack A_n$ then $tack B$
+    let $cal(cal(T))$ be first-order theory, let $B, A_1, dots, A_n$ be formulas in $cal(cal(T))$, if $B$ is tautological consequence of $A_1, dots, A_n$, and $tack A_1, dots, tack A_n$ then $tack B$
 ]) <tautology_theorem>
 
 #corollary([
@@ -523,7 +523,7 @@
 ]) <tautology_theorem_corollary>
 
 #proposition([
-    let $cal(T)$ be first-order theory, let $A, B, C$ be formulas in $cal(T)$, then the following are use cases of tautology theorem other than the detachment rule
+    let $cal(cal(T))$ be first-order theory, let $A, B, C$ be formulas in $cal(cal(T))$, then the following are use cases of tautology theorem other than the detachment rule
     + if $tack A <-> B$, then $tack A$ iff $tack B$
     + if $tack A -> B$ and $tack B -> C$, then $tack A -> C$
     + if $tack A <-> B$ and $tack B <-> C$, then $tack A <-> C$
@@ -533,14 +533,14 @@
 ]) <common_use_case_tautology_theorem_proposition>
 
 #definition(title: "theorem (generalized)", [
-    let $cal(T)$ be theory, then theorems of $cal(T)$ can be generalized by inductive definition as
+    let $cal(cal(T))$ be theory, then theorems of $cal(cal(T))$ can be generalized by inductive definition as
     + every substitution axiom, identity axiom, equality axiom, and nonlogical axiom is a theorem
-    + let $A_1, dots, A_n, B$ be formulas in $cal(T)$, if $A_1, dots, A_n$ for $n >= 0$ are theorems, and $B$ is tautological consequence of $A_1, dots, A_n$, then $B$ is a theorem
-    + let $A, B$ be formulas in $cal(T)$, if $A$ is a theorem and $B$ can be inferred from $A$ by $exists$-introduction rule, then $B$ is a theorem
+    + let $A_1, dots, A_n, B$ be formulas in $cal(cal(T))$, if $A_1, dots, A_n$ for $n >= 0$ are theorems, and $B$ is tautological consequence of $A_1, dots, A_n$, then $B$ is a theorem
+    + let $A, B$ be formulas in $cal(cal(T))$, if $A$ is a theorem and $B$ can be inferred from $A$ by $exists$-introduction rule, then $B$ is a theorem
 ]) <generalized_theorem_definition>
 
 #definition(title: "proof by induction", [
-    let $cal(T)$ be theory, let $A, A_1, dots, A_n, B$ be formulas in $cal(T)$, the method *proof by induction* or *induction on theorems* is the method proving every theorem has property $P$ by
+    let $cal(cal(T))$ be theory, let $A, A_1, dots, A_n, B$ be formulas in $cal(cal(T))$, the method *proof by induction* or *induction on theorems* is the method proving every theorem has property $P$ by
     + every substitution axiom, identity axiom, equality axiom, and nonlogical axiom has property $P$
     + if $A_1, dots, A_n$ have property $P$, and $B$ is tautological consequence of $A_1, dots, A_n$, \ then $B$ has property $P$
     + if $A$ has property $P$ and $B$ can be inferred from $A$ by $exists$-introduction rule, then $B$ has property $P$
@@ -549,11 +549,11 @@
 == Results on Qunatifiers
 
 #lemma(title: [$forall$-introduction rule], [
-    let $cal(T)$ be theory, let $A, B$ be formulas in $cal(T)$, let $x$ be variable, if $tack A -> B$ and $x$ is not free in $A$, then $tack A -> forall x B$
+    let $cal(cal(T))$ be theory, let $A, B$ be formulas in $cal(cal(T))$, let $x$ be variable, if $tack A -> B$ and $x$ is not free in $A$, then $tack A -> forall x B$
 ]) <forall_introduction_rule_lemma>
 
 #lemma(title: "generalization rule", [
-    let $cal(T)$ be thoery, let $A$ be formula, let $x$ be variable, if $tack A$, then $tack forall x A$
+    let $cal(cal(T))$ be thoery, let $A$ be formula, let $x$ be variable, if $tack A$, then $tack forall x A$
 ]) <generalization_rule_lemma>
 
 #definition(title: "instance", [
@@ -561,17 +561,17 @@
 ]) <formula_instance_definition>
 
 #lemma(title: "substitution rule", [
-    let $cal(T)$ be theory, let $A$ be formula, let $A'$ be instance of $A$, if $tack A$, then $tack A'$
+    let $cal(cal(T))$ be theory, let $A$ be formula, let $A'$ be instance of $A$, if $tack A$, then $tack A'$
 ]) <substitution_rule_lemma>
 
 #theorem(title: "substitution theorem", [
-    let $cal(T)$ be theory, let $A$ be formula, let $x_1, dots, x_n, a_1, dots, a_n$ be variables, then
+    let $cal(cal(T))$ be theory, let $A$ be formula, let $x_1, dots, x_n, a_1, dots, a_n$ be variables, then
     + $tack A_(x_1, dots, x_n)[a_1, dots, a_n] -> exists x_1 dots exists x_n A$
     + $tack forall x_1 dots forall x_n A -> A_(x_1, dots, x_n)[a_1, dots, a_n]$
 ]) <substitution_theorem>
 
 #lemma(title: "distribution rule", [
-    let $cal(T)$ be theory, let $A, B$ be formulas, let $x$ be variable, if $tack A -> B$, then
+    let $cal(cal(T))$ be theory, let $A, B$ be formulas, let $x$ be variable, if $tack A -> B$, then
     + $tack exists x A -> exists x B$
     + $tack forall x A -> forall x B$
 ]) <distribution_rule_lemma>
@@ -581,42 +581,42 @@
 ]) <closure_definition>
 
 #theorem(title: "closure theorem", [
-    let $cal(T)$ be theory, let $A$ be formula, let $A'$ be closure of $A$, then $tack A$ iff $tack A'$
+    let $cal(cal(T))$ be theory, let $A$ be formula, let $A'$ be closure of $A$, then $tack A$ iff $tack A'$
 ]) <closure_theorem>
 
 #corollary([
-    let $cal(T)$ be theory, let $A$ be formula, let $A'$ be closure of $A$, let $cal(A)$ be strucutre of $cal(T)$, \ then $A$ is valid in $cal(A)$ iff $A'$ is valid in $cal(A)$
+    let $cal(cal(T))$ be theory, let $A$ be formula, let $A'$ be closure of $A$, let $cal(A)$ be strucutre of $cal(cal(T))$, \ then $A$ is valid in $cal(A)$ iff $A'$ is valid in $cal(A)$
 ]) <closure_validity_in_structure_corollary>
 
-== The Deduction Theorem
+== cal(T)he Deduction cal(T)heorem
 
 #definition([
-    let $cal(T)$ be theory, let $A_1, dots, A_n$ be formulas, then we designate $cal(T)[A_1, dots, A_n]$ as accepting $A_1, dots, A_n$ as new nonlogical axioms to $cal(T)$
+    let $cal(cal(T))$ be theory, let $A_1, dots, A_n$ be formulas, then we designate $cal(cal(T))[A_1, dots, A_n]$ as accepting $A_1, dots, A_n$ as new nonlogical axioms to $cal(cal(T))$
 ]) <expanding_nonlogical_axiom_definition>
 
 #theorem(title: "deduction theorem", [
-    let $cal(T)$ be theory, let $A, B$ be formula, let $A$ be closed, then $tack_cal(T) A -> B$ iff $tack_(cal(T)[A]) B$
+    let $cal(cal(T))$ be theory, let $A, B$ be formula, let $A$ be closed, then $tack_cal(cal(T)) A -> B$ iff $tack_(cal(cal(T))[A]) B$
 ]) <deduction_theorem>
 
 #corollary([
-    let $cal(T)$ be theory, let $A_1, dots, A_n, B$ be formula in $cal(T)$, $A_1, dots, A_n$ be closed formula, then \ $tack_cal(T) A_1 -> dots -> A_n -> B$ iff $tack_(cal(T)[A_1, dots, A_n]) B$
+    let $cal(cal(T))$ be theory, let $A_1, dots, A_n, B$ be formula in $cal(cal(T))$, $A_1, dots, A_n$ be closed formula, then \ $tack_cal(cal(T)) A_1 -> dots -> A_n -> B$ iff $tack_(cal(cal(T))[A_1, dots, A_n]) B$
 ]) <deduction_theorem_corollary>
 
 #theorem(title: "theorem on constants", [
-    let $cal(T)$ be theory, let $cal(T)'$ be obtained by adding constants on $cal(T)$, let $A$ be formula in $cal(T)$, let $e_1, dots, e_n$ be new constants of $cal(T)'$, then $tack_cal(T) A$ iff $tack_cal(T)' A[e_1, dots, e_n]$
+    let $cal(cal(T))$ be theory, let $cal(cal(T))'$ be obtained by adding constants on $cal(cal(T))$, let $A$ be formula in $cal(cal(T))$, let $e_1, dots, e_n$ be new constants of $cal(cal(T))'$, then $tack_cal(cal(T)) A$ iff $tack_cal(cal(T))' A[e_1, dots, e_n]$
 ]) <theorem_on_constants_theorem>
 
 #theorem([
-    let $cal(T)$ be theory, let $cal(T)'$ be obtained by adding constants $e_1, dots, e_n$ on $cal(T)$, let $A, B$ be formula in $cal(T)$ where $x_1, dots, x_n$ is all of the free variables in $A$, then
+    let $cal(cal(T))$ be theory, let $cal(cal(T))'$ be obtained by adding constants $e_1, dots, e_n$ on $cal(cal(T))$, let $A, B$ be formula in $cal(cal(T))$ where $x_1, dots, x_n$ is all of the free variables in $A$, then
     $
-        tack_cal(T) A -> B h0 "iff" h0 tack_cal(T)' A[e_1, dots, e_n] -> B[e_1, dots, e_n]
+        tack_cal(cal(T)) A -> B h0 "iff" h0 tack_cal(cal(T))' A[e_1, dots, e_n] -> B[e_1, dots, e_n]
     $
 ]) <theorem_on_constant_deduction_theorem>
 
-== The Equivalence and Equality Theorems
+== cal(T)he Equivalence and Equality cal(T)heorems
 
 #theorem(title: "equivalence thoerem", [
-    let $cal(T)$ be theory, let $A, B_1, dots, B_n$ be formula in $cal(T)$, let $B_1, dots, B_n$ be part of $A$, let $A'$ be formula obtained by replacing $B_1, dots, B_n$ as $B'_1, dots, B'_n$, then
+    let $cal(cal(T))$ be theory, let $A, B_1, dots, B_n$ be formula in $cal(cal(T))$, let $B_1, dots, B_n$ be part of $A$, let $A'$ be formula obtained by replacing $B_1, dots, B_n$ as $B'_1, dots, B'_n$, then
     $
         mif tack B_1 <-> B'_1, dots, tack B_n <-> B'_n \
         => tack A <-> A'
@@ -628,35 +628,35 @@
 ]) <variance_of_formula_definition>
 
 #theorem(title: "variant theorem", [
-    let $cal(T)$ be theory, let $A$ be formula, let $A'$ be variant of $A$, then $tack A <-> A'$
+    let $cal(cal(T))$ be theory, let $A$ be formula, let $A'$ be variant of $A$, then $tack A <-> A'$
 ]) <variant_theorem>
 
 #theorem(title: "symmetry theorem", [
-    let $cal(T)$ be theory, let $a, b$ be terms, then $tack a = b <-> b = a$
+    let $cal(cal(T))$ be theory, let $a, b$ be terms, then $tack a = b <-> b = a$
 ]) <symmetry_theorem>
 
 #theorem(title: "equality theorem", [
-    let $cal(T)$ be theory, let $b$ be term, let $a_1, dots, a_n$ be terms not in quantifiers, let $b'$ be variant of $b$ replacing $a_1, dots, a_n$ as $a'_1, dots, a'_n$, if $tack a_1 = a'_1, dots, tack a_n = a'_n$, then $tack b = b'$
+    let $cal(cal(T))$ be theory, let $b$ be term, let $a_1, dots, a_n$ be terms not in quantifiers, let $b'$ be variant of $b$ replacing $a_1, dots, a_n$ as $a'_1, dots, a'_n$, if $tack a_1 = a'_1, dots, tack a_n = a'_n$, then $tack b = b'$
 
     let $A$ be formula, let $a_1, dots, a_n$ be terms not in quantifiers, let $A'$ be variant of $A$ replacing $a_1, dots, a_n$ as $a'_1, dots, a'_n$, if $tack a_1 = a'_1, dots, tack a_n = a'_n$, then $tack A <-> A'$
 ]) <equality_theorem>
 
 #corollary([
-    let $cal(T)$ be theory, let $b$ be term, let $a_1, dots, a_n$ be replacable terms in $b$, let $b'$ be variant of $b$ obtained by replacing $a_1, dots, a_n$ to $a'_1, dots, a'_n$, then $tack a_1 = a'_1 -> dots -> tack a_n = a'_n -> b[a_1, dots, a_n] = b'[a'_1, dots, a'_n]$
+    let $cal(cal(T))$ be theory, let $b$ be term, let $a_1, dots, a_n$ be replacable terms in $b$, let $b'$ be variant of $b$ obtained by replacing $a_1, dots, a_n$ to $a'_1, dots, a'_n$, then $tack a_1 = a'_1 -> dots -> tack a_n = a'_n -> b[a_1, dots, a_n] = b'[a'_1, dots, a'_n]$
 ]) <equality_theorem_term_corollary>
 
 #corollary([
-    let $cal(T)$ be theory, let $A$ be formula, let $a_1, dots, a_n$ be replacable terms in $A$, let $A'$ be variant of $A$ obtained by replacing $a_1, dots, a_n$ to $a'_1, dots, a'_n$, then \ $tack a_1 = a'_1 -> dots -> tack a_n = a'_n -> (A[a_1, dots, a_n] <-> A'[a'_1, dots, a'_n])$
+    let $cal(cal(T))$ be theory, let $A$ be formula, let $a_1, dots, a_n$ be replacable terms in $A$, let $A'$ be variant of $A$ obtained by replacing $a_1, dots, a_n$ to $a'_1, dots, a'_n$, then \ $tack a_1 = a'_1 -> dots -> tack a_n = a'_n -> (A[a_1, dots, a_n] <-> A'[a'_1, dots, a'_n])$
 ]) <equality_theorem_formula_corollary>
 
 #corollary([
-    let $cal(T)$ be theory, let $A$ be formula, let $a, x$ be terms in $A$, let $x$ not in $a$, then $tack A_x [a] <-> exists x (x = a and A)$
+    let $cal(cal(T))$ be theory, let $A$ be formula, let $a, x$ be terms in $A$, let $x$ not in $a$, then $tack A_x [a] <-> exists x (x = a and A)$
 ]) <equality_theorem_substitution_corollary>
 
 == Prenex Form
 
 #definition(title: "prenex form and prenex operations", [
-    let $cal(T)$ be theory, let $A$ be formula, let $B$ be open formula in $A$, let $x_1, dots, x_n$ be variables in $A$, let $Q_1, dots, Q_n$ be quantifiers $exists$ or $forall$, then $A' = Q_1 x_1 dots Q_n x_n B$ is a *prenex form*, where $Q_1 x_1 dots Q_n x_n$ is the *prefix*, and $B$ is the *matrix*
+    let $cal(cal(T))$ be theory, let $A$ be formula, let $B$ be open formula in $A$, let $x_1, dots, x_n$ be variables in $A$, let $Q_1, dots, Q_n$ be quantifiers $exists$ or $forall$, then $A' = Q_1 x_1 dots Q_n x_n B$ is a *prenex form*, where $Q_1 x_1 dots Q_n x_n$ is the *prefix*, and $B$ is the *matrix*
 
     we then define *prenex operations* that turns a formula into prenex form, let $Q$ be $exists$ or $forall$, let $Q'$ be $exists$ if $Q$ is $forall$, $forall$ if $Q$ is $exists$
     + replace $A$ by its variant
@@ -668,4 +668,48 @@
     + replace part $Q x B and C$ of $A$ by $Q x (B and C)$ where $x$ is not free in $C$
     + replace part $B and Q x C$ of $A$ by $Q x (B and C)$ where $x$ is not free in $B$
 ]) <prenex_form>
+
+#pagebreak()
+
+= The Characterization Problem
+
+== The Reduction Theorem
+
+#definition(title: "characterization problem", [
+    let $F$ be any formal system, then finding a necessary and sufficient condition that a formula $A$ of $F$ is a theorem of $F$ is called the *characterization problem* for $F$
+]) <characterization_problem_definition>
+
+#definition(title: "extension for language and theory", [
+    let $L$ be first-order language, then $L'$ is *extension* of $L$ if every nonlogical symbol of $L$ is nonlogical symbol of $L'$
+
+    let $cal(T)$ be first-order theory, then $cal(T)'$ is *extension* of $cal(T)$ if $L(cal(T)')$ is extension of $L(cal(T))$ and every theorem of $cal(T)$ is a theorem of $cal(T)'$
+
+    if $cal(T)'$ is *conservative* extension of $cal(T)$, then every formula of $cal(T)$ which is a theorem of $cal(T)'$ is also a theorem of $cal(T)$
+
+    theories $cal(T)$ and $cal(T)'$ are *equivalent* if each ore extensions of the other
+]) <extension_language_theory_definition>
+
+#corollary([
+    let $cal(T), cal(T)'$ be first-order theory, then if $cal(T), cal(T)'$ are equivalent, the characterization problems of $cal(T), cal(T)'$ are equivalent
+]) <equivalent_characterization_problems_corollary>
+
+#definition([
+    let $cal(T)$ be first-order theory, let $Gamma$ be set of formulas, then denote $cal(T)[Gamma]$ as extension of $cal(T)$ accepting all formulas in $Gamma$ as nonlogical axioms
+]) <nonlogical_set_theory_extension_notation_definition>
+
+#theorem(title: "reduction theorem", [
+    let $cal(T)$ be first-order theory, let $Gamma$ be set of formulas in $cal(T)$, let $A$ be formula of $cal(T)$, then $A$ is a theorem of $cal(T)[Gamma]$ iff there is a theorem of $cal(T)$ of form $B_1 -> dots -> B_n -> A$ where each $B_i$ is the closure of formula in $Gamma$
+]) <reduction_theorem>
+
+#definition(title: "consistency", [
+    let $cal(T)$ be first-order theory, the it is *inconsistent* if every formula in $cal(T)$ is a theorem of $cal(T)$, otherwise *consistent*
+]) <theory_consistency_definition>
+
+#theorem(title: "reduction theorem for consistency", [
+    let $cal(T)$ be first-order theory, let $Gamma$ be nonempty set of formulas in $cal(T)$, let $A_1, dots, A_n in Gamma$ be arbitrarily distinct, let $A'_1, dots, A'_n$ be closure of $A_1, dots, A_n$, then $cal(T)[Gamma]$ is inconsistent iff exists any \ $tack_(cal(T)[Gamma]) not A'_1 or dots not A'_n$
+]) <reduction_theorem_for_consistency>
+
+#corollary([
+    let $cal(T)$ be first-order theory, let $A$ be formula, let $A'$ be closure of $A$, then $tack_cal(T) A$ iff $cal(T)[not A']$ is inconsistent
+]) <inconsistency_theorem_negation_corollary>
 
