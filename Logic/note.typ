@@ -427,7 +427,7 @@
 
 #definition(title: "logical axioms", [
     let $L$ be first-order langauge, let $A, B$ be formula in $L$, let $x, y$ be variables, then we have axioms
-    + *proposition axiom*: $not A or A$
+    + *propositional axiom*: $not A or A$
     + *substitution axiom*: $A_x [a] -> exists x A$
     + *identity axiom*: $x = x$
     + *equality axiom*: 
