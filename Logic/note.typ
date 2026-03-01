@@ -74,16 +74,16 @@
 
 #pagebreak()
 
-= cal(T)he Nature of Mathematical Logic
+= The Nature of Mathematical Logic
 
 == Axiom Systems
 
 #definition(title: "axioms and basic concepts", [
-    cal(T)he first mathematical laws cannot be proved, it needs to be accepted before deriving any other laws. cal(T)hose laws to be accepted are *axioms* which conveys some *basic concepts*. 
+    The first mathematical laws cannot be proved, it needs to be accepted before deriving any other laws. Those laws to be accepted are *axioms* which conveys some *basic concepts*. 
 ]) <axioms_basic_concepts_meaning_definition>
 
 #proposition([
-    Mathematics should explain the basic concepts and axioms so that its audiences accept it. cal(T)hen he define derived concepts to prove theorems about basic and derived concepts. cal(T)hen construct system of basic concepts, derived concepts, axioms, and theorems, called *axiom system*
+    Mathematics should explain the basic concepts and axioms so that its audiences accept it. Then he define derived concepts to prove theorems about basic and derived concepts. Then construct system of basic concepts, derived concepts, axioms, and theorems, called *axiom system*
 ]) <axiom_system_proposition>
 
 == Formal Systems
@@ -97,9 +97,9 @@
 ]) <finitary_definition>
 
 #definition(title: "syntatical and semantical study", [
-    cal(T)he study of axioms and theorems as sentences is called *syntatical study* of axiom systems.
+    The study of axioms and theorems as sentences is called *syntatical study* of axiom systems.
 
-    cal(T)he study of meaning of the sentences is called *semantical study* of axiom systems.
+    The study of meaning of the sentences is called *semantical study* of axiom systems.
 ]) <syntatical_semantical_study_definition>
 
 #definition(title: "formal system", [
@@ -118,7 +118,7 @@
     Rules state that under certain condition, some formulas called *hypotheses* can *infer* a formula called *conclusion*. A formal system should have two laws:
     + the axioms of $F$ are theorems of $F$
     + if all hypothesis of a rule of $F$ are theorems of $F$, then the conclusion of the rule is a theorem of $F$
-    cal(T)hen a formula is a theorem of $F$ iff it follows the rules.
+    Then a formula is a theorem of $F$ iff it follows the rules.
 ]) <rules_definition>
 
 #definition(title: "generalized inductive definition", [
@@ -126,11 +126,11 @@
 ]) <generalized_inductive_definition>
 
 #definition(title: "prove by induction on theorems", [
-    cal(T)o prove every theorem of $F$ has property $P$, then is suffice to prove
+    To prove every theorem of $F$ has property $P$, then is suffice to prove
     + every axiom of $F$ has property $P$
     + if all hypotheses of rule of $F$ have property $P$, then conclusion of the rule has property $P$
 
-    cal(T)hen for each member of sets $S_0, S_1, dots S_omega$ has property $P$, which is prove by *induction on theorems*, the hypotheses are *induction hypotheses*
+    Then for each member of sets $S_0, S_1, dots S_omega$ has property $P$, which is prove by *induction on theorems*, the hypotheses are *induction hypotheses*
 ]) <prove_by_induction_on_theorems>
 
 #definition(title: "finite rule", [
@@ -159,12 +159,12 @@
 
 #pagebreak()
 
-= First-Order cal(T)heories
+= First-Order Theories
 
 == Functions and Predicates
 
 #definition(title: "logical and non-logical concepts", [
-    cal(T)o describe the language of a formal system, there are *logical concepts* which are common to all axiom systems, and *non-logical concepts*.
+    To describe the language of a formal system, there are *logical concepts* which are common to all axiom systems, and *non-logical concepts*.
 ]) <logical_nonlogical_concepts_definition>
 
 #definition(title: "non-logical concepts set theory terminology", [
@@ -183,7 +183,7 @@
     - for any set $A$, there is binary predicates of same elements $(a, a)$, then this is *equality predicate*, then we use denote $=$ for the equality predicates of an universe
 ]) <non_logical_concepts_set_theory_terminology_definition>
 
-== cal(T)ruth Functions
+== Truth Functions
 
 #definition(title: "truth values", [
     for logical concepts, we introduce objects $cal(T), F$ called *truth values* to descrive a formula of a formal system
@@ -313,7 +313,7 @@
     let $u_1, dots, u_n$ and $u'_1, dots, u'_n$ be designators, $u_1 dots u_n$ and $u'_1 dots u'_n$ are compatible, \ then $u_i = u'_i$ for $i = 1, dots, n$
 ]) <compatible_equivalence_lemma>
 
-#theorem(title: "Formation cal(T)heorem", [
+#theorem(title: "Formation Theorem", [
     every designator can be written in form $u v_1 dots v_n$ where $u$ is symbol of index $n$ in only one way
 ]) <formation_theorem>
 
@@ -321,7 +321,7 @@
     every occurence of a symbol in a designator $u$ begins an occurence of a designator in $u$
 ]) <designator_begin_lemma>
 
-#theorem(title: "Occurence cal(T)heorem", [
+#theorem(title: "Occurence Theorem", [
     let $u$ be symbol of index $n$, let $v_1, dots, v_n$ be designators, then any occurence of designator $v$ in $u v_1 dots v_n$ is either all of $u v_1 dots v_n$ or part of one in $v_i$
 ]) <occurence_theorem>
 
@@ -478,9 +478,9 @@
 
 #pagebreak()
 
-= cal(T)heorems in First-Order cal(T)heories
+= Theorems in First-Order Theories
 
-== cal(T)he cal(T)autology cal(T)heorem
+== The Tautology Theorem
 
 #definition(title: "elementary formula", [
     let $cal(cal(T))$ be first-order theory, let $A$ be formula in $cal(cal(T))$, then $A$ is *elementary* if either
@@ -588,7 +588,7 @@
     let $cal(cal(T))$ be theory, let $A$ be formula, let $A'$ be closure of $A$, let $cal(A)$ be strucutre of $cal(cal(T))$, \ then $A$ is valid in $cal(A)$ iff $A'$ is valid in $cal(A)$
 ]) <closure_validity_in_structure_corollary>
 
-== cal(T)he Deduction cal(T)heorem
+== The Deduction Theorem
 
 #definition([
     let $cal(cal(T))$ be theory, let $A_1, dots, A_n$ be formulas, then we designate $cal(cal(T))[A_1, dots, A_n]$ as accepting $A_1, dots, A_n$ as new nonlogical axioms to $cal(cal(T))$
@@ -613,7 +613,7 @@
     $
 ]) <theorem_on_constant_deduction_theorem>
 
-== cal(T)he Equivalence and Equality cal(T)heorems
+== The Equivalence and Equality Theorems
 
 #theorem(title: "equivalence thoerem", [
     let $cal(cal(T))$ be theory, let $A, B_1, dots, B_n$ be formula in $cal(cal(T))$, let $B_1, dots, B_n$ be part of $A$, let $A'$ be formula obtained by replacing $B_1, dots, B_n$ as $B'_1, dots, B'_n$, then
@@ -669,6 +669,18 @@
     + replace part $B and Q x C$ of $A$ by $Q x (B and C)$ where $x$ is not free in $B$
 ]) <prenex_form>
 
+== Additional Notes
+
+#proposition([
+    let $cal(T)$ be first-order theory, let $P, Q, R, S$ be formulas in $cal(T)$, then
+    + $(P -> Q) -> ((Q -> R) -> (P -> R))$
+    + $P -> ((P -> Q) -> Q)$
+    + $(P -> Q) -> ((R -> S) -> (P or R) -> (Q or S))$
+    + $P -> (P or R)$
+    + $(P -> R) -> ((Q -> R) -> ((P or Q) -> R))$
+    + $(P -> Q) -> ((Q -> P) -> (P <-> Q))$
+]) <useful_tautology_formulas_proposition>
+
 #pagebreak()
 
 = The Characterization Problem
@@ -712,4 +724,94 @@
 #corollary([
     let $cal(T)$ be first-order theory, let $A$ be formula, let $A'$ be closure of $A$, then $tack_cal(T) A$ iff $cal(T)[not A']$ is inconsistent
 ]) <inconsistency_theorem_negation_corollary>
+
+== The Completeness Theorem
+
+#theorem(title: "Completeness Theorem, First Form (Gödel)", [
+    A formula $A$ of a theory $cal(T)$ is a theorem of $cal(T)$ iff it is valid in $cal(T)$
+]) <completeness_theorem_first_form>
+
+#theorem(title: "Completeness Theorem, Second Form", [
+    A theory $cal(T)$ is consistent iff it has a model
+]) <completeness_theorem_second_form>
+
+#definition(title: "restriction and expansion", [
+    let $cal(T)$ be theory, let $L$ be first-order language, let $L'$ be first-order language extension of $L$, let $cal(A)'$ be structure of $L'$, we obtain $cal(A)$ a *restriction* of $cal(A)'$ to $L$ denote as $cal(A)'|_L$, and $cal(A)'$ an *expansion* of $cal(A)$
+
+    then $cal(A)'$ and $cal(A)$ have same individuals, thus $cal(A)(A) = cal(A)'(A)$ for every closed formula $A$ of $L(cal(A))$
+]) <restriction_expansion_definition>
+
+#lemma([
+    let $cal(T)$ be theory, let $cal(T)'$ be extension of $cal(T)$, let $cal(A)'$ be model of $cal(T)'$, then restriction $cal(A)'|_(L(cal(T)))$ is a model of $cal(T)$
+]) <restriction_model_lemma>
+
+#definition(title: "canonical structure", [
+    a *canonical structure* is built from theory using its own syntatic objects as the domain
+]) <canonical_structure_definition>
+
+#definition(title: "equivalence class", [
+    let $cal(T)$ be theory, let $cal(A)$ be canonical structure of $cal(T)$, the *equivalence class* of $a$ is denoted as $a^circle.small$, let $b$ be variable, then define $a tilde b$ to be $tack_cal(T) a = b$
+]) <equivalence_class_definition>
+
+#definition(title: "Henkin theory", [
+    a theory $cal(T)$ is *Henkin theory* if for every closed instantiation $exists x A$ of $cal(T)$, there is a constant $e$ such that $tack_cal(T) exists x A -> A_x [e]$
+]) <henkin_theory_definition>
+
+#definition(title: "decidibility", [
+    let $cal(T)$ be theory, let $A$ be formula
+    - if neither $A$ nor $not A$ is a theorem of $cal(T)$, then $A$ is *undecidible*
+    - otherwise *decidible*
+]) <decidibility_definition>
+
+#definition(title: "complete", [
+    let $cal(T)$ be theory, then $cal(T)$ is *complete* if it is consistent and if every closed formula in $cal(T)$ is decidable in $cal(T)$
+]) <complete_theory_definition>
+
+#lemma([
+    let $cal(T)$ be complete Henkin theory, let $cal(A)$ be canonical structure for $cal(T)$, let $A$ be closed formula of $cal(T)$, then $cal(A)(A) = T$ iff $A$ is a theorem of $cal(T)$
+]) <complete_henkin_theory_theorem_closed_formula_lemma>
+
+#corollary([
+    let $cal(T)$ be complete Henkin theory, then canonical structure of $cal(T)$ is a model of $cal(T)$
+]) <complete_henkin_theory_canonical_structure_model_corollary>
+
+#definition(title: "special constants and axioms", [
+    let $L$ be first-order language, then define *special constants* of level $n$ as constant represented by other constants at most level $n - 1$ for instantiations
+
+    denote language obtained from $L$ by adding all special constants of all levels as $L_c$, let $r$ be special constant for $exists x A$, where $A$ is a formula, then $exists x A -> A_x [r]$ is the *special axiom* for $r$
+
+    let $cal(T)$ be theory with language $L$, define $cal(T)_c$ as theory of language $L_c$, with nonlogical axioms of $cal(T)$ and special axioms for special constants of $L_c$, then $cal(T)_c$ is Henkin theory
+]) <special_constants_axioms_definition>
+
+#lemma([
+    let $cal(T)$ be theory of language $L$, let $cal(T)_c$ be extension of $cal(T)$ of special axioms for special constants of language $L_c$, then $cal(T)_c$ is a conservative extension of $cal(T)$
+]) <special_axiom_extension_conservative_extension_lemma>
+
+#definition(title: "finite character", [
+    let $E$ be set, let $J$ be class of subsets of $E$, then $J$ has *finite character* if every subset $A$ of $E$, where $A in J <=> forall B subset A, s0 B in J$
+
+    a set $A$ in $J$ is *maximal element* of $J$ if $A$ is not a subset of any other elements of $J$
+]) <finite_character_definition>
+
+#lemma(title: "Teichmüller-Tukey lemma", [
+    let $J$ be nonempty class of subsets of $E$ which is a finite character, then $J$ contains a maximal element
+]) <teichmuller_tukey_lemma>
+
+#definition(title: "simple extension", [
+    let $cal(T)$ be theory, let $cal(T)'$ be *simple extension* of $cal(T)$, then $cal(T), cal(T)'$ have same language
+])
+
+#theorem(title: "Lindenbaum's theorem", [
+    let $cal(T)$ be consistent theory, then $cal(T)$ has a complete simple extension
+]) <lindenbaum_theorem>
+
+#lemma([
+    let $cal(T)$ be theory, let $U$ be consistent simple extension of $cal(T)_c$, then $U$ has a model $cal(A)$ such that each individual of $cal(A)$ is $cal(A)(r)$ for infinitely many special constants $r$
+]) <consistent_simple_extension_infinitely_constant_model_lemma>
+
+#corollary([
+    let $cal(T), cal(T)'$ be theories with same language, then $cal(T)'$ is extension of $cal(T)$ iff every model of $cal(T)'$ is model of $cal(T)$
+
+    $cal(T)$ and $cal(T)'$ are equivalent iff they have same models
+]) <same_langauge_model_equivalent_corollary>
 
