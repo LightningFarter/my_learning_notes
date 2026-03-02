@@ -815,3 +815,47 @@
     $cal(T)$ and $cal(T)'$ are equivalent iff they have same models
 ]) <same_langauge_model_equivalent_corollary>
 
+== The Consistency Theorem
+
+#definition(title: "open theory", [
+    let $cal(T)$ be a theory, then $cal(T)$ is *open* if every of its nonlogical axioms are open
+]) <open_theory_definition>
+
+#definition(title: "formula belongings", [
+    let $cal(T)$ be a theory, let $r$ be a special constant for formula $exists x A$, then a formula *belongs to* $r$ is either 
+    - special axiom for $r$
+    - closed substitution of form $A_x [a] -> exists x A$
+]) <formula_belonging_definition>
+
+#definition(title: $Delta(cal(T))$, [
+    let $cal(T)$ be theory, let $cal(T)_c$ be theory extension of $cal(T)$ by special axioms, then define $Delta(cal(T))$ as set of formulas in $cal(T)_c$ that either
+    - belongs to some special constants
+    - closed instances of identity axioms, equality axioms, nonlogical axioms of $cal(T)$
+]) <delta_theory_set_definition>
+
+#lemma([
+    let $cal(T)$ be theory, let $A$ be formula in $cal(T)$, if $tack_cal(T) A$, let $A'$ be closed instance of $A$ in $L(cal(T)_c)$, then $A'$ is tautological consequence of formulas in $Delta(cal(T))$
+]) <logical_consequence_delta_theory_lemma>
+
+#definition(title: "quasi-tautology", [
+    let $cal(T)$ be theory, let $A$ be formula in $cal(T)$, then $A$ is *quasi-tautology* if $A$ is tautological consequence of instances of identity axioms and equality axioms
+]) <quasi_tautology_definition>
+
+#definition(title: "special sequence", [
+    let $cal(T)$ be theory, let $A_1, dots, A_n$ be formulas in $cal(T)$, then $A_1, dots, A_n$ is *special sequence* if \ $not A_1 or dots or not A_n$ is tautology
+]) <special_sequence_definition>
+
+#definition(title: "rank of special constants", [
+    let $cal(T)$ be theory, let $r$ be special constants of formula $exists x A$, then *rank* or $r$ is the number of occurence of symbol $exists$ in $exists x A$
+
+    then define $Delta_n (cal(T)) = {exists x A in Delta (cal(T)) | exists x A "belongs to" r and rank r <= n}$
+]) <rank_of_special_constants_definition>
+
+#lemma([
+    let $n > 0$, let $cal(T)$ be theory, let there be special sequence consisting formulas in $Delta_n (cal(T))$, then there is a special sequence consists of formulas in $Delta_(n - 1) (cal(T))$
+]) <special_sequence_constant_rank_reduction_lemma>
+
+#theorem(title: "consistency theorem (Hilbert-Ackermann)", [
+    an open theory $cal(T)$ is inconsistent iff there is a quasi-tautology which is in form $not A_1 or dots or not A_n$ where each $A_i$ is instance of nonlogical axioms
+]) <consistency_theorem>
+
