@@ -859,3 +859,32 @@
     an open theory $cal(T)$ is inconsistent iff there is a quasi-tautology which is in form $not A_1 or dots or not A_n$ where each $A_i$ is instance of nonlogical axioms
 ]) <consistency_theorem>
 
+== Herbrand's Theorem
+
+#definition(title: "existensial formula", [
+    let $A$ be formula, then $A$ is *existensial* if all of its quantifiers are $exists$
+]) <existensial_formula_definition>
+
+#lemma([
+    let $cal(T)$ be theory with no nonlogical axioms, let $A$ be closed existensial formula of $cal(T)$, then $tack_cal(T) A$ iff there is a quasi-tautology of disjunction of instances of matrix of $A$
+]) <existensial_closed_formula_theorem_condition_lemma>
+
+#definition(title: "special equality axiom", [
+    let $cal(T)$ be theory with no nonlogical axioms, let $cal(T)_c$ be extension of $cal(T)$ by adding all special variables, let $A, B$ be formulas of $cal(T)$, let $r, s$ be special variables for $exists x A, s0 exists x B$ respectively, then define *special equality axiom* as
+    $
+        forall x (A <-> B) -> r = s
+    $
+]) <special_equality_axiom_definition>
+
+#lemma([
+    let $cal(T)$ be a theory, let $cal(T)_c$ be extension of $cal(T)$ by adding all special variables, let $cal(T)'_c$ be extension of $cal(T)_c$ by adding special equality axioms to $cal(T)_c$, then $cal(T)_c$ and $cal(T)'_c$ are conservative extensions
+]) <conservative_extension_special_eq_axiom_lemma>
+
+#definition(title: $A_H$, [
+    let $A$ be a formula of form $exists x_1 dots exists x_n forall y B$, then we define $A^* = exists x_1 dots exists x_n B_y [f x_1 dots x_n]$ for some \ $n$-ary function $f$, then define $A^(**), ...$ until $A_H$ which is an existensial formula derived using the same rule from $A$
+]) <herbrands_existensial_formula_deduction_definition>
+
+#theorem(title: "Herbrand's theorem", [
+    let $cal(T)$ be theory with no nonlogical axioms, let $A$ be closed formula of prenex form in $cal(T)$, then \ $tack_cal(T) A$ iff there is a quasi-tautology of disjucntion of instances of matrix of $A_H$
+]) <herbrand_theorem>
+
