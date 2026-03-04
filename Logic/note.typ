@@ -862,7 +862,7 @@
 == Herbrand's Theorem
 
 #definition(title: "existensial formula", [
-    let $A$ be formula, then $A$ is *existensial* if all of its quantifiers are $exists$
+    let $A$ be formula, then $A$ is *existensial* if all of its quantifiers are $exists$, and $A$ is in prenex form
 ]) <existensial_formula_definition>
 
 #lemma([
@@ -881,10 +881,28 @@
 ]) <conservative_extension_special_eq_axiom_lemma>
 
 #definition(title: $A_H$, [
-    let $A$ be a formula of form $exists x_1 dots exists x_n forall y B$, then we define $A^* = exists x_1 dots exists x_n B_y [f x_1 dots x_n]$ for some \ $n$-ary function $f$, then define $A^(**), ...$ until $A_H$ which is an existensial formula derived using the same rule from $A$
-]) <herbrands_existensial_formula_deduction_definition>
+    let $A$ be a formula of form $exists x_1 dots exists x_n forall y B$, then we define $A^* = exists x_1 dots exists x_n B_y [f x_1 dots x_n]$ for some \ $n$-ary function $f$, then define $A^(**), ...$ until $A_H$ which is an existensial formula derived using the same rule from $A^*$
+]) <existensial_formula_deduction_definition>
 
 #theorem(title: "Herbrand's theorem", [
     let $cal(T)$ be theory with no nonlogical axioms, let $A$ be closed formula of prenex form in $cal(T)$, then \ $tack_cal(T) A$ iff there is a quasi-tautology of disjucntion of instances of matrix of $A_H$
 ]) <herbrand_theorem>
+
+== Addition on Function Symbols
+
+#theorem(title: "theorem on functional extension", [
+    let $cal(T)$ be theory, let $x, y_1, dots, y_n$ be distinct variables, let $exists x A$ be theorem of $cal(T)$ which no variables other than $y_1, dots, y_n$ is free, let $cal(T)'$ be theory obtained from $cal(T)$ adding new $n$-ary function symbol $f$ and new nonlogical axiom $A_x [f y_1 dots y_n]$, then $cal(T)'$ is conservative extension of $cal(T)$
+]) <functional_extension_theorem>
+
+#definition(title: "universal", [
+    let $A$ be formula, then $A$ is universal if all of its quantifiers are $forall$, and $A$ is in prenex form
+]) <universal_formula_definition>
+
+#definition(title: $A_S$, [
+    let $A$ be formula of form $forall x_1 dots forall x_n exists y B$, then we define $A^circle.small = forall x_1 dots forall x_n B_y [f x_1 dots x_n]$ for some \ $n$-ary function $f$, then define $A^(circle.small circle.small), dots$ until $A_S$ which is an universal formula derived using the same rule from $A^circle.small$
+]) <universal_formula_deduction_definition>
+
+#theorem(title: "Skolem's theorem", [
+    every theory has an open conservative extension
+]) <skolem_theorem>
 
