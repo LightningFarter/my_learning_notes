@@ -21,6 +21,7 @@
 #let c-ch  = counter("ch")
 #let c-sch = counter("sch")
 #let c-thm = counter("thm")
+#let c-axm = counter("axm")
 #let c-lem = counter("lem")
 #let c-prp = counter("prp")
 #let c-cor = counter("cor")
@@ -71,6 +72,7 @@
 }
 
 
+#let axiom(title: none, body) = make-env("Axiom", c: c-axm, color: col-thm, title: title, body: body)
 #let theorem(title: none, body) = make-env("Theorem", c: c-thm, color: col-thm, title: title, body: body)
 #let lemma(title: none, body) = make-env("Lemma", c: c-lem, color: col-thm, title: title, body: body)
 #let proposition(title: none, body) = make-env("Proposition", c: c-prp, color: col-thm, title: title, body: body)
@@ -94,6 +96,7 @@
 ]))
 #let todo(text) = block(lightfill(red, [*TODO:* #text]))
 
+#let axmtxt(id) = context [ Axiom #counter("ch").at(id).first().#counter("sch").at(id).first().#( counter("axm").at(id).first()+1 )]
 #let thetxt(id) = context [ Theorem #counter("ch").at(id).first().#counter("sch").at(id).first().#( counter("thm").at(id).first()+1 )]
 #let lemtxt(id) = context [ Lemma #counter("ch").at(id).first().#counter("sch").at(id).first().#( counter("lem").at(id).first()+1 )]
 #let protxt(id) = context [ Proposition #counter("ch").at(id).first().#counter("sch").at(id).first().#( counter("prp").at(id).first()+1 )]
@@ -102,6 +105,7 @@
 #let extxt(id) = context [ Example #counter("ch").at(id).first().#counter("sch").at(id).first().#(counter("ex").at(id).first()+1 )]
 #let exetxt(id) = context [ Exercise #counter("ch").at(id).first().#counter("sch").at(id).first().#( counter("exr").at(id).first()+1 )]
 
+#let axmref(id) = link(id, axmtxt(id))
 #let theref(id) = link(id, thetxt(id))
 #let lemref(id) = link(id, lemtxt(id))
 #let proref(id) = link(id, protxt(id))
@@ -137,3 +141,5 @@
 #let tenc(x) = $lr(chevron.l #x chevron.r)$
 #let Union = $op(union.big, limits: #true)$
 #let Inter = $op(inter.big, limits: #true)$
+#let argmin = $op(arg min, limits: #true)$
+#let argmax = $op(arg max, limits: #true)$
