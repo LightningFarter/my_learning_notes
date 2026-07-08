@@ -86,6 +86,85 @@
     + $tack n in bb(N) -> S(n) in bb(N)$
     + $forall n in bb(N) s0 (S(n) != 0)$
     + $forall n, m in bb(N) s0 ((n != m) -> (S(n) != S(m)))$
-    + let $P(n)$ be any property of $n in bb(N)$, $tack (P(0) and P(n)) -> P(S(n)) => s0 tack forall n in bb(N) s0 P(n)$
+    + let $P(n)$ be any property of $n in bb(N)$, $tack P(0) and (P(n) -> P(S(n))) => s0 tack forall n in bb(N) s0 P(n)$
 ]) <peano_axioms>
+
+== Addition
+
+#definition(title: "addition of natural numbers", [
+    let $n, m in NN$ then
+    + $0 + m := m$
+    + $S(n) + m := S(n + m)$
+]) <addition_n_definition>
+
+#lemma([
+    $forall n in NN s0 n + 0 = n$
+]) <add_zero_eq_lemma>
+
+#lemma([
+    $forall n, m in NN s0 n + S(m) = S(n + m)$
+]) <reverse_add_succ_lemma>
+
+#proposition(title: "addition is commutative", [
+    $forall n, m in NN s0 n + m = m + n$
+]) <add_comm_proposition>
+
+#proposition(title: "addition is associative", [
+    $forall a, b, c in NN h0 (a + b) + c = a + (b + c)$
+]) <add_asso_proposition>
+
+#proposition(title: "cancellation law", [
+    let $a, b, c in NN in.rev a + b = a + c$ then $b = c$
+]) <cancellation_law_proposition>
+
+#definition(title: "positive natural numbers", [
+    let $n in NN$ then $n$ is *positive* iff $n != 0$
+]) <positive_natural_number_definition>
+
+#proposition([
+    let $a in NN$ be positive, let $b in NN$, then $a + b$ is positive
+]) <pos_plus_n_pos_proposition>
+
+#corollary([
+    let $a, b in NN in.rev a + b = 0$ then $a = b = 0$
+]) <n_plus_n_eq_zero_corollary>
+
+#lemma([
+    let $a in NN$ be positive, then $existsunique b in NN in.rev S(b) = a$
+]) <exist_unique_predecessor_pos_lemma>
+
+#definition(title: "ordering of natural number", [
+    let $n, m in NN$, then denote $n$ is *greater than* $m$ as $n >= m$ or $m <= n$ iff $exists a in NN in.rev n = m + a$
+
+    denote $n$ is *strictly greater than* $m$ as $n > m$ or $m < n$ iff $n != m and n >= m$
+]) <ordering_n_definition>
+
+#proposition([
+    let $a, b, c in NN$, then
+    + (*reflexive*) $a >= a$
+    + (*transistive*) $a >= b and b >= c => a >= c$
+    + (*anti-symmetric*) $a >= b and b >= a => a = b$
+    + (*addition preserves order*) $a >= b <=> a + c >= b + c$
+    + $a < b <=> S(a) <= b$
+    + $a < b <=> exists d in NN "be positive such that" b = a + d$
+]) <basic_properties_n_ordering_proposition>
+
+#proposition(title: "trichotomy of order for natural numbers", [
+    let $a, b in NN$ then exactly one of below is true
+    - $a > b$
+    - $a = b$
+    - $a < b$
+]) <trichotomy_order_n_proposition>
+
+#proposition(title: "strong principle of induction", [
+    let $m_0 in NN$, let $P(m)$ be property pretaining to $m in NN$
+
+    if $forall m in NN s0 m >= m_0$ we have $tack P(m')$ with $m_0 <= m' < m -> P(m)$ then we can conclude \ $forall m in NN s0 m >= m_0 tack P(m)$
+]) <strong_principle_induction_proposition>
+
+#proposition(title: "principle of backward induction", [
+    let $n, m in NN$, let $P(m)$ be property pretaining to $m$
+
+    $(tack P(S(m)) -> P(m)) and P(n) => forall m in NN s0 m <= n tack P(m)$
+]) <principle_backward_induction_proposition>
 
