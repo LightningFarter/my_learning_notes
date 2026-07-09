@@ -168,3 +168,48 @@
     $(tack P(S(m)) -> P(m)) and P(n) => forall m in NN s0 m <= n tack P(m)$
 ]) <principle_backward_induction_proposition>
 
+== Multiplication
+
+#definition(title: "multiplication of natura numbers", [
+    let $n, m in NN$, then define *multiplication* that
+    - $0 times m := 0$
+    - $S(n) times m := (n times m) + m$
+    and we abreviate $n times m$ as $n m$
+]) <multiplication_n_definition>
+
+#lemma(title: "multiplicaiton is commutative", [
+    let $n, m in NN$ then $n times m = m times n$
+]) <mul_n_commutative_lemma>
+
+#lemma([
+    let $n, m in NN suchthat n times m = 0 => n = 0 or m = 0$
+]) <pos_no_zero_divisor_lemma>
+
+#proposition(title: "distributive law", [
+    let $a, b, c in NN$, then
+    - $a (b + c) = a b + a c$
+    - $(b + c) a = b a + c a$
+]) <distributive_law_n_proposition>
+
+#proposition(title: "multiplication is associative", [
+    let $a, b, c in NN$, then $(a times b) times c = a times (b times c)$
+]) <mul_n_associative_proposition>
+
+#proposition(title: "multiplication preserves order", [
+    let $a, b, c in NN suchthat a < b, s0 c != 0$ then $a c < b c$
+]) <mul_n_preserve_order_proposition>
+
+#corollary(title: "cancellation law", [
+    let $a, b, c in NN suchthat a c = b c and c != 0$ then $a = b$
+]) <mul_cancellation_law_corollary>
+
+#proposition(title: "Euclidean algorithm", [
+    let $n, q in NN$, $q$ be positive, then $exists m, r in NN suchthat 0 <= r < q s0 and s0 n = m q + r$
+]) <euclidean_algorithm_proposition>
+
+#definition(title: "exponentiation of natural numbers", [
+    let $n, m in NN$, then define *exponentiation*
+    - $m^0 := 1$ and $0^0 := 1$
+    - $m^(S(n)) := m^n times m$
+]) <exponentiation_n_definition>
+
