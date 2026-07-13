@@ -213,3 +213,116 @@
     - $m^(S(n)) := m^n times m$
 ]) <exponentiation_n_definition>
 
+#pagebreak()
+
+= Set Theory
+
+== Fundamentals
+
+#axiom(title: "sets are objects", [
+    if $A$ is a *set*, then $A$ is also an *object*
+]) <set_object_axiom>
+
+#definition(title: "equality of sets", [
+    let $A, B$ be sets, then $A = B$ iff $forall x (x in A -> x in B) and forall x (x in B -> x in A)$
+]) <set_equality_definition>
+
+#axiom(title: "empty set", [
+    there exists a set $emptyset$, called *empty set*, contains no element, thus for every object $x$ we have $x in.not emptyset$
+
+    set which is not $emptyset$ is *non-empty set*
+]) <empty_set_axiom>
+
+#lemma(title: "single choice", [
+    let $A$ be non-empty, then there exists an object $x$ such that $x in A$
+]) <single_choice_exists_non_empty_lemma>
+
+#axiom(title: "singleton sets and pair sets", [
+    let $a, b$ be objects, then $exists {a}$ as a set with only $a$ for every object, which is a *singleton set*
+
+    $exists {a, b}$ as a set with only $a$ and $b$ for every pair of objects, which is a *pair set*
+
+    then $y in {a} <=> y = a$ and $y in {a, b} <=> y = a or y = b$
+]) <singleton_pair_set_axiom>
+
+#axiom(title: "pairwise union", [
+    let $A, B$ be any sets, then $exists A union B$ called *union* of $A$ and $B$, define as
+    $
+        x in A union B <==> (x in A or x in B)
+    $
+]) <pairwise_union_set_axiom>
+
+#lemma([
+    let $a, b$ be objects, then ${a, b} = {a} union {b}$ \
+    let $A, B, C$ be sets, then
+    - $A union B = B union A$ (commutative)
+    - $(A union B) union C = A union (B union C)$ (associative)
+]) <union_comm_asso_lemma>
+
+#definition(title: "subsets", [
+    let $A, B$ be sets, then $A$ is *subset* of $B$ denoted as $A subset B$ iff $forall x (x in A -> x in B)$
+
+    $A$ is a *proper subset* of $B$ denoted as $A subset.neq B$ if $A subset B and A != B$
+]) <subset_definition>
+
+#proposition(title: "sets are partially orderd by set inclusion", [
+    let $A, B, C$ be sets
+    + $A subset B and B subset C => A subset C$
+    + $A subset B and B subset A => A = B$
+    + $A subset.neq B and B subset.neq C => A subset.neq C$
+]) <set_partial_order_inclusion_proposition>
+
+#axiom(title: "axiom of specification", [
+    let $A$ be set, for each $x in A$ let $P(x)$ be property pertaining to $x$, then $exists {x in A | P(x)}$
+]) <specification_set_axiom>
+
+#definition(title: "intersections", [
+    let $A, B$ be set, then define *intersection*
+    $
+        A inter B := {x | x in A and x in B}
+    $
+    and $A, B$ are *disjoint* if $A inter B = emptyset$
+]) <set_intersection_definition>
+
+#definition(title: "difference sets", [
+    let $A, B$ be sets, then denote *difference* as $A - B$ or $A \\ B$
+    $
+        A \\ B := {x | x in A and x in.not B}
+    $
+]) <difference_set_definition>
+
+#proposition(title: "sets form a boolean algebra", [
+    let $A, B, C$ be sets, let $X$ be set containing $A, B, C$ as subsets
+    + *(minimal element)* $A union emptyset = A$ and $A inter emptyset = emptyset$
+    + *(maximal element)* $A union X = X$ and $A inter X = A$
+    + *(identity)* $A inter A = A union A = A$
+    + *(commutativity)* $A union B = B union A$ and $A inter B = B inter A$
+    + *(associativity)* $(A union B) union C = A union (B union C)$ and $(A inter B) inter C = A inter (B inter C)$
+    + *(distributivity)* $A inter (B union C) = (A inter B) union (A inter C)$ and $A union (B inter C) = (A union B) inter (A union C)$
+    + *(partition)* $A union (X \\ A) = X$ and $A inter (X \\ A) = emptyset$
+    + *(De Morgan laws)* $X \\ (A union B) = (X \\ A) inter (X \\ B)$ and $X \\ (A inter B) = (X \\ A) union (X \\ B)$
+]) <set_boolean_algebra_proposition>
+
+#axiom(title: "replacement", [
+    let $A$ be a set, let $x, y in A$, let $P(x, y)$ be property pretaining to $x$ and $y$ such that for each $x$ there is at most one $y$ that $tack P(x, y)$, then $exists {y | P(x, y) "for some" x in A}$
+]) <set_replacement_axiom>
+
+#axiom(title: "infinity", [
+    there exists a set $NN$, whose elements are called *natural numbers*
+    - $0 in NN$
+    - there is $S(n)$ assigned to every $n in NN$
+    - the #axmref(<peano_axioms>) (Peano axioms) holds
+]) <natural_number_set_axiom>
+
+#exercise([
+    let $A, B, C$ be sets
+    + $A subset B$ and $A union B = B$ and $A inter B = A$ are logically equivalent
+    + $A inter B subset A$ and $A inter B subset B$
+    + $C subset A and C subset B <==> C subset A inter B$
+    + $A subset A union B$ and $B subset A union B$
+    + $A subset C and B subset C <==> A union B subset C$
+    + *(absorbtion laws)* $A inter (A union B) = A$ and $A union (A inter B) = A$
+    + $A union B = X and A inter B = emptyset => A = X \\ B and B = X \\ A$
+    + $A \\ B, A inter B, B \\ A$ are disjoint, and their union is $A union B$
+]) <set_fundamental_exercise>
+
