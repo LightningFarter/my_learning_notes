@@ -326,3 +326,37 @@
     + $A \\ B, A inter B, B \\ A$ are disjoint, and their union is $A union B$
 ]) <set_fundamental_exercise>
 
+== Russell's Paradox
+
+#axiom(title: "universal specification (flawed)", [
+    let $x$ be object, and let there be property $P(x)$ pertained to $x$, then exist a set ${x | P(x)}$ such that for every object $y$
+    $
+        y in {x | P(x)} <==> P(y)
+    $
+    or also called *axiom of comprehension*
+]) <set_comprehension_axiom>
+
+#proposition(title: "Russell's Paradox", [
+    suppose #axmref(<set_comprehension_axiom>) is true, then let $P(x) <=> x "is a set" and x in.not x$, then define
+    $
+        & Omega := {x | P(x)} = {x | x "is a set" and x in.not x} \
+        => & cases(
+            Omega in Omega -> not P(Omega) -> Omega in.not Omega,
+            Omega in.not Omega -> P(Omega) -> Omega in Omega
+        ) \
+        => & bot
+    $
+]) <russell_paradox_proposition>
+
+#axiom(title: "regularity", [
+    let $A$ be non-empty set, then there is at least one element $x$ of $A$ which $x$ is either not a set or disjoint from $A$
+
+    also called *axiom of foundation*
+]) <set_foundation_axiom>
+
+#exercise([
+    + universal specification axiom (#axmref(<set_comprehension_axiom>)) would imply axioms #axmref(<empty_set_axiom>), #axmref(<singleton_pair_set_axiom>), #axmref(<pairwise_union_set_axiom>), #axmref(<specification_set_axiom>), and #axmref(<set_replacement_axiom>)
+    + axiom of regularity and singleton set axiom imply if $A, B$ be set, then $A in.not A$ and $A in.not B or B in.not A$
+    + universal specification is true iff exists universal set
+]) <russel_paradox_exercise>
+
