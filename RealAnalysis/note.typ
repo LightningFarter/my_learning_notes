@@ -1,6 +1,6 @@
 #import "../math_variables_lib.typ": *
 
-#let title = "Probability"
+#let title = "Real Analysis"
 #let author = "Jason Chang"
 #let email = "jason5738867@gmail.com"
 #let show-solutions = true
